@@ -1,0 +1,201 @@
+"id","session","mid1","mid2","mid3","repeater","satmath","satreading","gender","ethnicity","gpa","utvideo","utclassact","utgroup","utmsb","utlbc","utcourse","prefer1","prefer2"
+1,"SS09",83,67,135,"Repeater",580,420,"Female","",4,5,4,5,3,6,5,2,2
+2,"SS09",25,27,46,"Repeater",NA,NA,"Female","",4,6,5,6,4,6,5,5,5
+3,"SS09",78,64,118,"Non-Repeater",720,640,"Female","",3.9,1,5,4,1,4,6,6,6
+4,"SS09",54,46,65,"Repeater",695,670,"Female","Latino/Other Spanish-American",3.872,5,5,4,3,4,5,3,4
+5,"SS09",80,53,130,"Repeater",792.5,705,"Male","",3.867,6,4,2,2,6,4,5,5
+6,"SS09",49,37,105,"Non-Repeater",713.33,710,"Male","Thai/Other Asian",3.854,4,3,2,2,5,5,4,5
+7,"SS09",51,62,75,"Repeater",NA,NA,"Female","",3.825,6,6,6,6,6,6,6,6
+8,"SS09",72,78,117,"Non-Repeater",NA,NA,"Male","Vietnamese",3.667,6,4,2,2,6,5,5,4
+9,"SS09",73,72,81,"Non-Repeater",620,600,"Female","Vietnamese",3.644,6,3,3,3,5,5,5,5
+10,"SS09",68,54,121,"Repeater",675,665,"Female","Chinese/Chinese-American",3.633,6,3,1,1,1,1,3,1
+11,"SS09",42,36,42,"Repeater",490,590,"Female","Chinese/Chinese-American",3.603,6,2,6,2,6,6,6,6
+12,"SS09",36,41,72,"Repeater",563.33,420,"Female","Vietnamese",3.584,6,5,2,1,5,6,6,6
+13,"SS09",80,86,139,"Non-Repeater",760,760,"Male","East Indian/Pakistani",3.582,6,5,4,1,6,6,6,6
+14,"SS09",80,83,108,"Non-Repeater",486.67,493.33,"Female","Chicano/Mexican-American",3.549,6,3,2,2,5,4,4,4
+15,"SS09",45,64,93,"Non-Repeater",690,580,"Female","Decline to State",3.548,6,3,4,2,5,5,3,4
+16,"SS09",50,40,98,"Repeater",640,630,"Female","Vietnamese",3.513,2,2,3,1,1,3,1,1
+17,"SS09",43,47,108,"Repeater",730,640,"Male","",3.482,6,4,4,4,6,5,6,6
+18,"SS09",64,70,127,"Non-Repeater",515,585,"Male","Japanese/Japanese-American",3.479,6,2,2,2,5,3,1,1
+19,"SS09",83,63,123,"Non-Repeater",615,565,"Male","White/Caucasian",3.468,4,5,5,4,6,5,5,5
+20,"SS09",73,NA,NA,"Non-Repeater",563.33,480,"Female","Vietnamese",3.455,4,3,5,2,4,5,2,2
+21,"SS09",76,71,119,"Non-Repeater",620,630,"Female","White/Caucasian",3.449,4,5,5,3,6,5,5,5
+22,"SS09",45,35,80,"Non-Repeater",610,623.33,"Female","Vietnamese",3.449,6,6,5,1,6,6,6,6
+23,"SS09",67,69,148,"Non-Repeater",502.5,475,"Female","Vietnamese",3.413,5,3,3,2,3,4,4,4
+24,"SS09",47,33,90,"Repeater",530,570,"Female","Chicano/Mexican-American",3.401,5,5,3,3,6,5,6,4
+25,"SS09",83,67,109,"Non-Repeater",603.33,516.67,"Female","Chinese/Chinese-American",3.387,6,6,1,1,6,6,6,6
+26,"SS09",32,41,97,"Repeater",610,593.33,"Male","Decline to State",3.376,5,2,2,2,5,3,1,1
+27,"SS09",33,15,61,"Non-Repeater",560,640,"Female","White/Caucasian",3.368,6,5,6,3,5,5,5,5
+28,"SS09",36,45,NA,"Non-Repeater",NA,NA,"Male","",3.367,NA,NA,NA,NA,NA,NA,NA,NA
+29,"SS09",61,50,132,"Non-Repeater",600,565,"Female","Chinese/Chinese-American",3.345,6,5,3,3,6,6,6,6
+30,"SS09",75,66,143,"Non-Repeater",NA,NA,"Male","",3.3,4,5,3,1,6,4,5,2
+31,"SS09",59,72,94,"Non-Repeater",573.33,486.67,"Female","Vietnamese",3.283,5,5,1,1,5,5,5,4
+32,"SS09",68,70,120,"Repeater",740,610,"Male","White/Caucasian",3.27,1,1,1,1,5,2,1,1
+33,"SS09",52,35,98,"Non-Repeater",620,537.5,"Female","Vietnamese",3.267,6,6,3,1,5,5,6,5
+34,"SS09",75,76,135,"Non-Repeater",613.33,640,"Female","Philipino/Filipino",3.263,6,6,5,4,6,6,6,6
+35,"SS09",51,75,83,"Non-Repeater",542.5,535,"Female","Philipino/Filipino",3.255,5,5,2,2,5,5,5,4
+36,"SS09",75,74,127,"Non-Repeater",670,650,"Female","White/Caucasian",3.247,5,5,6,1,6,5,5,6
+37,"SS09",86,67,108,"Non-Repeater",663.33,640,"Female","",3.24,4,3,3,2,2,4,1,1
+38,"SS09",42,49,84,"Repeater",NA,NA,"Male","",3.233,6,6,6,3,6,6,1,6
+39,"SS09",37,40,66,"Non-Repeater",585,560,"Female","White/Caucasian",3.226,6,5,5,5,5,5,5,6
+40,"SS09",87,77,138,"Non-Repeater",653.33,470,"Female","Philipino/Filipino",3.224,5,5,3,5,5,4,2,3
+41,"SS09",35,25,92,"Repeater",676.67,553.33,"Female","Korean",3.223,4,4,2,2,4,3,2,1
+42,"SS09",79,44,131,"Non-Repeater",670,593.33,"Female","Chinese/Chinese-American",3.222,5,5,4,2,5,5,6,5
+43,"SS09",78,75,122,"Non-Repeater",615,480,"Female","Japanese/Japanese-American",3.212,5,3,3,1,6,4,4,4
+44,"SS09",52,55,72,"Repeater",553.33,510,"Female","Thai/Other Asian",3.205,4,4,2,2,5,5,2,4
+45,"SS09",45,46,90,"Repeater",675,565,"Male","Chinese/Chinese-American",3.202,6,4,5,2,6,5,6,6
+46,"SS09",78,74,123,"Non-Repeater",616.67,523.33,"Female","Philipino/Filipino",3.194,6,6,6,3,6,5,6,6
+47,"SS09",55,71,101,"Non-Repeater",540,450,"Female","Vietnamese",3.171,6,3,6,2,4,6,2,4
+48,"SS09",44,48,52,"Repeater",580,530,"Female","Decline to State",3.17,3,3,3,3,3,3,2,3
+49,"SS09",91,70,150,"Non-Repeater",700,530,"Female","Chinese/Chinese-American",3.167,6,3,6,1,6,5,5,3
+50,"SS09",46,38,69,"Repeater",650,395,"Female","Thai/Other Asian",3.161,3,3,5,2,4,3,2,3
+51,"SS09",74,71,151,"Non-Repeater",593.33,586.67,"Female","Philipino/Filipino",3.158,4,4,4,2,5,5,5,5
+52,"SS09",84,77,126,"Non-Repeater",515,440,"Female","",3.155,6,4,6,1,6,6,6,6
+53,"SS09",37,54,55,"Non-Repeater",670,550,"Female","East Indian/Pakistani",3.155,5,4,1,1,6,4,5,4
+54,"SS09",40,39,70,"Repeater",575,505,"Female","Vietnamese",3.133,4,3,4,2,3,3,1,1
+55,"SS09",40,43,63,"Non-Repeater",570,665,"Female","Chinese/Chinese-American",3.128,6,6,4,1,4,4,1,1
+56,"SS09",87,63,124,"Non-Repeater",610,603.33,"Female","Chinese/Chinese-American",3.125,6,6,6,2,6,6,6,6
+57,"SS09",22,41,20,"Repeater",660,476.67,"Female","Korean",3.124,5,4,1,1,6,4,4,4
+58,"SS09",58,32,86,"Repeater",655,590,"Female","Japanese/Japanese-American",3.102,6,3,2,2,4,3,2,2
+59,"SS10",76,49,119,"Non-Repeater",665,640,"Male","Philipino/Filipino",3.098,6,6,3,3,6,5,6,6
+60,"SS10",56,67,152,"Non-Repeater",655,560,"Female","Korean",3.083,5,6,3,2,5,5,4,4
+61,"SS10",82,62,163,"Non-Repeater",726.67,566.67,"Female","Chinese/Chinese-American",3.081,6,6,6,6,6,6,6,6
+62,"SS10",27,27,42,"Non-Repeater",590,550,"Female","Vietnamese",3.08,3,1,3,1,5,2,1,1
+63,"SS10",55,42,118,"Non-Repeater",525,565,"Male","",3.07,4,6,5,1,5,4,5,6
+64,"SS10",79,95,192,"Non-Repeater",700,503.33,"Female","East Indian/Pakistani",3.066,6,1,1,1,4,4,4,6
+65,"SS10",79,50,115,"Repeater",560,563.33,"Female","Chicano/Mexican-American",3.061,6,4,3,2,4,4,5,5
+66,"SS10",48,53,71,"Non-Repeater",580,606.67,"Female","Vietnamese",3.058,5,5,6,3,5,5,4,4
+67,"SS10",42,25,42,"Repeater",NA,NA,"Female","White/Caucasian",3.051,6,5,3,2,5,5,6,6
+68,"SS10",80,74,154,"Non-Repeater",555,462.5,"Female","Chinese/Chinese-American",3.049,4,4,5,2,4,4,4,3
+69,"SS10",21,26,41,"Non-Repeater",670,450,"Female","Chinese/Chinese-American",3.038,6,4,4,1,6,5,6,4
+70,"SS10",47,39,79,"Non-Repeater",615,630,"Female","Chinese/Chinese-American",3.028,6,4,1,1,6,6,6,6
+71,"SS10",96,91,179,"Non-Repeater",580,530,"Female","Vietnamese",3.028,5,1,1,1,5,3,3,3
+72,"SS10",43,60,114,"Non-Repeater",NA,NA,"Female","Philipino/Filipino",3.017,3,6,4,1,6,5,4,3
+73,"SS10",68,56,68,"Non-Repeater",420,493.33,"Female","Latino/Other Spanish-American",3.017,4,1,3,1,4,3,1,1
+74,"SS10",64,58,70,"Repeater",640,585,"Male","Chinese/Chinese-American",2.997,6,6,4,1,4,4,6,5
+75,"SS10",34,41,67,"Non-Repeater",730,590,"Male","Korean",2.988,NA,NA,NA,NA,NA,NA,NA,NA
+76,"SS10",69,65,74,"Non-Repeater",496.67,440,"Female","Korean",2.987,4,1,4,2,4,4,4,3
+77,"SS10",31,54,89,"Non-Repeater",595,500,"Female","Philipino/Filipino",2.987,3,2,1,1,4,3,2,2
+78,"SS10",46,55,140,"Non-Repeater",530,640,"Female","Vietnamese",2.987,3,3,3,3,3,3,2,1
+79,"SS10",70,78,154,"Non-Repeater",410,425,"Female","Chicano/Mexican-American",2.963,4,6,6,1,6,6,6,6
+80,"SS10",46,46,71,"Repeater",630,546.67,"Female","Korean",2.906,5,5,3,2,5,6,6,6
+81,"SS10",29,54,100,"Non-Repeater",500,405,"Female","Vietnamese",2.882,3,2,2,1,3,3,1,1
+82,"SS10",46,32,53,"Non-Repeater",540,500,"Male","Chicano/Mexican-American",2.879,5,4,4,2,5,5,4,5
+83,"SS10",44,47,128,"Non-Repeater",580,556.67,"Male","East Indian/Pakistani",2.878,4,4,4,1,4,4,5,3
+84,"SS10",55,60,84,"Non-Repeater",560,760,"Female","White/Caucasian",2.866,6,5,3,3,5,4,4,4
+85,"SS10",59,59,163,"Non-Repeater",646.67,443.33,"Female","Korean",2.862,4,4,5,3,5,4,4,4
+86,"SS10",80,71,139,"Non-Repeater",715,645,"Male","White/Caucasian",2.851,6,5,5,4,6,5,5,6
+87,"SS10",58,47,96,"Repeater",605,460,"Male","Vietnamese",2.847,4,3,3,3,4,3,3,3
+88,"SS10",58,73,122,"Non-Repeater",760,690,"Male","Chinese/Chinese-American",2.841,6,5,5,3,5,5,4,4
+89,"SS10",66,57,109,"Non-Repeater",656.67,520,"Female","Decline to State",2.838,4,4,2,1,2,4,1,1
+90,"SS10",51,43,83,"Non-Repeater",480,470,"Female","Philipino/Filipino",2.831,3,6,6,1,6,6,6,6
+91,"SS10",47,51,142,"Non-Repeater",577.5,482.5,"Female","Philipino/Filipino",2.809,4,2,1,1,5,5,5,4
+92,"SS10",85,84,181,"Non-Repeater",556.67,486.67,"Female","East Indian/Pakistani",2.807,4,4,4,5,5,5,3,2
+93,"SS10",46,35,125,"Non-Repeater",700,705,"Male","Korean",2.776,6,3,3,3,5,3,3,2
+94,"SS10",39,34,96,"Non-Repeater",585,590,"Male","Chinese/Chinese-American",2.771,6,4,2,1,5,4,6,5
+95,"SS10",28,31,52,"Repeater",NA,NA,"Female","White/Caucasian",2.763,4,4,2,1,3,4,3,3
+96,"SS10",40,27,16,"Repeater",525,535,"Female","Chicano/Mexican-American",2.74,6,3,3,1,5,5,6,6
+97,"SS10",30,33,33,"Non-Repeater",630,660,"Male","Decline to State",2.738,6,6,4,4,4,6,6,6
+98,"SS10",24,19,NA,"Repeater",580,550,"Male","White/Caucasian",2.737,5,4,2,1,5,5,6,5
+99,"SS10",82,82,173,"Non-Repeater",625,552.5,"Male","Chinese/Chinese-American",2.716,NA,NA,NA,NA,NA,NA,NA,NA
+100,"SS10",58,34,104,"Non-Repeater",710,475,"Male","Vietnamese",2.71,6,3,3,4,5,5,5,5
+101,"SS10",33,67,139,"Non-Repeater",520,515,"Female","Thai/Other Asian",2.709,2,2,2,2,2,2,3,3
+102,"SS10",84,82,159,"Non-Repeater",430,513.33,"Female","Black/African-American",2.698,5,5,5,3,5,5,3,3
+103,"SS10",17,25,44,"Non-Repeater",650,530,"Female","Philipino/Filipino",2.689,5,5,3,2,5,5,4,4
+104,"SS10",30,28,49,"Non-Repeater",690,620,"Male","Chinese/Chinese-American",2.684,4,3,3,1,3,4,1,2
+105,"SS10",15,28,42,"Repeater",543.33,463.33,"Male","Philipino/Filipino",2.683,5,4,3,1,5,5,5,5
+106,"SS10",42,50,108,"Repeater",480,385,"Female","Latino/Other Spanish-American",2.678,6,5,5,1,6,5,6,6
+107,"SS10",33,79,119,"Non-Repeater",465,565,"Female","Philipino/Filipino",2.658,4,4,3,1,4,4,1,1
+108,"SS10",42,45,35,"Repeater",720,440,"Male","",2.65,6,1,3,5,5,1,1,1
+109,"SS10",62,60,123,"Non-Repeater",530,570,"Female","Philipino/Filipino",2.649,5,3,4,2,5,4,4,5
+110,"SS11",14,18,45,"Non-Repeater",570,485,"Female","Japanese/Japanese-American",2.64,NA,NA,NA,NA,NA,NA,NA,NA
+111,"SS11",71,61,128,"Repeater",440,453.33,"Female","East Indian/Pakistani",2.62,5,2,2,2,5,4,5,5
+112,"SS11",60,61,110,"Repeater",586.67,550,"Male","Philipino/Filipino",2.603,5,4,4,2,5,5,5,6
+113,"SS11",49,51,61,"Non-Repeater",546.67,530,"Female","Philipino/Filipino",2.601,5,2,3,1,5,5,5,5
+114,"SS11",22,37,NA,"Repeater",605,605,"Male","Korean",2.58,6,4,1,1,6,4,6,6
+115,"SS11",54,16,NA,"Non-Repeater",NA,NA,"Female","Chicano/Mexican-American",2.572,6,3,2,1,4,5,6,6
+116,"SS11",43,63,54,"Repeater",610,576.67,"Female","Chinese/Chinese-American",2.57,5,4,4,1,2,2,1,1
+117,"SS11",53,56,105,"Non-Repeater",563.33,483.33,"Female","Korean",2.564,NA,NA,NA,NA,NA,NA,NA,NA
+118,"SS11",44,50,82,"Repeater",577.5,575,"Female","Japanese/Japanese-American",2.555,6,3,3,1,6,5,4,5
+119,"SS11",48,44,NA,"Repeater",663.33,563.33,"Male","Vietnamese",2.541,6,6,5,5,6,6,6,6
+120,"SS11",67,61,141,"Non-Repeater",633.33,516.67,"Male","Vietnamese",2.541,6,6,6,6,6,6,5,5
+121,"SS11",36,50,82,"Repeater",690,650,"Male","Korean",2.54,6,2,1,1,2,3,1,1
+122,"SS11",60,52,140,"Non-Repeater",NA,NA,"Female","Japanese/Japanese-American",2.533,6,5,3,4,6,6,5,2
+123,"SS11",83,80,133,"Non-Repeater",570,530,"Female","Philipino/Filipino",2.529,4,6,5,6,5,4,5,3
+124,"SS11",56,51,93,"Repeater",630,500,"Male","White/Caucasian",2.521,3,3,2,2,2,2,3,3
+125,"SS11",19,19,17,"Repeater",555,405,"Female","Other",2.515,6,5,3,3,5,5,6,5
+126,"SS11",56,57,113,"Non-Repeater",716.67,373.33,"Male","Chinese/Chinese-American",2.515,6,3,5,2,2,5,3,3
+127,"SS11",75,50,121,"Non-Repeater",595,610,"Male","Vietnamese",2.5,3,2,1,1,3,4,1,1
+128,"SS11",54,66,45,"Non-Repeater",663.33,546.67,"Female","Chinese/Chinese-American",2.493,5,5,1,2,5,5,4,5
+129,"SS11",45,50,145,"Non-Repeater",505,545,"Female","White/Caucasian",2.486,6,6,6,6,6,6,6,6
+130,"SS11",67,51,78,"Repeater",636.67,513.33,"Male","Vietnamese",2.484,5,5,3,3,4,4,6,6
+131,"SS11",44,48,41,"Repeater",535,550,"Male","Vietnamese",2.482,3,2,3,1,4,3,2,1
+132,"SS11",61,85,133,"Non-Repeater",NA,NA,"Male","Korean",2.478,6,4,3,4,6,4,3,3
+133,"SS11",37,29,38,"Repeater",543.33,473.33,"Female","Vietnamese",2.472,2,2,4,2,1,4,4,3
+134,"SS11",47,NA,NA,"Repeater",606.67,500,"Female","Philipino/Filipino",2.452,NA,NA,NA,NA,NA,NA,NA,NA
+135,"SS11",86,73,162,"Non-Repeater",610,565,"Male","Philipino/Filipino",2.396,6,5,4,1,5,4,5,4
+136,"SS11",37,54,100,"Non-Repeater",546.67,566.67,"Female","Vietnamese",2.364,4,5,5,3,5,4,3,3
+137,"SS11",71,47,137,"Non-Repeater",560,440,"Female","White/Caucasian",2.358,4,4,4,4,3,3,4,3
+138,"SS11",34,37,67,"Non-Repeater",715,590,"Male","Philipino/Filipino",2.337,6,4,3,3,4,3,4,4
+139,"SS11",54,36,85,"Non-Repeater",515,495,"Female","Thai/Other Asian",2.318,6,6,4,3,5,5,5,5
+140,"SS11",79,70,129,"Non-Repeater",680,600,"Female","",2.3,6,6,6,6,6,6,6,5
+141,"SS11",61,58,102,"Non-Repeater",446.67,433.33,"Female","Philipino/Filipino",2.244,6,4,1,3,4,5,4,3
+142,"SS11",54,59,87,"Repeater",715,680,"Male","Chinese/Chinese-American",2.243,NA,NA,NA,NA,NA,NA,NA,NA
+143,"SS11",57,53,135,"Non-Repeater",NA,NA,"Male","Vietnamese",2.24,6,4,5,4,6,5,3,4
+144,"SS11",79,71,134,"Non-Repeater",605,515,"Male","Vietnamese",2.237,5,1,3,3,4,4,4,4
+145,"SS11",37,35,60,"Repeater",585,430,"Female","Vietnamese",2.234,6,6,4,4,5,6,5,6
+146,"SS11",41,34,28,"Repeater",530,610,"Male","East Indian/Pakistani",2.234,4,3,2,2,4,3,3,3
+147,"SS11",61,38,80,"Repeater",620,596.67,"Female","Japanese/Japanese-American",2.209,6,3,6,3,6,5,6,6
+148,"SS11",57,68,90,"Non-Repeater",525,460,"Male","Latino/Other Spanish-American",2.184,NA,NA,NA,NA,NA,NA,NA,NA
+149,"SS11",81,81,166,"Non-Repeater",540,560,"Female","Philipino/Filipino",2.166,4,3,3,4,5,4,3,2
+150,"SS11",69,72,155,"Non-Repeater",625,585,"Female","White/Caucasian",2.149,6,6,3,1,6,6,6,6
+151,"SS11",31,40,76,"Repeater",560,570,"Female","Philipino/Filipino",2.074,6,5,3,2,5,4,5,3
+152,"SS11",64,41,90,"Non-Repeater",480,490,"Female","Chicano/Mexican-American",2.066,6,6,5,3,6,6,6,6
+153,"SS11",35,31,61,"Repeater",500,520,"Female","Chinese/Chinese-American",2.05,1,1,1,1,1,3,1,1
+154,"SS11",81,63,164,"Non-Repeater",670,630,"Male","Thai/Other Asian",2.045,6,5,4,6,6,5,5,5
+155,"SS11",33,17,18,"Repeater",614,400,"Female","Japanese/Japanese-American",2.04,3,3,3,1,1,3,1,1
+156,"SS11",71,53,129,"Non-Repeater",NA,NA,"Female","Latino/Other Spanish-American",2.005,NA,NA,NA,NA,NA,NA,NA,NA
+157,"SS11",48,82,150,"Non-Repeater",560,535,"Male","Philipino/Filipino",1.982,NA,NA,NA,NA,NA,NA,NA,NA
+158,"SS11",63,55,121,"Non-Repeater",525,535,"Female","Chicano/Mexican-American",1.949,6,5,4,1,5,5,6,6
+159,"SS11",49,27,NA,"Non-Repeater",523.33,453.33,"Female","",1.9,6,3,4,2,4,5,1,2
+160,"SS11",67,53,134,"Non-Repeater",610,455,"Male","",1.867,4,4,3,3,4,4,2,3
+161,"SS11",85,75,162,"Non-Repeater",710,593.33,"Male","Chinese/Chinese-American",1.839,4,1,1,1,3,2,1,1
+162,"SS11",82,88,177,"Non-Repeater",553.33,450,"Female","Korean",1.765,5,5,2,2,6,4,5,4
+163,"SS11",46,25,57,"Non-Repeater",530,480,"Female","",1.636,6,6,6,2,6,5,6,6
+164,"SS11",25,46,63,"Repeater",NA,NA,"Male","White/Caucasian",1.632,4,5,3,1,4,5,4,4
+165,"SS11",66,83,170,"Non-Repeater",NA,NA,"Female","",1.3,6,6,5,5,5,4,4,4
+166,"SS11",31,35,76,"Non-Repeater",NA,NA,"Female","",1.133,3,2,2,1,2,2,1,1
+167,"SS11",74,62,142,"Non-Repeater",750,735,"Male","",0,6,5,5,3,6,6,6,6
+168,"SS11",36,68,148,"Non-Repeater",NA,NA,"Male","Decline to State",4,4,3,1,1,5,3,3,3
+169,"SS11",37,30,94,"Repeater",665,630,"Male","",3.95,2,3,5,2,3,2,1,1
+170,"SS11",90,86,169,"Non-Repeater",NA,NA,"Male","",3.889,6,5,4,2,6,6,6,5
+171,"SS11",61,68,43,"Non-Repeater",NA,NA,"Female","White/Caucasian",3.858,5,4,3,2,4,4,3,3
+172,"SS11",83,77,162,"Non-Repeater",623.33,536.67,"Male","",3.857,5,5,2,1,4,5,4,4
+173,"SS11",63,57,100,"Non-Repeater",630,453.33,"Female","Thai/Other Asian",3.753,6,5,6,4,6,6,5,6
+174,"SS11",36,52,68,"Repeater",700,570,"Female","Japanese/Japanese-American",3.746,5,4,5,3,5,5,4,5
+175,"SS11",48,24,33,"Non-Repeater",680,610,"Male","Japanese/Japanese-American",3.708,6,4,3,1,3,4,2,1
+176,"SS11",78,83,153,"Non-Repeater",616.67,590,"Male","Chinese/Chinese-American",3.701,4,2,2,3,6,4,2,1
+177,"SS11",15,14,38,"Repeater",655,650,"Male","Chinese/Chinese-American",3.659,4,3,3,2,3,4,3,4
+178,"SS11",61,50,143,"Non-Repeater",695,650,"Male","Other",3.652,5,4,4,1,5,5,4,3
+179,"SS11",63,30,113,"Non-Repeater",700,625,"Male","Japanese/Japanese-American",3.632,6,5,4,3,6,5,6,6
+180,"SS11",81,72,166,"Non-Repeater",636.67,670,"Male","White/Caucasian",3.625,6,6,3,1,6,5,6,6
+181,"SS11",46,43,62,"Non-Repeater",633.33,590,"Female","Vietnamese",3.527,5,1,2,1,5,5,1,1
+182,"SS11",49,38,72,"Repeater",645,620,"Male","",3.5,5,3,3,3,4,4,5,5
+183,"SS11",80,86,173,"Non-Repeater",515,585,"Male","Japanese/Japanese-American",3.479,6,5,5,4,4,5,4,5
+184,"SS11",80,88,177,"Non-Repeater",640,505,"Female","Vietnamese",3.466,6,5,3,3,4,4,4,4
+185,"SS11",20,19,34,"Repeater",NA,NA,"Male","",3.433,6,4,3,1,6,5,5,6
+186,"SS11",27,29,67,"Non-Repeater",680,586.67,"Female","Vietnamese",3.423,3,2,4,1,2,4,1,1
+187,"SS11",64,51,84,"Non-Repeater",603.33,520,"Female","Chinese/Chinese-American",3.422,4,2,3,1,3,3,3,3
+188,"SS11",51,41,35,"Repeater",635,570,"Male","Vietnamese",3.411,4,5,5,1,4,5,3,4
+189,"SS11",58,57,100,"Repeater",715,610,"Female","Vietnamese",3.374,6,4,2,3,6,4,5,4
+190,"SS11",52,76,152,"Non-Repeater",700,485,"Male","Vietnamese",3.361,5,4,4,4,5,5,4,4
+191,"SS11",61,55,98,"Non-Repeater",670,566.67,"Male","",3.333,NA,NA,NA,NA,NA,NA,NA,NA
+192,"SS11",85,52,150,"Non-Repeater",755,620,"Male","Vietnamese",3.317,3,3,1,1,4,3,3,2
+193,"SS11",29,12,66,"Repeater",585,465,"Female","Vietnamese",3.3,NA,NA,NA,NA,NA,NA,NA,NA
+194,"SS11",48,22,50,"Repeater",660,685,"Female","Chinese/Chinese-American",3.273,NA,NA,NA,NA,NA,NA,NA,NA
+195,"SS11",49,37,60,"Non-Repeater",680,380,"Female","Thai/Other Asian",3.233,NA,NA,NA,NA,NA,NA,NA,NA
+196,"SS11",87,65,158,"Non-Repeater",NA,NA,"Female","Other",3.213,NA,NA,NA,NA,NA,NA,NA,NA
+197,"SS11",31,37,72,"Repeater",775,600,"Male","Vietnamese",3.194,NA,NA,NA,NA,NA,NA,NA,NA
+198,"SS11",31,24,116,"Non-Repeater",595,560,"Female","Decline to State",3.181,NA,NA,NA,NA,NA,NA,NA,NA
+199,"SS11",24,31,64,"Repeater",555,600,"Female","White/Caucasian",3.178,NA,NA,NA,NA,NA,NA,NA,NA
+200,"SS11",63,30,121,"Non-Repeater",695,615,"Male","White/Caucasian",3.173,NA,NA,NA,NA,NA,NA,NA,NA

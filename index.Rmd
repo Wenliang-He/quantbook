@@ -1,0 +1,32 @@
+--- 
+title: "Quantitative Research Methods for Education"
+author: "Wenliang He"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+output: bookdown::gitbook
+documentclass: book
+biblio-style: apalike
+link-citations: yes
+description: "This is the first trial version!"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Introduction
+
+Let's test it a little bit!
+
+## Intro to Rmarkdown
+
+## Intro to Bookdown
+
+
+## Resources to Rmarkdown
+
+
+## Resources to Bookdown
+
+
+

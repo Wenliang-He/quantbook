@@ -1,0 +1,1166 @@
+--- 
+title: "Quantitative Research Methods for Education"
+author: "Wenliang He"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+output: bookdown::gitbook
+documentclass: book
+biblio-style: apalike
+link-citations: yes
+description: "This is the first trial version!"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Introduction
+
+Let's test it a little bit!
+
+## Intro to Rmarkdown
+
+## Intro to Bookdown
+
+
+## Resources to Rmarkdown
+
+
+## Resources to Bookdown
+
+
+
+
+<!--chapter:end:index.Rmd-->
+
+# Cheatsheet
+
+## Dictionary of Symbols
+
+|Text|Effect|
+|:---|:---:|
+|`# First-level Header`|# First-level Header|
+|`## Second-level Header`|## Second-level Header|
+|`### Third-level Header`|### Third-level Header|
+|`#### Fourth-level Header`|#### Fourth-level Header|
+|`##### Fifth-level Header`|##### Fifth-level Header|
+|`###### Sixth-level Header`|###### Sixth-level Header|
+|`####### Seventh-level Header`|Just regular text!|
+|`_italic_`|_italic_|
+|`*italic*`|*italic*|
+|`__bold__`|__bold__|
+|`**bold**`|**bold**|
+|`X~i~`|X~i~|
+|`X^2^`|X^2^|
+|`X~i~^2^`|X~i~^2^|
+|`X^2^~i~`|X^2^~i~|
+|`[RStudio](https://www.rstudio.com)`|[RStudio](https://www.rstudio.com)|
+|`<span style="font-variant:small-caps;">Small Caps</span>`|<span style="font-variant:small-caps;">Small Caps</span>|
+|`![Image Name](path/to/image)`||
+|`^[This is a footnote]`|^[This is a footnote]|
+| | |
+
+
+If you do not want a certain heading to be numbered, add `{-}` after the heading. 
+```
+# Non-numbered Header {-}
+```
+
+Unordered list starts with any one of `-`, `+`, or `*`. They are all the same; just pick whichever one you like. You can nest one list within another list by indenting the sub-list with either (a) four spaces or (b) hitting the `tab` key to create the equivalent of four spaces (e.g., by default, one `tab` yields two spaces and hence you will need to hit the `tab` key twice). Unordered list works with only three levels, after which it will just repeat using the symbol intended for the third level. 
+
+- item1
+- item2
+    - item2.1
+    - item2.2
+        - item2.2.1
+        - item2.2.2
+            - item2.2.2.1
+            - item2.2.2.2
+                - item2.2.2.2.1
+                - item2.2.2.2.2
+
++ item1
++ item2
+    + item2.1
+    + item2.2
+        + item2.2.1
+        + item2.2.2
+            + item2.2.2.1
+            + item2.2.2.2
+                + item2.2.2.2.1
+                + item2.2.2.2.2
+
+
+* item1
+* item2
+    * item2.1
+    * item2.2
+        * item2.2.1
+        * item2.2.2
+            * item2.2.2.1
+            * item2.2.2.2
+                * item2.2.2.2.1
+                * item2.2.2.2.2
+
+
+
+
+
+Check out options for knitr: <https://yihui.name/knitr/options/>
+
+Writing math formulas in markdown: <http://csrgxtu.github.io/2015/03/20/Writing-Mathematic-Fomulars-in-Markdown/>
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+
+
+
+$$ab, a b, a    b, a~b, a~~b, a~~~b$$
+
+how to get `#$%^&`, `\cbrt`, `\qdrt`, `\rddots`, `x\hat`, `x\tilde`
+
+### Subscripts and Superscripts
+$$ x_i, x_{i+1}, x^2, x^{2/3}, x_i^2, x^2_i, x_{i+1}^{2/3}, \sqrt{x}, \sqrt[^n]{x} $$
+$$ \sum_{i=1}^{n} (X_i - \bar{X})(Y_i - \bar{Y}) $$
+
+
+### Operators 1
+$$ \pm, \mp, \times, \div, =, \ne, \le, \ge, \ll, \gg, \approx, \sim, \equiv, \cong, \propto, \infty $$
+
+### Operators 2
+$$ \exp(x) $$
+
+$$ \text{reglar text}, \boldsymbol{s}, \mathbf{s} $$
+
+$$ dx, \lim, \partial{x}, \int, \sum, \prod,   $$
+
+$$ \forall, \exists, \nexists, \cup, \cap, \in, \ni, \emptyset $$
+
+$$  \therefore, \cdot, \cdots, \dots, \ldots, \vdots, \ddots, \bullet, \dot A, \dot \forall $$
+
+$$ \to, \rightarrow, \gets, \leftarrow, \uparrow, \downarrow, \leftrightarrow $$
+
+$$ \overset{iid}{\sim}, \underset{(1)}{=}, \underset{\text{below}}{\overset{\text{above}}{=}} $$
+
+$$  \nabla $$
+
+
+
+<!--chapter:end:01_cheatsheet.Rmd-->
+
+
+# Linear Regression
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_knit$set(root.dir="/Users/Wen/Google Drive/01_Teaching/01_My_Courses/11_QuantMethods_I/")
+```
+
+```{r load_data, echo=FALSE}
+xdat = read.csv("data/demo_data.csv", stringsAsFactors = T)
+```
+
+## Table of Contents
+1. Pearson Correlation
+2. Simple Linear Regression
+3. Scatterplots
+4. Transformations
+
+## Pearson Product-Moment Correlation Coefficient
+
+### Definition
+Commonly referred to as **Pearson correlation** or simply **correlation**, **Pearson product-moment correlation coefficient** is a standardized form of the covariance. Given the formula for variance,
+
+$$ Var(Y) = \frac{\sum_{i=1}^n(Y_i - \bar{Y})^2}{n-1}  $$
+one should not be too surprised to see the formula for covariance.
+
+$$ Cov(X,Y) = \frac{\sum_{i=1}^n(X_i - \bar{X})(Y_i-\bar{Y})}{n-1}  $$
+
+It should thus be clear that variance of Y is the covariance of Y with Y itself, i.e., variance is a special case of covariance. 
+
+$$ Cov(Y,Y) = \frac{\sum_{i=1}^n(Y_i - \bar{Y})(Y_i-\bar{Y})}{n-1} 
+= \frac{\sum_{i=1}^n(Y_i - \bar{Y})^2}{n-1} = Var(Y) $$
+
+If we divide $Cov(X,Y)$ by the corresponding standard deviations involved with regard to X and Y, we get *Pearson correlation*. In other words, Pearson correlation is the covariance of z-scores. 
+
+$$ r = \frac {\color{red}{Cov(X,Y)}} {s_Xs_Y} 
+= \frac {\color{red}{\sum_{i=1}^n(X_i - \bar{X})(Y_i-\bar{Y})}} {s_X s_Y \color{red}{(n-1)}} 
+= \frac{1}{n-1} \sum_{i=1}^n \color{gold}{\frac{(X_i-\bar{X})}{s_X}} \color{blue}{\frac{(Y_i-\bar{Y})}{s_Y}} 
+= \frac{1}{n-1} \sum_{i=1}^n \color{gold}{z_X} \color{blue}{z_Y} $$
+
+### Properties of Pearson Correlation  
+1. The correlation $r$ is always **between -1 and 1**. Values of $r$ close to 0 indicate a weak linear relationship. Values of $r$ close to 1 imply a strong positive linear relationship, whereas values close to -1 imply a negative linear relationship. The extreme cases of $r=-1$ or $r=1$ occur only when the points in a scatterplot lie exactly along a straight line. In other words, signs of $r$ show the ***direction*** and absolute values of $r$ indicate the ***strength*** of the relationship.  
+2. The correlation $r$ does not change when we change the **units of measurement** of either X or Y or both. This should be clear since correlation $r$ uses the unitless z-scores.  
+3. The correlation $r$ **does not distinguish** between independent and dependent variables. Reversing X and Y gives identical results. It has to be emphasized again that statistics knows no causal directions. Statistics on its own only reveals associations, not causations.  
+
+### Limitations of Pearson Correlation
+1. Pearson correlation measures only **linear association**. Always plot your data before calculating $r$. `TODO: need a graph here!`  
+2. Calculation of Pearson correlation invovles means and standard deviations, and hence $r$ is **susceptible to outliers**. Always plot your data and look for potentially ***influential data points*** (which is defined later).   
+
+### Other Issues on the Usage of Pearson Correlation
+1. Pearson correlation based on **averaged data** is usually higher than the correlation between the same variables using data for individuals. For example, the average weight of infants against their age in months would give a very strong positive correlation near one. A plot of weight against age for individual infants will show much more scatter and lower correlation. On the contrary, using a composite score averaged from multiple items measuring motivation usually gives much more consistent, and hence reliable, result.  
+2. When the data we use do not contain information on the full range of independent and dependent variables, we have the **restricted-range problem**. When data suffer from restricted range, $r$ is usually lower than it would be if the full range could be observed. `TODO: need an example here!`  
+3. **Lurking variables** can make correlation results misleading. This problem is not specific to Pearson correlation. All measures of two-way relationships suffer from this problem, which is known as the **interaction effect**. `TODO: need a graph here!`   
+4. **Extrapolation** (using a model far beyond the range of data used to fit it) often produces unreliable predictions. This problem is not specific to Pearson correlation. All models suffer from some generalizability concern, which might raise the concern of omitted-variable bias (e.g., individuals possessing values beyond the observed range of values might systematically differ from individuals currently in the sample). 
+
+
+## Simple Linear Regression
+
+### Independent Variable: From Categorical to Continuous
+```{r anova}
+mid1cat = cut(xdat$mid1, breaks=quantile(xdat$mid1), include.lowest=T)
+xdat = data.frame(xdat, mid1cat)
+boxplot(mid3 ~ mid1cat, data=xdat, 
+        main="Boxplot of Exam Results", 
+        xlab="First Midterm Score Category",
+        ylab="Final Exam Score")
+abline(h=mean(xdat$mid3,na.rm=T), lty=2)
+```
+
+
+```{r simple_linear_regression}
+plot(mid3 ~ mid1, data=xdat, 
+     main="Scatterplot of Exam Results", 
+     xlab="First Midterm Score", 
+     ylab="Final Exam Score")
+mod = lm(mid3 ~ mid1, data=xdat)
+abline(h=mean(xdat$mid3,na.rm=T), lty=2)
+abline(coef(mod)[1], coef(mod)[2], col="red")
+```
+
+### Fitting a Straight Line to Data
+Let us fit a straight line with an intercept and a slope. As a result, the conditional expectation of Y is now a function of X and the prediction model with unknown **_population parameters_** can be expressed as follows. To note, "the conditional expectation of Y" is just a fancy way of saying "the predicted values of Y" or "the prediction model of Y". They are all different ways of saying the same thing. 
+
+$$ E(Y|X) = \beta_0 + \beta_1X $$
+
+Accordingly, the predition model of Y with **_sample parameters_** is:
+
+$$ \hat{E}(Y_i|X_i) = \hat{\beta}_0 + \hat{\beta}_1X_i $$
+
+In practice, we often use simplified notations to represent the preceding formula. 
+
+$$ \hat{Y}_i = b_0 + b_1X_i $$
+
+where $\hat{Y}_i \equiv \hat{E}(Y_i|X_i)$, $b_0 \equiv \hat{\beta}_0$ and $b_1 \equiv \hat{\beta}_1$. This is the formula for the deterministic part of the linear regression. By adding the stochastic part, we have
+
+$$ Y_i = \hat{Y}_i + \hat{R}_i = b_0 + b_1X_i + e_i $$
+
+We can describe the previous simple linear model as the **_regression of Y on X_**. At this moment, this expression might be exceedingly clear to you, since the use of Y and X makes it abundently clear which one is the DV and which one is the IV. In a real case, however, one might be confused over which is which. For example, with the expression *"regressing income on education"*, one must know that income is Y and education is X. 
+
+### The Least-Squares Method
+The least-squares method is one of the ways to solve the above equation for the unknown parameters $b_0$ and $b_1$. The official name for this method is **ordinary least squares (OLS)** method. 
+
+$$ SSR = \sum_{i=1}^n R_i^2 = \sum_{i=1}^n (Y_i-\hat{Y}_i)^2 = \sum_{i=1}^n (Y_i - (b_0 + b_1X_i))^2 $$
+
+The idea is that we would find $b_0$ and $b_1$ such that $SSR$ would reach its minimum. Remember, the last time we use this idea, we end up finding the mean. 
+
+$$ SSR = \sum_{i=1}^n (Y_i-c)^2 $$
+Solving for $c$ that minimizes $SSR$ gives $c = \bar{Y}$. Applying the idea above, we would eventually find the following solutions.
+
+$$ b_1 = \frac{\sum(X_i-\bar{X})(Y_i-\bar{Y})} {\sum(X_i-\bar{X})^2} $$
+and
+
+$$ b_0 = \bar{Y} - b_1 \bar{X} $$
+
+### Interpretations of Regression Coefficients
+```{r, echo=FALSE}
+plot(mid3 ~ mid1, data=xdat, main="Scatterplot of Exam Results", xlab="First Midterm Score", ylab="Final Exam Score")
+mod = lm(mid3 ~ mid1, data=xdat)
+abline(h=mean(xdat$mid3,na.rm=T), lty=2)
+abline(coef(mod)[1], coef(mod)[2], col="red")
+```
+
+* It should be clear that **$b_0$** is the intercept, which is interpreted as **the value of Y when X = 0**. To note, values of X oftentimes cannot be exactly 0, e.g., weight or IQ. In such a case, the interpretation of $b_0$ would not make intuitive sense (since no one would have 0 weight or 0 intelligence); the intercept is there only to make the math work. 
+* To make the interpretation of **$b_0$** meaningful, we can choose to center X with respect to its mean, i.e. $X^* = X - \bar{X}$. Now $b_0$ is **the value of Y when $X = \bar{X}$**.
+* In contrast, **$b_1$** is the slope, which is interpreted as **the amount of change in Y when X changes by 1 unit of measurement**. As a result, the value of $b_1$ would change, if the unit of measurement for Y or X or both changes. 
+
+### Understanding the Estimators
+
+There are several ways to look at $b_1$, each provides some insight from different perspectives. 
+
+$$ b_1 
+\overset{(1)}{=} \frac { \color{blue}{ \sum(X_i-\bar{X})(Y_i-\bar{Y}) } } { \color{red}{\sum(X_i-\bar{X})^2} } 
+\overset{(2)}{=} r \frac{s_Y}{s_X}
+\overset{(3)}{=} \color{blue}{\sum} \left( \frac{ \color{blue}{ (X_i-\bar{X}) } }{ \color{red}{SSX} } \cdot \color{blue}{(Y_i-\bar{Y})} \right)
+\overset{(4)}{=} \frac { \color{blue}{Cov(X,Y)} } { \color{red}{Var(X)} } $$
+*Note*: Similar to $\bar{X}$, $SSX = (n-1)Var(X)$ is treated as a constant and can therefore move in and out of the summation sign $\sum$ freely. 
+
+1. When we change the scale of $X$ to $cX$ (without loss of generality, let's assume $c\ge1$), the term $(X_i-\bar{X})$ would change by $c$ and $(X_i-\bar{X})^2$ would change by $c^2$, and hence we would expect $b_1$ to become $1/c \cdot b_1$. This result makes sense, since increase in the *scale* of X is canceled out by decrease in the *coefficient* of X such that their product remains the same. Similarly, when we change the scale of $Y$ to $cY$, we would expect $b_1$ to become $c b_1$.
+
+**R_Proof: Linear Transformations**
+```{r proof_effects_of_linear_transformations}
+x = rnorm(10000, mean=1, sd=5)
+c = 10
+cx = c * x
+y = 2*x + rnorm(10000, 0, 5)
+cy = c * y
+dat = data.frame(x, cx, y, cy)
+b1 = lm( y ~  x, data=dat)$coefficients[2]
+b2 = lm( y ~ cx, data=dat)$coefficients[2]
+b3 = lm(cy ~  x, data=dat)$coefficients[2]
+bs = c(c,b1,b2,b3)
+names(bs) = c("c","x","cx","cy")
+bs
+```
+
+2. When X and Y are standardized z-scores, which entails that $s_X=1$ and $s_Y=1$, $b_1$ becomes the Pearson correlation $r$. 
+$$ b_1 = \color{red}{r} \cdot \frac{s_Y}{s_X} 
+= \color{red}{ \frac {\sum_{i=1}^n(X_i - \bar{X})(Y_i-\bar{Y})} {s_X s_Y (n-1)} } \cdot \frac{s_Y}{s_X} 
+= \frac { \sum_{i=1}^n(X_i - \bar{X})(Y_i-\bar{Y})} {(n-1)~ \color{gold}{s_X^2} }
+= \frac { \sum(X_i-\bar{X})(Y_i-\bar{Y}) } { \color{blue}{\sum(X_i-\bar{X})^2} } = b_1 $$
+
+where
+
+$$ \color{gold}{s_X^2} = \frac{ \color{blue}{\sum (X_i-\bar{X})^2} }{n-1}  $$
+
+3. If we regard $(X_i-\bar{X})/SSX$ as a weight, it is thus clear that $X_i$ that is farther away from $\bar{X}$ has stronger *influence* on $\hat{\beta}_1$. In fact, if a singular data point has undue (i.e., overly large) influence on regression coefficients, it is regarded as an **influential data point**. It should be clear that outliers are mostly likely to become influential data points. 
+
+$$ b_1 = \sum \left( \color{red}{ \frac{(X_i-\bar{X})}{SSX} } \cdot (Y_i-\bar{Y}) \right) \overset{*}{=} \sum \left( \color{red}{ \frac{(X_i-\bar{X})}{SSX} } \cdot Y_i \right)
+= \sum \left( \color{red}{w_i} \cdot Y_i \right) $$
+
+*Note*: To see how $\overset{*}{=}$ is true, let $c$ be a constant and we have
+
+$$ \sum (X_i - \bar{X})(Y_i \pm c) 
+= \sum (X_i - \bar{X})Y_i \pm \sum (X_i - \bar{X})c 
+= \sum (X_i - \bar{X})Y_i \pm c\sum (X_i - \bar{X}) 
+= \sum (X_i - \bar{X})Y_i \pm c \cdot 0 = \sum (X_i - \bar{X})Y_i $$
+
+4. Measurement error in $X$ always shrinks the magnitude of $b_1$ towards 0, whereas measurement error in $Y$ does not affect $b_1$. To note, measurement error is regarded as random noise. To see this, let $X^* = X+E$, where $E$ denotes random error. 
+
+$$ Cov(X^*,Y) = Cov(X+E,~Y) = Cov(X,Y) + Cov(E,Y) = Cov(X,Y) $$
+$$ Var(X^*) = Var(X+E) = Var(X) + Var(E) + 2Cov(X,E) = Var(X) + Var(E) $$
+*Note*: Both $Cov(Y,E)=0$ and $Cov(X,E)=0$ are true, because random noise by definition does not co-vary with anything. As a result, we have
+
+$$ b_1^* = \frac{Cov(X^*,Y)}{Var(X^*)} = \frac{Cov(X+E,~Y)}{Var(X+E)} 
+= \frac{Cov(X,Y)}{Var(X)+Var(E)} < \frac{Cov(X,Y)}{Var(X)} = b_1$$
+
+**R_Proof: Measurement Error**
+``` {r, proof_measurement_error}
+noise = rnorm(length(x), mean=0, sd=sd(x))
+nx = x + noise
+noise = rnorm(length(y), mean=0, sd=sd(y))
+ny = y + noise
+dat = data.frame(dat, nx, ny)
+b4 = lm( y ~ nx, data=dat)$coefficients[2]
+b5 = lm(ny ~  x, data=dat)$coefficients[2]
+names = names(bs)
+bs = c(bs, b4, b5)
+names(bs) = c(names,"noise_x","noise_y")
+bs
+```
+
+*Note*: The result from adding noise to Y changes slightly, because the `cor(Y,E)` in our sample is `r cor(noise, y)`, which is not strictly 0 due to sampling randomness. 
+
+### Residual Variance
+
+**Residual variance** (aka **conditional variance**) is given as follows.
+
+$$ \hat{\sigma}^2 = MSR = \frac{SSR}{DFR} = \frac{\sum R_i^2}{df} 
+= \frac{\sum_{i=1}^n (Y_i-\hat{Y_i})^2}{df} = \frac{\sum_{i=1}^n (Y_i - (b_0 + b_1X_i))^2}{n-2} $$
+
+It is thus clear that **RMSE** (i.e., root of mean squares residual) is the **residual standard deviation**, aka **conditional standard deviation**. 
+
+Notation-wise, for the sake of simplicity, we will use $s$ to denote the residual standard deviation $\hat{\sigma}$ and hence $s^2$ to represent the residual variance $\hat{\sigma}^2$. 
+
+
+### Standard Error of the Slope
+
+Given the residual standard deviation,
+
+$$ \hat{\sigma} = \sqrt{\frac{\sum R_i^2}{df}}
+= \sqrt{ \frac{\sum_{i=1}^n (Y_i-\hat{Y_i})^2}{n-2} } 
+= \sqrt{ \frac{\sum_{i=1}^n (Y_i - (b_0 + b_1X_i))^2}{n-2} } $$
+The standard errors of $b_1$ and $b_0$ are given as follows.
+
+$$ \hat{\sigma}_{b_1}^2
+= \frac{\hat{\sigma}^2}{\sum (X_i-\bar{X})^2}
+= \frac{\hat{\sigma}^2}{\text{SSX}}
+= \frac{\hat{\sigma}^2}{(n-1) Var(X)}$$
+and
+$$ \hat{\sigma}_{b_0}^2
+= \frac{\hat{\sigma}^2}{n} \cdot \frac{\sum (X_i)^2}{\sum (X_i-\bar{X})^2}  $$
+
+It must be emphasized that we usually do not care about inference regarding $b_0$. The standard error of $b_0$ is provided here primarily for the sake of completeness rather than for any praticial value. 
+
+* It is clear that the standard error of $b_1$ is directly proportional to the **residual standard deviation**. In other words, if the overall fit of the line is good, the RMSE (i.e., $\hat{\sigma}$) will be small and hence $\hat{\sigma}_{b_1}$. 
+* When **n is large**, $\hat{\sigma}$ would be small and $SSX$ would be large, which drives $\hat{\sigma}_{b_1}$ to become even smaller.
+* All else being equal, greater **intrinsic variation in X** would result in a larger $SSX$, which in turn produces a small $\hat{\sigma}_{b_0}$. Results from surveys using a 1-5 Likert scale is a good example. Sometimes, the wording of a question is phrased in such a way that the responses to the question would only span a restricted range (e.g., registering exclusively positive ratings). This clearly leads to reduced intrinsic variation in X. 
+
+### Effect Size and Standardized Coefficients
+Since the magnitude of $\beta_0$ and $\beta_1$ is subject to change with respect to the units of measurement adopted in Y and X. Therefore, it would be helpful to derive some kind of *standardized* coefficients such that sizes of the coefficients are invariant to the choice of measurement units. After standardizing both X and Y, the resultant coefficients are **standardized coefficients**, known as the **beta coefficients**. As shown previously, in simple OLS regression, standardized $b_1$ is identical to the Pearson correlation $r$. Beta coefficients are therefore used as an **effect size** measure in communicating the substantive practical significance of a linear relationship. 
+
+Let $s_X$ and $s_Y$ be the standard deviations of X and Y, we have
+$$ r = b_{\text{standardized}} = \frac{s_X}{s_Y} \cdot b_{\text{original}} $$
+
+For certain problems, sometimes we would only want to standardize either X or Y, but not both of them. For example, when X is an ordinal variable measured on a 1-5 Likert scale. We might want to standardize only Y and claim that 1 point increase on the Likert scale would result in $b_1$ standard deviations of increase in Y. 
+
+### ANOVA for Regression
+
+`HOWTO: how to add lines above and below the table?`
+
+`HOWTO: how to "center"" content in a cell`
+
+| |SS|DF|MS|
+|---|:---:|:---:|:---:|
+|$$\mathbf{Total}~~$$ | $$~~\sum(Y_i-\bar{Y})^2~~$$ | $$~~n-1~~$$ | $$~~\frac{1}{n-1} \sum (Y_i-\bar{Y})^2$$|
+|$$\mathbf{Model}~~$$ | $$~~\sum(\hat{Y}_i-\bar{Y})^2~~$$ | $$~~(1+p)-1~~$$ | $$~~\frac{1}{p}\sum (\hat{Y}_i-\bar{Y})^2$$|
+|$$\mathbf{Residual}~~$$ | $$~~\sum(Y_i - \hat{Y}_i)^2~~$$ | $$~~n-(1+p)~~$$ | $$\frac{1}{n-1-p}\sum (Y_i-\hat{Y}_i)^2$$|
+
+where $\hat{Y}_i = b_0 + b_1X_i$ and $p$ is the number of features, i.e., the number of parameters minus 1 to exclude the intercept. 
+
+$$ R^2 = \frac{\text{SSM}}{\text{SST}} = \frac{ \sum(\hat{Y}_i-\bar{Y})^2 }{ \sum(Y_i-\bar{Y})^2 } $$
+and
+
+$$ F = \frac{MSM}{MSE} = \frac{ \frac{1}{p}\sum (\hat{Y}_i-\bar{Y})^2 }{ \frac{1}{n-1-p}\sum (Y_i-\hat{Y}_i)^2 } $$
+where $F(p, n-1-p)$ and $p=1$ in the case of simple linear regression. 
+
+`TODO: check out p594 in IPS`
+
+**R_Proof: R-square and F-test**
+```{r, proof_rsquare}
+mod = lm(mid3 ~ mid1, data=xdat)
+yhat = predict(mod)
+ybar = mean(xdat$mid3, na.rm=T)
+ssm = sum((yhat-ybar)^2, na.rm=T)
+sst = sum((xdat$mid3-ybar)^2, na.rm=T)
+r2 = ssm/sst
+r = cor(xdat$mid3, xdat$mid1, use="pairwise")
+# cor(na.omit(xdat$mid3), yhat)
+c(r2, r^2)
+```
+
+## Non-linear Relations 
+
+### Log-transformations
+
+- log-transformation is one way for handling non-linearity if the relation between IV and DV is indeed connected by a log-based relationship. 
+- log-transformation is commonly used for handling highly skewed variable by taknig advantage of the *suppressive* property of logarithm (e.g., $\log_{10}(10)=1$ and $\log_{10}(100)=2$). As a result, many highly skewed variables, after log-transformations, would look much like a normal distribution. 
+
+For simple linear regression, the linear model is represented as follows. 
+
+$$ Y = b_0 + b_1X + e $$
+
+Take the derivative with respect to $X$ on both sides, we have
+
+$$ \frac{dY}{dX} \approx \frac{\Delta Y}{\Delta X} = \frac{d(b_0+b_1X)}{dX} = b_1 $$
+and hence
+
+$$ \Delta Y = b_1 \Delta X $$
+In this case, the interpretation derived from a **Calculus** perspective readily agrees with that from an **arithmetic** perspective, i.e., when X increases by 1 unit (i.e., $\Delta X=1$), Y would increase by an average of $b_1$ (i.e., $\Delta Y = b_1$). This situation would not be true under log-transformations. 
+
+#### Linear-log Model: Log-transformation on X
+Now, let's consider log-transforming X. The linear model would become
+$$ Y = b_0 + b_1 \log(X) + e $$
+To note, the `log` notation in this textbook would always denote the natural logarithm with base $e \approx 2.718$, which in some textbooks is represented by `ln`. 
+
+Simple rules of **arithmetic** dictate that $b_1$ is the expected units of change in Y given a one-unit increase in log(X), which means
+
+$$ \log(X) + 1 = \log(X) + \log(e) = \log(eX)  $$
+
+This result makes it clear that adding 1 to log(X) is equivalent of multipling X by $e \approx 2.718$. In other words, Y is expected to change by $b_1$ units when X increases by approximately 1.72 times or 172%. 
+
+Let's look at this from a **Calculus** perspective by taking the derivative with respect to X on the both sides.
+
+$$ \frac{dY}{dX} \approx \frac{\Delta Y}{\Delta X} = \frac{d(b_0+b_1 \log(X))}{dX} = b_1 \cdot \frac{1}{X} $$
+and hence
+
+$$ \Delta Y = b_1 \cdot \frac{\Delta X}{X} 
+= \frac{b_1}{100} \cdot \left( 100 \cdot \frac{\Delta X}{X} \right) 
+= \frac{b_1}{100} \cdot p $$
+
+where $\Delta X/X$ represents the **_proportion of change_** in X and hence $100 \cdot \Delta X/X$ denotes the **_percentage of change_** in X. In other words, 1% increase in X, namely $(100 \cdot \Delta X / X) = 1$, would translate into $b_1/100$ units of increase in $Y$ or one hundredth of Y. To note, this Calculus-inspired percentage interpretation is only true (i.e., the $\approx$ sign would hold), if $\Delta X$ is small (e.g., 1%). 
+
+Now let's re-examine this interpretation from the **arithmetic** perspective, where a *p* percent increase in X would be $X \cdot (100+p)/100 = X \cdot (1+p/100)$. Let $Y_0$ and $Y_p$ be the values of Y corresponding to X and X with *p* percent increase. 
+
+$$ Y_0 = b_0 + b_1 \log(X) + e $$
+and
+$$ Y_p = b_0 + b_1 \log \left( X \cdot \frac{100+p}{100} \right) + e $$
+and
+
+$$ \frac{\Delta X}{X} 
+= \frac{X \cdot (1+p/100) - X}{X} 
+= \frac{p}{100} $$
+or
+
+$$ 100 \cdot \frac{\Delta X}{X} = p $$
+
+Hence, a *p* percent increase in X would result in 
+
+$$ \Delta Y = Y_p - Y_0 
+= b_1 \left( \log \left( (1+\frac{p}{100}) \cdot X \right) - \log(X) \right) 
+= b_1 \log \left( 1 + \frac{p}{100} \right) $$
+
+This result indicates that *p* = 1 or 1% increase in X would result in $b_1 \log(1.01) \approx b_1 \cdot 0.01$. This interpretation is scalable up to about 10% (i.e., the exact **arithmetic** and the approximate **Calculus** interpretations agree only up to about 10%), since *p* = 10 or 10% increase in X would result in $b_1 \log(1.10) \approx b_1 \cdot 0.10$. The following table shows the degree of deviations under and beyond 10% change in X. 
+
+proportion increase in X | percentage increase in X | increase in Y
+|:---:|:---:|:---:|
+$\Delta X/X = p/100$ | $100 \cdot \Delta X/X = p$ | $b_1 \log(1+p/100)$
+0.01 | 1% | $b_1 \cdot 0.01$
+0.05 | 5% | $b_1 \cdot 0.05$
+0.10 | 10% | $b_1 \cdot 0.10$
+0.20 | 20% | $b_1 \cdot 0.18$
+0.50 | 50% | $b_1 \cdot 0.41$
+1.00 | 100% | $b_1 \cdot 0.69$
+1.72 | 172% | $b_1 \cdot 1.00$
+
+`TODO: add a shiny app to supplement the table!`
+
+```{r}
+curve(log, from=0.01, to=4, ylim=c(-4,4))
+curve(x-1, add=T, col=2)
+abline(v=0, h=0, lty=2)
+```
+
+In summary, given the discussions above, the following statements are equivalent (or almost equivalent).
+
+- When log(X) increases by 1 unit, Y would change by an average of $b_1$.
+- When X is multiplied by 2.72, Y would change by an average of $b_1$.
+- When X increases by 172%, Y would change by an average of $b_1$.
+- When X increases by p%, Y would change by an average of $b_1 \log(1+p/100)$.
+- When X increases by 1%, Y would change by an average of $b_1/100$.
+- When X increases by 10%, Y would change by an average of $b_1/10$.
+
+#### Log-linear Model: Log-transformation on Y
+
+$$ \log(Y) = b_0 + b_1X + e $$
+
+Take the derivative with respect to X on both sides, we have
+
+$$ \frac{1}{Y} \cdot \frac{dY}{dX} \approx \frac{1}{Y} \cdot \frac{\Delta Y}{\Delta X} = b_1 $$
+and hence
+
+$$ \frac{\Delta Y}{Y} = b_1 \cdot \Delta X $$
+
+Replacing **_proportion of change_** by **_percentage of change_** gives
+
+$$ 100 \cdot \frac{\Delta Y}{Y} = 100 \cdot b_1 \cdot \Delta X $$
+which leads to the interpretation that 1 unit increase in X would result in $100 \cdot b_1$ percent increase in Y. Similar to the previous case, this **Calculus** interpretation is only true when $b_1$ is less than 0.1 or 10%. 
+
+Let's examine the precise **arithmetic** interpretation. From $\log(Y) = b_0 + b_1X + e$, we have
+
+$$ Y = e^{(b_0 + b_1X + e)} $$
+
+Let $Y_0$, $Y_1$, and $Y_p$ be the values of Y corresponding to X, X+1, and X+p. We have
+
+$$ Y_0 = e^{(b_0 + b_1X + e)} $$
+and
+
+$$ Y_1 = e^{(b_0 + b_1(X+1) + e)} = e^{(b_0 + b_1X + e)} \cdot e^{b_1} = Y_0 \cdot e^{b_1} $$
+which implies that 1 unit increase in X would result in Y multiplied by $e^{b_1}$. 
+
+$$ \frac{\Delta Y}{Y_0} = \frac{Y_1 - Y_0}{Y_0} 
+= \frac{Y_0 \cdot e^{b_1} - Y_0}{Y_0} 
+= \frac{Y_0 \cdot (e^{b_1} - 1)}{Y_0} 
+= (e^{b_1}-1) $$
+
+Replacing **_proportion of change_** by **_percentage of change_** gives
+
+$$ 100 \cdot \frac{\Delta Y}{Y_0} = 100 \cdot (e^{b_1}-1) $$
+
+The **Taylor expansion** of $e^b$ gives the following result 
+$$ e^b = 1 + b + \frac{b^2}{2!} + \frac{b^3}{3!} + \cdots+\frac{b^n}{n!} $$
+When b is small (e.g. $b \le 0.1$), $e^b \approx 1 + b$ and hence $e^b - 1 \approx b$. In other words, when $b_1$ is less than 0.1 (as suggested by the table below), the exact **arithmetic** interpretation agrees with the approximate **Calculus** interpretation.   
+
+```{r}
+b = c(c(0.01,0.05,0.1,0.15), seq(0.2, 1, by=0.1))
+p = round(exp(b)-1, 2)
+mat = cbind(b,p)
+colnames(mat) = c("b","exp(b)-1")
+mat
+```
+
+In summary, 
+
+- When X increases by 1, log(Y) would increase by $b_1$.
+- When X increases by 1, Y would be multiplied by $e^{b_1}$. 
+- When X increases by c, Y would be multiplied by $e^{c b_1}$. 
+- When X increases by 1, Y would increase by $100 \cdot (e^{b_1}-1)$ percent.
+- When X increases by 1 and when $b_1 \le 0.1$, Y would increase by $100 \cdot b_1$ percent.
+
+
+#### Log-log Model: log-transformations on X and Y
+
+$$ \log(Y) = b_0 + b_1 \log(X) + e $$
+
+Taking the derivative with respect to X on both sides gives
+
+$$ \frac{1}{Y} \cdot \frac{dY}{dX} 
+\approx \frac{1}{Y} \cdot \frac{\Delta Y}{\Delta X} = \frac{b_1}{X} $$
+
+and hence
+
+$$ 100 \cdot \frac{\Delta Y}{Y} = b_1 \cdot \left( 100 \cdot \frac{\Delta X}{X} \right) $$
+which implies that 1 percent increase in X would result in $b_1$ percent increase in Y. 
+
+With the log-log model, the coefficient $b_1$ is called **elasticity** in economics.
+
+
+In summary, 
+
+- When log(X) increase by 1, log(Y) would increase by $b_1$.
+- When X is multiplied by $e$, the expected value of Y would increase by multiplying $e^{b_1}$.
+- When X increases by *p* percent, the expected value of Y would increase by multiplying $e^{c b_1}$ where $c = \log(1+p/100)$.
+
+
+### Quadratic Relations
+
+
+## The Assumptions of Simple Linear Regression
+When the OLS assumptions hold, OLS estimators have been shown to be unbiased and have minimum standard error of among all unbiased linear estimators, a property known as **Best Linear Unbiased Estimators (BLUE)**.
+
+$$ Y_i|X_i \overset{id}{\sim} N(\beta_0 + \beta_1X_i, \sigma^2) $$
+
+
+## Assumption Diagnostics
+
+
+
+
+
+<!--chapter:end:02_cor_linearReg.Rmd-->
+
+
+# Key Formatting Constructs
+
+The key formatting constructs are discussed at <http://rmarkdown.rstudio.com/authoring_basics.html>. You can see above how I constructed main section headings. Now I'm going to create a series of sections using secondary headings.
+
+## Emphasis
+
+This is *italic*. This is **bold**.
+
+## Superscripts
+
+This is y^2^.
+
+## Lists
+
+### Unordered
+
+* Item 1
+* Item 2
+    + Item 2a
+    + Item 2b
+    
+### Ordered
+
+1. Item 1
+2. Item 2
+3. Item 3
+    + Item 3a
+    + Item 3b
+
+1. Item 1  
+2. Item 2  
+3. Item 3  
+    (a) Item 3a
+    (b) Item 3b
+
+
+## Block Quotes
+
+A friend once said:
+
+> It's always better to give
+> than to receive.
+
+## Displaying Blocks of Code Without Evaluating
+
+In some situations, you want to display R code but not evaluate it. Here is an example of how you format.
+
+```
+This text is displayed verbatim / preformatted
+```
+
+## Displaying R Code Inline in a Sentence
+
+Sometimes, you need to include an R name or command inline in a sentence. Here is how your format it.  
+
+The `sqrt` function computes the square root of a number.
+
+## Evaluating and Inserting R Code in a Sentence
+
+Sometimes, you want a result without showing the user that you used R to get it.
+Here is an example.
+
+The mean of the numbers 2,3,4 is `r mean(c(2,3,4))`.
+
+There are lots of ways you can exploit this capability.  You can do more advanced calculations in a hidden code block, assign the results to variables, and then simply use the variable names to insert the results in a sentence.
+
+In the following example, I compute the sum of the integers from 2 to 19 in a hidden code block. Then I display the result inline.
+
+```{r,echo=FALSE}
+x <- 2:19
+answer <- sum(x)
+```
+The sum of the integers from 2 to 19 is `r answer`.
+
+## Typesetting Equations
+
+## Inline vs. Display Material
+
+Equations can be formatted *inline* or as *displayed formulas*.  In the latter case, they are centered and set off from the main text.  In the former case, the mathematical material occurs smoothly in the line of text.
+
+In order to fit neatly in a line, summation expressions (and similar constructs) are formatted slightly differently in their inline and display versions.  
+
+Inline mathematical material is set off by the use of single dollar-sign characters. Consequently, if you wish to use a dollar sign (for example, to indicate currency), you need to preface it with a back-slash.  The following examples, followed by their typeset versions, should make this clear
+
+``` 
+This summation expression $\sum_{i=1}^n X_i$ appears inline.
+```
+
+This summation expression $\sum_{i=1}^n X_i$ appears inline.
+
+```
+This summation expression is in display form.
+$$\sum_{i=1}^n X_i$$
+```
+This summation expression is in display form.
+
+$$\sum_{i=1}^n X_i$$
+
+
+## Some LaTeX Basics
+
+In this section, we show you some rudiments of the LaTeX typesetting language.
+
+
+### Self-Sizing Parentheses
+
+In LaTeX, you can create parentheses, brackets, and braces which size themselves automatically to contain large expressions. You do this using the `\left` and `\right` operators.  Here is an example
+
+```
+$$\sum_{i=1}^{n}\left( \frac{X_i}{Y_i} \right)$$
+```
+
+$$\sum_{i=1}^{n}\left( \frac{X_i}{Y_i} \right)$$
+
+
+
+
+### Special Functions
+
+LaTeX typesets special functions in a different font from mathematical variables. These functions, such as $\sin$, $\cos$, etc. are indicated in LaTeX with a backslash. Here is an example that also illustrates how to typeset an integral.
+
+```
+$$\int_0^{2\pi} \sin x~dx$$
+```
+$$\int_0^{2\pi} \sin x~dx$$
+
+### Matrices
+
+Matrics are presented in the `array` environment. One begins with the statement
+`\begin{array}` and ends with the statement `\end{array}`. Following the opening statement, a format code is used to indicate the formatting of each column. In the example below, we use the code `{rrr}` to indicate that each column is right justified. Each row is then entered, with cells separated by the `&` symbol, and each line (except the last) terminated by `\\`.
+
+```
+$$\begin{array}
+{rrr}
+1 & 2 & 3 \\
+4 & 5 & 6 \\
+7 & 8 & 9
+\end{array}
+$$
+```
+$$\begin{array}
+{rrr}
+1 & 2 & 3 \\
+4 & 5 & 6 \\
+7 & 8 & 9
+\end{array}
+$$
+
+In math textbooks, matrices are often surrounded by brackets, and are assigned to a boldface letter.  Here is an example
+
+```
+$$\mathbf{X} = \left[\begin{array}
+{rrr}
+1 & 2 & 3 \\
+4 & 5 & 6 \\
+7 & 8 & 9
+\end{array}\right]
+$$
+```
+
+$$\mathbf{X} = \left[\begin{array}
+{rrr}
+1 & 2 & 3 \\
+4 & 5 & 6 \\
+7 & 8 & 9
+\end{array}\right]
+$$
+
+<!--chapter:end:03_testit.Rmd-->
+
+
+```{r load_data, echo=FALSE}
+xdat = read.csv("data/demo_data.csv", stringsAsFactors = T)
+```
+
+# Multiple Linear Regression
+Multiple linear regression, or simply **multiple regression**, is a powerful statistical modeling technique that can handle
+
+- independent variables of assorted data types, i.e., ditchotomous, nominal, continuous  
+- complex relations among the IVs, e.g., nonlinear relations and interaction effects  
+
+## Regression Models - The Base Form
+### Model Specification with Population Parameters
+In a *simple linear regression model*, we use only one independent variable X to predict a continuous dependent variable Y and the *prediction model* has two parameters, i.e. the intercept and the slope. In this chapter, instead of usign one IV, we will use *p* IVs, i.e. $X_1, X_2, \dots, X_p$. As a result, with the *population parameters* in place, the **multiple linear regression model** is
+
+$$ Y_i = \mu_i + \varepsilon_i = \beta_0 + \beta_1X_{1i} + \beta_2X_{2i} + \cdots + \beta_pX_{pi} + \varepsilon_i  $$
+where $i = 1,2,\dots,n$ and $\mu_i \equiv E(Y_i|\boldsymbol{X}_i)$ is commonly referred to as the **mean response model** or the **prediction model**
+
+$$ E(Y_i|\boldsymbol{X}_i) \equiv \mu_i = \beta_0 + \beta_1X_{1i} + \beta_2X_{2i} + \cdots + \beta_pX_{pi} $$
+and $\varepsilon_i$ is called the **error** and 
+
+$$\varepsilon_i \overset{iid}{\text{~}} N(0,\sigma^2)$$ 
+
+To note, the population parameters of this linear model are $\beta_0, \beta_1, \dots, \beta_p$ and $\sigma$. 
+
+### Model Specification with Sample Parameters
+Accordingly, using the *sample parameters*, the **multiple linear regression model** is
+
+$$ Y_i = \hat{Y}_i + e_i = b_0 + b_1X_{1i} + b_2X_{2i} + \cdots + b_pX_{pi} + e_i  $$
+where $i = 1,2,\dots,n$ and the **prediction model** is
+
+$$ \hat{Y}_i = b_0 + b_1X_{1i} + b_2X_{2i} + \cdots + b_pX_{pi}  $$
+and $e_i$ is called the **residual** and 
+
+$$ e_i \overset{iid}{\text{~}} N(0,s^2)$$ 
+
+To note, $b_0, b_1, \dots, b_p$ and $s^2$ are parameters estimated from a given sample to approximate the unknown and constant population parameters $\beta_0, \beta_1, \dots, \beta_p$ and $\sigma$. 
+
+
+## The Ordinary Least-Squres Method
+Similar to the case of simple linear regression, the **ordinary least squares (OLS)** method can also be applied to estimate sample parameters for multiple linear regression. 
+
+$$ SSR = \sum_{i=1}^n R_i^2 = \sum_{i=1}^n (Y_i-\hat{Y}_i)^2 = \sum_{i=1}^n (Y_i - (b_0 + b_1X_{1i} + b_2X_{2i} + \cdots + b_pX_{pi}))^2 $$
+
+The solutions for $b_j$, $j = 1,2,\dots,p$, should minimize $SSR$, hence the name **least-squares method**. 
+
+### Interpretations of Regression Coefficients
+
+Given the following *mean response model*,
+
+$$ \hat{Y}_i = b_0 + b_1X_{1i} + b_2X_{2i} + \cdots + b_pX_{pi}  $$
+
+- intercept $b_0$: The expected value (i.e., mean) of Y when all IVs are zero.
+- slope $b_i$: Holding other IVs constant, increase in $X_i$ by 1 unit corresponds to an average of $b_i$ units of increase in Y. 
+
+### Residual Variance
+
+The **residual variance** (aka **conditional variance**) is given as follows.
+
+$$ s^2 = MSR = \frac{\sum R_i^2}{df} 
+= \frac{\sum_{i=1}^n (Y_i-\hat{Y_i})^2}{df} = \frac{\sum_{i=1}^n (Y_i - (b_0 + b_1X_{1i} + b_2X_{2i} + \cdots + b_pX_{pi}))^2}{n-(1+p)} $$
+
+It should be clear that $1+p$ is the number of parameters required to estimate $\hat{Y}_i$ (i.e., the degrees of freedom we have to spend or give up for fitting the model), which equals $p$ slope parameters plus 1 for the intercept. The denominator $n-(1+p)$ is the degrees of freedom that are left for us after fitting the model. 
+
+As a result, $s$ is called the **residual standard deviation** or **conditional standard deviation** or **RMSE**. 
+
+## Standard Errors of Regression Coefficients
+
+As explained previously, we are usually only interested in the standard error of a slope. Let $b_j$ denote the slope parameter for the *j*th feature $X_j$ where $j = 1,2,\dots,p$. We have
+
+$$ s_{b_j}^2 = \frac{s^2}{\text{SSX}_j} \cdot \text{VIF}_j 
+= \frac{s^2}{(n-1) Var(X_j)} \cdot \text{VIF}_j $$
+where $s^2$ is the residual variance, $\text{SSX}_j = \sum_{i=1}^m (X_{ij}-\bar{X}_j)^2$ is the sum of squares for $X_j$, and $\text{VIF}_j$ is an important concept called **variance inflation factor**. 
+
+### Variance Inflation Factor
+
+To compute VIF for $X_j$, use the following equation.
+
+$$ \text{VIF}_j = \frac{1}{1-R_j^2} $$
+where $R_j^2$ is the R-squared of regressing $X_j$ on all the other IVs except for $X_j$. To be clear, the VIF of $X_j$ can be computed in three steps. 
+
+- Step 1: For $X_1,X_2,\dots,X_p$, regress $Y_j$ on the rest of the IVs: There are only $p-1$ features and $Y$ is completely ignored. 
+
+$$ X_j = a_0 + a_1X_1 + a_2X_2 + \cdots + a_pX_p $$
+
+- Step 2: Compute the $R^2$ for this regression model, which results in $R_j^2$. 
+
+- Step 3: Compute VIF based on the formula given above. 
+
+### Significance of VIF
+Remember that $R^2$ is interpreted as the proportion of variance explained by the IVs and $1-R^2$ is the proportion of unexplained variance. It should be clear that when $X_j$ highly correlates with other features, $R_j^2$ would be high and $1-R_j^2$ would be low and hence $VIF_j$ tends to be high. In fact, when $X_j$ does not correlate with any other features, i.e., $R_j^2 = 0$, we will have $VIF_j = 1$, which would give the smallest possible standard error for $b_j$, as shown in the following equation. To note, this is the same formula for the standard error of $b_j$ in simple linear regression.
+
+$$ s_{b_j}^2 = \frac{s^2}{\text{SSX}_j} \cdot \text{VIF}_j = \frac{s^2}{\text{SSX}_j} $$
+In contrast, if $X_j$ highly correlates with some other features such that the $R_j^2 = 0.90$, i.e., 90% of the variance in $X_j$ can be explained by the other features, then $VIF_j = 10$. In other words, the standard error of $b_j$ derived from multiple linear regression would be inflated 10 times as compared to the standard error of $b_j$ that we would have got from a simple linear regression model where $X_j$ is the sole predictor. 
+
+### Multicollinearity
+This previous example illustrates how the term VIF gets its name *variance inflation factor* and the phenonemon of variance inflation due to presence of highly correlated featuers is called **multicollinearity**. As a rule of thumb, multicollinearity is usually not regarded as an issue unless VIF is greater than 10. 
+
+Another point worth noticing is that, since in most situations, a given feature will always correlate with some other features, IVs or features in the context of multiple linear regression are also called **covariates** (since features co-vary), which is particularly true for continuous features. 
+
+### Influencing Factors on Standard Errors
+With the meaning of VIF explained, we can now discuss the factors affecting the standard error of the slope parameter $b_j$ for the covariate $X_j$. 
+
+$$ s_{b_j}^2 = \frac{s^2}{\text{SSX}_j} \cdot \text{VIF}_j 
+= \frac{s^2}{(n-1) Var(X_j)} \cdot \frac{1}{1-R_j^2} $$
+
+- $s^2$: Better model fit leads to smaller standard errors, or greater scatter in data around the regression line leads to more uncertainties in slope parameter estimations. 
+- $n$: Larger sample size results in smaller standard errors.
+- $Var(X_j)$: Greater instrinsic variability in a covariate yields smaller standard errors. 
+- $R_j^2$: Features that highly correlate with other features might associate with large standard errors. 
+
+## $R^2$ and ANOVA for Multiple Regression
+When dealing with simple linear regression, we have already studied how to derive the ANOVA table, compute the $R^2$ and perform the $F$ test. The same results also hold here, which will not be repeated except for one point. The formula for computing $R^2$ is
+
+$$ R^2 = \frac{\text{SSM}}{\text{SST}} = \frac{ \sum(\hat{Y}_i-\bar{Y})^2 }{ \sum(Y_i-\bar{Y})^2 } $$
+
+In the context of multiple regression, the statistic $R^2$ is called the **coefficient of determination** of the linear model, and the square root of $R^2$ is called the **multiple correlation coefficient**, which interestingly enough is the correlation between observed values $Y_i$ and predicted values $\hat{Y}_i$. 
+
+```{r, echo=FALSE}
+mod1 = lm(mid3 ~ satmath + satreading + gpa, data=xdat)
+```
+
+**R_Proof: Multiple Correlation Coefficient**
+```{r proof_multiple_correlation_coefficient}
+tdat = na.omit(xdat[c("mid3","satmath","satreading","gpa")])
+mod1 = lm(mid3 ~ satmath + satreading + gpa, data=tdat)
+yhat = predict(mod1)
+ybar = mean(tdat$mid3, na.rm=T)
+ssm = sum((yhat-ybar)^2, na.rm=T)
+sst = sum((tdat$mid3-ybar)^2, na.rm=T)
+r2 = ssm/sst
+r = cor(tdat$mid3, yhat)
+c(sqrt(r2), r)
+```
+
+## Regression Models Extended - Categorical Features
+
+### Dummy Variables
+A **dummy variable** has only two unique levels. For comparison purposes, we would designate one level as the **reference level** and code it as 0, whereas the other level is coded as 1. Since 1 is usually used to indicate the presence of something of interest, a dummy variable is also called a **indicator variable**. 
+
+When a dummy variable is the only feature in a linear regression model, it gives identical results to a **_two-sample t-test_**. To see how this is true, let's use a concrete example, where we regress final exam scores on gender to see if males outperformed females in a Chemistry class. Let us use *M* to indicate a dummy variable, where *M=0* for females and *M=1* for males. The prediction model would be as follows.
+
+$$ \hat{Y}_i = b_0 + b_1M_i $$
+Three points can be inferred from this equation:
+
+- When $M_i = 0$, the group average for females is $\hat{Y}_i=b_0$.  
+- When $M_i = 1$, the group average for males is $\hat{Y}_i=b_0+b_1$.  
+- The interpretation of $b_1$ is that 1 unit increase in $M_i$, i.e., changing from female to male, $\hat{Y}_i$ on average would increase by $b_1$.  
+
+Putting together, it should be clear that (a) $b_0$ is the group mean for females, (b) $b_0+b_1$ is the group mean for males, and (c) $b_1$ is the difference in group means. 
+
+**R_Proof: Regression vs Two-sample T-test**
+```{r proof_regression_vs_ttest}
+# two-sample t-test with equal variance
+tt = t.test(mid3 ~ gender, data=xdat, var.equal=TRUE)
+# simple linear regression with a dummy feature
+mod = lm(mid3 ~ gender, data=xdat)
+modsum = summary(mod)
+
+modsum$coefficients
+c(diff(tt$estimate), tt$statistic, tt$p.value)
+
+r2 = modsum$r.squared
+r = cor(xdat$mid3, as.numeric(xdat$gender)-1, use="pair")
+c(r2, r^2)
+```
+
+
+### Nominal Variables
+In regression analysis, a nominal variable is routinely converted into a set of dummy features, designate one level/feature as the **reference level**, and put the rest of the levels/features into the regression model. To illustrate this, let's regress final exam scores on year to examine if students from different years performed differently. There are three sessions (i.e., years) in the dataset. Let's use *S1*, *S2*, and *S3* to denote the first, second, and third sessions, and designate *S1* as the **reference level**. The prediction model would be as follows. 
+
+$$ \hat{Y}_i = b_0 + b_1S_{2i} + b_2S_{3i} $$
+To note, since the dummy feature *S1* is used as the reference level, it is absent as a feature from the equation. Moreover, the three dummy variables are mutually exlucsive, e.g., when *S1=1*, *S2* and *S3* have to be zero. Three points can be inferred from this equation:
+
+- When $S_{1i} = 1$, the group average for students from the first session is $\hat{Y}_i=b_0$.  
+- When $S_{2i} = 1$, the group average for students from the second session is $\hat{Y}_i=b_0+b_1$.  
+- When $S_{3i} = 1$, the group average for students from the third session is $\hat{Y}_i=b_0+b_2$.  
+
+Putting together, it should be clear that (a) $b_1$ is the difference in group means between the second and first sessions, and (b) $b_2$ is the difference in group means between the third and first sessions. If there are more sessions up to *p* levels, then $b_3,b_4,\dots,b_p$ would be difference in group means between each of these levels and the first session. Everything is compared to the first session, which is why it is termed as the **reference level** or **base level** or **reference group**.  
+
+When a nominal variable is converted into a set of dummies and used as the only feature in a linear regression model, it gives identical results to the **_one-way ANOVA_**.
+
+**R_Proof: Regression vs ANOVA**
+```{r proof_regression_vs_anova}
+# one-way ANOVA
+aovmod = aov(mid3 ~ session, data=xdat)
+aovsum = summary(aovmod)
+aovsum
+# simple linear regression with a nominal feature
+mod = lm(mid3 ~ session, data=xdat)
+anova(mod)
+modsum = summary(mod)
+modsum
+modsum$fstatistic
+```
+
+Let's create a nominal feature with three levels (i.e., 'a','b','c') and use the `model.matrix()` function in R to generate a set of dummy features. 
+
+```{r}
+xvec = gl(3, 2, labels=c("a","b","c"))
+tdat = data.frame(xvec)
+tdat
+model.matrix(~xvec, data=tdat)
+```
+
+Notice that (a) a column of 1s is automatically created, and (b) the first level 'a' is missing from the results. 
+
+```{r}
+model.matrix(~xvec-1, data=tdat)
+```
+
+
+## Regression Models Extended - Interaction Effects
+The **interaction effects** are also called **moderation effects**, which are critically important in regression analysis. It is the idea that the effect of X on Y is **_moderated_** by Z. For example, we might be interested in the effect of *study time* X on *course performance* Y. It is conceivable that the way study time affects exam results might depend on *whether the time is spent willingly* Z. 
+
+- If students are forced to spend a lot of time studying, then the more time spent may or may not translate to stronger performance.  
+- If students are willingly investing time in a course, more time spent should have a much stronger effect on exam performance. 
+
+### Dummy-Dummy Interactions
+
+In our dataset, let's consider the effect of repeater status R (i.e., repeater=1) on final exam scores Y moderated by gender Male (i.e., male=1).
+
+$$ \hat{Y}_i = b_0 + b_1\cdot\text{R} + b_2\cdot\text{Male} + b_3\cdot\text{R}\cdot\text{Male} $$
+
+For $Male=0$ (i.e., females), we have
+
+$$ \hat{Y}_i = b_0 + b_1\cdot\text{R} $$
+
+which shows (a) that the average score for female non-repeaters is $b_0$ and (b) that females enjoyed an average of $b_1$ points increase when switching from non-repeater to repeater status.  
+
+For $Male=1$ (i.e., males), we have
+
+$$ \hat{Y}_i = b_0 + b_1\cdot\text{R} + b_2 + b_3\cdot\text{R} 
+= (b_0+b_2) + (b_1+b_3)\cdot\text{R}$$
+
+which shows (a) that the average score for male non-repeaters was $b_2$ points higher than that for female non-repeaters and (b) that for the same switch from non-repeater to repeater status, males enjoyed an additional $b_3$ points increase as compared to the score gain for females making the same status switch. 
+
+
+Now let's fit a linear regression model and examine the coefficients. 
+```{r}
+mod = lm(mid3 ~ repeater*gender, data=xdat)
+modsum = summary(mod)
+modsum
+```
+
+The visualize a dummy-continuous interaction effect, fit a simple linear regression model between X and Y conditioned on Z.
+
+```{r}
+newdat = expand.grid(mod$xlevels)
+newdat$yhat = predict(mod, newdat)
+
+yrange = range(newdat$yhat)
+yrange = yrange + c(-1,1)*diff(yrange)*0.1
+plot(1:2, newdat$yhat[1:2], ylim=yrange, type="o",
+     xaxt="n", ylab="Final Exam Scores", xlab=NA)
+axis(1, at=1:2, labels=levels(newdat[,1]))
+points(1:2, newdat$yhat[3:4], type="o", pty=2, lty=2)
+
+```
+
+
+### Dummy-Continuous Interactions
+
+In our dataset, let's consider the effect of high school GPA X on final exam scores Y moderated by repeater status R.
+
+$$ \hat{Y}_i = b_0 + b_1\cdot\text{GPA} + b_2\cdot\text{R} + b_3\cdot\text{GPA}\cdot\text{R} $$
+
+For $R=0$ (i.e., non-repeaters), we have
+
+$$ \hat{Y}_i = b_0 + b_1\cdot\text{GPA} $$
+
+which shows that (a) a non-repeater with 0 highschool GPA got an average of $b_0$ points in the final exam, and (b) that the average effect of 1 point increase in GPA on exam performance is $b_1$ points for non-repeaters.  
+
+For $R=1$ (i.e., repeaters), we have
+
+$$ \hat{Y}_i = b_0 + b_1\cdot\text{GPA} + b_2 + b_3\cdot\text{GPA} 
+= (b_0+b_2) + (b_1+b_3)\cdot\text{GPA}$$
+
+which shows that (a) repeaters with 0 highschool GPA would on average get $b_2$ points higher on the final exam, and (b) that the average effect of 1 point increase in GPA on exam performance is $b_1+b_3$ for repeaters. Hence, for the same 1 point increase in GPA, repeaters enjoyed an extra $b_3$ points increase in the final exam as compared to the $b_1$ points gain in final scores for non-repeaters. 
+
+The visualize a dummy-continuous interaction effect, fit a simple linear regression model between X and Y conditioned on Z.
+```{r}
+car::scatterplot(mid3 ~ gpa*repeater, data=xdat)
+```
+
+In R, interaction effect between X and Z is represented by `X*Z`. To note, whenever an interaction effect (e.g., `X*Z`) is added to a linear model, the component variables involved (e.g., `X` and `Z`) will be automatically added to the linear model as well. In other words, the following two linear models give identical results. 
+
+`lm(mid3 ~ repeater*gpa, data=xdat)`
+
+`lm(mid3 ~ repeater + gpa + repeater*gpa, data=xdat)`
+
+
+Now let's fit a linear regression model and examine the coefficients. 
+```{r}
+mod = lm(mid3 ~ repeater*gpa, data=xdat)
+modsum = summary(mod)
+modsum
+```
+
+
+
+### Continuous-Continuous Interactions
+Let's consider the effect of highschool GPA on final exam scores Y moderated by perceived usefulness of the course U. 
+
+$$ \hat{Y}_i = b_0 + b_1\cdot\text{GPA} + b_2 \cdot U + b_3\cdot\text{GPA} \cdot U $$
+
+When $U=0$, we have
+
+$$ \hat{Y}_i = b_0 + b_1\cdot\text{GPA} $$
+
+When $U=1$, we have
+
+$$ \hat{Y}_i = (b_0 +b_2) + (b_1+b_3)\cdot\text{GPA} $$
+
+At this point, the interpretations of the coefficients are very similar to those we have encountered in the case of dummy-continuous interactions. To be noted, if we use $U$ and $U+1$ instead of using $U=0$ and $U=1$, we would end up with very similar interpretations: (a) 1 unit increase in perceived course usefulness would result in $b_0$ points increase in final exam scores for students with 0 GPA, and (b) 1 unit increase in perceived course usefulness would enhance the effect of GPA by $b_3$ points per 1 unit increase in GPA.  
+
+```{r}
+mod = lm(mid3 ~ gpa*utcourse, data=xdat)
+modsum = summary(mod)
+modsum
+```
+
+```{r}
+xs = quantile(xdat$gpa, na.rm=TRUE)
+ys = quantile(xdat$utcourse, na.rm=TRUE, probs=c(0.25, 0.75))
+newdat = expand.grid(xs,ys)
+colnames(newdat) = c("gpa","utcourse")
+newdat$yhat = predict(mod, newdat)
+
+yrange = range(newdat$yhat)
+yrange = yrange + c(-1,1)*diff(yrange)*0.1
+plot(xdat$gpa, xdat$mid3,xlab="GPA", ylab="Final Exam Scores")
+points(newdat$gpa[1:5], newdat$yhat[1:5], type="o", pch=2)
+points(newdat$gpa[6:10], newdat$yhat[6:10], type="o", pch=5, lty=2)
+legend("topleft", legend=c("25% Quantile","75% Quantile"), bty="n", pch=c(2,5), lty=c(1,2))
+```
+
+To note, do not plot only the fitted lines without the actual data points. 
+```{r}
+plot(newdat$gpa[1:5], newdat$yhat[1:5], ylim=yrange, type="o",
+     xlab="GPA", ylab="predicted", pch=2)
+points(newdat$gpa[6:10], newdat$yhat[6:10], type="o", pch=5, lty=2)
+```
+
+## Regression Models Extended - Nonlinear Relations
+
+
+
+
+
+## Model Comparision & Evaluation
+
+### F-test for Nested Models
+
+### Adjusted R-Squared
+
+### Information Criteria
+
+
+
+
+
+
+
+<!--chapter:end:04_multipleReg.Rmd-->
+
