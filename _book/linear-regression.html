@@ -25,7 +25,7 @@
 <meta name="author" content="Wenliang He">
 
 
-<meta name="date" content="2018-06-12">
+<meta name="date" content="2018-07-01">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -341,7 +341,7 @@ bs =<span class="st"> </span><span class="kw">c</span>(c,b1,b2,b3)
 <span class="kw">names</span>(bs) =<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;c&quot;</span>,<span class="st">&quot;x&quot;</span>,<span class="st">&quot;cx&quot;</span>,<span class="st">&quot;cy&quot;</span>)
 bs</code></pre></div>
 <pre><code>##          c          x         cx         cy 
-## 10.0000000  2.0054926  0.2005493 20.0549261</code></pre>
+## 10.0000000  2.0113918  0.2011392 20.1139181</code></pre>
 <ol start="2" style="list-style-type: decimal">
 <li>When X and Y are standardized z-scores, which entails that <span class="math inline">\(s_X=1\)</span> and <span class="math inline">\(s_Y=1\)</span>, <span class="math inline">\(b_1\)</span> becomes the Pearson correlation <span class="math inline">\(r\)</span>. <span class="math display">\[ b_1 = \color{red}{r} \cdot \frac{s_Y}{s_X} 
 = \color{red}{ \frac {\sum_{i=1}^n(X_i - \bar{X})(Y_i-\bar{Y})} {s_X s_Y (n-1)} } \cdot \frac{s_Y}{s_X} 
@@ -379,8 +379,8 @@ bs =<span class="st"> </span><span class="kw">c</span>(bs, b4, b5)
 <span class="kw">names</span>(bs) =<span class="st"> </span><span class="kw">c</span>(names,<span class="st">&quot;noise_x&quot;</span>,<span class="st">&quot;noise_y&quot;</span>)
 bs</code></pre></div>
 <pre><code>##          c          x         cx         cy    noise_x    noise_y 
-## 10.0000000  2.0054926  0.2005493 20.0549261  0.9921121  1.9925041</code></pre>
-<p><em>Note</em>: The result from adding noise to Y changes slightly, because the <code>cor(Y,E)</code> in our sample is -0.0136111, which is not strictly 0 due to sampling randomness.</p>
+## 10.0000000  2.0113918  0.2011392 20.1139181  1.0138626  1.9944733</code></pre>
+<p><em>Note</em>: The result from adding noise to Y changes slightly, because the <code>cor(Y,E)</code> in our sample is -0.0055469, which is not strictly 0 due to sampling randomness.</p>
 </div>
 <div id="residual-variance" class="section level3">
 <h3><span class="header-section-number">3.3.6</span> Residual Variance</h3>
@@ -581,7 +581,7 @@ r =<span class="st"> </span><span class="kw">cor</span>(xdat$mid3, xdat$mid1, <s
 <p><span class="math display">\[ \frac{\Delta Y}{Y} = b_1 \cdot \Delta X \]</span></p>
 <p>Replacing <strong><em>proportion of change</em></strong> by <strong><em>percentage of change</em></strong> gives</p>
 <p><span class="math display">\[ 100 \cdot \frac{\Delta Y}{Y} = 100 \cdot b_1 \cdot \Delta X \]</span> which leads to the interpretation that 1 unit increase in X would result in <span class="math inline">\(100 \cdot b_1\)</span> percent increase in Y. Similar to the previous case, this <strong>Calculus</strong> interpretation is only true when <span class="math inline">\(b_1\)</span> is less than 0.1 or 10%.</p>
-<p>Let’s examine a precise <strong>arithmetic</strong> interpretation. From <span class="math inline">\(\log(Y) = b_0 + b_1X + e\)</span>, we have</p>
+<p>Let’s examine the precise <strong>arithmetic</strong> interpretation. From <span class="math inline">\(\log(Y) = b_0 + b_1X + e\)</span>, we have</p>
 <p><span class="math display">\[ Y = e^{(b_0 + b_1X + e)} \]</span></p>
 <p>Let <span class="math inline">\(Y_0\)</span>, <span class="math inline">\(Y_1\)</span>, and <span class="math inline">\(Y_p\)</span> be the values of Y corresponding to X, X+1, and X+p. We have</p>
 <p><span class="math display">\[ Y_0 = e^{(b_0 + b_1X + e)} \]</span> and</p>

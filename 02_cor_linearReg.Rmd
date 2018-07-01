@@ -1,9 +1,9 @@
 
 # Linear Regression
 
-```{r setup, include=FALSE}
+```{r setup2, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
-knitr::opts_knit$set(root.dir="/Users/Wen/Google Drive/01_Teaching/01_My_Courses/11_QuantMethods_I/")
+knitr::opts_knit$set(root.dir="/Users/Wen/百度云同步盘/01_Teaching/01_My_Courses/11_QuantMethods_I/")
 ```
 
 ```{r load_data, echo=FALSE}
