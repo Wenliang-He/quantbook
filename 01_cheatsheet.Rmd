@@ -2,6 +2,20 @@
 
 ## Dictionary of Symbols
 
+*italics*
+**bold**
+`background highlight`
+
+Let me write some formlas, e.g. $x^2$ or $$x^2$$ and that's it.
+
+
+```
+The *raw* text **is** like **_this_**. $\frac{x^2}{n-1}$
+```
+
+The *raw* text **is** like **_this_**. $\frac{x^2}{n-1}$
+
+
 |Text|Effect|
 |:---|:---:|
 |`# First-level Header`|# First-level Header|
@@ -16,6 +30,7 @@
 |`__bold__`|__bold__|
 |`**bold**`|**bold**|
 |`X~i~`|X~i~|
+|`$X_i$`|$X_i$|
 |`X^2^`|X^2^|
 |`X~i~^2^`|X~i~^2^|
 |`X^2^~i~`|X^2^~i~|
@@ -84,7 +99,6 @@ plot(pressure)
 ```
 
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
-
 
 
 
