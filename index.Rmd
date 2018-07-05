@@ -10,10 +10,6 @@ link-citations: yes
 description: "This is the first trial version!"
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
-
 # Introduction
 
 Let's test it a little bit!
