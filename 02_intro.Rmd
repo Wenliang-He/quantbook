@@ -4,7 +4,7 @@
 ```{r setup, include=FALSE}
 library(DiagrammeR)
 library(DT)
-library(editR)
+#library(editR)
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
@@ -12,7 +12,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Why Studying Statistics
 
-1. teaching, research, practicum (实践)
+1. teaching, research, practicum
     - a prerequisite for more courses
     - a prerequisite for research
     - a prerequisite for working on practical projects
@@ -38,7 +38,6 @@ ML --> DS
     - teach useful things
         - study-load reduction
         - happy learning
-        - 学而时习之，不亦说乎
     - don't teach unless you've used it
 5. preparation for studying abroad
     - open your eyes and see for yourself 
@@ -51,12 +50,12 @@ ML --> DS
 
 ### Understanding the World
 
-- Subject (对象)
+- Subject
     - nature
     - human society
-- Methodology (方法)
+- Methodology
     - the scientific method: observe-hypothesize-verify
-- Tools (工具)
+- Tools
     - languages
         - natural languages
         - mathematical languages, e.g., Calculus, Probability & Statistics
@@ -228,7 +227,7 @@ knitr::asis_output(htmltools::htmlPreserve("
 
 #### Statistic vs. Statistics
 
-The plural form of **_statistic_** is **_statistics_**. So the study of statistics (统计量) is statistics (统计学).
+The plural form of **_statistic_** is **_statistics_**. So the study of statistics is statistics.
 
 Why do we need any statistics? Because we need to summarize a load of data efficiently. 
 
@@ -279,7 +278,7 @@ On average, if there is a data point at some distance away from the mean to the 
 
 Since mean is sensitive to outliers and median is not, logic dictates that
 
-`TODO`: add a graph here!
+![mean_sensitive](images/intro_mean_sensitive.png)
 
 3. Let $E(X-c)^2 = Q1$ where $c$ is a constant. Q1 will reach its smallest possible value when $c$ equals the mean. In other words, **_mean_** is the value that makes the average of the **_squared distances_** the smallest. 
 
@@ -309,7 +308,7 @@ Since a quarter is 1/4 or 25%,
 - **inner fences** span between **_1.5_** times the IQR above the 3rd quartile and below the 1st quartile. Data points lying beyond the inner fences are regarded as **_potential outliers_**. 
 - **outer fences** span between **_3.0_** times the IQR above the 3rd quartile and below the 1st quartile. Data points lying beyond the outer fences are regarded as **_practically outliers_**. 
 
-`TODO`: add a graph here!
+![IQR](images/intro_IQR.png)
 
 #### Skewness and Kurtosis
 
@@ -340,7 +339,7 @@ Since a quarter is 1/4 or 25%,
 
 Given **x**, we have **y = a + bx**. How does this linear transformation affect measures on center, spread, and shape?
 
-Change of **_units of measurement_**, e.g., from Celsius (摄氏度) to Fahrenheit (华氏度), is a typical example of a linear transformation. Multipling a **b** greater than 1 incrases disperstion (i.e., spread), while multipling a **b** less than 1 decreases dispersion. Adding an **a** to **bx** shifts **bx** by **a** without changing the dispersion. As a result, we have:
+Change of **_units of measurement_**, e.g., from Celsius to Fahrenheit, is a typical example of a linear transformation. Multipling a **b** greater than 1 incrases disperstion (i.e., spread), while multipling a **b** less than 1 decreases dispersion. Adding an **a** to **bx** shifts **bx** by **a** without changing the dispersion. As a result, we have:
 
 - Given the old mean **m**, the new mean changes to **a + bm**.
 - Given the old standard deviation **s**, the new standard deviation changes to **bs**.
@@ -396,7 +395,7 @@ When $\mu = 0$ and $\sigma = 1$, we get **_the standard normal distribution_**. 
 
 `NOTE`: There are an infinite number of normal distributions, each with a different $\mu$ and $\sigma$. However, there is only one **standard** normal distribution, called **the** standard normal distribution.
 
-`TODO`: add a graph here!
+![The 68-95-99.7 Rule](images/intro_rule.png)
 
 
 #### Normal Quantile Plot
@@ -404,7 +403,7 @@ When $\mu = 0$ and $\sigma = 1$, we get **_the standard normal distribution_**. 
 Normal Quantile Plot (aka **QQ Plot**) is used to visually inspect how much a given distribution deviates from a normal distribution by comparing it against the standard normal distribution.	 	 	 		
 
 1. Arrange the observed data values from smallest to largest. Record what percentile of the data each value occupies. For example, the smallest observation in a set of 20 is at the 5% point, the second smallest is at the 10% point, and so on. 
-2. Do normal distribution calculations to find the z-scores corresponding to these same percentiles. For example, z = −1.645 is the 5% point of the standard normal distribution, and z = −1.282 is the 10% point. 
+2. Do normal distribution calculations to find the z-scores corresponding to these same percentiles. For example, z = -1.645 is the 5% point of the standard normal distribution, and z = -1.282 is the 10% point. 
 3. Plot each data point on the y axis against the corresponding z-score on the x axis. If the data distribution is close to any normal distribution, the plotted points will lie close to a straight line. 
 
 

@@ -25,7 +25,7 @@
 <meta name="author" content="Wenliang He">
 
 
-<meta name="date" content="2018-07-24">
+<meta name="date" content="2018-07-25">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -249,7 +249,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div id="why-studying-statistics" class="section level2">
 <h2><span class="header-section-number">3.1</span> Why Studying Statistics</h2>
 <ol style="list-style-type: decimal">
-<li>teaching, research, practicum (实践)
+<li>teaching, research, practicum
 <ul>
 <li>a prerequisite for more courses</li>
 <li>a prerequisite for research</li>
@@ -264,8 +264,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li>data scientist</li>
 </ul></li>
 </ol>
-<div id="htmlwidget-fa5f50ae1f3f9f79a885" style="width:672px;height:150px;" class="DiagrammeR html-widget"></div>
-<script type="application/json" data-for="htmlwidget-fa5f50ae1f3f9f79a885">{"x":{"diagram":"\ngraph LR\nDA(Data Analyst) --> Stats(Statistician)\nStats --> DS(Data Scientist)\nDA --> DS\nDA --> ML(Machine Learning Scientist)\nML --> DS\n"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-620b74ef783e45d3615f" style="width:672px;height:150px;" class="DiagrammeR html-widget"></div>
+<script type="application/json" data-for="htmlwidget-620b74ef783e45d3615f">{"x":{"diagram":"\ngraph LR\nDA(Data Analyst) --> Stats(Statistician)\nStats --> DS(Data Scientist)\nDA --> DS\nDA --> ML(Machine Learning Scientist)\nML --> DS\n"},"evals":[],"jsHooks":[]}</script>
 <ol start="4" style="list-style-type: decimal">
 <li>K-12 content-wise education revolution
 <ul>
@@ -273,7 +273,6 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <ul>
 <li>study-load reduction</li>
 <li>happy learning</li>
-<li>学而时习之，不亦说乎</li>
 </ul></li>
 <li>don’t teach unless you’ve used it</li>
 </ul></li>
@@ -293,16 +292,16 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div id="understanding-the-world" class="section level3">
 <h3><span class="header-section-number">3.1.1</span> Understanding the World</h3>
 <ul>
-<li>Subject (对象)
+<li>Subject
 <ul>
 <li>nature</li>
 <li>human society</li>
 </ul></li>
-<li>Methodology (方法)
+<li>Methodology
 <ul>
 <li>the scientific method: observe-hypothesize-verify</li>
 </ul></li>
-<li>Tools (工具)
+<li>Tools
 <ul>
 <li>languages
 <ul>
@@ -314,8 +313,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul></li>
 </ul>
 <p>Equipped with the scientific method, social sciences have eventually chipped off the humanities and have evolved into stand-alone disciplines in their own right. Statistics plays a central role in the process. If Calculus is the mathematical language for describing the natural world, Statistics is the language for describing human societies. In college, you should not only learn the knowledge, but also the methods and tools begetting the knowledge.</p>
-<div id="htmlwidget-e43eef21b684496081fb" style="width:672px;height:650px;" class="DiagrammeR html-widget"></div>
-<script type="application/json" data-for="htmlwidget-e43eef21b684496081fb">{"x":{"diagram":"\ngraph LR\n\nSci(Science) --> N(Nature)\nN --> NS(Natural Sciences)\nSci --> S(Society)\nS --> SS(Social Sciences)\nS --> H(Humanities)\n\nNS --> Phys(Physics)\nNS --> Chem(Chemistry)\nNS --> Bio(Biology)\nSS --> Soc(Sociology)\nSS --> Edu(Education)\nSS --> Psy(Psychology)\nSS --> Econ(Economy)\nSS --> Pol(Political Science)\n\nH --> L(Literature)\nH --> A(Arts)\nH --> Hist(History)\nH --> Phi(Philosophy)\n"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-86cd7e82cb1355c5b926" style="width:672px;height:650px;" class="DiagrammeR html-widget"></div>
+<script type="application/json" data-for="htmlwidget-86cd7e82cb1355c5b926">{"x":{"diagram":"\ngraph LR\n\nSci(Science) --> N(Nature)\nN --> NS(Natural Sciences)\nSci --> S(Society)\nS --> SS(Social Sciences)\nS --> H(Humanities)\n\nNS --> Phys(Physics)\nNS --> Chem(Chemistry)\nNS --> Bio(Biology)\nSS --> Soc(Sociology)\nSS --> Edu(Education)\nSS --> Psy(Psychology)\nSS --> Econ(Economy)\nSS --> Pol(Political Science)\n\nH --> L(Literature)\nH --> A(Arts)\nH --> Hist(History)\nH --> Phi(Philosophy)\n"},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="science-vs.philosophy" class="section level3">
 <h3><span class="header-section-number">3.1.2</span> Science vs. Philosophy</h3>
@@ -354,8 +353,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li>a specific data point is called an entry, an element, a field</li>
 </ul>
 <p>The following is the first rows of the famous <code>iris</code> dataset.</p>
-<div id="htmlwidget-4df1159868fca1e07cc4" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-4df1159868fca1e07cc4">{"x":{"filter":"none","caption":"<caption>Table 1: This is the famous iris dataset.<\/caption>","data":[[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,128,129,130,131,132,133,134,135,136,137,138,139,140,141,142,143,144,145,146,147,148,149,150],[5.1,4.9,4.7,4.6,5,5.4,4.6,5,4.4,4.9,5.4,4.8,4.8,4.3,5.8,5.7,5.4,5.1,5.7,5.1,5.4,5.1,4.6,5.1,4.8,5,5,5.2,5.2,4.7,4.8,5.4,5.2,5.5,4.9,5,5.5,4.9,4.4,5.1,5,4.5,4.4,5,5.1,4.8,5.1,4.6,5.3,5,7,6.4,6.9,5.5,6.5,5.7,6.3,4.9,6.6,5.2,5,5.9,6,6.1,5.6,6.7,5.6,5.8,6.2,5.6,5.9,6.1,6.3,6.1,6.4,6.6,6.8,6.7,6,5.7,5.5,5.5,5.8,6,5.4,6,6.7,6.3,5.6,5.5,5.5,6.1,5.8,5,5.6,5.7,5.7,6.2,5.1,5.7,6.3,5.8,7.1,6.3,6.5,7.6,4.9,7.3,6.7,7.2,6.5,6.4,6.8,5.7,5.8,6.4,6.5,7.7,7.7,6,6.9,5.6,7.7,6.3,6.7,7.2,6.2,6.1,6.4,7.2,7.4,7.9,6.4,6.3,6.1,7.7,6.3,6.4,6,6.9,6.7,6.9,5.8,6.8,6.7,6.7,6.3,6.5,6.2,5.9],[3.5,3,3.2,3.1,3.6,3.9,3.4,3.4,2.9,3.1,3.7,3.4,3,3,4,4.4,3.9,3.5,3.8,3.8,3.4,3.7,3.6,3.3,3.4,3,3.4,3.5,3.4,3.2,3.1,3.4,4.1,4.2,3.1,3.2,3.5,3.6,3,3.4,3.5,2.3,3.2,3.5,3.8,3,3.8,3.2,3.7,3.3,3.2,3.2,3.1,2.3,2.8,2.8,3.3,2.4,2.9,2.7,2,3,2.2,2.9,2.9,3.1,3,2.7,2.2,2.5,3.2,2.8,2.5,2.8,2.9,3,2.8,3,2.9,2.6,2.4,2.4,2.7,2.7,3,3.4,3.1,2.3,3,2.5,2.6,3,2.6,2.3,2.7,3,2.9,2.9,2.5,2.8,3.3,2.7,3,2.9,3,3,2.5,2.9,2.5,3.6,3.2,2.7,3,2.5,2.8,3.2,3,3.8,2.6,2.2,3.2,2.8,2.8,2.7,3.3,3.2,2.8,3,2.8,3,2.8,3.8,2.8,2.8,2.6,3,3.4,3.1,3,3.1,3.1,3.1,2.7,3.2,3.3,3,2.5,3,3.4,3],[1.4,1.4,1.3,1.5,1.4,1.7,1.4,1.5,1.4,1.5,1.5,1.6,1.4,1.1,1.2,1.5,1.3,1.4,1.7,1.5,1.7,1.5,1,1.7,1.9,1.6,1.6,1.5,1.4,1.6,1.6,1.5,1.5,1.4,1.5,1.2,1.3,1.4,1.3,1.5,1.3,1.3,1.3,1.6,1.9,1.4,1.6,1.4,1.5,1.4,4.7,4.5,4.9,4,4.6,4.5,4.7,3.3,4.6,3.9,3.5,4.2,4,4.7,3.6,4.4,4.5,4.1,4.5,3.9,4.8,4,4.9,4.7,4.3,4.4,4.8,5,4.5,3.5,3.8,3.7,3.9,5.1,4.5,4.5,4.7,4.4,4.1,4,4.4,4.6,4,3.3,4.2,4.2,4.2,4.3,3,4.1,6,5.1,5.9,5.6,5.8,6.6,4.5,6.3,5.8,6.1,5.1,5.3,5.5,5,5.1,5.3,5.5,6.7,6.9,5,5.7,4.9,6.7,4.9,5.7,6,4.8,4.9,5.6,5.8,6.1,6.4,5.6,5.1,5.6,6.1,5.6,5.5,4.8,5.4,5.6,5.1,5.1,5.9,5.7,5.2,5,5.2,5.4,5.1],[0.2,0.2,0.2,0.2,0.2,0.4,0.3,0.2,0.2,0.1,0.2,0.2,0.1,0.1,0.2,0.4,0.4,0.3,0.3,0.3,0.2,0.4,0.2,0.5,0.2,0.2,0.4,0.2,0.2,0.2,0.2,0.4,0.1,0.2,0.2,0.2,0.2,0.1,0.2,0.2,0.3,0.3,0.2,0.6,0.4,0.3,0.2,0.2,0.2,0.2,1.4,1.5,1.5,1.3,1.5,1.3,1.6,1,1.3,1.4,1,1.5,1,1.4,1.3,1.4,1.5,1,1.5,1.1,1.8,1.3,1.5,1.2,1.3,1.4,1.4,1.7,1.5,1,1.1,1,1.2,1.6,1.5,1.6,1.5,1.3,1.3,1.3,1.2,1.4,1.2,1,1.3,1.2,1.3,1.3,1.1,1.3,2.5,1.9,2.1,1.8,2.2,2.1,1.7,1.8,1.8,2.5,2,1.9,2.1,2,2.4,2.3,1.8,2.2,2.3,1.5,2.3,2,2,1.8,2.1,1.8,1.8,1.8,2.1,1.6,1.9,2,2.2,1.5,1.4,2.3,2.4,1.8,1.8,2.1,2.4,2.3,1.9,2.3,2.5,2.3,1.9,2,2.3,1.8],["setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>ID<\/th>\n      <th>Sepal.Length<\/th>\n      <th>Sepal.Width<\/th>\n      <th>Petal.Length<\/th>\n      <th>Petal.Width<\/th>\n      <th>Species<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[0,1,2,3,4]}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-ae09fef87b401d0f8fc4" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-ae09fef87b401d0f8fc4">{"x":{"filter":"none","caption":"<caption>Table 1: This is the famous iris dataset.<\/caption>","data":[[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,128,129,130,131,132,133,134,135,136,137,138,139,140,141,142,143,144,145,146,147,148,149,150],[5.1,4.9,4.7,4.6,5,5.4,4.6,5,4.4,4.9,5.4,4.8,4.8,4.3,5.8,5.7,5.4,5.1,5.7,5.1,5.4,5.1,4.6,5.1,4.8,5,5,5.2,5.2,4.7,4.8,5.4,5.2,5.5,4.9,5,5.5,4.9,4.4,5.1,5,4.5,4.4,5,5.1,4.8,5.1,4.6,5.3,5,7,6.4,6.9,5.5,6.5,5.7,6.3,4.9,6.6,5.2,5,5.9,6,6.1,5.6,6.7,5.6,5.8,6.2,5.6,5.9,6.1,6.3,6.1,6.4,6.6,6.8,6.7,6,5.7,5.5,5.5,5.8,6,5.4,6,6.7,6.3,5.6,5.5,5.5,6.1,5.8,5,5.6,5.7,5.7,6.2,5.1,5.7,6.3,5.8,7.1,6.3,6.5,7.6,4.9,7.3,6.7,7.2,6.5,6.4,6.8,5.7,5.8,6.4,6.5,7.7,7.7,6,6.9,5.6,7.7,6.3,6.7,7.2,6.2,6.1,6.4,7.2,7.4,7.9,6.4,6.3,6.1,7.7,6.3,6.4,6,6.9,6.7,6.9,5.8,6.8,6.7,6.7,6.3,6.5,6.2,5.9],[3.5,3,3.2,3.1,3.6,3.9,3.4,3.4,2.9,3.1,3.7,3.4,3,3,4,4.4,3.9,3.5,3.8,3.8,3.4,3.7,3.6,3.3,3.4,3,3.4,3.5,3.4,3.2,3.1,3.4,4.1,4.2,3.1,3.2,3.5,3.6,3,3.4,3.5,2.3,3.2,3.5,3.8,3,3.8,3.2,3.7,3.3,3.2,3.2,3.1,2.3,2.8,2.8,3.3,2.4,2.9,2.7,2,3,2.2,2.9,2.9,3.1,3,2.7,2.2,2.5,3.2,2.8,2.5,2.8,2.9,3,2.8,3,2.9,2.6,2.4,2.4,2.7,2.7,3,3.4,3.1,2.3,3,2.5,2.6,3,2.6,2.3,2.7,3,2.9,2.9,2.5,2.8,3.3,2.7,3,2.9,3,3,2.5,2.9,2.5,3.6,3.2,2.7,3,2.5,2.8,3.2,3,3.8,2.6,2.2,3.2,2.8,2.8,2.7,3.3,3.2,2.8,3,2.8,3,2.8,3.8,2.8,2.8,2.6,3,3.4,3.1,3,3.1,3.1,3.1,2.7,3.2,3.3,3,2.5,3,3.4,3],[1.4,1.4,1.3,1.5,1.4,1.7,1.4,1.5,1.4,1.5,1.5,1.6,1.4,1.1,1.2,1.5,1.3,1.4,1.7,1.5,1.7,1.5,1,1.7,1.9,1.6,1.6,1.5,1.4,1.6,1.6,1.5,1.5,1.4,1.5,1.2,1.3,1.4,1.3,1.5,1.3,1.3,1.3,1.6,1.9,1.4,1.6,1.4,1.5,1.4,4.7,4.5,4.9,4,4.6,4.5,4.7,3.3,4.6,3.9,3.5,4.2,4,4.7,3.6,4.4,4.5,4.1,4.5,3.9,4.8,4,4.9,4.7,4.3,4.4,4.8,5,4.5,3.5,3.8,3.7,3.9,5.1,4.5,4.5,4.7,4.4,4.1,4,4.4,4.6,4,3.3,4.2,4.2,4.2,4.3,3,4.1,6,5.1,5.9,5.6,5.8,6.6,4.5,6.3,5.8,6.1,5.1,5.3,5.5,5,5.1,5.3,5.5,6.7,6.9,5,5.7,4.9,6.7,4.9,5.7,6,4.8,4.9,5.6,5.8,6.1,6.4,5.6,5.1,5.6,6.1,5.6,5.5,4.8,5.4,5.6,5.1,5.1,5.9,5.7,5.2,5,5.2,5.4,5.1],[0.2,0.2,0.2,0.2,0.2,0.4,0.3,0.2,0.2,0.1,0.2,0.2,0.1,0.1,0.2,0.4,0.4,0.3,0.3,0.3,0.2,0.4,0.2,0.5,0.2,0.2,0.4,0.2,0.2,0.2,0.2,0.4,0.1,0.2,0.2,0.2,0.2,0.1,0.2,0.2,0.3,0.3,0.2,0.6,0.4,0.3,0.2,0.2,0.2,0.2,1.4,1.5,1.5,1.3,1.5,1.3,1.6,1,1.3,1.4,1,1.5,1,1.4,1.3,1.4,1.5,1,1.5,1.1,1.8,1.3,1.5,1.2,1.3,1.4,1.4,1.7,1.5,1,1.1,1,1.2,1.6,1.5,1.6,1.5,1.3,1.3,1.3,1.2,1.4,1.2,1,1.3,1.2,1.3,1.3,1.1,1.3,2.5,1.9,2.1,1.8,2.2,2.1,1.7,1.8,1.8,2.5,2,1.9,2.1,2,2.4,2.3,1.8,2.2,2.3,1.5,2.3,2,2,1.8,2.1,1.8,1.8,1.8,2.1,1.6,1.9,2,2.2,1.5,1.4,2.3,2.4,1.8,1.8,2.1,2.4,2.3,1.9,2.3,2.5,2.3,1.9,2,2.3,1.8],["setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>ID<\/th>\n      <th>Sepal.Length<\/th>\n      <th>Sepal.Width<\/th>\n      <th>Petal.Length<\/th>\n      <th>Petal.Width<\/th>\n      <th>Species<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[0,1,2,3,4]}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="variable-types" class="section level3">
 <h3><span class="header-section-number">3.3.2</span> Variable Types</h3>
@@ -475,7 +474,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
 <div id="statistic-vs.statistics" class="section level4">
 <h4><span class="header-section-number">3.3.3.1</span> Statistic vs. Statistics</h4>
-<p>The plural form of <strong><em>statistic</em></strong> is <strong><em>statistics</em></strong>. So the study of statistics (统计量) is statistics (统计学).</p>
+<p>The plural form of <strong><em>statistic</em></strong> is <strong><em>statistics</em></strong>. So the study of statistics is statistics.</p>
 <p>Why do we need any statistics? Because we need to summarize a load of data efficiently.</p>
 <ul>
 <li>In the context of statistics, a statistic is a summary of some aspect of a sample of data.</li>
@@ -518,9 +517,15 @@ samp3 =<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</sp
 <li><span class="math inline">\(E(X - \bar{X}) = E(X) - E(\bar{X}) = \bar{X} - \bar{X} = 0\)</span></li>
 </ol>
 <p>On average, if there is a data point at some distance away from the mean to the right, there is as if another data point of the same distance from the mean lying on the left. Image a seesaw, where data points are of the same weights but lying at different positions specified by their values. Mean is the balancing point.</p>
-<p><code>TODO</code>: add a graph here!</p>
+<div class="figure">
+<img src="images/intro_mean_balance.png" alt="mean_balance" />
+<p class="caption">mean_balance</p>
+</div>
 <p>Since mean is sensitive to outliers and median is not, logic dictates that</p>
-<p><code>TODO</code>: add a graph here!</p>
+<div class="figure">
+<img src="images/intro_mean_sensitive.png" alt="mean_sensitive" />
+<p class="caption">mean_sensitive</p>
+</div>
 <ol start="3" style="list-style-type: decimal">
 <li><p>Let <span class="math inline">\(E(X-c)^2 = Q1\)</span> where <span class="math inline">\(c\)</span> is a constant. Q1 will reach its smallest possible value when <span class="math inline">\(c\)</span> equals the mean. In other words, <strong><em>mean</em></strong> is the value that makes the average of the <strong><em>squared distances</em></strong> the smallest.</p></li>
 <li><p>Let <span class="math inline">\(E(|X-c|) = Q2\)</span> where <span class="math inline">\(c\)</span> is a constant. Q2 will reach its smallest possible value when <span class="math inline">\(c\)</span> equals the median In other words, <strong><em>median</em></strong> is the value that makes the average of the <strong><em>absolute distances</em></strong> the smallest.</p></li>
@@ -547,7 +552,10 @@ samp3 =<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</sp
 <li><strong>inner fences</strong> span between <strong><em>1.5</em></strong> times the IQR above the 3rd quartile and below the 1st quartile. Data points lying beyond the inner fences are regarded as <strong><em>potential outliers</em></strong>.</li>
 <li><strong>outer fences</strong> span between <strong><em>3.0</em></strong> times the IQR above the 3rd quartile and below the 1st quartile. Data points lying beyond the outer fences are regarded as <strong><em>practically outliers</em></strong>.</li>
 </ul>
-<p><code>TODO</code>: add a graph here!</p>
+<div class="figure">
+<img src="images/intro_IQR.png" alt="IQR" />
+<p class="caption">IQR</p>
+</div>
 </div>
 <div id="skewness-and-kurtosis" class="section level4">
 <h4><span class="header-section-number">3.3.3.6</span> Skewness and Kurtosis</h4>
@@ -615,7 +623,7 @@ samp3 =<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</sp
 <div id="effects-of-linear-transformations" class="section level4">
 <h4><span class="header-section-number">3.3.3.7</span> Effects of Linear Transformations</h4>
 <p>Given <strong>x</strong>, we have <strong>y = a + bx</strong>. How does this linear transformation affect measures on center, spread, and shape?</p>
-<p>Change of <strong><em>units of measurement</em></strong>, e.g., from Celsius (摄氏度) to Fahrenheit (华氏度), is a typical example of a linear transformation. Multipling a <strong>b</strong> greater than 1 incrases disperstion (i.e., spread), while multipling a <strong>b</strong> less than 1 decreases dispersion. Adding an <strong>a</strong> to <strong>bx</strong> shifts <strong>bx</strong> by <strong>a</strong> without changing the dispersion. As a result, we have:</p>
+<p>Change of <strong><em>units of measurement</em></strong>, e.g., from Celsius to Fahrenheit, is a typical example of a linear transformation. Multipling a <strong>b</strong> greater than 1 incrases disperstion (i.e., spread), while multipling a <strong>b</strong> less than 1 decreases dispersion. Adding an <strong>a</strong> to <strong>bx</strong> shifts <strong>bx</strong> by <strong>a</strong> without changing the dispersion. As a result, we have:</p>
 <ul>
 <li>Given the old mean <strong>m</strong>, the new mean changes to <strong>a + bm</strong>.</li>
 <li>Given the old standard deviation <strong>s</strong>, the new standard deviation changes to <strong>bs</strong>.</li>
@@ -659,14 +667,17 @@ data = rnorm(sample_size, mean=0, sd=1)</code></pre>
 <h4><span class="header-section-number">3.3.4.2</span> The 68-95-99.7 Rule</h4>
 <p>When <span class="math inline">\(\mu = 0\)</span> and <span class="math inline">\(\sigma = 1\)</span>, we get <strong><em>the standard normal distribution</em></strong>. We know <strong>everything</strong> about the standard normal distribution.</p>
 <p><code>NOTE</code>: There are an infinite number of normal distributions, each with a different <span class="math inline">\(\mu\)</span> and <span class="math inline">\(\sigma\)</span>. However, there is only one <strong>standard</strong> normal distribution, called <strong>the</strong> standard normal distribution.</p>
-<p><code>TODO</code>: add a graph here!</p>
+<div class="figure">
+<img src="images/intro_rule.png" alt="The 68-95-99.7 Rule" />
+<p class="caption">The 68-95-99.7 Rule</p>
+</div>
 </div>
 <div id="normal-quantile-plot" class="section level4">
 <h4><span class="header-section-number">3.3.4.3</span> Normal Quantile Plot</h4>
 <p>Normal Quantile Plot (aka <strong>QQ Plot</strong>) is used to visually inspect how much a given distribution deviates from a normal distribution by comparing it against the standard normal distribution.</p>
 <ol style="list-style-type: decimal">
 <li>Arrange the observed data values from smallest to largest. Record what percentile of the data each value occupies. For example, the smallest observation in a set of 20 is at the 5% point, the second smallest is at the 10% point, and so on.</li>
-<li>Do normal distribution calculations to find the z-scores corresponding to these same percentiles. For example, z = −1.645 is the 5% point of the standard normal distribution, and z = −1.282 is the 10% point.</li>
+<li>Do normal distribution calculations to find the z-scores corresponding to these same percentiles. For example, z = -1.645 is the 5% point of the standard normal distribution, and z = -1.282 is the 10% point.</li>
 <li>Plot each data point on the y axis against the corresponding z-score on the x axis. If the data distribution is close to any normal distribution, the plotted points will lie close to a straight line.</li>
 </ol>
 
