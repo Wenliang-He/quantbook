@@ -1,5 +1,5 @@
 
-# Fundamentals of Statistics
+# The Fundamentals of Statistics
 
 ```{r setup, include=FALSE}
 library(DiagrammeR)
@@ -146,9 +146,7 @@ DT::datatable(data.frame(ID=1:nrow(iris), iris),
 
 ### Variable Types
 
-Three major data types:
-
-> **_nominal_** variable < **_ordinal_** variable < **_interval_** variable
+Three major data types: **_nominal_** variable < **_ordinal_** variable < **_interval_** variable
 
 | Variable Type | Type | Treatment | Examples |
 |:---|:---|:---|:---|
@@ -157,7 +155,7 @@ Three major data types:
 | ordinal | categorical | nominal or continuous|education level |
 | interval | continuous | continuous | temperature in Celsius |
 | ratio | continuous | continuous | temperature in Kelvin |
-| | | | |
+
 
 - For categorical variables, i.e., nominal and ordinal variables, each unique value is called a **_level_**.
 - **dummy** variable: A dummy variable, a.k.a. **_dichotomous_** or **_indicator_** variable, is a special kind of normal variable with only two levels, e.g., gender (male vs. female).
@@ -188,7 +186,6 @@ Three major data types:
 <!-- | | skewedness | | -->
 <!-- | | kurtosis | | -->
 <!-- | | | | -->
-
 
 
 ```{r, echo=FALSE}
@@ -228,14 +225,15 @@ knitr::asis_output(htmltools::htmlPreserve("
 
 #### Statistic vs. Statistics
 
+- In the context of statistics, a statistic is a summary of some aspect of a sample of data. 
+- In daily usage, a statistic is an event or person regarded as no more than a piece of data. 
+
 The plural form of **_statistic_** is **_statistics_**. So the study of statistics (统计量) is statistics (统计学).
 
 Why do we need any statistics? Because we need to summarize a load of data efficiently. 
 
-- In the context of statistics, a statistic is a summary of some aspect of a sample of data. 
-- In daily usage, a statistic is an event or person regarded as no more than a piece of data. 
 
-#### Mean vs. Median
+#### Center: Mean vs. Median
 
 $$ m = \frac{1}{n} \sum_{i=1}^n x_i$$
 By convention, we usually use $m$ to represent sample mean. Don't mind the word _sample_ for now; focus on the word _mean_.
@@ -265,7 +263,7 @@ c(median(samp1), median(samp2), median(samp3))
     - has nice mathematical properties of a different kind
 
 
-#### Variance & Standard Deviations
+#### Spread: Variance & Standard Deviations
 
 If the average of $x_i$ is the mean, then what is the aveage of $(x_i-m)$ and $(x_i-m)^2$?
 
@@ -289,7 +287,7 @@ Since mean is sensitive to outliers and median is not, logic dictates that
 > Questions: Is variance sensitive to outliers?
 
 
-#### Quartiles and Percentiles
+#### Spread: Quartiles and Percentiles
 
 Since a quarter is 1/4 or 25%, 
 
@@ -304,14 +302,14 @@ Since a quarter is 1/4 or 25%,
 `NOTE`: In R, `quantile()` is the command for getting percentiles. But why does R use the word **quantile** instead **percentile**? I would really hate to say that **percentile** and **quantile** mean exactly the same thing in HERE. However, they are two completely different concepts when used in the context of probability functions, which we will discuss below with normal distributions. That being said, **quantile** is a more apt term in that context, and R are using the two terms consistently. But other sources, e.g. textbooks, might use them interchangably. As a result, you will have to rely on context to decide whether they mean the same thing or not. 
 
 
-#### Inner Fences, Outer Fences, and Outliers
+#### Spread: Inner Fences, Outer Fences, and Outliers
 
 - **inner fences** span between **_1.5_** times the IQR above the 3rd quartile and below the 1st quartile. Data points lying beyond the inner fences are regarded as **_potential outliers_**. 
 - **outer fences** span between **_3.0_** times the IQR above the 3rd quartile and below the 1st quartile. Data points lying beyond the outer fences are regarded as **_practically outliers_**. 
 
 `TODO`: add a graph here!
 
-#### Skewness and Kurtosis
+#### Shape: Skewness and Kurtosis
 
 - **_skewness_** is a statistic that measures the amount of imbalance away from symmetry. A positive number indicates right-skewness (aka skewed to the right) with a long tail on the right and a negative number indicates left-skewness (aka skewed to the left) with a long tail on the left. 
     - average of $z^3$
@@ -331,7 +329,6 @@ Since a quarter is 1/4 or 25%,
 | skewness < 0 | left-skewed | a long tail on the left |
 | excess kurtosis > 0 | | shoulder mass shits to the tails and/or centers |
 | excess kurtosis < 0 | | the opposite is true |
-| | | |
 
 
 > Question: What are the averages of z-score and z-score squared?
@@ -404,7 +401,7 @@ When $\mu = 0$ and $\sigma = 1$, we get **_the standard normal distribution_**. 
 Normal Quantile Plot (aka **QQ Plot**) is used to visually inspect how much a given distribution deviates from a normal distribution by comparing it against the standard normal distribution.	 	 	 		
 
 1. Arrange the observed data values from smallest to largest. Record what percentile of the data each value occupies. For example, the smallest observation in a set of 20 is at the 5% point, the second smallest is at the 10% point, and so on. 
-2. Do normal distribution calculations to find the z-scores corresponding to these same percentiles. For example, z = −1.645 is the 5% point of the standard normal distribution, and z = −1.282 is the 10% point. 
+2. Do normal distribution calculations to find the z-scores corresponding to these same percentiles. For example, z = -1.645 is the 5% point of the standard normal distribution, and z = -1.282 is the 10% point. 
 3. Plot each data point on the y axis against the corresponding z-score on the x axis. If the data distribution is close to any normal distribution, the plotted points will lie close to a straight line. 
 
 

@@ -32,8 +32,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-
-<link rel="next" href="a-brief-r-tutorial.html">
+<link rel="prev" href="statistical-inference.html">
+<link rel="next" href="linear-regression.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -228,27 +228,310 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Quantitative Research Methods for Education</h1>
-<h4 class="author"><em>Wenliang He</em></h4>
-<h4 class="date"><em>2018-07-30</em></h4>
+<div id="common-statistical-tests" class="section level1">
+<h1><span class="header-section-number">5</span> Common Statistical Tests</h1>
+<table>
+<thead>
+<tr class="header">
+<th><span class="math inline">\(_X \ ^Y\)</span></th>
+<th>dummy</th>
+<th>continuous</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>dummy</td>
+<td>(2) <strong>difference in proportions</strong> or <strong>odds ratio</strong></td>
+<td>(1) <strong>two-sample t-test</strong></td>
+</tr>
+<tr class="even">
+<td>categorical</td>
+<td>(3) <strong>chi-square test</strong></td>
+<td>(4) <strong>ANOVA</strong></td>
+</tr>
+<tr class="odd">
+<td>continuous</td>
+<td>(6) <strong>logistic regression</strong></td>
+<td>(5) <strong>linear regression</strong></td>
+</tr>
+</tbody>
+</table>
+<div id="dummy-x---continuous-y" class="section level2">
+<h2><span class="header-section-number">5.1</span> Dummy (X) - Continuous (Y)</h2>
+<p><strong>RCT</strong> or <strong>Randomized Controlled Trial</strong> is the prime example of an Experiment Design, where the independent variable X is a dummy variable.</p>
+<div id="two-sample-t-test" class="section level3">
+<h3><span class="header-section-number">5.1.1</span> Two-sample T-Test</h3>
+<p>Given two samples</p>
+<p><span class="math display">\[Y_{T_i} \sim \forall \left( \mu_T, \sigma_T^2 \right) 
+~~~~ and ~~~~
+Y_{C_j} \sim \forall \left( \mu_C, \sigma_C^2 \right) \]</span> where <span class="math inline">\(i = 1,2,3,...,n_T\)</span> and <span class="math inline">\(j = 1,2,3,...,n_C\)</span></p>
+<p>and</p>
+<p><span class="math display">\[\bar{Y}_T = \frac{1}{n_T} \sum Y_{T_i} 
+~~~~ and ~~~~
+\bar{Y}_C = \frac{1}{n_C} \sum Y_{C_i}\]</span></p>
+<p>The <strong>estimand</strong> and <strong>estimator</strong> that are of interest to us are as follows.</p>
+<ul>
+<li>estimand: <span class="math inline">\(\Delta = \mu_T - \mu_C\)</span></li>
+<li>estimator: <span class="math inline">\(\hat{\Delta} = \bar{Y}_T - \bar{Y}_C\)</span>.</li>
+</ul>
+<p>The estimand is a constant (because it’s a population parameter) and the estimator is a random variable. Hence, we are immediately interested in the properties of the estimator.</p>
+<blockquote>
+<p>Question: What are the properties of <span class="math inline">\(\hat{\Delta}\)</span>?</p>
+</blockquote>
+<p><strong>Answers</strong>:</p>
+<ul>
+<li><span class="math inline">\(E(\hat{\Delta}) = \mu_T - \mu_C\)</span></li>
+<li><span class="math inline">\(Var(\hat{\Delta}) = \frac{\sigma_T^2}{n_T} + \frac{\sigma_C^2}{n_C}\)</span></li>
+<li><span class="math inline">\(shape(\hat{\Delta}) = N\)</span></li>
+</ul>
+<p>or equivalently</p>
+<p><span class="math display">\[\hat{\Delta} \sim N \left( \mu_T - \mu_C, ~ \frac{\sigma_T^2}{n_T} + \frac{\sigma_C^2}{n_C} \right)\]</span></p>
+<p><code>Proof</code>:</p>
+<p>Considering the CLT, <span class="math display">\[\bar{Y}_{T} \sim N \left( \mu_T, ~ \frac{\sigma_T^2}{n_T} \right) 
+~~~~ and ~~~~
+\bar{Y}_{C} \sim N \left( \mu_C, ~ \frac{\sigma_C^2}{n_C} \right) \]</span></p>
+<p>we have the following</p>
+<p><span class="math display">\[E(\hat{\Delta}) = E(\bar{Y}_T - \bar{Y}_C) 
+= E(\bar{Y}_T) - E(\bar{Y}_C) = \mu_T - \mu_C = \Delta\]</span> and <span class="math display">\[Var(\hat{\Delta}) = Var(\bar{Y}_T - \bar{Y}_C) 
+= Var(\bar{Y}_T) + Var(\bar{Y}_C) 
+= \frac{\sigma_T^2}{n_T} + \frac{\sigma_C^2}{n_C}\]</span></p>
+<p>Note:</p>
+<p><span class="math display">\[Var(X+Y) = Var(X) + 2Cov(X,Y) + Var(Y)\]</span></p>
+<p><span class="math display">\[Var(X-Y) = Var(X) - 2Cov(X,Y) + Var(Y)\]</span> When X and Y are independent, i.e., <span class="math inline">\(X \perp Y\)</span>, we have <span class="math inline">\(Cov(X,Y)=0\)</span> and hence</p>
+<p><span class="math display">\[Var(X \pm Y) = Var(X) + Var(Y)\]</span></p>
+<p>Now, given what we know about the properties of <span class="math inline">\(\hat{\Delta}\)</span> and the CLT, we have</p>
+<p><span class="math display">\[z = \frac{ \hat{\Delta} - \Delta }{ \text{se}(\Delta) } 
+= \frac{ (\bar{Y}_T - \bar{Y}_C) - (\mu_T - \mu_C) }{ \sqrt{ \frac{\sigma_T^2}{n_T} + \frac{\sigma_C^2}{n_C} } }\]</span></p>
+<p>At this point, <span class="math inline">\(\sigma_T\)</span> and <span class="math inline">\(\sigma_C\)</span> are unknown to us. As a result, we need to use sample variances to replace population variances and the z-statistic would thus become a t-statistic.</p>
+<p><span class="math display">\[t = \frac{ (\bar{Y}_T - \bar{Y}_C) - (\mu_T - \mu_C) }{ \sqrt{ \frac{s_T^2}{n_T} + \frac{s_C^2}{n_C} } }\]</span> with <span class="math inline">\(\text{df} = \text{df}_T + \text{df}_C = (n_T-1) + (n_C-1)\)</span></p>
+<p>To conduct hypothesis test, we have</p>
+<ol style="list-style-type: decimal">
+<li>propose the hypothesis</li>
+</ol>
+<p><span class="math inline">\(H_0: \Delta = \mu_T - \mu_C = 0\)</span>, where <span class="math inline">\(H_0\)</span> is called the <strong>null hypothesis</strong></p>
+<p><span class="math inline">\(H_a: \Delta = \mu_T - \mu_C \ne 0\)</span>, where <span class="math inline">\(H_a\)</span> is called the <strong>alternative hypothesis</strong></p>
+<ol start="2" style="list-style-type: decimal">
+<li>compute a probability under the hypothesis</li>
+</ol>
+<p><span class="math display">\[t = \frac{ \bar{Y}_T - \bar{Y}_C }{ \sqrt{ \frac{s_p^2}{n_T} + \frac{s_p^2}{n_C} } }\]</span></p>
+<p>Under the null hypothesis that the two samples are from the same population, it is natural for us to combine the two sample varinances.</p>
+<p><span class="math display">\[s_p^2 = \frac{\text{df}_C}{\text{df}_C+\text{df}_T} s_C^2 + 
+\frac{\text{df}_T}{\text{df}_C+\text{df}_T} s_T^2 
+= \frac{(n_C-1)}{(n_C-1) + (n_T-1)}s_C^2 + 
+\frac{(n_T-1)}{(n_C-1) + (n_T-1)}s_T^2\]</span></p>
+<p>We can then compute the p-value using the following R code.</p>
+<pre><code>p_value = 2 * ( 1 - pt(t, df=(nt-1)+(nc-1)) )</code></pre>
+<ol start="3" style="list-style-type: decimal">
+<li>make a decision</li>
+</ol>
+<p>Make a decison based on pre-determined confidence level, i.e. <span class="math inline">\(1 - \alpha\)</span>, where <span class="math inline">\(\alpha=0.05\)</span> by default.</p>
 </div>
-<div id="introduction" class="section level1">
-<h1><span class="header-section-number">1</span> Introduction</h1>
-<p>Let’s test it a little bit!</p>
-<div id="intro-to-rmarkdown" class="section level2">
-<h2><span class="header-section-number">1.1</span> Intro to Rmarkdown</h2>
-<p>Add some text and see what happens.</p>
+<div id="statistical-power" class="section level3">
+<h3><span class="header-section-number">5.1.2</span> Statistical Power</h3>
+<p><code>TODO</code>: add a graph in the beginning of page 3 in notes_20180504.pdf</p>
+<ul>
+<li>type I error rate <span class="math inline">\(\alpha\)</span></li>
+<li>specificity <span class="math inline">\(1-\alpha\)</span></li>
+<li>type II error rate <span class="math inline">\(\beta\)</span></li>
+<li>sensitivity or power <span class="math inline">\(1-\beta\)</span></li>
+</ul>
+<p>Note: CV stands for critical value.</p>
+<p><span class="math display">\[z_{(1-\frac{\alpha}{2})} = \frac{\text{CV}-0}{\text{se}} 
+~~~~ \rightarrow ~~~~
+\text{CV} = z_{(1-\frac{\alpha}{2})} \cdot \text{se}\]</span> where <span class="math inline">\(\alpha=0.05\)</span> by default and hence <span class="math inline">\(z_{(1-\alpha/2)} = 1.96\)</span>.</p>
+<p><span class="math display">\[z_\beta = \frac{\text{CV} - \Delta}{\text{se}}
+~~~~ \rightarrow ~~~~
+\text{CV} = \Delta + z_\beta \cdot \text{se}\]</span> where <span class="math inline">\(\beta=0.80\)</span> by default and hence <span class="math inline">\(z_\beta = -0.84\)</span>.</p>
+<p>Through equating <span class="math inline">\(\text{CV}\)</span>, we have</p>
+<p><span class="math display">\[z_{(1-\frac{\alpha}{2})} \cdot \text{se} = \Delta + z_\beta \cdot \text{se}\]</span> and hence</p>
+<p><span class="math display">\[(z_{(1-\frac{\alpha}{2})} - z_\beta) \cdot \text{se} = \Delta 
+~~~~ \rightarrow ~~~~~
+\text{se} = \frac{\Delta}{z_{(1-\frac{\alpha}{2})} - z_\beta}\]</span></p>
+<p>Moreover, let’s assume that treatment and control groups have the same sample size <span class="math inline">\(n\)</span> and hence the pooled variance is</p>
+<p><span class="math display">\[\text{se}^2 = \frac{s_T^2}{n_T} + \frac{s_C^2}{n_C} = \frac{2s_p^2}{n}\]</span></p>
+<p><span class="math display">\[\text{se}^2 = \left( \frac{\Delta}{z_{(1-\frac{\alpha}{2})} - z_\beta} \right)^2 = \frac{2s_p^2}{n}\]</span> and hence <span class="math display">\[n = \frac{2 s_p^2 ( z_{(1-\frac{\alpha}{2})} - z_\beta )^2}{\Delta^2}
+= \frac{2 \cdot 7.84 \cdot s_p^2}{\Delta^2} \approx \frac{16s_p^2}{\Delta^2} 
+= \left( \frac{4s_p}{\Delta} \right)^2\]</span> where <span class="math inline">\(( z_{(1-\frac{\alpha}{2})} - z_\beta )^2 = (1.96 + 0.84)^2 = 7.84\)</span>.</p>
+<p>Given the formula above, we can answer the following questions.</p>
+<blockquote>
+<p>Question: What factors can result in smaller sample sizes?</p>
+</blockquote>
+<p><strong>Answers</strong>:</p>
+<ul>
+<li>larger <span class="math inline">\(\alpha\)</span></li>
+<li>larger <span class="math inline">\(\beta\)</span></li>
+<li>smaller <span class="math inline">\(s_p^2\)</span></li>
+<li>larger <span class="math inline">\(\Delta\)</span></li>
+</ul>
+<p>By rearranging the formula above, we have</p>
+<p><span class="math display">\[z_\beta = z_{(1-\frac{\alpha}{2})} - \sqrt{ \frac{n\Delta^2}{2s_p^2} }\]</span></p>
+<blockquote>
+<p>Question: What factors would result in larger power?</p>
+</blockquote>
+<p><strong>Answers</strong>:</p>
+<ul>
+<li>larger <span class="math inline">\(n\)</span></li>
+<li>smaller <span class="math inline">\(s_p^2\)</span></li>
+<li>larger <span class="math inline">\(\alpha\)</span></li>
+<li>larger <span class="math inline">\(\Delta\)</span></li>
+</ul>
+<p>Tip: To answer this question, think about the graph not the formula.</p>
 </div>
-<div id="intro-to-bookdown" class="section level2">
-<h2><span class="header-section-number">1.2</span> Intro to Bookdown</h2>
 </div>
-<div id="resources-to-rmarkdown" class="section level2">
-<h2><span class="header-section-number">1.3</span> Resources to Rmarkdown</h2>
+<div id="dummy-x---dummy-y" class="section level2">
+<h2><span class="header-section-number">5.2</span> Dummy (X) - Dummy (Y)</h2>
+<div id="basics" class="section level3">
+<h3><span class="header-section-number">5.2.1</span> Basics</h3>
+<div id="bernoulli-distribution" class="section level4">
+<h4><span class="header-section-number">5.2.1.1</span> Bernoulli Distribution</h4>
+<p>A random variable Y following a Bernoullie distribution can be expressed as follows.</p>
+<p><span class="math display">\[Y \sim Bern(\pi)\]</span> where Y = 1 with probability <span class="math inline">\(\pi\)</span> and Y = 0 with probability <span class="math inline">\(1-\pi\)</span>.</p>
+<p>Based on the definitions of E(Y) and Var(Y), we have</p>
+<p><span class="math display">\[E(Y) = \sum Y \cdot P(Y) = 1 \cdot \pi + 0 \cdot (1-\pi) = \pi\]</span> and</p>
+<p><span class="math display">\[Var(Y) = E(Y - EY)^2 = \sum (Y - EY)^2 \cdot P(Y) 
+= (1-\pi)^2 \cdot \pi + (0-\pi)^2 \cdot (1-\pi)\]</span> <span class="math display">\[= (\pi^2 - 2\pi + 1)\pi + \pi^2 (1-\pi) = \pi - \pi^2 = \pi(1-\pi)\]</span></p>
+<p>Hence the properties of the random variable Y can be expressed as <span class="math display">\[Y \sim Bern(\pi, \pi(1-\pi))\]</span></p>
+<p>Given the CLT, we therefore have <span class="math display">\[\bar{Y} \sim N \left( \pi, \frac{\pi(1-\pi)}{n} \right)\]</span></p>
 </div>
-<div id="resources-to-bookdown" class="section level2">
-<h2><span class="header-section-number">1.4</span> Resources to Bookdown</h2>
+<div id="inference-with-one-variance" class="section level4">
+<h4><span class="header-section-number">5.2.1.2</span> Inference with One Variance</h4>
+<p><code>TODO</code>: Contents to be added!</p>
+</div>
+</div>
+<div id="difference-in-proportions" class="section level3">
+<h3><span class="header-section-number">5.2.2</span> Difference in Proportions</h3>
+<p>Similar to two sample t-test, we have</p>
+<p><span class="math display">\[\hat{\Delta} \sim N \left( \pi_T-\pi_C, ~ \sqrt{\frac{\pi_T(1-\pi_T)}{n_T} + \frac{\pi_T(1-\pi_C)}{n_C}} \right)\]</span></p>
+<ol style="list-style-type: decimal">
+<li>propose a hypothesis</li>
+</ol>
+<p>The two samples are from the same distribution, i.e.,</p>
+<p><span class="math inline">\(H_0: \Delta=\pi_T-\pi_C = 0\)</span></p>
+<p><span class="math inline">\(H_a: \Delta=\pi_T-\pi_C \ne 0\)</span></p>
+<ol start="2" style="list-style-type: decimal">
+<li>compute the probability under the hypothesis</li>
+</ol>
+<p>Since the two samples are from the same distribution, we can compute a pooled variance</p>
+<p><span class="math display">\[\pi_p = \frac{\sum Y_{T_i} + \sum Y_{C_i}}{n_T+n_C}\]</span> and hence</p>
+<p><span class="math display">\[z = \frac{\hat{\Delta}}{\text{se}(\hat{\Delta})} 
+= \frac{\hat{\Delta}}{\sqrt{\pi_p(1-\pi_p) (\frac{1}{n_T}+\frac{1}{n_C})}}\]</span></p>
+<p>To note, since no unknown <span class="math inline">\(\sigma\)</span> is involved, we can simply use the z-statistic instead of the t-statistic.</p>
+<ol start="3" style="list-style-type: decimal">
+<li>make a decision</li>
+</ol>
+</div>
+<div id="relative-risks" class="section level3">
+<h3><span class="header-section-number">5.2.3</span> Relative Risks</h3>
+<p><code>TODO</code>: Contents to be added from page 8 in notes_20180504.pdf</p>
+</div>
+<div id="odds-ratio" class="section level3">
+<h3><span class="header-section-number">5.2.4</span> Odds Ratio</h3>
+<p>The definition of odds is as follows.</p>
+<p><span class="math display">\[\text{odds} \overset{1^*}{=} \frac{p}{1-p} \overset{2^*}{=} \frac{\text{total # of success}}{\text{total # of failure}} \]</span></p>
+<ul>
+<li><span class="math inline">\(1^*\)</span>: Given <span class="math inline">\(p = 1/4\)</span>, we have odds = (1/4) / (3/4) = 1/3</li>
+<li><span class="math inline">\(2^*\)</span>: If odds of success is x, odds of failure is 1/x</li>
+<li><span class="math inline">\(2^*\)</span>: Given odds = 1/3, we have p = 1/3 / (1/3 + 1) = 1/4</li>
+</ul>
+<p><span class="math display">\[p = \frac{\text{odds}}{\text{odds}+1}\]</span></p>
+<p>Consider the <strong>contingency table</strong> below, where rows represent the independent variable X and columns represent the dependent variable Y.</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left"><span class="math inline">\(_X \ ^Y\)</span></th>
+<th align="left">0</th>
+<th align="left">1</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">0</td>
+<td align="left">a</td>
+<td align="left">b</td>
+</tr>
+<tr class="even">
+<td align="left">1</td>
+<td align="left">c</td>
+<td align="left">d</td>
+</tr>
+</tbody>
+</table>
+<p>Let <span class="math inline">\(p_C\)</span> represents the probability of Y=1 given X=0 and <span class="math inline">\(p_T\)</span> represents the probability of Y=1 given X=1. We would thus have</p>
+<p><span class="math display">\[p_C=\frac{b}{a+b} ~~~~ \rightarrow ~~~~ \text{odds}_C=\frac{p_C}{1-p_C}
+= \frac{a}{a+b} \cdot \frac{a+b}{b} = \frac{a}{b}\]</span> and</p>
+<p><span class="math display">\[p_T=\frac{d}{c+d} ~~~~ \rightarrow ~~~~ \text{odds}_T=\frac{p_T}{1-p_T}
+= \frac{d}{c+d} \cdot \frac{c+d}{c} = \frac{d}{c}\]</span></p>
+<p>Therefore, we have</p>
+<p><span class="math display">\[\hat{\theta} = \frac{\text{odds}_T}{\text{odds}_C} 
+= \frac{p_T}{1-p_T} \cdot \frac{1-p_C}{p_C} 
+= \frac{a}{b} \cdot \frac{d}{c} = \frac{ad}{bc}\]</span></p>
+<p>To note, for the contingency table above, if we treat rows as Y and columns as X and recompute the odds ratio <span class="math inline">\(\hat{\theta}\)</span>. We would end up getting exactly the same result. Compared to relative risks, odds ratio is superior in the aspect such that it can handle the case-control design.</p>
+<p>In order to conduct hypothesis testing, we now need to consider the standard error of the odds ratio. Similar to the case of relative risks, to simplify the derivation, we will consider the standard error of the <strong><em>log of odds ratio</em></strong> instead of <strong><em>odds ratio</em></strong>, i.e., <span class="math inline">\(\log(\hat{\theta})\)</span>.</p>
+<p>Under the null hypothesis that the two ratios are identical, we have <span class="math inline">\(\log(\hat{\theta}) = \log(1) = 0\)</span>. Given the CLT, we therefore have</p>
+<p><span class="math display">\[z = \frac{\log(\hat{\theta})}{\text{se}(\log(\hat{\theta}))}\]</span> where <span class="math inline">\(\hat{\theta}\)</span> is the empirical odds ratio computed from the two samples and</p>
+<p><span class="math display">\[\text{se}(\log(\hat{\theta})) = \sqrt{ \frac{1}{a} + \frac{1}{b} + \frac{1}{c} + \frac{1}{d} }\]</span></p>
+<p><code>Proof - Prerequisites</code>:</p>
+<p><span class="math display">\[Var(f(x)) = Var(X) \cdot (f&#39;(x))^2\]</span> where <span class="math inline">\(f&#39;(x)\)</span> is the first derivative of <span class="math inline">\(f(x)\)</span> with respect to x.</p>
+<p>In our case, for example,</p>
+<p><span class="math display">\[Var(\log(\text{odds})) = Var \left( \log(\frac{p}{1-p}) \right) 
+= Var(p) \cdot \left( \frac{1}{p(1-p)} \right)^2 
+= \frac{\pi(1-\pi)}{n} \cdot \frac{1}{(\pi(1-\pi))^2}\]</span> <span class="math display">\[= \frac{1}{n\pi(1-\pi)}\]</span> where <span class="math display">\[\left( \log(\frac{p}{1-p}) \right)&#39; = ( \log(p) - \log(1-p) )&#39;
+= \frac{1}{p} - \frac{-1}{1-p} = \frac{1}{p(1-p)}\]</span></p>
+<p><code>Proof</code>: <span class="math display">\[Var(\log(\hat{\theta})) = Var \left( \log(\frac{\text{odds}_T}{\text{odds}_C}) \right) 
+= Var(\log(\text{odds}_T) - \log(\text{odds}_C))\]</span> <span class="math display">\[= \frac{1}{n_Tp_T(1-p_T)} + \frac{1}{np_C(1-p_C)}
+= \frac{c+d}{cd} + \frac{a+b}{ab} 
+= \frac{1}{a} + \frac{1}{b} + \frac{1}{c} + \frac{1}{d}\]</span> where <span class="math display">\[p_T = \frac{d}{c+d} ~~~~ \rightarrow ~~~~ 
+n_Tp_T(1-p_T) = (c+d) \cdot \frac{d}{c+d} \cdot \frac{c}{c+d} = \frac{cd}{c+d}\]</span> and <span class="math display">\[p_C = \frac{a}{a+b} ~~~~ \rightarrow ~~~~ 
+n_Cp_C(1-p_C) = (a+b) \cdot \frac{b}{a+b} \cdot \frac{a}{a+b} = \frac{ab}{a+b}\]</span></p>
+</div>
+</div>
+<div id="categorical-x---dummy-y" class="section level2">
+<h2><span class="header-section-number">5.3</span> Categorical (X) - Dummy (Y)</h2>
+<p>Now that we can deal with a 2-by-2 contingency table. We need to generalize it to handle a n-by-n contngency table, where n is greater than 2.</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left"><span class="math inline">\(_X \ ^Y\)</span></th>
+<th align="left">0</th>
+<th align="left">1</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">1</td>
+<td align="left">a</td>
+<td align="left">b</td>
+</tr>
+<tr class="even">
+<td align="left">2</td>
+<td align="left">c</td>
+<td align="left">d</td>
+</tr>
+<tr class="odd">
+<td align="left">3</td>
+<td align="left">e</td>
+<td align="left">f</td>
+</tr>
+<tr class="even">
+<td align="left">4</td>
+<td align="left">g</td>
+<td align="left">h</td>
+</tr>
+</tbody>
+</table>
+<div id="chi-square-test" class="section level3">
+<h3><span class="header-section-number">5.3.1</span> Chi-square Test</h3>
+</div>
+<div id="g-square-test" class="section level3">
+<h3><span class="header-section-number">5.3.2</span> G-square Test</h3>
+</div>
+</div>
+<div id="categorical-x---continuous-y" class="section level2">
+<h2><span class="header-section-number">5.4</span> Categorical (X) - Continuous (Y)</h2>
+<div id="anova" class="section level3">
+<h3><span class="header-section-number">5.4.1</span> ANOVA</h3>
 
+</div>
 </div>
 </div>
             </section>
@@ -256,8 +539,8 @@
           </div>
         </div>
       </div>
-
-<a href="a-brief-r-tutorial.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="statistical-inference.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="linear-regression.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

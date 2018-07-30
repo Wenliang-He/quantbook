@@ -32,7 +32,7 @@ where $i = 1,2,\dots,n$ and the **prediction model** is
 $$ \hat{Y}_i = b_0 + b_1X_{1i} + b_2X_{2i} + \cdots + b_pX_{pi}  $$
 and $e_i$ is called the **residual** and 
 
-$$ e_i \overset{iid}{\text{~}} N(0,s^2)$$ 
+$$ e_i \overset{iid}{\sim} N(0,s^2)$$ 
 
 To note, $b_0, b_1, \dots, b_p$ and $s^2$ are parameters estimated from a given sample to approximate the unknown and constant population parameters $\beta_0, \beta_1, \dots, \beta_p$ and $\sigma$. 
 
