@@ -14,28 +14,32 @@ colorArea <- function(from, to, func, col="red", ...){
 
 ## Random Variable
 
+For data stored in tables, we have rows as **_cases_** and columns as **_variables_**, and a _variable_ (e.g., **Var2**) would look conceptually as follows. 
+
 || Var1 | Var2 | Var3 | Var4 | 
-|---|---|:---:|---|---|
+|:---:|---|:---:|---|---|
 |1| | $y_1$ | | | 
 |2| | $y_2$ | | | 
 |3| | $y_3$ | | | 
 |...| | $...$ | | | 
 |n| | $y_n$ | | | 
 
-What is a **_random variable_** or **_RV_**? We have rows as cases and columns as variales. How is a _variable_ as we know it connected with the idea of a _random varible_?
+While we know what a _variable_ is, but what is a **random variable** or **RV**? How does a _variable_ as we know it connect with the concept of a _random variable_?
 
+### Get a Sample of Data
 
 > 形而上者谓之道 - 在天成象 - 象（无形之概念、蓝图、计划）
-
+>
 > 形而下者谓之器 - 在地成形 - 现象（有形之物、器、案例）
+
+Let's get some data, i.e., $y_1, y_2, y_3, ..., y_n$, from the standard normal distribution $N(0,1)$ and store them as a variable in a table. 
 
 `TODO`: add the first graph with red and gold colors from notes_20180403
 
-
-Let's choose $Y_1, Y_2, Y_3, ..., Y_n$ from the standard normal distribution $N(0,1)$. 
+In summary,
 
 - before we see the value of $Y_i$
-    - $Y_i$ is a **random variable**, which is practically a probability distribution
+    - $Y_i$ is a **random variable**, which is a probability distribution
     - $Y_1, Y_2, Y_3, ..., Y_n$ is a **random sample**
     - a statistic (e.g., $\bar{Y} = 1/n \sum Y_i$) computed from a random sample is another _random variable_ called a **sampling statistic**
 - after we see the value of $Y_i$
@@ -43,11 +47,11 @@ Let's choose $Y_1, Y_2, Y_3, ..., Y_n$ from the standard normal distribution $N(
     - $y_1, y_2, y_3, ..., y_n$ is a **sample**
     - a statistic (e.g., $m=1/n \sum y_i$) computed from a sample is a _number_ called a **sample statistic**
 
-In this context, the word **random** means **unsettled**. The value of a _random_ variable will not be _settled_ unless it is actually sampled and observed, i.e., an actual data point is collected.  
+In this context, the word **_random_** means **_unsettled_**. The value of a _random_ variable will not be _settled_ unless it is actually sampled and observed, i.e., an actual data point is collected.  
 
 ### IID - Independently and Identically Distributed
 
-The phrase, let's choose $Y_1, Y_2, Y_3, ..., Y_n$ from the standard normal distribution $N(0,1)$, can be succinctly summarized as follows:
+The phrase, let's choose a random sample of $Y_1, Y_2, Y_3, ..., Y_n$ from the standard normal distribution $N(0,1)$, can be succinctly summarized as follows:
 
 $$Y_1, Y_2, Y_3, ..., Y_n \overset{iid}{\sim} N(0,1) $$
 where **iid** means **i**ndependently and **i**dentically **d**istributed.
@@ -73,41 +77,41 @@ classDef reds fill:red
 
 Let's image that we have 3 black (B) balls and 2 red (R) balls. 
 
-> If you would randomly choose a ball, what is the probability that it's black? 
+> **Question**: If you would randomly choose a ball, what is the probability that it's black? 
 
-**Answer**: $P(B_1) = 3/5$. 
+> **Answer**: $P(B_1) = 3/5$. 
 
-> Now if we indeed pick a black ball in our first try and we decide to choose a second ball. Given that we do not put the first ball back, what is the probability that the second one is also black?
+> **Question**: Now if we indeed pick a black ball in our first try and we decide to choose a second ball. Given that we do NOT put the first ball back, what is the probability that the second one is also black?
 
-**Answer**: $P(B_2) = 2/4$. 
+> **Answer**: $P(B_2) = 2/4$. 
 
-Hence, choosing two balls in this example violates the **identically distributed** assumption. 
+Hence, choosing two balls in this example violates the **_identically distributed_** assumption. 
 
-Two important ideas emerge in the _process of choosing_ (aka _sampling_) things. 
+Two important ideas emerge in the _process of choosing_ (aka **sampling**) things. 
 
-- In the previous sampling process, after each draw, if we do not put the balls back, this way of choosing things is called **_sampling without replacement_**. 
-- In contrast, if you do put the balls back after each draw, it is called **_sampling with replacement_**. 
+- In the previous sampling process, after each draw, if we do not put the balls back, this way of choosing things is called **sampling without replacement**. 
+- In contrast, if you do put the balls back after each draw, it is called **sampling with replacement**. 
 
-It is hence clear that the word _replacement_ in this context practically means _putting things back_ (or more precisely _finding a replacement_ for the one that is drawn). 
+It is hence clear that the word **_replacement_** in this context practically means **_putting things back_** (or more precisely **_finding a replacement_** for the one that is drawn). 
 
-In practice, we would rarely sample with relacement. However, if the pool is large enough, we can ignore the slight change in probability after each time one case is drawn. 
+In practice, we would rarely _sample with relacement_. However, if the pool is large enough, we can ignore the slight change in probability after each time one case is drawn. 
 
 #### Independently Distributed
 
-Now let's consider another case. Imagine that at the beginning of a semester, you as a student is trying to find a course to enroll. There are **N** courses in total and all courses are equally attractive (i.e., same probabiliy of being chosen by a student). You and your friend from the same dorm are discussing about the teachers and courses. Eventually, the two of you decide to enroll into the same course denoted as **C**. 
+Now let's consider another case. Imagine that at the beginning of a semester, you as a student is trying to find a course to enroll. There are **_N_** courses in total and all courses are equally attractive (i.e., same probabiliy of being chosen by any student). You and your friend from the same dorm are discussing about the teachers and courses. Eventually, the two of you decide to enroll into the same course denoted as **_C_**. 
 
-> What are the probabilities of you and your friend enrolling into course **C**?
+> **Question**: What are the probabilities of you and your friend enrolling into course **_C_**?
 
-**Answer**: $P(C_1) = 1/N$ and $P(C_2) = 1/N$. Since there are **N** courses in total and all are equally attractive, the probabilities of you and your friend enrolling into course **C** are the same. 
+> **Answer**: $P(C_1) = 1/N$ and $P(C_2) = 1/N$. Since there are **_N_** courses in total and all are equally attractive, the probabilities of you and your friend enrolling into course **_C_** are the same. 
 
-> Is the probability of you enrolling into the course independent of the probability of your friend enrolling into the same course?
+> **Question**: Is the probability of you enrolling into the course independent of the probability of your friend enrolling into the same course?
 
-**Answer**: obviously no! Because you and your friend are not making the course enrollment decisions separately, but with much discussion going around. 
+> **Answer**: obviously no! Because you and your friend are not making the course enrollment decisions separately; much discussion has been going around between you two. 
 
-Hence, choosing the same course in this example violates the **independently distributed** assumption, even though they are _identically distributed_. 
+Hence, choosing the same course in this example violates the **_independently distributed_** assumption, even though they are _identically distributed_. 
 
 
-### Random Variable vs. Case
+### Random Variables vs. Cases
 
 || Random Variable(s) | Case(s) |
 |---|---|---|
@@ -121,7 +125,7 @@ Hence, choosing the same course in this example violates the **independently dis
 
 ### Properties of a Random Variable
 
-Previously, we have $Y_1, Y_2, Y_3, ..., Y_n \overset{iid}{\sim} N(0,1)$ and $\bar{Y} = \frac{1}{n} \sum_{i=1}^{n} Y_i$, where both $Y_i$s and $\bar{Y}$ are random variables. In practice, we would encounter a variety of random variables. As a result, we would constantly ask the questions:
+Previously, we have $Y_1, Y_2, Y_3, ..., Y_n \overset{iid}{\sim} N(0,1)$ and $\bar{Y} = \frac{1}{n} \sum_{i=1}^{n} Y_i$, where $Y_i$'s and $\bar{Y}$ are all random variables. In practice, we would encounter a variety of random variables. As a result, we would constantly ask the questions:
 
 - What does a RV look like?
 - What is the distribution of a RV?
@@ -135,14 +139,14 @@ The first two questions are identical. The first one is using informal language 
 The properties of a RV can be succintly summarized as 
 
 $$Y \sim \forall(\mu, \sigma^2) $$
-where $\forall$ stands for **_any_**. Notice $\forall$ is just an inverted **A**. 
+where $\forall$ means **_any_** _shape_. Notice $\forall$ is just an inverted **A**. 
 
 
 ## Central Limit Theorem 
 
-**Central Limit Theorem** or **CLT** is the singularly most important theorem in statistics. CLT forms the foundation of **statistical inference**, a subject of perpetual interest in statistics. 
+**Central Limit Theorem** or **CLT** is the singularly most important theorem in statistics. CLT forms the foundation of **statistical inference**, a subject of central concern in statistics. 
 
-### Presenting Central Limit Theorem
+### Intro to Central Limit Theorem
 
 1. Given a random variable Y of **any shape** with mean $\mu$ and variance $\sigma^2$,
 
@@ -156,47 +160,51 @@ where each $Y_i$ is a random variable with $E(Y_i) = \mu$ and $Var(Y_i) = \sigma
 $$\bar{Y} = \frac{1}{n} \sum_{i=1}^{n} Y_i$$
 where $\bar{Y}$ becomes another random variable. 
 
-4. Hence, we would immediately ask the question: What are the properties of $\bar{Y}$?
+4. Hence, we would immediately ask the question: What are the properties of $\bar{Y}$? The answer to this question gives rise to the **_Central Limit Theorem_** (see part of the proof of the theorem below).
 
-The answer to this question gives birth to the singularly most important theorem in statistics, known as the **_Central Limit Theorem_** or **CLT**. See the proof of part of the theorem below.
+> **Question**: What are the properties of $\bar{Y}$?
 
-**Answers**:
-$$\bar{Y} \sim N \left( \mu, \frac{\sigma^2}{n} \right)$$
-or equivalently
-
-- $E(\bar{Y}) = \mu$
-- $Var(\bar{Y}) = \sigma^2 / n$
-- $shape(\bar{Y}) = N$
+> **Answers**:
+> $$\bar{Y} \sim N \left( \mu, \frac{\sigma^2}{n} \right)$$
+> or equivalently
+>
+> - $E(\bar{Y}) = \mu$
+> - $Var(\bar{Y}) = \sigma^2 / n$
+> - $shape(\bar{Y}) = N$
 
 The most surprising part of the CLT is the discovery that given a random variable $Y$ of **any** distribution, $\bar{Y}$ is **always** normally distributed as long as two conditions are satisfied:
 
-1. $Y_1, Y_2, Y_3, ..., Y_n ~ \overset{iid}{\sim} ~ \forall(\mu,\sigma^2)$
-2. sample size n is large enough
+1. $Y_1, Y_2, Y_3, ..., Y_n ~ \overset{iid}{\sim} ~ \forall(\mu,\sigma^2)$, i.e., the $iid$ assumption
+2. sample size $n$ is large enough
 
 
-`Proof - Prerequisites`:
-
-- $E(cX) = c E(X)$
+> **Proof**:
+> 
+> `Prerequisites`
+>
+- $E(cX) = cE(X)$
 - $E(X+Y) = E(X) + E(Y)$
-- $E(cX) = c^2E(X)$
-- $Var(X+Y) = Var(X) + Var(Y)$ if $X \perp Y$, i.e., X is independent of Y
-
-`Proof`:
+- $Var(cX) = c^2E(X)$
+- $Var(X+Y) = Var(X) + 2Cov(X,Y) + Var(Y) \overset{*}{=} Var(X) + Var(Y)$ </br> where $\overset{*}{=}$ holds if $X \perp Y$, i.e., X is independent of Y.
+>
+> `Proof`
 $$E(\bar{Y}) = E( \frac{1}{n} \sum_{i=1}^{n} Y_i ) = \frac{1}{n} E( \sum_{i=1}^{n} Y_i ) 
 = \frac{1}{n} \sum_{i=1}^{n} E(Y_i) =  \frac{1}{n} \sum_{i=1}^{n} \mu 
 = \frac{1}{n} n\mu = \mu$$
-
-and
-
+>
+> and
+>
 $$Var(\bar{Y}) = Var( \frac{1}{n} \sum_{i=1}^{n} Y_i ) 
 = \frac{1}{n^2} Var( \sum_{i=1}^{n} Y_i ) 
 = \frac{1}{n^2} \sum_{i=1}^{n} Var(Y_i) =  \frac{1}{n^2} \sum_{i=1}^{n} \sigma^2 
 = \frac{1}{n^2} n\sigma^2 = \frac{\sigma^2}{n}$$
+>
+>
 
 Note that the proof of $E(\bar{Y}) = \mu$ and $Var(\bar{Y}) = \sigma^2 / n$ are very straitforward. However, showing that the $shape(\bar{Y}) = N$ is much more difficult and is beyond the scope of this book. The third point is in fact the most important contribution of the Central Limit Theorem.
 
 
-### Understanding Central Limit Theorem
+### More on Central Limit Theorem
 
 ```{r, echo=FALSE}
 mermaid("
@@ -227,11 +235,14 @@ To sum up,
 #### Inference 
 Given a sample of cases, inference is the process of estimating properties of the original random variable. The first and foremost question to ask is 
 
-> How to estimate the population mean $\mu$?
+> **Question**: How to estimate the population mean $\mu$?
 
-An intuitive reaction is to consider using sample mean $\bar{y}$ to estimate population mean $\mu$. Since each time we collect a sample, the sample mean will change. It is thus natural to consider the sampling distribution of sample mean and the answer is readily given by the CLT. 
+> **Answer**: An intuitive reaction is to think how about using sample mean $\bar{y}$ to estimate population mean $\mu$. 
+
+Since each time we collect a sample, the sample mean will change. It is thus natural to consider the sampling distribution of the sample mean and the answer is readily given by the CLT. 
 
 $$\bar{Y} \sim N \left( \mu, \frac{\sigma^2}{n} \right)$$
+
 
 `TODO`: add graph by the end of 2nd page in notes_20180410. 
 
@@ -240,52 +251,52 @@ $$\bar{Y} \sim N \left( \mu, \frac{\sigma^2}{n} \right)$$
 Another way to present CLT is
 
 $$\sum Y_i = n\bar{Y} \sim N( n\mu, n \sigma^2 )$$
-which suggests that **any random disturbances added together** would give rise to **a normal distribution**. 
+which suggests that **_any random disturbances added together_** would give rise to **_a normal distribution_**. 
 
 
 Given the CLT
 
 $$\bar{Y} \sim N \left( \mu, \frac{\sigma^2}{n} \right)$$
 
-we know that $\bar{Y}$ is called the **sample mean**; $N$ is a probability distribution; $\mu$ is a mean; $\sigma^2/n$ is a variance; and $\sqrt{\sigma^2/n}$ is the standard deviation. 
+we know that $\bar{Y}$ is called the **_sample mean_**; $N$ is a probability distribution; $\mu$ is a mean; $\sigma^2/n$ is a variance; and $\sqrt{\sigma^2/n}$ is a standard deviation. 
 
-Since the sampling process and inference are so important, we would invent some new terms.
+Since the sampling and inference are so important, we would invent some new terms.
 
-- $\bar{Y}$ is the _sample mean_ that is generally known as a **sample statistic**
-- $N$ is called a **sampling distribution**, or in this context, the sampling distribution of the sample mean
-- $\sqrt{\sigma^2/n}$ is called the **standard error** that is the standard deviation of the sampling distribution of the sample mean
-- `Definition`: **_sampling distribution_** is the _probability distribution_ of a sample statistic
-- `Definition`: **_standard error_** that is the _standard deviation_ of a sample statistic
+- $\bar{Y}$ is generally known as **sample statistic**, or in this context, the sample mean 
+- $N$ is generally known as **sampling distribution**, or in this context, the sampling distribution of the sample mean 
+- $\sqrt{\sigma^2/n}$ is generally known as **standard error**, or in this context, the standard deviation of the sampling distribution of the sample mean 
+- By definition, **sampling distribution** is the _probability distribution_ of a sample statistic 
+- By definition, **standard error** is the _standard deviation_ of a sampling distribution
 
 
-## Statistical Inference
+## Intro to Statistical Inference
 
-Statistical inference is a formal mathematical technique used to **infer whether a hypothesis is true based on existing evidence**, i.e., data that we have collected. 
+Statistical inference is a formal mathematical technique used to **_infer whether a hypothesis is true based on existing evidence_**, i.e., data that we have collected. 
 
 ### The Diamond Expert
 
 Imagine that you are an expert on diamonds. You have studied and seen so many diamonds for so long that you know everything about them. One day a close friend of yours called you and asked you to help him to inspect whether a newly acquired diamond is authentic or not. Let's pretend that evaluating a diamond would take quite some time and money to do so. Now that your friend comes to your place and gleefully reveals a surprisingly large diamond of 30 cm in diameter. Without doing any technical assessment formally, simply by your gut feeling
 
-> Do you think the diamond is authentic or not?
+> **Question**: Do you think the diamond is authentic or not?
 
-**Answer**: If you ask me, I would say the diamond is too big to be real. It's got to be a fake. 
+> **Answer**: If you ask me, I would say the diamond is too big to be real. It's got to be a fake. 
 
-Let's rationalize this gut feel using some mathematics. Since you are the diamond expert, you know that real diamonds would average 0.5 cm in diameter with a standard deviation of 0.3 cm. As a result, if the diamond is real (this is your hypothesis), 30 cm in diameter would  translate into a large z-score of about 98. In other words, the probability of seeing a real diamond as large as 30 cm would be infinitesimally small. At this point you need to make a choice between two possible scenarios: 
+Let's rationalize this gut feel using some mathematics. Since you are the diamond expert, you know that real diamonds would average 0.5 cm in diameter with a standard deviation of 0.3 cm. As a result, if the diamond is real (this is your hypothesis now), 30 cm in diameter would  translate into a large z-score of about 98. In other words, the probability of seeing a real diamond as large as 30 cm would be infinitesimally small. At this point you need to make a choice between two possible scenarios: 
 
 1. Your hypothesis holds (i.e., the diamond is real) and you are lucky enough to have seen an extremely rare event.
 2. You cannot be so lucky to see such a rare event. The hypothesis has got to be wrong (i.e., the diamond is fake).
 
-In our case, since the probability of seeing a gigantic diamond of 30 cm is so small, our gut feeling readily accepts scenario two. In an instant, the convoluted but precise mathematical rationale presented above would be encapsulated by our good intuition that **this diamond is too big to be real!**
+In our case, since the probability of seeing a gigantic diamond of 30 cm is so small, our gut feeling readily accepts scenario two. In an instant, the convoluted but precise mathematical rationale presented above would be encapsulated by our good intuition that **_this diamond is too big to be real!_**
 
 The gut feeling we have replied on is the essence of statistial inference, i.e., making a decision based on a probability computed under a proposed hypothesis. The process can be formalized as follows:
 
-1. State a hypothesis
+1. State the hypothesis (and the alternative hypothesis)
 2. Compute a probability under the hypotheis
-3. Make a decision based on pre-determined rule
+3. Make a decision based on collected data and pre-determined rule
 
 ### Hypothesis Testing
 
-With a specific normal distribution, there is always a small probability, no matter how small, that an extreme case is indeed coming from the normal distribution. As a result, we need to agree on certain pre-determined cutoffs beyond which extreme cases are flagged as highly unlikely, i.e., **too big to be true**. The cutoffs we use would correspond to the tail regions summing up to 5% probability, i.e., $\boldsymbol{\alpha=0.05}$, where $\alpha$ is formally referred to as the **Type I Error Rate** or **False Positive Rate**. 
+With a specific normal distribution, there is always a small probability, no matter how small, that an extreme case is indeed coming from the normal distribution. As a result, we need to agree on certain pre-determined cutoffs beyond which extreme cases are flagged as highly unlikely, i.e., **_too big to be true_**. The cutoffs we use would correspond to the tail regions summing up to 5% probability, i.e., $\boldsymbol{\alpha=0.05}$, where $\alpha$ is formally referred to as the **Type I Error Rate** or **False Positive Rate**. 
 
 #### Hypothesis Testing with $N(0,1)$
 
@@ -324,7 +335,7 @@ $$\bar{Y}_L = \mu + z_L \sqrt{\frac{\sigma^2}{n}} = \mu - 1.96 \sqrt{\frac{\sigm
 and
 $$\bar{Y}_U = \mu + z_U \sqrt{\frac{\sigma^2}{n}} = \mu + 1.96 \sqrt{\frac{\sigma^2}{n}}$$
 
-As a result, given a specific $\bar{y}$ computed from a settled sample, if $\bar{y} < \bar{Y}_L$ or $\bar{y} > \bar{Y}_U$, we would reject that hypothesis that $\bar{y}$ is coming from a distribution with mean $\mu$. We would therefore refer to $\bar{y} < \bar{Y}_L$ and $\bar{y} > \bar{Y}_U$ as the **rejection regions**. On the contrary, we will call $\bar{Y}_L \le \bar{y} \le \bar{Y}_U$ or $(\bar{Y}_L, \bar{Y}_U)$ the **acceptance regions**.  
+As a result, given a specific $\bar{y}$ computed from a settled sample, if $\bar{y} < \bar{Y}_L$ or $\bar{y} > \bar{Y}_U$, we would reject that hypothesis that $\bar{y}$ is coming from a distribution with mean $\mu$. We would therefore refer to $\bar{y} < \bar{Y}_L$ and $\bar{y} > \bar{Y}_U$ as the **rejection region**. On the contrary, we will call $\bar{Y}_L \le \bar{y} \le \bar{Y}_U$ or $(\bar{Y}_L, \bar{Y}_U)$ the **acceptance region**.  
 
 
 #### Confidence Interval with Known Variance
@@ -364,13 +375,13 @@ The resulting $[LB, UP]$ is called the **confidence interval** or **IC** at 95% 
 
 #### Margin of Error
 
-Previously, we have introduced $\sqrt{\sigma^2/n}$ as the **standard error** or $\mathbf{se}$. Now we would introduce a new concept called the **margin of error** or $\mathbf{me}$. 
+Previously, we have introduced $\sqrt{\sigma^2/n}$ as the **_standard error_** or **_se_**. Now we would introduce a new concept called the **margin of error** or **me**. 
 
-$$\text{me} = z_{(1-\frac{\alpha}{2})} \sqrt{\frac{\sigma^2}{n}} $$
+$$\mathbf{me} = z_{(1-\frac{\alpha}{2})} \sqrt{\frac{\sigma^2}{n}} $$
 where $z_{(1-\alpha/2)}$ is computed by `qnorm(1-alpha/2)` and `alpha` is the type I error rate $\alpha$. By default, $\alpha = 0.05$ and hence $z_{(1-\alpha/2)} = 1.96$. 
 
 
-Hence it should be clear that $\mu \pm \text{me}$ gives the **acceptance regions** and $\bar{y} \pm \text{me}$ gives the **confidence interval**. In other words, with $\mu$ in the center and reaching out to the left and right by $\text{me}$, we will have the acception regions. With $\bar{y}$ in the center and reaching out to the left and right by $\text{me}$, we will have the confidence interval. 
+Hence it should be clear that $\mu \pm \text{me}$ gives the **acceptance region** and $\bar{y} \pm \text{me}$ gives the **confidence interval**. In other words, with $\mu$ in the center and reaching out to the left and right by $\text{me}$, we will have the acception regions. With $\bar{y}$ in the center and reaching out to the left and right by $\text{me}$, we will have the confidence interval. 
 
 #### Further Notes
 
@@ -382,7 +393,7 @@ $$P \left[\bar{Y} - 1.96 \sqrt{\frac{\sigma^2}{n}} \le \mu \le \bar{Y} + 1.96 \s
 
 one should **NOT** interpret it as follows: The probability that the true population mean $\mu$ would fall between LB and UB is 95%. 
 
-The correct interpretation is: The numerous sets of confidence interval as generated by the current estimator $\bar{Y}$ will have a 95% chance of capturing the true population mean $\mu$. 
+The correct interpretation is: The numerous confidence intervals as generated by the current estimator $\bar{Y}$ will have a 95% chance of capturing the true population mean $\mu$. 
 
 To someone who is new to statistics, chances are that the more you would think about how the two claims are different, the more you will get confused. The differences are more cosmetic than practical. In fact, if you adopt a Bayesian view of statistics, the first claim would turn out to be true. However, frequentists would regard the first claim as categorically wrong, because it violates the valid form of a probability representation, i.e., $P(a \le X \le b) = p$. 
 
@@ -422,13 +433,13 @@ $$t = \frac{z}{\sqrt{\frac{\chi^2}{df}}}
 The result can be summary as follows. 
 $$t = \frac{\bar{Y} - \mu}{\sqrt{\frac{s^2}{n}}}$$
 
-To note, compared to the z-statistic, the t-statistic is also a pivotal quantity, where $t$ is of a known distribution and $s^2$ is the sample variance that can be easily computed. 
+To note, compared to the z-statistic (it's a pivotal quantity if $\sigma$ is known, which is almost never true), the t-statistic is a true pivotal quantity, where $t$ is of a known distribution and $s^2$ is the sample variance that can be easily computed. 
 
 #### Hypothesis Testing Revisited
 
-To account for the unknown variance $\sigma^2$, let's replace z-statistic with t-statistic and redo the previous derivations. We will have
+To account for the unknown variance $\sigma^2$, let's replace z-statistic with t-statistic and redo the previous derivations. Eventually, we will have
 
-- acceptance regions for hypothesis testing
+- acceptance region for hypothesis testing
 $$\mu \pm z_{(1-\frac{\alpha}{2})} \sqrt{\frac{\sigma^2}{n}} 
 ~~ \rightarrow ~~ 
 \mu \pm t_{(1-\frac{\alpha}{2})} \sqrt{\frac{s^2}{n}}$$
@@ -460,14 +471,17 @@ Strictly speaking, student rating is an ordinal variable. In practice, however, 
 
 Let's pretend we have collected data from a sample of 56 students. The average rating is 3.8 with a standard deviation of 1.2. The question is
 
-> Is the average student rating truly different from being neutral?
+> **Question**: Is the average student rating truly different from being neutral?
 
-```{r, echo=FALSE}
+> **Answer**:
+```{r}
 n = 56; m = 3.8; s = 1.2; mu=3.5
 q = qt(0.975, n-1)
 t = (m - mu) / (s/sqrt(n))
 p = round(2*(1-pt(t, df=n-1)), 3)
+p
 ```
+>
 
 Let's summarize and present some statistics.
 
@@ -506,6 +520,8 @@ rating2 = sample(1:6, size=56, replace=T, prob=c(1,1,2,2,3,3))
 ```{r, echo=FALSE}
 ans = t.test(rating2, rating1, paired=T)
 ```
+
+
 
 
  

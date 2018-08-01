@@ -129,15 +129,16 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul></li>
 <li class="chapter" data-level="4" data-path="statistical-inference.html"><a href="statistical-inference.html"><i class="fa fa-check"></i><b>4</b> Statistical Inference</a><ul>
 <li class="chapter" data-level="4.1" data-path="statistical-inference.html"><a href="statistical-inference.html#random-variable"><i class="fa fa-check"></i><b>4.1</b> Random Variable</a><ul>
-<li class="chapter" data-level="4.1.1" data-path="statistical-inference.html"><a href="statistical-inference.html#iid---independently-and-identically-distributed"><i class="fa fa-check"></i><b>4.1.1</b> IID - Independently and Identically Distributed</a></li>
-<li class="chapter" data-level="4.1.2" data-path="statistical-inference.html"><a href="statistical-inference.html#random-variable-vs.case"><i class="fa fa-check"></i><b>4.1.2</b> Random Variable vs. Case</a></li>
-<li class="chapter" data-level="4.1.3" data-path="statistical-inference.html"><a href="statistical-inference.html#properties-of-a-random-variable"><i class="fa fa-check"></i><b>4.1.3</b> Properties of a Random Variable</a></li>
+<li class="chapter" data-level="4.1.1" data-path="statistical-inference.html"><a href="statistical-inference.html#get-a-sample-of-data"><i class="fa fa-check"></i><b>4.1.1</b> Get a Sample of Data</a></li>
+<li class="chapter" data-level="4.1.2" data-path="statistical-inference.html"><a href="statistical-inference.html#iid---independently-and-identically-distributed"><i class="fa fa-check"></i><b>4.1.2</b> IID - Independently and Identically Distributed</a></li>
+<li class="chapter" data-level="4.1.3" data-path="statistical-inference.html"><a href="statistical-inference.html#random-variables-vs.cases"><i class="fa fa-check"></i><b>4.1.3</b> Random Variables vs. Cases</a></li>
+<li class="chapter" data-level="4.1.4" data-path="statistical-inference.html"><a href="statistical-inference.html#properties-of-a-random-variable"><i class="fa fa-check"></i><b>4.1.4</b> Properties of a Random Variable</a></li>
 </ul></li>
 <li class="chapter" data-level="4.2" data-path="statistical-inference.html"><a href="statistical-inference.html#central-limit-theorem"><i class="fa fa-check"></i><b>4.2</b> Central Limit Theorem</a><ul>
-<li class="chapter" data-level="4.2.1" data-path="statistical-inference.html"><a href="statistical-inference.html#presenting-central-limit-theorem"><i class="fa fa-check"></i><b>4.2.1</b> Presenting Central Limit Theorem</a></li>
-<li class="chapter" data-level="4.2.2" data-path="statistical-inference.html"><a href="statistical-inference.html#understanding-central-limit-theorem"><i class="fa fa-check"></i><b>4.2.2</b> Understanding Central Limit Theorem</a></li>
+<li class="chapter" data-level="4.2.1" data-path="statistical-inference.html"><a href="statistical-inference.html#intro-to-central-limit-theorem"><i class="fa fa-check"></i><b>4.2.1</b> Intro to Central Limit Theorem</a></li>
+<li class="chapter" data-level="4.2.2" data-path="statistical-inference.html"><a href="statistical-inference.html#more-on-central-limit-theorem"><i class="fa fa-check"></i><b>4.2.2</b> More on Central Limit Theorem</a></li>
 </ul></li>
-<li class="chapter" data-level="4.3" data-path="statistical-inference.html"><a href="statistical-inference.html#statistical-inference-1"><i class="fa fa-check"></i><b>4.3</b> Statistical Inference</a><ul>
+<li class="chapter" data-level="4.3" data-path="statistical-inference.html"><a href="statistical-inference.html#intro-to-statistical-inference"><i class="fa fa-check"></i><b>4.3</b> Intro to Statistical Inference</a><ul>
 <li class="chapter" data-level="4.3.1" data-path="statistical-inference.html"><a href="statistical-inference.html#the-diamond-expert"><i class="fa fa-check"></i><b>4.3.1</b> The Diamond Expert</a></li>
 <li class="chapter" data-level="4.3.2" data-path="statistical-inference.html"><a href="statistical-inference.html#hypothesis-testing"><i class="fa fa-check"></i><b>4.3.2</b> Hypothesis Testing</a></li>
 <li class="chapter" data-level="4.3.3" data-path="statistical-inference.html"><a href="statistical-inference.html#hypothesis-testing-with-unknown-variance"><i class="fa fa-check"></i><b>4.3.3</b> Hypothesis Testing with Unknown Variance</a></li>
@@ -314,8 +315,9 @@ Y_{C_j} \sim \forall \left( \mu_C, \sigma_C^2 \right) \]</span> where <span clas
 </ul>
 <p>The estimand is a constant (because it’s a population parameter) and the estimator is a random variable. Hence, we are immediately interested in the properties of the estimator.</p>
 <blockquote>
-<p>Question: What are the properties of <span class="math inline">\(\hat{\Delta}\)</span>?</p>
+<p>Question: What are the properties of the estimator <span class="math inline">\(\hat{\Delta}\)</span>?</p>
 </blockquote>
+<blockquote>
 <p><strong>Answers</strong>:</p>
 <ul>
 <li><span class="math inline">\(E(\hat{\Delta}) = \mu_T - \mu_C\)</span></li>
@@ -324,7 +326,16 @@ Y_{C_j} \sim \forall \left( \mu_C, \sigma_C^2 \right) \]</span> where <span clas
 </ul>
 <p>or equivalently</p>
 <p><span class="math display">\[\hat{\Delta} \sim N \left( \mu_T - \mu_C, ~ \frac{\sigma_T^2}{n_T} + \frac{\sigma_C^2}{n_C} \right)\]</span></p>
-<p><code>Proof</code>:</p>
+</blockquote>
+<p>Proof of the properties of <span class="math inline">\(\hat{\Delta}\)</span> is as follows.</p>
+<blockquote>
+<p><strong>Proof</strong>:</p>
+<p><code>Prerequisites</code></p>
+<p><span class="math display">\[Var(X+Y) = Var(X) + 2Cov(X,Y) + Var(Y)\]</span></p>
+<p><span class="math display">\[Var(X-Y) = Var(X) - 2Cov(X,Y) + Var(Y)\]</span></p>
+<p>When X and Y are independent, i.e., <span class="math inline">\(X \perp Y\)</span>, we have <span class="math inline">\(Cov(X,Y)=0\)</span> and hence</p>
+<p><span class="math display">\[Var(X \pm Y) = Var(X) + Var(Y)\]</span></p>
+<p><code>Proof</code></p>
 <p>Considering the CLT, <span class="math display">\[\bar{Y}_{T} \sim N \left( \mu_T, ~ \frac{\sigma_T^2}{n_T} \right) 
 ~~~~ and ~~~~
 \bar{Y}_{C} \sim N \left( \mu_C, ~ \frac{\sigma_C^2}{n_C} \right) \]</span></p>
@@ -333,10 +344,7 @@ Y_{C_j} \sim \forall \left( \mu_C, \sigma_C^2 \right) \]</span> where <span clas
 = E(\bar{Y}_T) - E(\bar{Y}_C) = \mu_T - \mu_C = \Delta\]</span> and <span class="math display">\[Var(\hat{\Delta}) = Var(\bar{Y}_T - \bar{Y}_C) 
 = Var(\bar{Y}_T) + Var(\bar{Y}_C) 
 = \frac{\sigma_T^2}{n_T} + \frac{\sigma_C^2}{n_C}\]</span></p>
-<p>Note:</p>
-<p><span class="math display">\[Var(X+Y) = Var(X) + 2Cov(X,Y) + Var(Y)\]</span></p>
-<p><span class="math display">\[Var(X-Y) = Var(X) - 2Cov(X,Y) + Var(Y)\]</span> When X and Y are independent, i.e., <span class="math inline">\(X \perp Y\)</span>, we have <span class="math inline">\(Cov(X,Y)=0\)</span> and hence</p>
-<p><span class="math display">\[Var(X \pm Y) = Var(X) + Var(Y)\]</span></p>
+</blockquote>
 <p>Now, given what we know about the properties of <span class="math inline">\(\hat{\Delta}\)</span> and the CLT, we have</p>
 <p><span class="math display">\[z = \frac{ \hat{\Delta} - \Delta }{ \text{se}(\Delta) } 
 = \frac{ (\bar{Y}_T - \bar{Y}_C) - (\mu_T - \mu_C) }{ \sqrt{ \frac{\sigma_T^2}{n_T} + \frac{\sigma_C^2}{n_C} } }\]</span></p>
@@ -368,12 +376,24 @@ Y_{C_j} \sim \forall \left( \mu_C, \sigma_C^2 \right) \]</span> where <span clas
 <h3><span class="header-section-number">5.1.2</span> Statistical Power</h3>
 <p><code>TODO</code>: add a graph in the beginning of page 3 in notes_20180504.pdf</p>
 <ul>
-<li>type I error rate <span class="math inline">\(\alpha\)</span></li>
-<li>specificity <span class="math inline">\(1-\alpha\)</span></li>
-<li>type II error rate <span class="math inline">\(\beta\)</span></li>
-<li>sensitivity or power <span class="math inline">\(1-\beta\)</span></li>
+<li><strong>type I error rate</strong> <span class="math inline">\(\alpha\)</span></li>
+<li><strong>specificity</strong> <span class="math inline">\(1-\alpha\)</span></li>
+<li><strong>type II error rate</strong> <span class="math inline">\(\beta\)</span></li>
+<li><strong>sensitivity</strong> or <strong>power</strong> <span class="math inline">\(1-\beta\)</span></li>
 </ul>
 <p>Note: CV stands for critical value.</p>
+<blockquote>
+<p><strong>Question</strong>: Assuming that (a) the treatment and control groups have identical sample size <span class="math inline">\(n\)</span>, (b) <span class="math inline">\(\alpha = 0.05\)</span>, and (c) <span class="math inline">\(\beta = 0.80\)</span>, what is the smallest <span class="math inline">\(n\)</span> required to detect a true difference of size <span class="math inline">\(\Delta\)</span>?</p>
+</blockquote>
+<blockquote>
+<p><strong>Answer</strong>:</p>
+<p><span class="math display">\[n = \frac{2 s_p^2 ( z_{(1-\frac{\alpha}{2})} - z_\beta )^2}{\Delta^2}
+\approx \frac{16s_p^2}{\Delta^2}\]</span> where <span class="math display">\[s_p^2 = \frac{(n_C-1)}{(n_C-1) + (n_T-1)}s_C^2 + 
+\frac{(n_T-1)}{(n_C-1) + (n_T-1)}s_T^2\]</span></p>
+</blockquote>
+<p>The proof for the formula above is as follows.</p>
+<blockquote>
+<p><strong>Proof</strong>:</p>
 <p><span class="math display">\[z_{(1-\frac{\alpha}{2})} = \frac{\text{CV}-0}{\text{se}} 
 ~~~~ \rightarrow ~~~~
 \text{CV} = z_{(1-\frac{\alpha}{2})} \cdot \text{se}\]</span> where <span class="math inline">\(\alpha=0.05\)</span> by default and hence <span class="math inline">\(z_{(1-\alpha/2)} = 1.96\)</span>.</p>
@@ -385,15 +405,17 @@ Y_{C_j} \sim \forall \left( \mu_C, \sigma_C^2 \right) \]</span> where <span clas
 <p><span class="math display">\[(z_{(1-\frac{\alpha}{2})} - z_\beta) \cdot \text{se} = \Delta 
 ~~~~ \rightarrow ~~~~~
 \text{se} = \frac{\Delta}{z_{(1-\frac{\alpha}{2})} - z_\beta}\]</span></p>
-<p>Moreover, let’s assume that treatment and control groups have the same sample size <span class="math inline">\(n\)</span> and hence the pooled variance is</p>
+<p>Moreover, with the assumption that treatment and control groups have the same sample size <span class="math inline">\(n\)</span> and using the pooled variance, we have</p>
 <p><span class="math display">\[\text{se}^2 = \frac{s_T^2}{n_T} + \frac{s_C^2}{n_C} = \frac{2s_p^2}{n}\]</span></p>
 <p><span class="math display">\[\text{se}^2 = \left( \frac{\Delta}{z_{(1-\frac{\alpha}{2})} - z_\beta} \right)^2 = \frac{2s_p^2}{n}\]</span> and hence <span class="math display">\[n = \frac{2 s_p^2 ( z_{(1-\frac{\alpha}{2})} - z_\beta )^2}{\Delta^2}
 = \frac{2 \cdot 7.84 \cdot s_p^2}{\Delta^2} \approx \frac{16s_p^2}{\Delta^2} 
 = \left( \frac{4s_p}{\Delta} \right)^2\]</span> where <span class="math inline">\(( z_{(1-\frac{\alpha}{2})} - z_\beta )^2 = (1.96 + 0.84)^2 = 7.84\)</span>.</p>
+</blockquote>
 <p>Given the formula above, we can answer the following questions.</p>
 <blockquote>
-<p>Question: What factors can result in smaller sample sizes?</p>
+<p><strong>Question</strong>: What factors can result in a smaller sample size?</p>
 </blockquote>
+<blockquote>
 <p><strong>Answers</strong>:</p>
 <ul>
 <li>larger <span class="math inline">\(\alpha\)</span></li>
@@ -401,11 +423,13 @@ Y_{C_j} \sim \forall \left( \mu_C, \sigma_C^2 \right) \]</span> where <span clas
 <li>smaller <span class="math inline">\(s_p^2\)</span></li>
 <li>larger <span class="math inline">\(\Delta\)</span></li>
 </ul>
+</blockquote>
 <p>By rearranging the formula above, we have</p>
 <p><span class="math display">\[z_\beta = z_{(1-\frac{\alpha}{2})} - \sqrt{ \frac{n\Delta^2}{2s_p^2} }\]</span></p>
 <blockquote>
-<p>Question: What factors would result in larger power?</p>
+<p><strong>Question</strong>: What factors would result in larger statistical power?</p>
 </blockquote>
+<blockquote>
 <p><strong>Answers</strong>:</p>
 <ul>
 <li>larger <span class="math inline">\(n\)</span></li>
@@ -414,6 +438,7 @@ Y_{C_j} \sim \forall \left( \mu_C, \sigma_C^2 \right) \]</span> where <span clas
 <li>larger <span class="math inline">\(\Delta\)</span></li>
 </ul>
 <p>Tip: To answer this question, think about the graph not the formula.</p>
+</blockquote>
 </div>
 </div>
 <div id="dummy-x---dummy-y" class="section level2">
@@ -484,7 +509,7 @@ Y_{C_j} \sim \forall \left( \mu_C, \sigma_C^2 \right) \]</span> where <span clas
 <li>make a decision</li>
 </ol>
 <p>Make a decison based on pre-determined confidence level, i.e. <span class="math inline">\(1 - \alpha\)</span>, where <span class="math inline">\(\alpha=0.05\)</span> by default.</p>
-<p>One problem with <em>difference in proportions</em> is that it does not handle small proportions well. For example, is 0.05 a small or big difference? It would be considered small if it’s between 0.95 and 0.90; but would be a big difference if it’s between 0.10 and 0.15.</p>
+<p>One problem with <em>difference in proportions</em> is that it does not handle small proportions well. For example, is <span class="math inline">\(\hat{\Delta} = 0.05\)</span> a small or big difference? It would be considered small if it’s between 0.95 and 0.90; but would be a big difference if it’s between 0.10 and 0.15.</p>
 </div>
 <div id="relative-risks" class="section level3">
 <h3><span class="header-section-number">5.2.3</span> Relative Risks</h3>
@@ -499,17 +524,21 @@ Y_{C_j} \sim \forall \left( \mu_C, \sigma_C^2 \right) \]</span> where <span clas
 <p>Log-transformation can easily reduce products and quotients into sums. In our case, we have</p>
 <p><span class="math display">\[\log RR = \log p_T - \log p_C\]</span> and</p>
 <p><span class="math display">\[\text{se}(\log RR) = \sqrt{\frac{1-\pi_T}{n_T}+\frac{1-\pi_C}{n_C}}\]</span></p>
-<p><code>Proof - Prerequisites</code>:</p>
+<p>Proof of the formula above is as follows.</p>
+<blockquote>
+<p><strong>Proof</strong>:</p>
+<p><code>Prerequisites</code></p>
 <p><span class="math display">\[Var(f(x)) = Var(X) \cdot (f&#39;(x))^2\]</span> where <span class="math inline">\(f&#39;(x)\)</span> is the first derivative of <span class="math inline">\(f(x)\)</span> with respect to x.</p>
 <p>In our case, <span class="math display">\[Var(\log p) = Var(p) \left( \frac{1}{p} \right)^2 
 = \frac{p(1-p)}{np^2} = \frac{1-p}{np}\]</span></p>
-<p><code>Proof</code>:</p>
+<p><code>Proof</code></p>
 <p><span class="math display">\[Var(\log RR) = Var(\log p_T - \log p_C) = Var(\log p_T) + Var(\log p_C) = \frac{1-p_T}{n_Tp_T} + \frac{1-p_C}{n_Cp_C}\]</span></p>
+</blockquote>
 <p>Under the null hypothesis, i.e., <span class="math inline">\(\pi_T = \pi_C\)</span>, we have <span class="math inline">\(E(\log RR) = 0\)</span>, and hence</p>
 <p><span class="math display">\[z = \frac{\log p_T - \log p_C}{\sqrt{\frac{1-p_T}{n_T}+\frac{1-p_C}{n_C}}}\]</span></p>
 <p>For confidence interval, we have</p>
-<p><span class="math display">\[(L, U) = \log \frac{p_T}{p_C} \pm z_{(1-\frac{\alpha}{2})} \cdot \sqrt{\frac{1-p_T}{n_T}+\frac{1-p_C}{n_C}}\]</span></p>
-<p>To convert the confidence interval back to the original scale, we have <span class="math inline">\((e^L, e^U)\)</span>.</p>
+<p><span class="math display">\[[L, U] = \log \frac{p_T}{p_C} \pm z_{(1-\frac{\alpha}{2})} \cdot \sqrt{\frac{1-p_T}{n_T}+\frac{1-p_C}{n_C}}\]</span></p>
+<p>To convert the confidence interval back to the original scale, we have <span class="math inline">\([e^L, e^U]\)</span>.</p>
 <p>One problem with <em>relative risks</em> is that it is not appropriate for case-control design.</p>
 <table>
 <thead>
@@ -582,24 +611,31 @@ Y_{C_j} \sim \forall \left( \mu_C, \sigma_C^2 \right) \]</span> where <span clas
 <p><span class="math display">\[\hat{\theta} = \frac{\text{odds}_T}{\text{odds}_C} 
 = \frac{p_T}{1-p_T} \cdot \frac{1-p_C}{p_C} 
 = \frac{a}{b} \cdot \frac{d}{c} = \frac{ad}{bc}\]</span></p>
-<p>To note, for the contingency table above, if we treat rows as Y and columns as X and recompute the odds ratio <span class="math inline">\(\hat{\theta}\)</span>. We would end up getting exactly the same result. Compared to relative risks, odds ratio is superior in the aspect such that it can handle the case-control design.</p>
+<p>To note, for the contingency table above, if we treat rows as Y and columns as X and recompute the odds ratio <span class="math inline">\(\hat{\theta}\)</span>. We would end up getting exactly the same result. Compared to relative risks, odds ratio is superior in the aspect such that it can handle the case-control study.</p>
+<blockquote>
+<p><strong>Practice</strong>: Compute the odds ratio with the assumption of a case-control study.</p>
+</blockquote>
 <p>In order to conduct hypothesis testing, we now need to consider the standard error of the odds ratio. Similar to the case of relative risks, to simplify the derivation, we will consider the standard error of the <strong><em>log of odds ratio</em></strong> instead of <strong><em>odds ratio</em></strong>, i.e., <span class="math inline">\(\log(\hat{\theta})\)</span>.</p>
 <p>Under the null hypothesis that the two ratios are identical, we have <span class="math inline">\(\log(\hat{\theta}) = \log(1) = 0\)</span>. Given the CLT, we therefore have</p>
 <p><span class="math display">\[z = \frac{\log(\hat{\theta})}{\text{se}(\log(\hat{\theta}))}\]</span> where <span class="math inline">\(\hat{\theta}\)</span> is the empirical odds ratio computed from the two samples and</p>
 <p><span class="math display">\[\text{se}(\log(\hat{\theta})) = \sqrt{ \frac{1}{a} + \frac{1}{b} + \frac{1}{c} + \frac{1}{d} }\]</span></p>
-<p><code>Proof - Prerequisites</code>:</p>
+<p>The proof of the formula above is as follows.</p>
+<blockquote>
+<p><strong>Proof</strong>:</p>
+<p><code>Prerequisites</code></p>
 <p><span class="math display">\[Var(f(x)) = Var(X) \cdot (f&#39;(x))^2\]</span> where <span class="math inline">\(f&#39;(x)\)</span> is the first derivative of <span class="math inline">\(f(x)\)</span> with respect to x.</p>
 <p>In our case, for example,</p>
 <p><span class="math display">\[Var(\log(\text{odds})) = Var \left( \log(\frac{p}{1-p}) \right) 
 = Var(p) \cdot \left( \frac{1}{p(1-p)} \right)^2 
 = \frac{\pi(1-\pi)}{n} \cdot \frac{1}{(\pi(1-\pi))^2}\]</span> <span class="math display">\[= \frac{1}{n\pi(1-\pi)}\]</span> where <span class="math display">\[\left( \log(\frac{p}{1-p}) \right)&#39; = ( \log(p) - \log(1-p) )&#39;
 = \frac{1}{p} - \frac{-1}{1-p} = \frac{1}{p(1-p)}\]</span></p>
-<p><code>Proof</code>: <span class="math display">\[Var(\log(\hat{\theta})) = Var \left( \log(\frac{\text{odds}_T}{\text{odds}_C}) \right) 
+<p><code>Proof</code> <span class="math display">\[Var(\log(\hat{\theta})) = Var \left( \log(\frac{\text{odds}_T}{\text{odds}_C}) \right) 
 = Var(\log(\text{odds}_T) - \log(\text{odds}_C))\]</span> <span class="math display">\[= \frac{1}{n_Tp_T(1-p_T)} + \frac{1}{np_C(1-p_C)}
 = \frac{c+d}{cd} + \frac{a+b}{ab} 
 = \frac{1}{a} + \frac{1}{b} + \frac{1}{c} + \frac{1}{d}\]</span> where <span class="math display">\[p_T = \frac{d}{c+d} ~~~~ \rightarrow ~~~~ 
 n_Tp_T(1-p_T) = (c+d) \cdot \frac{d}{c+d} \cdot \frac{c}{c+d} = \frac{cd}{c+d}\]</span> and <span class="math display">\[p_C = \frac{a}{a+b} ~~~~ \rightarrow ~~~~ 
 n_Cp_C(1-p_C) = (a+b) \cdot \frac{b}{a+b} \cdot \frac{a}{a+b} = \frac{ab}{a+b}\]</span></p>
+</blockquote>
 </div>
 </div>
 <div id="categorical-x---dummy-y" class="section level2">
@@ -653,7 +689,9 @@ n_Cp_C(1-p_C) = (a+b) \cdot \frac{b}{a+b} \cdot \frac{a}{a+b} = \frac{ab}{a+b}\]
 <li><strong>joint probability</strong>: <span class="math inline">\(P(X,Y)\)</span></li>
 </ul>
 <p><span class="math display">\[P(X=0,Y=0) = \frac{a}{n}\]</span> <span class="math display">\[P(X=0,Y=1) = \frac{b}{n}\]</span> <span class="math display">\[P(X=1,Y=0) = \frac{c}{n}\]</span> <span class="math display">\[P(X=1,Y=1) = \frac{d}{n}\]</span></p>
-<p><code>Practice</code>: Given the table below, compute <span class="math inline">\(P(X=0,Y=1)\)</span>, <span class="math inline">\(P(X=0)\)</span>, <span class="math inline">\(P(Y=1)\)</span>.</p>
+<blockquote>
+<p><strong>Practice</strong>: Given the table below, compute <span class="math inline">\(P(X=0,Y=1)\)</span>, <span class="math inline">\(P(X=0)\)</span>, <span class="math inline">\(P(Y=1)\)</span>.</p>
+</blockquote>
 <table>
 <thead>
 <tr class="header">
@@ -709,7 +747,7 @@ n_Cp_C(1-p_C) = (a+b) \cdot \frac{b}{a+b} \cdot \frac{a}{a+b} = \frac{ab}{a+b}\]
 <li><span class="math inline">\(P(Y=1|X=0) = P(Y=1|X=1) = P(Y=1)\)</span></li>
 </ul></li>
 </ul>
-<p>These expressions are saying exactly the same thing; they differ only in the amount of details presented. To note, for the claim of independence to hold, <span class="math inline">\(P(Y|X=0) = P(Y|X=1) = P(Y)\)</span> must be true for <strong>each</strong> level of Y. In other words, all equations subsumed under the <strong>most detailed expression</strong> must hold so that the <strong>more detailed expression</strong> would hold.</p>
+<p>These expressions are saying exactly the same thing; they differ only in the amount of details presented. To note, for the claim of independence to hold, <span class="math inline">\(P(Y|X=0) = P(Y|X=1) = P(Y)\)</span> must be true for <strong>each</strong> level of Y. In other words, all equations subsumed under the <strong><em>most detailed expression</em></strong> must hold so that the <strong><em>more detailed expression</em></strong> would hold.</p>
 <p>Regardless which form of expression we use, <span class="math inline">\(P(Y|X) = P(Y)\)</span> clearly suggests</p>
 <ul>
 <li>the distribution of Y does not depend on X</li>
@@ -719,9 +757,15 @@ n_Cp_C(1-p_C) = (a+b) \cdot \frac{b}{a+b} \cdot \frac{a}{a+b} = \frac{ab}{a+b}\]
 </div>
 <div id="null-hypothesis-and-independence" class="section level4">
 <h4><span class="header-section-number">5.3.1.3</span> Null Hypothesis and Independence</h4>
-<p>In the 2-by-2 contingency table, the null hypothesis <span class="math inline">\(H_0: p_T = p_C\)</span> is equivalent to the claim that X and Y are independent.</p>
-<p><code>Proof</code>:</p>
-<p>By definition, we have <span class="math inline">\(p_C = P(Y=1|X=0)\)</span> and <span class="math inline">\(p_T = P(Y=1|X=1)\)</span>. Under the null hypothesis <span class="math inline">\(p_C = p_T\)</span>, we have <span class="math inline">\(P(Y=1|X=0) = P(Y=1|X=1)\)</span>, which implies</p>
+<p>In the 2-by-2 contingency table, the following two claims are equivalent.</p>
+<ul>
+<li>the null hypothesis <span class="math inline">\(H_0: p_T = p_C\)</span></li>
+<li>random variables X and Y are independent</li>
+</ul>
+<blockquote>
+<p><strong>Proof</strong>:</p>
+<p>By definition, we have <span class="math inline">\(p_C = P(Y=1|X=0)\)</span> and <span class="math inline">\(p_T = P(Y=1|X=1)\)</span>.</p>
+<p>Under the null hypothesis <span class="math inline">\(p_C = p_T\)</span>, we have <span class="math inline">\(P(Y=1|X=0) = P(Y=1|X=1)\)</span>, which implies</p>
 <ul>
 <li><span class="math inline">\(P(Y=1|X=0) = P(Y=1|X=1) = P(Y=1)\)</span></li>
 <li><span class="math inline">\(P(Y=0|X=0) = P(Y=0|X=1) = P(Y=0)\)</span></li>
@@ -730,6 +774,8 @@ n_Cp_C(1-p_C) = (a+b) \cdot \frac{b}{a+b} \cdot \frac{a}{a+b} = \frac{ab}{a+b}\]
 <ul>
 <li><span class="math inline">\(P(Y|X=0) = P(Y|X=1) = P(Y)\)</span></li>
 </ul>
+<p>which clearly shows that X and Y are independent.</p>
+</blockquote>
 </div>
 </div>
 <div id="chi-squared-test" class="section level3">
@@ -753,25 +799,32 @@ n_Cp_C(1-p_C) = (a+b) \cdot \frac{b}{a+b} \cdot \frac{a}{a+b} = \frac{ab}{a+b}\]
 </ul>
 <p>Given an I-by-J table, under the independence assumption, the expected cell count <span class="math inline">\(\hat{\mu}_{ij}\)</span> for the i-th row and j-th column is</p>
 <p><span class="math display">\[\hat{\mu}_{ij} = \frac{n_{i+}n_{+j}}{n}\]</span></p>
-<p><code>Proof</code>:</p>
+<blockquote>
+<p><strong>Proof</strong>:</p>
 <p>Under the independence assumption, we have <span class="math inline">\(p_{ij} = p_{i+}p_{+j}\)</span> and hence</p>
 <p><span class="math display">\[\frac{\hat{\mu}_{ij}}{n} = \frac{n_{i+}}{n} \cdot \frac{n_{+j}}{n} 
 ~~~~ \rightarrow ~~~~
 \hat{\mu}_{ij} = \frac{n_{i+}n_{+j}}{n}\]</span></p>
+</blockquote>
 </div>
 <div id="chi-squared-distribution" class="section level4">
 <h4><span class="header-section-number">5.3.2.3</span> Chi-squared Distribution</h4>
 <p>Regardless of its fancy name, chi-squared distribution with 1 degree of freedom is simply a z-score squared.</p>
 <p><span class="math display">\[z^2 \sim \chi_{df=1}^2\]</span> and <span class="math display">\[\sum_{i=1}^n z_i^2 \sim \chi_{df=n}^2\]</span></p>
-<p><code>Example</code>:</p>
+<blockquote>
+<p><strong>Example</strong>:</p>
 <p>In our previous discussion, we have</p>
 <p><span class="math display">\[\frac{\sum R_i^2}{\sigma^2} \sim \chi_{df}^2\]</span></p>
-<p><code>Proof</code>:</p>
+</blockquote>
+<p>The proof of the formula above is as follows.</p>
+<blockquote>
+<p><strong>Proof</strong>:</p>
 <p>Given <span class="math inline">\(Y_1, Y_2, Y_3, ..., Y_n \sim \forall(\mu, \sigma^2)\)</span>, we have</p>
 <p><span class="math display">\[z_i^2 = \frac{(Y_i-\mu)^2}{\sigma^2} \sim \chi_{df=1}^2\]</span> and hence <span class="math display">\[\sum_{i=1}^n z_i^2 = \sum_{i=1}^n \frac{(Y_i-\mu)^2}{\sigma^2} = \frac{\sum (Y_i-\mu)^2}{\sigma^2} \sim \chi_{df=n}^2\]</span> When we use the estimator <span class="math inline">\(\bar{Y}\)</span> to estimate <span class="math inline">\(\mu\)</span>, we have</p>
 <p><span class="math display">\[\frac{\sum (Y_i-\bar{Y})^2}{\sigma^2} \sim \chi_{df=n-1}^2\]</span></p>
 <p>When we use a more complex model <span class="math inline">\(\hat{Y}\)</span> with <span class="math inline">\(p\)</span> parameters to estimate <span class="math inline">\(\mu\)</span>, we have</p>
 <p><span class="math display">\[\frac{\sum (Y_i-\hat{Y})^2}{\sigma^2} = \frac{\sum R_i^2}{\sigma^2} \sim \chi_{df=n-p}^2\]</span></p>
+</blockquote>
 </div>
 <div id="chi-squared-statistic" class="section level4">
 <h4><span class="header-section-number">5.3.2.4</span> Chi-squared Statistic</h4>
@@ -779,20 +832,27 @@ n_Cp_C(1-p_C) = (a+b) \cdot \frac{b}{a+b} \cdot \frac{a}{a+b} = \frac{ab}{a+b}\]
 <p><span class="math display">\[z_{ij}^2 = \frac{(n_{ij}-\hat{n}_{ij})^2}{\hat{n}_{ij}} \sim \chi_1^2\]</span> and hence</p>
 <p><span class="math display">\[\sum_{I,J} z_{ij}^2 = \sum_{I,J} \frac{(n_{ij}-\hat{n}_{ij})^2}{\hat{n}_{ij}} \sim \chi_{df=(I-1)(J-1)}^2\]</span></p>
 <p><code>p = 1 - pchisquare(X, df)</code></p>
-<p><code>Proof</code>:</p>
+<p>Proof of the degree of freedom is as follows.</p>
+<blockquote>
+<p><strong>Proof</strong>:</p>
 <p>The df is the difference between the df under <span class="math inline">\(H_a\)</span> and the df under <span class="math inline">\(H_0\)</span>.</p>
-<p>Under the <span class="math inline">\(H_0\)</span>, i.e., X and Y are independent, cell counts can be computed directly from row and column counts. There are I rows and hence (I-1) df for the row; J columns and hence (J-1) df for the column. Total df is <strong>(I-1) + (J-1)</strong>. Under the <span class="math inline">\(H_a\)</span>, i.e., X and Y are dependent, each cell count need to be specified one by one except for one. Therefore, the total df is <strong>(IJ-1)</strong>.</p>
+<p>Under the <span class="math inline">\(H_0\)</span>, i.e., X and Y are independent, cell counts can be computed directly from row and column counts. There are I rows and hence (I-1) df for the row; J columns and hence (J-1) df for the column. Total df is <strong>(I-1) + (J-1)</strong>.</p>
+<p>Under the <span class="math inline">\(H_a\)</span>, i.e., X and Y are dependent, each cell count need to be specified one by one except for one. Therefore, the total df is <strong>(IJ-1)</strong>.</p>
 <p><span class="math display">\[df = (IJ-1) - ((I-1)+(J-1)) = (I-1)(J-1)\]</span></p>
-<p><code>Example</code>:</p>
-<p>Given a 2-by-2 table, i.e., I=2 and J=2, knowning the sample size n,</p>
-<blockquote>
-<p>How many cells can be freely decided under the null hypothesis?</p>
 </blockquote>
+<p>Let’s use an example to illustrate the point.</p>
+<blockquote>
+<p><strong>Question</strong>: Given a 2-by-2 table, i.e., I=2 and J=2, knowning the sample size n, how many cells can be freely decided under the null hypothesis?</p>
+</blockquote>
+<blockquote>
 <p><strong>Answer</strong>: 2 = (2-1) + (2-1)</p>
-<blockquote>
-<p>How many cells can be freely decided under the alternative hypothesis?</p>
 </blockquote>
+<blockquote>
+<p><strong>Question</strong>: Under the same conditions, how many cells can be freely decided under the alternative hypothesis?</p>
+</blockquote>
+<blockquote>
 <p><strong>Answer</strong>: 3 = 2*2 - 1</p>
+</blockquote>
 <p>You should draw a 2-by-2 table and think in the order of the four cell counts a, b, c, d to convince yourself.</p>
 </div>
 <div id="diagnostics" class="section level4">
@@ -830,12 +890,19 @@ n_Cp_C(1-p_C) = (a+b) \cdot \frac{b}{a+b} \cdot \frac{a}{a+b} = \frac{ab}{a+b}\]
 <p>At this point, <span class="math inline">\(P(Y_1,Y_2,...,Y_n|\pi)\)</span> is a <strong>probability function</strong>, the integration of which sums to 1.</p>
 <p><span class="math display">\[L = f(\pi|Y_1,Y_2,...,Y_n) = \prod_{i=1}^n \pi^{Y_i}(1-\pi)^{1-Y_i}\]</span></p>
 <p>To note, <span class="math inline">\(f(\pi|Y_1,Y_2,...,Y_n)\)</span> is not a probability function, since its integration does not sum up to 1. As a result, we must give it a different name, which is called the <strong>likelihood function</strong>.</p>
-<p><code>Proof</code>:</p>
+<p>Proof that <span class="math inline">\(P(Y_1,Y_2,...,Y_n|\pi)\)</span> is a proper probability function is as follows.</p>
+<blockquote>
+<p><strong>Proof</strong>:</p>
 <p>Since each <span class="math inline">\(P(Y_i)\)</span> for i = 1, 2, …, n is a probability function, which means</p>
-<p><span class="math display">\[\int P(Y_i)dY_i = 1\]</span> we have</p>
+<p><span class="math display">\[\int P(Y_i)dY_i = 1\]</span></p>
+<p>Hence, we have</p>
 <p><span class="math display">\[\int\int...\int_{(n)} P(Y_1,Y_2,...,Y_n)~dY_1dY_2 \cdots dY_n\]</span> <span class="math display">\[= \int\int...\int_{(n)} P(Y_1)P(Y_2),...,P(Y_n)~dY_1dY_2 \cdots dY_n\]</span> <span class="math display">\[= \int\int...\int_{(n-1)} \left( \int P(Y_1)dY_1 \right) P(Y_2),...,P(Y_n)~dY_2dY_3 \cdots dY_n\]</span> <span class="math display">\[= \int\int...\int_{(n-1)} 1 \cdot P(Y_2),...,P(Y_n)~dY_2dY_3 \cdots dY_n\]</span> <span class="math display">\[= \int\int...\int_{(n-2)} 1 \cdot 1 \cdot P(Y_3),...,P(Y_n)~dY_3 \cdots dY_n\]</span> <span class="math display">\[= \int\int...\int_{(n-3)} 1 \cdot 1 \cdot 1 \cdot P(Y_4),...,P(Y_n)~dY_4 \cdots dY_n\]</span> <span class="math display">\[= \cdots = 1\]</span></p>
+</blockquote>
 <p>The idea of maximum likelihood is simple: Given the observed data <span class="math inline">\(Y_1,Y_2,...,Y_n\)</span>, choose the value of <span class="math inline">\(\pi\)</span> that would maximize the likelihood function <span class="math inline">\(f(\pi|Y_1,Y_2,...,Y_n)\)</span>.</p>
-<p><code>Example</code>: Let’s use 4 data points <span class="math inline">\(Y_1=1, Y_2=0, Y_3=0, Y_4=1\)</span>.</p>
+<p>Let’s use the following example to illustrate the point.</p>
+<blockquote>
+<p><strong>Example</strong>:</p>
+<p>Let’s use 4 data points <span class="math inline">\(Y_1=1, Y_2=0, Y_3=0, Y_4=1\)</span>.</p>
 <p><span class="math display">\[L = f(\pi|Y_1,Y_2,Y_3,Y_4) = \prod_{i=4}^n \pi^{Y_i}(1-\pi)^{1-Y_i} 
 = \pi(1-\pi)(1-\pi)\pi = \pi^2(1-\pi)^2\]</span></p>
 <ul>
@@ -846,21 +913,19 @@ n_Cp_C(1-p_C) = (a+b) \cdot \frac{b}{a+b} \cdot \frac{a}{a+b} = \frac{ab}{a+b}\]
 <li>if <span class="math inline">\(\pi=0.8\)</span>, <span class="math inline">\(L = 16/625\)</span></li>
 <li>if <span class="math inline">\(\pi=1.0\)</span>, <span class="math inline">\(L = 0\)</span></li>
 </ul>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">fn =<span class="st"> </span>function(x) {x^<span class="dv">2</span> *<span class="st"> </span>(<span class="dv">1</span>-x)^<span class="dv">2</span>}
-x =<span class="st"> </span><span class="kw">seq</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dt">by=</span><span class="fl">0.1</span>)
-y =<span class="st"> </span><span class="kw">fn</span>(x)
-<span class="kw">plot</span>(x, y, <span class="dt">type=</span><span class="st">&quot;o&quot;</span>)
-<span class="kw">abline</span>(<span class="dt">v=</span><span class="fl">0.5</span>, <span class="dt">lty=</span><span class="dv">2</span>)</code></pre></div>
 <p><img src="_main_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
 <p>We will therefore choose the <span class="math inline">\(\hat{\pi}\)</span> that produces the highest probability. In this case, <span class="math inline">\(\hat{\pi}=0.5\)</span>.</p>
+</blockquote>
 <p>Now we need to find a way to solve for the result analytically.</p>
 <p><span class="math display">\[L = \prod_{i=1}^n \pi^{Y_i}(1-\pi)^{1-Y_i}\]</span> and <span class="math display">\[l = \log(L) = \sum_{i=1}^n (Y_i \log(\pi) + (1-Y_i) \log(1-\pi))\]</span></p>
 <p>Get the first derivative of <span class="math inline">\(l\)</span> with respect to <span class="math inline">\(\pi\)</span> and set it to equal 0.</p>
 <p><span class="math display">\[\frac{dl}{d\pi} = \sum_{i=1}^n \left( Y_i \cdot \frac{1}{\pi} + (1-Y_i) \cdot \frac{-1}{1-\pi} \right)
 = \frac{\sum Y_i}{\pi} - \frac{\sum (1-Y_i)}{1-\pi} = 0\]</span></p>
 <p>Solving for the equation, we have <span class="math display">\[\hat{\pi} = \arg\max(l) = \frac{\sum Y_i}{n}\]</span></p>
-<p><code>Proof</code>:</p>
+<blockquote>
+<p><strong>Proof</strong>:</p>
 <p><span class="math display">\[(1-\pi) \sum Y_i = \pi \sum (1-Y_i) = \pi (n - \sum Y_i)\]</span> <span class="math display">\[\sum Y_i - \pi \sum Y_i = n\pi - \pi \sum Y_i\]</span> <span class="math display">\[\pi = \frac{\sum Y_i}{n}\]</span></p>
+</blockquote>
 </div>
 <div id="likelihood-ratio-statistic" class="section level4">
 <h4><span class="header-section-number">5.3.3.2</span> Likelihood-Ratio Statistic</h4>
@@ -869,11 +934,20 @@ y =<span class="st"> </span><span class="kw">fn</span>(x)
 <p>The maximum likelihood with less constrained model (aka <strong>full model</strong>) will always fit at least as good as the more constrained model under the null hypothesis (aka <strong>reduced model</strong>). Therefore, the quotient <span class="math inline">\(L_0/L_a\)</span> is always between 0 and 1 and its <span class="math inline">\(-2 \log(L_0/L_a)\)</span> is always positive.</p>
 <p>For two-way contingency tables, <span class="math inline">\(-2 \log(L_0/L_a)\)</span> can be simplified to the <span class="math inline">\(G^2\)</span> statistic.</p>
 <p><span class="math display">\[G^2 = -2 \sum n_{ij} \cdot \log \left( \frac{\hat{\mu}_{ij}}{n_{ij}} \right) ~~~~ \&amp; ~~~~ df = (I-1)(J-1)\]</span></p>
-<p><code>Proof</code>:</p>
-<p><span class="math display">\[L = P(Y_1,Y_2, ...,Y_n) = \prod_{I,J} \frac{e^{-\lambda} \cdot (\lambda_{ij})^{n_{ij}}}{n_{ij}!}\]</span> and hence <span class="math display">\[l = \log L = -\sum \lambda_{ij} + \sum (n_{ij} \cdot \log \lambda_{ij}) - \sum \log n_{ij}!\]</span></p>
-<p>Under <span class="math inline">\(H_0\)</span>, we have <span class="math display">\[l_{H_0} = -\sum \hat{\mu}_{ij} + \sum (n_{ij} \cdot \log \hat{\mu}_{ij}) - \sum \log n_{ij}!\]</span> Under <span class="math inline">\(H_a\)</span>, we have <span class="math display">\[l_{H_a} = -\sum n_{ij} + \sum (n_{ij} \cdot \log n_{ij}) - \sum \log n_{ij}!\]</span> To note, <span class="math inline">\(\sum \hat{\mu}_{ij} = \sum n_{ij} = n\)</span>.</p>
+<blockquote>
+<p><strong>Proof</strong>:</p>
+<p><span class="math display">\[L = P(Y_1,Y_2, ...,Y_n) = \prod_{I,J} \frac{e^{-\lambda} \cdot (\lambda_{ij})^{n_{ij}}}{n_{ij}!}\]</span></p>
+<p>and hence</p>
+<p><span class="math display">\[l = \log L = -\sum \lambda_{ij} + \sum (n_{ij} \cdot \log \lambda_{ij}) - \sum \log n_{ij}!\]</span></p>
+<p>Under <span class="math inline">\(H_0\)</span>, we have</p>
+<p><span class="math display">\[l_{H_0} = -\sum \hat{\mu}_{ij} + \sum (n_{ij} \cdot \log \hat{\mu}_{ij}) - \sum \log n_{ij}!\]</span></p>
+<p>Under <span class="math inline">\(H_a\)</span>, we have</p>
+<p><span class="math display">\[l_{H_a} = -\sum n_{ij} + \sum (n_{ij} \cdot \log n_{ij}) - \sum \log n_{ij}!\]</span> To note, <span class="math inline">\(\sum \hat{\mu}_{ij} = \sum n_{ij} = n\)</span>.</p>
 <p>Therefore,</p>
-<p><span class="math display">\[\log \frac{L_0}{L_a} = \sum \left( n_{ij} \cdot \log \left( \frac{\hat{\mu}_{ij}}{n_{ij}} \right) \right)\]</span> and <span class="math display">\[G^2 = -2 \sum n_{ij} \cdot \log \left( \frac{\hat{\mu}_{ij}}{n_{ij}} \right)\]</span></p>
+<p><span class="math display">\[\log \frac{L_0}{L_a} = \sum \left( n_{ij} \cdot \log \left( \frac{\hat{\mu}_{ij}}{n_{ij}} \right) \right)\]</span></p>
+<p>and</p>
+<p><span class="math display">\[G^2 = -2 \sum n_{ij} \cdot \log \left( \frac{\hat{\mu}_{ij}}{n_{ij}} \right)\]</span></p>
+</blockquote>
 </div>
 </div>
 </div>
