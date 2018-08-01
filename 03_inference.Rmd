@@ -19,8 +19,8 @@ colorArea <- function(from, to, func, col="red", ...){
 |1| | $y_1$ | | | 
 |2| | $y_2$ | | | 
 |3| | $y_3$ | | | 
-|4| | $...$ | | | 
-|5| | $y_n$ | | | 
+|...| | $...$ | | | 
+|n| | $y_n$ | | | 
 
 What is a **_random variable_** or **_RV_**? We have rows as cases and columns as variales. How is a _variable_ as we know it connected with the idea of a _random varible_?
 
