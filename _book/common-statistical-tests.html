@@ -25,7 +25,7 @@
 <meta name="author" content="Wenliang He">
 
 
-<meta name="date" content="2018-07-30">
+<meta name="date" content="2018-08-01">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -49,6 +49,43 @@
 
 
 
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
 
 </head>
 
@@ -120,7 +157,7 @@
 </ul></li>
 <li class="chapter" data-level="5.3" data-path="common-statistical-tests.html"><a href="common-statistical-tests.html#categorical-x---dummy-y"><i class="fa fa-check"></i><b>5.3</b> Categorical (X) - Dummy (Y)</a><ul>
 <li class="chapter" data-level="5.3.1" data-path="common-statistical-tests.html"><a href="common-statistical-tests.html#basics-1"><i class="fa fa-check"></i><b>5.3.1</b> Basics</a></li>
-<li class="chapter" data-level="5.3.2" data-path="common-statistical-tests.html"><a href="common-statistical-tests.html#chi-square-test"><i class="fa fa-check"></i><b>5.3.2</b> Chi-square Test</a></li>
+<li class="chapter" data-level="5.3.2" data-path="common-statistical-tests.html"><a href="common-statistical-tests.html#chi-squared-test"><i class="fa fa-check"></i><b>5.3.2</b> Chi-squared Test</a></li>
 <li class="chapter" data-level="5.3.3" data-path="common-statistical-tests.html"><a href="common-statistical-tests.html#g-square-test"><i class="fa fa-check"></i><b>5.3.3</b> G-square Test</a></li>
 </ul></li>
 <li class="chapter" data-level="5.4" data-path="common-statistical-tests.html"><a href="common-statistical-tests.html#categorical-x---continuous-y"><i class="fa fa-check"></i><b>5.4</b> Categorical (X) - Continuous (Y)</a><ul>
@@ -247,7 +284,7 @@
 </tr>
 <tr class="even">
 <td>categorical</td>
-<td>(3) <strong>chi-square test</strong></td>
+<td>(3) <strong>chi-squared test</strong></td>
 <td>(4) <strong>ANOVA</strong></td>
 </tr>
 <tr class="odd">
@@ -401,6 +438,32 @@ Y_{C_j} \sim \forall \left( \mu_C, \sigma_C^2 \right) \]</span> where <span clas
 </div>
 <div id="difference-in-proportions" class="section level3">
 <h3><span class="header-section-number">5.2.2</span> Difference in Proportions</h3>
+<table>
+<thead>
+<tr class="header">
+<th align="left"><span class="math inline">\(_X \ ^Y\)</span></th>
+<th align="center">Outcome=No (0)</th>
+<th align="center">Outcome=Yes (1)</th>
+<th align="center">column total</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><strong>Control (0)</strong></td>
+<td align="center">a</td>
+<td align="center">b</td>
+<td align="center">n</td>
+</tr>
+<tr class="even">
+<td align="left"><strong>Treatment (1)</strong></td>
+<td align="center">c</td>
+<td align="center">d</td>
+<td align="center">n</td>
+</tr>
+</tbody>
+</table>
+<p>where <span class="math inline">\(a+b=n\)</span> and <span class="math inline">\(c+d=n\)</span>. To note, treatment and control groups do not have to have the same sample size n. We deliberately make them to be identical in order to emphasize that <em>row totals</em> can be set beforehand.</p>
+<p><span class="math display">\[p_T = P(Y=1|X=1) = \frac{d}{c+d}\]</span> and <span class="math display">\[p_C = P(Y=1|X=0) = \frac{b}{a+b}\]</span></p>
 <p>Similar to two sample t-test, we have</p>
 <p><span class="math display">\[\hat{\Delta} \sim N \left( \pi_T-\pi_C, ~ \sqrt{\frac{\pi_T(1-\pi_T)}{n_T} + \frac{\pi_T(1-\pi_C)}{n_C}} \right)\]</span></p>
 <ol style="list-style-type: decimal">
@@ -420,19 +483,72 @@ Y_{C_j} \sim \forall \left( \mu_C, \sigma_C^2 \right) \]</span> where <span clas
 <ol start="3" style="list-style-type: decimal">
 <li>make a decision</li>
 </ol>
+<p>Make a decison based on pre-determined confidence level, i.e. <span class="math inline">\(1 - \alpha\)</span>, where <span class="math inline">\(\alpha=0.05\)</span> by default.</p>
+<p>One problem with <em>difference in proportions</em> is that it does not handle small proportions well. For example, is 0.05 a small or big difference? It would be considered small if it’s between 0.95 and 0.90; but would be a big difference if it’s between 0.10 and 0.15.</p>
 </div>
 <div id="relative-risks" class="section level3">
 <h3><span class="header-section-number">5.2.3</span> Relative Risks</h3>
-<p><code>TODO</code>: Contents to be added from page 8 in notes_20180504.pdf</p>
+<p>An alternative statistic is called <strong>relative risks</strong>.</p>
+<p><span class="math display">\[RR = \frac{p_T}{p_C}\]</span></p>
+<p>Now we need to derive the properties of RR. In general, it is extremely difficult to deal with products or quotients of random variables. One way to tackle this is to use log-transformation.</p>
+<ul>
+<li><span class="math inline">\(\log(XY) = \log(X) + \log(Y)\)</span></li>
+<li><span class="math inline">\(\log(\frac{X}{Y}) = \log(X) - \log(Y)\)</span></li>
+<li><span class="math inline">\(\log(X^Y) = Y \log(X)\)</span></li>
+</ul>
+<p>Log-transformation can easily reduce products and quotients into sums. In our case, we have</p>
+<p><span class="math display">\[\log RR = \log p_T - \log p_C\]</span> and</p>
+<p><span class="math display">\[\text{se}(\log RR) = \sqrt{\frac{1-\pi_T}{n_T}+\frac{1-\pi_C}{n_C}}\]</span></p>
+<p><code>Proof - Prerequisites</code>:</p>
+<p><span class="math display">\[Var(f(x)) = Var(X) \cdot (f&#39;(x))^2\]</span> where <span class="math inline">\(f&#39;(x)\)</span> is the first derivative of <span class="math inline">\(f(x)\)</span> with respect to x.</p>
+<p>In our case, <span class="math display">\[Var(\log p) = Var(p) \left( \frac{1}{p} \right)^2 
+= \frac{p(1-p)}{np^2} = \frac{1-p}{np}\]</span></p>
+<p><code>Proof</code>:</p>
+<p><span class="math display">\[Var(\log RR) = Var(\log p_T - \log p_C) = Var(\log p_T) + Var(\log p_C) = \frac{1-p_T}{n_Tp_T} + \frac{1-p_C}{n_Cp_C}\]</span></p>
+<p>Under the null hypothesis, i.e., <span class="math inline">\(\pi_T = \pi_C\)</span>, we have <span class="math inline">\(E(\log RR) = 0\)</span>, and hence</p>
+<p><span class="math display">\[z = \frac{\log p_T - \log p_C}{\sqrt{\frac{1-p_T}{n_T}+\frac{1-p_C}{n_C}}}\]</span></p>
+<p>For confidence interval, we have</p>
+<p><span class="math display">\[(L, U) = \log \frac{p_T}{p_C} \pm z_{(1-\frac{\alpha}{2})} \cdot \sqrt{\frac{1-p_T}{n_T}+\frac{1-p_C}{n_C}}\]</span></p>
+<p>To convert the confidence interval back to the original scale, we have <span class="math inline">\((e^L, e^U)\)</span>.</p>
+<p>One problem with <em>relative risks</em> is that it is not appropriate for case-control design.</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center"><span class="math inline">\(_X \ ^Y\)</span></th>
+<th align="center">Cancer=No (0)</th>
+<th align="center">Cancer=Yes (1)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><strong>Smoking=No (0)</strong></td>
+<td align="center">a</td>
+<td align="center">b</td>
+</tr>
+<tr class="even">
+<td align="center"><strong>Smoking=Yes (1)</strong></td>
+<td align="center">c</td>
+<td align="center">d</td>
+</tr>
+<tr class="odd">
+<td align="center"><strong>column total</strong></td>
+<td align="center">n</td>
+<td align="center">n</td>
+</tr>
+</tbody>
+</table>
+<p>where <span class="math inline">\(a+c=n\)</span> and <span class="math inline">\(b+d=n\)</span>. To note, cancer or non-cancer groups do not have to have the same sample size n. We deliberately make them to be identical in order to emphasize that <em>column totals</em> can be set beforehand.</p>
+<p><span class="math display">\[p_T = P(X=1|Y=1) = \frac{d}{b+d}\]</span> and <span class="math display">\[p_C = P(X=1|Y=0) = \frac{c}{a+c}\]</span></p>
+<p>In a case like this one, we cannot perform an experiment and forcibly assign people into treatment and control groups. Instead, we find the same number of people with or without cancer and investigate the proportion of smokers. A study like this is called a <strong>case-control study</strong>.</p>
 </div>
 <div id="odds-ratio" class="section level3">
 <h3><span class="header-section-number">5.2.4</span> Odds Ratio</h3>
-<p>The definition of odds is as follows.</p>
+<p>An alternative statistic is called <strong>odds ratio</strong>.</p>
 <p><span class="math display">\[\text{odds} \overset{1^*}{=} \frac{p}{1-p} \overset{2^*}{=} \frac{\text{total # of success}}{\text{total # of failure}} \]</span></p>
 <ul>
-<li><span class="math inline">\(1^*\)</span>: Given <span class="math inline">\(p = 1/4\)</span>, we have odds = (1/4) / (3/4) = 1/3</li>
-<li><span class="math inline">\(2^*\)</span>: If odds of success is x, odds of failure is 1/x</li>
-<li><span class="math inline">\(2^*\)</span>: Given odds = 1/3, we have p = 1/3 / (1/3 + 1) = 1/4</li>
+<li>by definition <span class="math inline">\(1^*\)</span>: Given <span class="math inline">\(p = 1/4\)</span>, we have odds = (1/4) / (3/4) = 1/3</li>
+<li>by definition <span class="math inline">\(2^*\)</span>: If odds of success is x, odds of failure is 1/x</li>
+<li>by definition <span class="math inline">\(2^*\)</span>: Given odds = 1/3, we have p = 1/3 / (1/3 + 1) = 1/4</li>
 </ul>
 <p><span class="math display">\[p = \frac{\text{odds}}{\text{odds}+1}\]</span></p>
 <p>Consider the <strong>contingency table</strong> below, where rows represent the independent variable X and columns represent the dependent variable Y.</p>
@@ -488,55 +604,276 @@ n_Cp_C(1-p_C) = (a+b) \cdot \frac{b}{a+b} \cdot \frac{a}{a+b} = \frac{ab}{a+b}\]
 </div>
 <div id="categorical-x---dummy-y" class="section level2">
 <h2><span class="header-section-number">5.3</span> Categorical (X) - Dummy (Y)</h2>
-<p>Now that we can deal with a 2-by-2 contingency table. We need to generalize it to handle a n-by-n contngency table, where n is greater than 2.</p>
+<p>Now that we can deal with a 2-by-2 contingency table. We need to generalize it to handle I-by-J contingency tables, where I and J can be greater than 2.</p>
+<div id="basics-1" class="section level3">
+<h3><span class="header-section-number">5.3.1</span> Basics</h3>
+<p>For the sake of clarity, in the presentation below, we will continue using a 2-by-2 contingency table. However, any conclusions we draw are readily generalizable to I-by-J tables.</p>
 <table>
 <thead>
 <tr class="header">
-<th align="left"><span class="math inline">\(_X \ ^Y\)</span></th>
-<th align="left">0</th>
-<th align="left">1</th>
+<th align="center"><span class="math inline">\(_X \ ^Y\)</span></th>
+<th align="center">0</th>
+<th align="center">1</th>
+<th align="center">row total</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">1</td>
-<td align="left">a</td>
-<td align="left">b</td>
+<td align="center"><strong>0</strong></td>
+<td align="center">a</td>
+<td align="center">b</td>
+<td align="center">a+b</td>
 </tr>
 <tr class="even">
-<td align="left">2</td>
-<td align="left">c</td>
-<td align="left">d</td>
+<td align="center"><strong>1</strong></td>
+<td align="center">c</td>
+<td align="center">d</td>
+<td align="center">c+d</td>
 </tr>
 <tr class="odd">
-<td align="left">3</td>
-<td align="left">e</td>
-<td align="left">f</td>
-</tr>
-<tr class="even">
-<td align="left">4</td>
-<td align="left">g</td>
-<td align="left">h</td>
+<td align="center"><strong>column total</strong></td>
+<td align="center">a+c</td>
+<td align="center">b+d</td>
+<td align="center">n</td>
 </tr>
 </tbody>
 </table>
-<div id="basics-1" class="section level3">
-<h3><span class="header-section-number">5.3.1</span> Basics</h3>
+<p>where <span class="math inline">\(n = a + b + c + d\)</span>.</p>
 <div id="marginal-conditional-and-joint-probabilities" class="section level4">
 <h4><span class="header-section-number">5.3.1.1</span> Marginal, Conditional, and Joint Probabilities</h4>
-<p>page 5 in notes_20180508.pdf</p>
+<ul>
+<li><strong>marginal probability</strong>: <span class="math inline">\(P(Y)\)</span> or <span class="math inline">\(P(X)\)</span></li>
+</ul>
+<p><span class="math display">\[P(Y=0) = \frac{a+c}{n} ~~~~ and ~~~~ P(Y=1) = \frac{b+d}{n}\]</span> or <span class="math display">\[P(X=0) = \frac{a+b}{n} ~~~~ and ~~~~ P(X=1) = \frac{c+d}{n}\]</span></p>
+<ul>
+<li><strong>conditional probability</strong>: <span class="math inline">\(P(Y|X)\)</span> or <span class="math inline">\(P(X|Y)\)</span></li>
+</ul>
+<p><span class="math display">\[P(Y=0|X=0) = \frac{a}{a+b} ~~~~ and ~~~~ P(Y=1|X=0) = \frac{b}{a+b}\]</span> <span class="math display">\[P(Y=0|X=1) = \frac{c}{c+d} ~~~~ and ~~~~ P(Y=1|X=1) = \frac{d}{c+d}\]</span> or <span class="math display">\[P(X=0|Y=0) = \frac{a}{a+c} ~~~~ and ~~~~ P(X=1|Y=0) = \frac{c}{a+c}\]</span> <span class="math display">\[P(X=0|Y=1) = \frac{b}{b+d} ~~~~ and ~~~~ P(X=1|Y=1) = \frac{d}{b+d}\]</span></p>
+<ul>
+<li><strong>joint probability</strong>: <span class="math inline">\(P(X,Y)\)</span></li>
+</ul>
+<p><span class="math display">\[P(X=0,Y=0) = \frac{a}{n}\]</span> <span class="math display">\[P(X=0,Y=1) = \frac{b}{n}\]</span> <span class="math display">\[P(X=1,Y=0) = \frac{c}{n}\]</span> <span class="math display">\[P(X=1,Y=1) = \frac{d}{n}\]</span></p>
+<p><code>Practice</code>: Given the table below, compute <span class="math inline">\(P(X=0,Y=1)\)</span>, <span class="math inline">\(P(X=0)\)</span>, <span class="math inline">\(P(Y=1)\)</span>.</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center"><span class="math inline">\(_X \ ^Y\)</span></th>
+<th align="center">0</th>
+<th align="center">1</th>
+<th align="center">row total</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><strong>0</strong></td>
+<td align="center">2</td>
+<td align="center">4</td>
+<td align="center">6</td>
+</tr>
+<tr class="even">
+<td align="center"><strong>1</strong></td>
+<td align="center">10</td>
+<td align="center">20</td>
+<td align="center">30</td>
+</tr>
+<tr class="odd">
+<td align="center"><strong>column total</strong></td>
+<td align="center">12</td>
+<td align="center">24</td>
+<td align="center">36</td>
+</tr>
+</tbody>
+</table>
 </div>
 <div id="independence-in-a-contingency-table" class="section level4">
 <h4><span class="header-section-number">5.3.1.2</span> Independence in a Contingency Table</h4>
+<p>Two variables are regarded as <strong>independent</strong> if any <strong>one</strong> of the three following conditions are met.</p>
+<ul>
+<li><span class="math inline">\(P(Y|X) = P(Y)\)</span></li>
+<li><span class="math inline">\(P(X|Y) = P(X)\)</span></li>
+<li><span class="math inline">\(P(X,Y) = P(X)P(Y)\)</span></li>
+</ul>
+<p>To further explain it, we will focus on the first condition. The first condition is more complicated than what meets the eye. From the simplest to the most detailed, the first condition can be expressed as follows.</p>
+<ul>
+<li>simplest expression:
+<ul>
+<li><span class="math inline">\(P(Y|X) = P(Y)\)</span></li>
+</ul></li>
+<li>more detailed expression:
+<ul>
+<li><span class="math inline">\(P(Y|X=0) = P(Y|X=1) = P(Y)\)</span></li>
+</ul></li>
+<li>most detailed expression:
+<ul>
+<li><span class="math inline">\(P(Y=0|X=0) = P(Y=0|X=1) = P(Y=0)\)</span></li>
+<li><span class="math inline">\(P(Y=1|X=0) = P(Y=1|X=1) = P(Y=1)\)</span></li>
+</ul></li>
+</ul>
+<p>These expressions are saying exactly the same thing; they differ only in the amount of details presented. To note, for the claim of independence to hold, <span class="math inline">\(P(Y|X=0) = P(Y|X=1) = P(Y)\)</span> must be true for <strong>each</strong> level of Y. In other words, all equations subsumed under the <strong>most detailed expression</strong> must hold so that the <strong>more detailed expression</strong> would hold.</p>
+<p>Regardless which form of expression we use, <span class="math inline">\(P(Y|X) = P(Y)\)</span> clearly suggests</p>
+<ul>
+<li>the distribution of Y does not depend on X</li>
+<li>the distribution of Y is the same at each level of X</li>
+<li>whether we consider X or not (i.e., conditioned on X or not) does not affect the distribution of Y</li>
+</ul>
+</div>
+<div id="null-hypothesis-and-independence" class="section level4">
+<h4><span class="header-section-number">5.3.1.3</span> Null Hypothesis and Independence</h4>
+<p>In the 2-by-2 contingency table, the null hypothesis <span class="math inline">\(H_0: p_T = p_C\)</span> is equivalent to the claim that X and Y are independent.</p>
+<p><code>Proof</code>:</p>
+<p>By definition, we have <span class="math inline">\(p_C = P(Y=1|X=0)\)</span> and <span class="math inline">\(p_T = P(Y=1|X=1)\)</span>. Under the null hypothesis <span class="math inline">\(p_C = p_T\)</span>, we have <span class="math inline">\(P(Y=1|X=0) = P(Y=1|X=1)\)</span>, which implies</p>
+<ul>
+<li><span class="math inline">\(P(Y=1|X=0) = P(Y=1|X=1) = P(Y=1)\)</span></li>
+<li><span class="math inline">\(P(Y=0|X=0) = P(Y=0|X=1) = P(Y=0)\)</span></li>
+</ul>
+<p>or equivalently</p>
+<ul>
+<li><span class="math inline">\(P(Y|X=0) = P(Y|X=1) = P(Y)\)</span></li>
+</ul>
 </div>
 </div>
-<div id="chi-square-test" class="section level3">
-<h3><span class="header-section-number">5.3.2</span> Chi-square Test</h3>
+<div id="chi-squared-test" class="section level3">
+<h3><span class="header-section-number">5.3.2</span> Chi-squared Test</h3>
+<p>Given an <span class="math inline">\(I \times J\)</span> table, where rows represent X with I levels and columns represent Y with J levels. Let’s use <span class="math inline">\(n_{ij}\)</span> to denote the number of counts in the i-th row and j-th column and use <span class="math inline">\(n\)</span> to represent the total number of cases in the sample.</p>
+<div id="poisson-distribution" class="section level4">
+<h4><span class="header-section-number">5.3.2.1</span> Poisson Distribution</h4>
+<p><span class="math display">\[X \sim Pois(\lambda)\]</span> and <span class="math display">\[f(x) = \frac{e^{-\lambda} \cdot \lambda^x}{x!}\]</span></p>
+<p>A special property about Poisson distribution is that <span class="math inline">\(E(X) = Var(X) = \lambda\)</span>. Since X is a random variable, with regard to <span class="math inline">\(X \sim \forall(E(X), Var(X))\)</span>, we have</p>
+<p><span class="math display">\[X \sim Pois(\lambda, \lambda)\]</span> In the introduction of CLT, we have learned that any random disturbances added together would eventually give rise to normality. Poisson distribution is essentially a distribution for counting, i.e., a sum of individual counts. As a result, with reasonably large sample size under the <strong>iid</strong> assumption, we have</p>
+<p><span class="math display">\[X \sim N(\lambda, \lambda)\]</span> which is a normal approximation to the Poisson distribution.</p>
+</div>
+<div id="expected-cell-counts-under-independence" class="section level4">
+<h4><span class="header-section-number">5.3.2.2</span> Expected Cell Counts Under Independence</h4>
+<p>In a 2-by-2 table, we can use a, b, c, d to represent the four cell counts. This notation system, however, cannot be readily generalized to I-by-J tables. Starting from here, we will use the following notation.</p>
+<ul>
+<li><span class="math inline">\(n_{ij}\)</span> is the cell count for the i-th row and j-th column</li>
+<li><span class="math inline">\(n_{i+}\)</span> is the total row count for the i-th row across columns</li>
+<li><span class="math inline">\(n_{+j}\)</span> is the total column count for the j-th column across rows</li>
+<li><span class="math inline">\(n\)</span> is the total sample size across all rows and columns</li>
+</ul>
+<p>Given an I-by-J table, under the independence assumption, the expected cell count <span class="math inline">\(\hat{\mu}_{ij}\)</span> for the i-th row and j-th column is</p>
+<p><span class="math display">\[\hat{\mu}_{ij} = \frac{n_{i+}n_{+j}}{n}\]</span></p>
+<p><code>Proof</code>:</p>
+<p>Under the independence assumption, we have <span class="math inline">\(p_{ij} = p_{i+}p_{+j}\)</span> and hence</p>
+<p><span class="math display">\[\frac{\hat{\mu}_{ij}}{n} = \frac{n_{i+}}{n} \cdot \frac{n_{+j}}{n} 
+~~~~ \rightarrow ~~~~
+\hat{\mu}_{ij} = \frac{n_{i+}n_{+j}}{n}\]</span></p>
+</div>
+<div id="chi-squared-distribution" class="section level4">
+<h4><span class="header-section-number">5.3.2.3</span> Chi-squared Distribution</h4>
+<p>Regardless of its fancy name, chi-squared distribution with 1 degree of freedom is simply a z-score squared.</p>
+<p><span class="math display">\[z^2 \sim \chi_{df=1}^2\]</span> and <span class="math display">\[\sum_{i=1}^n z_i^2 \sim \chi_{df=n}^2\]</span></p>
+<p><code>Example</code>:</p>
+<p>In our previous discussion, we have</p>
+<p><span class="math display">\[\frac{\sum R_i^2}{\sigma^2} \sim \chi_{df}^2\]</span></p>
+<p><code>Proof</code>:</p>
+<p>Given <span class="math inline">\(Y_1, Y_2, Y_3, ..., Y_n \sim \forall(\mu, \sigma^2)\)</span>, we have</p>
+<p><span class="math display">\[z_i^2 = \frac{(Y_i-\mu)^2}{\sigma^2} \sim \chi_{df=1}^2\]</span> and hence <span class="math display">\[\sum_{i=1}^n z_i^2 = \sum_{i=1}^n \frac{(Y_i-\mu)^2}{\sigma^2} = \frac{\sum (Y_i-\mu)^2}{\sigma^2} \sim \chi_{df=n}^2\]</span> When we use the estimator <span class="math inline">\(\bar{Y}\)</span> to estimate <span class="math inline">\(\mu\)</span>, we have</p>
+<p><span class="math display">\[\frac{\sum (Y_i-\bar{Y})^2}{\sigma^2} \sim \chi_{df=n-1}^2\]</span></p>
+<p>When we use a more complex model <span class="math inline">\(\hat{Y}\)</span> with <span class="math inline">\(p\)</span> parameters to estimate <span class="math inline">\(\mu\)</span>, we have</p>
+<p><span class="math display">\[\frac{\sum (Y_i-\hat{Y})^2}{\sigma^2} = \frac{\sum R_i^2}{\sigma^2} \sim \chi_{df=n-p}^2\]</span></p>
+</div>
+<div id="chi-squared-statistic" class="section level4">
+<h4><span class="header-section-number">5.3.2.4</span> Chi-squared Statistic</h4>
+<p>Under the hull hypothesis that X and Y are independent, we have <span class="math inline">\(E(n_{ij}) = \hat{n}_{ij}\)</span>. Since cell count follows Poisson distribution and can be approximated by a normal distribution, we have <span class="math inline">\(n_{ij} \sim N(\hat{n}_{ij}, \hat{n}_{ij})\)</span>. Therefore, we have</p>
+<p><span class="math display">\[z_{ij}^2 = \frac{(n_{ij}-\hat{n}_{ij})^2}{\hat{n}_{ij}} \sim \chi_1^2\]</span> and hence</p>
+<p><span class="math display">\[\sum_{I,J} z_{ij}^2 = \sum_{I,J} \frac{(n_{ij}-\hat{n}_{ij})^2}{\hat{n}_{ij}} \sim \chi_{df=(I-1)(J-1)}^2\]</span></p>
+<p><code>p = 1 - pchisquare(X, df)</code></p>
+<p><code>Proof</code>:</p>
+<p>The df is the difference between the df under <span class="math inline">\(H_a\)</span> and the df under <span class="math inline">\(H_0\)</span>.</p>
+<p>Under the <span class="math inline">\(H_0\)</span>, i.e., X and Y are independent, cell counts can be computed directly from row and column counts. There are I rows and hence (I-1) df for the row; J columns and hence (J-1) df for the column. Total df is <strong>(I-1) + (J-1)</strong>. Under the <span class="math inline">\(H_a\)</span>, i.e., X and Y are dependent, each cell count need to be specified one by one except for one. Therefore, the total df is <strong>(IJ-1)</strong>.</p>
+<p><span class="math display">\[df = (IJ-1) - ((I-1)+(J-1)) = (I-1)(J-1)\]</span></p>
+<p><code>Example</code>:</p>
+<p>Given a 2-by-2 table, i.e., I=2 and J=2, knowning the sample size n,</p>
+<blockquote>
+<p>How many cells can be freely decided under the null hypothesis?</p>
+</blockquote>
+<p><strong>Answer</strong>: 2 = (2-1) + (2-1)</p>
+<blockquote>
+<p>How many cells can be freely decided under the alternative hypothesis?</p>
+</blockquote>
+<p><strong>Answer</strong>: 3 = 2*2 - 1</p>
+<p>You should draw a 2-by-2 table and think in the order of the four cell counts a, b, c, d to convince yourself.</p>
+</div>
+<div id="diagnostics" class="section level4">
+<h4><span class="header-section-number">5.3.2.5</span> Diagnostics</h4>
+<p>It should be clear that the construction of the chi-squared statistic depends on the CLT and the normality assumption in particular.</p>
+<ul>
+<li><span class="math inline">\(\chi^2\)</span>-test is only valid if each expected cell count is greater than 5, i.e., <span class="math inline">\(\hat{n}_{ij} &gt; 5\)</span></li>
+<li>if I and J are large, a few cell counts less than 5, i.e., <span class="math inline">\(\hat{n}_{ij} &lt; 5\)</span>, does not matter</li>
+</ul>
+<p>From the count table, compute (a) expected cell count table and (b) z-score table.</p>
+<ul>
+<li><strong>rescaled cell residuals</strong></li>
+</ul>
+<p><span class="math display">\[z_{ij} = \frac{n_{ij} - \hat{n}_{ij}}{\sqrt{\hat{n}_{ij}}}\]</span> where <span class="math inline">\(\text{se}(n_{ij}) = \sqrt{\hat{n}_{ij}}\)</span>.</p>
+<ul>
+<li><strong>standardized cell residuals</strong></li>
+</ul>
+<p><span class="math display">\[z_{ij} = \frac{n_{ij} - \hat{n}_{ij}} {\sqrt{\hat{n}_{ij}(1-p_{i+})(1-p_{+j})}}\]</span> where the denominator is the estimated standard error of <span class="math inline">\(n_{ij} - \hat{n}_{ij}\)</span> under the null hypothesis.</p>
+<p>Therefore, a standardized residual with absolute value</p>
+<ol style="list-style-type: lower-alpha">
+<li>exceeding 2 when there are only a few cells, or</li>
+<li>exceeding 3 when there are many cells</li>
+</ol>
+<p>indicates lack of fit of the null hypothesis in that cell.</p>
+</div>
 </div>
 <div id="g-square-test" class="section level3">
 <h3><span class="header-section-number">5.3.3</span> G-square Test</h3>
 <div id="maximum-likelihood-method" class="section level4">
 <h4><span class="header-section-number">5.3.3.1</span> Maximum Likelihood Method</h4>
+<p>Given <span class="math inline">\(Y \sim Bern(\pi)\)</span>, we draw a random sample <span class="math inline">\(Y_1, Y_2, ..., Y_n\)</span> and compute the sample mean <span class="math inline">\(\bar{Y}\)</span>.</p>
+<p><span class="math display">\[P(Y_i) = \pi^{Y_i}(1-\pi)^{1-Y_i}\]</span></p>
+<p><span class="math display">\[P(Y_1,Y_2,...,Y_n) = P(Y_1,Y_2,...,Y_n|\pi) = \prod_{i=1}^n Y_i
+= \prod_{i=1}^n \pi^{Y_i}(1-\pi)^{1-Y_i}\]</span></p>
+<p>At this point, <span class="math inline">\(P(Y_1,Y_2,...,Y_n|\pi)\)</span> is a <strong>probability function</strong>, the integration of which sums to 1.</p>
+<p><span class="math display">\[L = f(\pi|Y_1,Y_2,...,Y_n) = \prod_{i=1}^n \pi^{Y_i}(1-\pi)^{1-Y_i}\]</span></p>
+<p>To note, <span class="math inline">\(f(\pi|Y_1,Y_2,...,Y_n)\)</span> is not a probability function, since its integration does not sum up to 1. As a result, we must give it a different name, which is called the <strong>likelihood function</strong>.</p>
+<p><code>Proof</code>:</p>
+<p>Since each <span class="math inline">\(P(Y_i)\)</span> for i = 1, 2, …, n is a probability function, which means</p>
+<p><span class="math display">\[\int P(Y_i)dY_i = 1\]</span> we have</p>
+<p><span class="math display">\[\int\int...\int_{(n)} P(Y_1,Y_2,...,Y_n)~dY_1dY_2 \cdots dY_n\]</span> <span class="math display">\[= \int\int...\int_{(n)} P(Y_1)P(Y_2),...,P(Y_n)~dY_1dY_2 \cdots dY_n\]</span> <span class="math display">\[= \int\int...\int_{(n-1)} \left( \int P(Y_1)dY_1 \right) P(Y_2),...,P(Y_n)~dY_2dY_3 \cdots dY_n\]</span> <span class="math display">\[= \int\int...\int_{(n-1)} 1 \cdot P(Y_2),...,P(Y_n)~dY_2dY_3 \cdots dY_n\]</span> <span class="math display">\[= \int\int...\int_{(n-2)} 1 \cdot 1 \cdot P(Y_3),...,P(Y_n)~dY_3 \cdots dY_n\]</span> <span class="math display">\[= \int\int...\int_{(n-3)} 1 \cdot 1 \cdot 1 \cdot P(Y_4),...,P(Y_n)~dY_4 \cdots dY_n\]</span> <span class="math display">\[= \cdots = 1\]</span></p>
+<p>The idea of maximum likelihood is simple: Given the observed data <span class="math inline">\(Y_1,Y_2,...,Y_n\)</span>, choose the value of <span class="math inline">\(\pi\)</span> that would maximize the likelihood function <span class="math inline">\(f(\pi|Y_1,Y_2,...,Y_n)\)</span>.</p>
+<p><code>Example</code>: Let’s use 4 data points <span class="math inline">\(Y_1=1, Y_2=0, Y_3=0, Y_4=1\)</span>.</p>
+<p><span class="math display">\[L = f(\pi|Y_1,Y_2,Y_3,Y_4) = \prod_{i=4}^n \pi^{Y_i}(1-\pi)^{1-Y_i} 
+= \pi(1-\pi)(1-\pi)\pi = \pi^2(1-\pi)^2\]</span></p>
+<ul>
+<li>if <span class="math inline">\(\pi=0.0\)</span>, <span class="math inline">\(L = 0\)</span></li>
+<li>if <span class="math inline">\(\pi=0.2\)</span>, <span class="math inline">\(L = 16/625\)</span></li>
+<li>if <span class="math inline">\(\pi=0.4\)</span>, <span class="math inline">\(L = 36/625\)</span></li>
+<li>if <span class="math inline">\(\pi=0.6\)</span>, <span class="math inline">\(L = 36/625\)</span></li>
+<li>if <span class="math inline">\(\pi=0.8\)</span>, <span class="math inline">\(L = 16/625\)</span></li>
+<li>if <span class="math inline">\(\pi=1.0\)</span>, <span class="math inline">\(L = 0\)</span></li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">fn =<span class="st"> </span>function(x) {x^<span class="dv">2</span> *<span class="st"> </span>(<span class="dv">1</span>-x)^<span class="dv">2</span>}
+x =<span class="st"> </span><span class="kw">seq</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dt">by=</span><span class="fl">0.1</span>)
+y =<span class="st"> </span><span class="kw">fn</span>(x)
+<span class="kw">plot</span>(x, y, <span class="dt">type=</span><span class="st">&quot;o&quot;</span>)
+<span class="kw">abline</span>(<span class="dt">v=</span><span class="fl">0.5</span>, <span class="dt">lty=</span><span class="dv">2</span>)</code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
+<p>We will therefore choose the <span class="math inline">\(\hat{\pi}\)</span> that produces the highest probability. In this case, <span class="math inline">\(\hat{\pi}=0.5\)</span>.</p>
+<p>Now we need to find a way to solve for the result analytically.</p>
+<p><span class="math display">\[L = \prod_{i=1}^n \pi^{Y_i}(1-\pi)^{1-Y_i}\]</span> and <span class="math display">\[l = \log(L) = \sum_{i=1}^n (Y_i \log(\pi) + (1-Y_i) \log(1-\pi))\]</span></p>
+<p>Get the first derivative of <span class="math inline">\(l\)</span> with respect to <span class="math inline">\(\pi\)</span> and set it to equal 0.</p>
+<p><span class="math display">\[\frac{dl}{d\pi} = \sum_{i=1}^n \left( Y_i \cdot \frac{1}{\pi} + (1-Y_i) \cdot \frac{-1}{1-\pi} \right)
+= \frac{\sum Y_i}{\pi} - \frac{\sum (1-Y_i)}{1-\pi} = 0\]</span></p>
+<p>Solving for the equation, we have <span class="math display">\[\hat{\pi} = \arg\max(l) = \frac{\sum Y_i}{n}\]</span></p>
+<p><code>Proof</code>:</p>
+<p><span class="math display">\[(1-\pi) \sum Y_i = \pi \sum (1-Y_i) = \pi (n - \sum Y_i)\]</span> <span class="math display">\[\sum Y_i - \pi \sum Y_i = n\pi - \pi \sum Y_i\]</span> <span class="math display">\[\pi = \frac{\sum Y_i}{n}\]</span></p>
+</div>
+<div id="likelihood-ratio-statistic" class="section level4">
+<h4><span class="header-section-number">5.3.3.2</span> Likelihood-Ratio Statistic</h4>
+<p>For the same reason, we will deal with log-likelihood (instead of likelihood) in order to simplify derivation.</p>
+<p><span class="math display">\[-2 \log \left( \frac{L_0}{L_a} \right) = -2(\log L_0 - \log L_a)\]</span> where <span class="math inline">\(L_0\)</span> is the likelihood under the <span class="math inline">\(H_0\)</span> and <span class="math inline">\(L_a\)</span> is the likelihood under the <span class="math inline">\(H_a\)</span>.</p>
+<p>The maximum likelihood with less constrained model (aka <strong>full model</strong>) will always fit at least as good as the more constrained model under the null hypothesis (aka <strong>reduced model</strong>). Therefore, the quotient <span class="math inline">\(L_0/L_a\)</span> is always between 0 and 1 and its <span class="math inline">\(-2 \log(L_0/L_a)\)</span> is always positive.</p>
+<p>For two-way contingency tables, <span class="math inline">\(-2 \log(L_0/L_a)\)</span> can be simplified to the <span class="math inline">\(G^2\)</span> statistic.</p>
+<p><span class="math display">\[G^2 = -2 \sum n_{ij} \cdot \log \left( \frac{\hat{\mu}_{ij}}{n_{ij}} \right) ~~~~ \&amp; ~~~~ df = (I-1)(J-1)\]</span></p>
+<p><code>Proof</code>:</p>
+<p><span class="math display">\[L = P(Y_1,Y_2, ...,Y_n) = \prod_{I,J} \frac{e^{-\lambda} \cdot (\lambda_{ij})^{n_{ij}}}{n_{ij}!}\]</span> and hence <span class="math display">\[l = \log L = -\sum \lambda_{ij} + \sum (n_{ij} \cdot \log \lambda_{ij}) - \sum \log n_{ij}!\]</span></p>
+<p>Under <span class="math inline">\(H_0\)</span>, we have <span class="math display">\[l_{H_0} = -\sum \hat{\mu}_{ij} + \sum (n_{ij} \cdot \log \hat{\mu}_{ij}) - \sum \log n_{ij}!\]</span> Under <span class="math inline">\(H_a\)</span>, we have <span class="math display">\[l_{H_a} = -\sum n_{ij} + \sum (n_{ij} \cdot \log n_{ij}) - \sum \log n_{ij}!\]</span> To note, <span class="math inline">\(\sum \hat{\mu}_{ij} = \sum n_{ij} = n\)</span>.</p>
+<p>Therefore,</p>
+<p><span class="math display">\[\log \frac{L_0}{L_a} = \sum \left( n_{ij} \cdot \log \left( \frac{\hat{\mu}_{ij}}{n_{ij}} \right) \right)\]</span> and <span class="math display">\[G^2 = -2 \sum n_{ij} \cdot \log \left( \frac{\hat{\mu}_{ij}}{n_{ij}} \right)\]</span></p>
 </div>
 </div>
 </div>
@@ -544,6 +881,53 @@ n_Cp_C(1-p_C) = (a+b) \cdot \frac{b}{a+b} \cdot \frac{a}{a+b} = \frac{ab}{a+b}\]
 <h2><span class="header-section-number">5.4</span> Categorical (X) - Continuous (Y)</h2>
 <div id="anova" class="section level3">
 <h3><span class="header-section-number">5.4.1</span> ANOVA</h3>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">mid1cat =<span class="st"> </span><span class="kw">cut</span>(xdat$mid1, <span class="dt">breaks=</span><span class="kw">quantile</span>(xdat$mid1), <span class="dt">include.lowest=</span>T)
+xdat =<span class="st"> </span><span class="kw">data.frame</span>(xdat, mid1cat)
+<span class="kw">boxplot</span>(mid3 ~<span class="st"> </span>mid1cat, <span class="dt">data=</span>xdat, 
+        <span class="dt">main=</span><span class="st">&quot;Boxplot of Exam Results&quot;</span>, 
+        <span class="dt">xlab=</span><span class="st">&quot;First Midterm Score Category&quot;</span>,
+        <span class="dt">ylab=</span><span class="st">&quot;Final Exam Score&quot;</span>)
+<span class="kw">abline</span>(<span class="dt">h=</span><span class="kw">mean</span>(xdat$mid3,<span class="dt">na.rm=</span>T), <span class="dt">lty=</span><span class="dv">2</span>)</code></pre></div>
+<p><img src="_main_files/figure-html/anova-1.png" width="672" /></p>
+<table style="width:31%;">
+<colgroup>
+<col width="5%" />
+<col width="8%" />
+<col width="8%" />
+<col width="8%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th align="center">SS</th>
+<th align="center">DF</th>
+<th align="center">MS</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math display">\[\mathbf{Total}~~\]</span></td>
+<td align="center"><span class="math display">\[~~\sum(Y_i-\bar{Y})^2~~\]</span></td>
+<td align="center"><span class="math display">\[~~n-1~~\]</span></td>
+<td align="center"><span class="math display">\[~~\frac{1}{n-1} \sum (Y_i-\bar{Y})^2\]</span></td>
+</tr>
+<tr class="even">
+<td><span class="math display">\[\mathbf{Model}~~\]</span></td>
+<td align="center"><span class="math display">\[~~\sum(\bar{Y}_g-\bar{Y})^2~~\]</span></td>
+<td align="center"><span class="math display">\[~~g-1~~\]</span></td>
+<td align="center"><span class="math display">\[~~\frac{1}{g-1}\sum (\bar{Y}_g-\bar{Y})^2\]</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math display">\[\mathbf{Residual}~~\]</span></td>
+<td align="center"><span class="math display">\[~~\sum(Y_i - \bar{Y}_g)^2~~\]</span></td>
+<td align="center"><span class="math display">\[~~n-g~~\]</span></td>
+<td align="center"><span class="math display">\[\frac{1}{n-g}\sum (Y_i-\bar{Y}_g)^2\]</span></td>
+</tr>
+</tbody>
+</table>
+<p>where <span class="math inline">\(n\)</span> is the sample size and <span class="math inline">\(g\)</span> is the number of groups.</p>
+<p><span class="math display">\[ F = \frac{MSM}{MSE} = \frac{ \frac{1}{p}\sum (\hat{Y}_i-\bar{Y})^2 }{ \frac{1}{n-1-p}\sum (Y_i-\hat{Y}_i)^2 } \]</span> where <span class="math inline">\(F(p, n-1-p)\)</span> and <span class="math inline">\(p=1\)</span> in the case of simple linear regression.</p>
+<p><code>p = 1 - pf(F, df1, df2)</code></p>
 
 </div>
 </div>
