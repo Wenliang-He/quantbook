@@ -29,7 +29,8 @@ What is a **_random variable_** or **_RV_**? We have rows as cases and columns a
 
 > 形而下者谓之器 - 在地成形 - 现象（有形之物、器、案例）
 
-`TODO`: add the first graph with red and gold colors from notes_20180403
+
+![](images/inference_RV.png)
 
 
 Let's choose $Y_1, Y_2, Y_3, ..., Y_n$ from the standard normal distribution $N(0,1)$. 
@@ -216,7 +217,8 @@ B --> F(Case4)
 
 Given a random variable, the sampling process is the process of getting a sample of cases. Get a case involves two steps: (1) choose and (2) measure. 
 
-`TODO`: add the graph by the end of the 1st page in notes_20180410.
+
+![](images/inference_measure.png)
 
 To sum up, 
 
@@ -233,7 +235,7 @@ An intuitive reaction is to consider using sample mean $\bar{y}$ to estimate pop
 
 $$\bar{Y} \sim N \left( \mu, \frac{\sigma^2}{n} \right)$$
 
-`TODO`: add graph by the end of 2nd page in notes_20180410. 
+![](images/inference_estimate.png) 
 
 #### Further Notes
 
