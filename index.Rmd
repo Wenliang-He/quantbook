@@ -16,8 +16,6 @@ Let's test it a little bit!
 
 ## Intro to Rmarkdown
 
-Add some text and see what happens.
-
 ## Intro to Bookdown
 
 
