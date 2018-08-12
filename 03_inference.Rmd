@@ -332,6 +332,8 @@ As a result, given a specific $\bar{y}$ computed from a settled sample, if $\bar
 
 #### Confidence Interval with Known Variance
 
+((Coursera - Johns Hopkins - DSJH6-10 Statistical Inference/Week 3/Module 8/08 01,08 02, 08 03,08 04))(Zhu-Qiuxia)
+
 Given the two previous cutoffs, we can have
 
 $$P(\bar{Y}_L \le \bar{Y} \le \bar{Y}_U) = 0.95$$
@@ -548,7 +550,7 @@ While we know what a _variable_ is, but what is a **random variable** or **RV**?
 
 Let's get some data, i.e., $y_1, y_2, y_3, ..., y_n$, from the standard normal distribution $N(0,1)$ and store them as a variable in a table. 
 
-`TODO`: add the first graph with red and gold colors from notes_20180403
+![](images/inference_gold and red.png)
 
 In summary,
 
@@ -720,6 +722,8 @@ Note that the proof of $E(\bar{Y}) = \mu$ and $Var(\bar{Y}) = \sigma^2 / n$ are 
 
 ### More on Central Limit Theorem
 
+(Coursera - Johns Hopkins - DSJH6-10 Statistical Inference/Week 2/Module 7/07 02 Asymptotics and CLT)(Zhu-Qiuxia)
+
 ```{r, echo=FALSE}
 mermaid("
 graph LR
@@ -738,7 +742,7 @@ B --> F(Case4)
 
 Given a random variable, the sampling process is the process of getting a sample of cases. Get a case involves two steps: (1) choose and (2) measure. 
 
-`TODO`: add the graph by the end of the 1st page in notes_20180410.
+![](images/inference_measure.png)
 
 To sum up, 
 
@@ -758,7 +762,7 @@ Since each time we collect a sample, the sample mean will change. It is thus nat
 $$\bar{Y} \sim N \left( \mu, \frac{\sigma^2}{n} \right)$$
 
 
-`TODO`: add graph by the end of 2nd page in notes_20180410. 
+![](images/inference_estimate.png)
 
 #### Further Notes
 
@@ -810,9 +814,12 @@ The gut feeling we have replied on is the essence of statistial inference, i.e.,
 
 ### Hypothesis Testing
 
+((Coursera - Johns Hopkins - DSJH6-10 Statistical Inference/Week 3/Module 9: Hypothesis testing))(Zhu-Qiuxia)
+
 With a specific normal distribution, there is always a small probability, no matter how small, that an extreme case is indeed coming from the normal distribution. As a result, we need to agree on certain pre-determined cutoffs beyond which extreme cases are flagged as highly unlikely, i.e., **_too big to be true_**. The cutoffs we use would correspond to the tail regions summing up to 5% probability, i.e., $\boldsymbol{\alpha=0.05}$, where $\alpha$ is formally referred to as the **Type I Error Rate** or **False Positive Rate**. 
 
 #### Hypothesis Testing with $N(0,1)$
+
 
 ```{r, echo=FALSE}
 # draw a density curve
@@ -854,6 +861,8 @@ As a result, given a specific $\bar{y}$ computed from a settled sample, if $\bar
 
 #### Confidence Interval with Known Variance
 
+(Coursera - Johns Hopkins - DSJH6-10 Statistical Inference/Week 2/Module 7/07 03 Asymptotics and confidence intervals)(Zhu-Qiuxia)
+
 Given the two previous cutoffs, we can have
 
 $$P(\bar{Y}_L \le \bar{Y} \le \bar{Y}_U) = 0.95$$
@@ -888,6 +897,8 @@ Notice that we are using `[]` instead of `()` because this equation above is not
 The resulting $[LB, UP]$ is called the **confidence interval** or **IC** at 95% level, i.e. $1-\alpha$. 
 
 #### Margin of Error
+
+((Coursera - Johns Hopkins - DSJH6-10 Statistical Inference/Week 2/Module 5/05 03 Standard error of the mean))(Zhu-Qiuxia)
 
 Previously, we have introduced $\sqrt{\sigma^2/n}$ as the **_standard error_** or **_se_**. Now we would introduce a new concept called the **margin of error** or **me**. 
 
