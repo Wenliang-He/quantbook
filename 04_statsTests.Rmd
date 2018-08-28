@@ -786,7 +786,7 @@ $$G^2 = -2 \sum n_{ij} \cdot \log \left( \frac{\hat{\mu}_{ij}}{n_{ij}} \right)$$
 xdat = read.csv("/Users/Wen/百度云同步盘/01_Teaching/01_My_Courses/11_QuantMethods_I/data/demo_data.csv", stringsAsFactors = T)
 ```
 
-```{r anova}
+```{r}
 mid1cat = cut(xdat$mid1, breaks=quantile(xdat$mid1), include.lowest=T)
 xdat = data.frame(xdat, mid1cat)
 boxplot(mid3 ~ mid1cat, data=xdat, 

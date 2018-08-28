@@ -25,7 +25,7 @@
 <meta name="author" content="Wenliang He">
 
 
-<meta name="date" content="2018-08-01">
+<meta name="date" content="2018-08-28">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -55,6 +55,13 @@
 <link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
 <script src="libs/chromatography-0.1/chromatography.js"></script>
 <script src="libs/DiagrammeR-binding-1.0.0/DiagrammeR.js"></script>
+<link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
+<script src="libs/datatables-binding-0.4/datatables.js"></script>
+<link href="libs/dt-core-1.10.16/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="libs/dt-core-1.10.16/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="libs/dt-core-1.10.16/js/jquery.dataTables.min.js"></script>
+<link href="libs/crosstalk-1.0.0/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.0.0/js/crosstalk.min.js"></script>
 
 
 <style type="text/css">
@@ -360,8 +367,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p><span class="math display">\[Y_1, Y_2, Y_3, ..., Y_n \overset{iid}{\sim} N(0,1) \]</span> where <strong>iid</strong> means <strong>i</strong>ndependently and <strong>i</strong>dentically <strong>d</strong>istributed.</p>
 <div id="identically-distributed" class="section level4">
 <h4><span class="header-section-number">4.1.2.1</span> Identically Distributed</h4>
-<div id="htmlwidget-750b49833b4a756ed5a9" style="width:672px;height:100px;" class="DiagrammeR html-widget"></div>
-<script type="application/json" data-for="htmlwidget-750b49833b4a756ed5a9">{"x":{"diagram":"\ngraph LR\n\nA((B)) --- B((B)) \nB --- C((B)) \nC --- D((R)) \nD --- E((R))\n\nlinkStyle default stroke-width:0px\nclass A,B,C blacks\nclass D,E reds\nclassDef blacks fill:darkgray\nclassDef reds fill:red\n\n"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-6e186b16566c11c39101" style="width:672px;height:100px;" class="DiagrammeR html-widget"></div>
+<script type="application/json" data-for="htmlwidget-6e186b16566c11c39101">{"x":{"diagram":"\ngraph LR\n\nA((B)) --- B((B)) \nB --- C((B)) \nC --- D((R)) \nD --- E((R))\n\nlinkStyle default stroke-width:0px\nclass A,B,C blacks\nclass D,E reds\nclassDef blacks fill:darkgray\nclassDef reds fill:red\n\n"},"evals":[],"jsHooks":[]}</script>
 <p>Let’s image that we have 3 black (B) balls and 2 red (R) balls.</p>
 <blockquote>
 <p><strong>Question</strong>: If you would randomly choose a ball, what is the probability that it’s black?</p>
@@ -521,8 +528,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </div>
 <div id="more-on-central-limit-theorem" class="section level3">
 <h3><span class="header-section-number">4.2.2</span> More on Central Limit Theorem</h3>
-<div id="htmlwidget-511494a24d0ff3b720ed" style="width:672px;height:250px;" class="DiagrammeR html-widget"></div>
-<script type="application/json" data-for="htmlwidget-511494a24d0ff3b720ed">{"x":{"diagram":"\ngraph LR\n\nA(Random Variable) -->|Sampling|B(Sample)\nB -->|Inference|A\nB --> C(Case1)\nB --> D(Case2)\nB --> E(Case3)\nB --> F(Case4)\n\n"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-57b041c4fb91e59215ee" style="width:672px;height:250px;" class="DiagrammeR html-widget"></div>
+<script type="application/json" data-for="htmlwidget-57b041c4fb91e59215ee">{"x":{"diagram":"\ngraph LR\n\nA(Random Variable) -->|Sampling|B(Sample)\nB -->|Inference|A\nB --> C(Case1)\nB --> D(Case2)\nB --> E(Case3)\nB --> F(Case4)\n\n"},"evals":[],"jsHooks":[]}</script>
 <div id="sampling-process" class="section level4">
 <h4><span class="header-section-number">4.2.2.1</span> Sampling Process</h4>
 <p>Given a random variable, the sampling process is the process of getting a sample of cases. Get a case involves two steps: (1) choose and (2) measure.</p>
@@ -595,7 +602,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>With a specific normal distribution, there is always a small probability, no matter how small, that an extreme case is indeed coming from the normal distribution. As a result, we need to agree on certain pre-determined cutoffs beyond which extreme cases are flagged as highly unlikely, i.e., <strong><em>too big to be true</em></strong>. The cutoffs we use would correspond to the tail regions summing up to 5% probability, i.e., <span class="math inline">\(\boldsymbol{\alpha=0.05}\)</span>, where <span class="math inline">\(\alpha\)</span> is formally referred to as the <strong>Type I Error Rate</strong> or <strong>False Positive Rate</strong>.</p>
 <div id="hypothesis-testing-with-n01" class="section level4">
 <h4><span class="header-section-number">4.3.2.1</span> Hypothesis Testing with <span class="math inline">\(N(0,1)\)</span></h4>
-<p><img src="_main_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-20-1.png" width="672" /></p>
 <p>Under the standard normal distribution, the cutoff for the lower tail <span class="math inline">\(z_L=\)</span> -1.959964, i.e., <code>qnorm(0.025)</code> and the cutoff for the upper tail <span class="math inline">\(z_U=\)</span> 1.959964, i.e., <code>qnorm(0.975)</code>.</p>
 </div>
 <div id="hypothesis-testing-with-known-variance" class="section level4">

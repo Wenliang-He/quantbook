@@ -57,7 +57,7 @@ $$ r = \frac {\color{red}{Cov(X,Y)}} {s_Xs_Y}
 ## Simple Linear Regression
 
 ### Independent Variable: From Categorical to Continuous
-```{r anova}
+```{r}
 mid1cat = cut(xdat$mid1, breaks=quantile(xdat$mid1), include.lowest=T)
 xdat = data.frame(xdat, mid1cat)
 boxplot(mid3 ~ mid1cat, data=xdat, 
