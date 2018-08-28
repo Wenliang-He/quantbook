@@ -25,15 +25,15 @@
 <meta name="author" content="Wenliang He">
 
 
-<meta name="date" content="2018-08-28">
+<meta name="date" content="2018-08-12">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-<link rel="prev" href="the-fundamentals-of-statistics.html">
-<link rel="next" href="statistical-inference-2.html">
+<link rel="prev" href="statistical-inference.html">
+<link rel="next" href="common-statistical-tests.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -55,13 +55,6 @@
 <link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
 <script src="libs/chromatography-0.1/chromatography.js"></script>
 <script src="libs/DiagrammeR-binding-1.0.0/DiagrammeR.js"></script>
-<link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
-<script src="libs/datatables-binding-0.4/datatables.js"></script>
-<link href="libs/dt-core-1.10.16/css/jquery.dataTables.min.css" rel="stylesheet" />
-<link href="libs/dt-core-1.10.16/css/jquery.dataTables.extra.css" rel="stylesheet" />
-<script src="libs/dt-core-1.10.16/js/jquery.dataTables.min.js"></script>
-<link href="libs/crosstalk-1.0.0/css/crosstalk.css" rel="stylesheet" />
-<script src="libs/crosstalk-1.0.0/js/crosstalk.min.js"></script>
 
 
 <style type="text/css">
@@ -299,14 +292,15 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="statistical-inference" class="section level1">
-<h1><span class="header-section-number">4</span> Statistical Inference</h1>
-<div id="random-variable" class="section level2">
-<h2><span class="header-section-number">4.1</span> Random Variable</h2>
+<div id="statistical-inference-2" class="section level1">
+<h1><span class="header-section-number">5</span> Statistical Inference</h1>
+<div id="random-variable-1" class="section level2">
+<h2><span class="header-section-number">5.1</span> Random Variable</h2>
+<p>For data stored in tables, we have rows as <strong><em>cases</em></strong> and columns as <strong><em>variables</em></strong>, and a <em>variable</em> (e.g., <strong>Var2</strong>) would look conceptually as follows.</p>
 <table>
 <thead>
 <tr class="header">
-<th></th>
+<th align="center"></th>
 <th>Var1</th>
 <th align="center">Var2</th>
 <th>Var3</th>
@@ -315,35 +309,35 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </thead>
 <tbody>
 <tr class="odd">
-<td>1</td>
+<td align="center">1</td>
 <td></td>
 <td align="center"><span class="math inline">\(y_1\)</span></td>
 <td></td>
 <td></td>
 </tr>
 <tr class="even">
-<td>2</td>
+<td align="center">2</td>
 <td></td>
 <td align="center"><span class="math inline">\(y_2\)</span></td>
 <td></td>
 <td></td>
 </tr>
 <tr class="odd">
-<td>3</td>
+<td align="center">3</td>
 <td></td>
 <td align="center"><span class="math inline">\(y_3\)</span></td>
 <td></td>
 <td></td>
 </tr>
 <tr class="even">
-<td>4</td>
+<td align="center">…</td>
 <td></td>
 <td align="center"><span class="math inline">\(...\)</span></td>
 <td></td>
 <td></td>
 </tr>
 <tr class="odd">
-<td>5</td>
+<td align="center">n</td>
 <td></td>
 <td align="center"><span class="math inline">\(y_n\)</span></td>
 <td></td>
@@ -351,22 +345,20 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </tr>
 </tbody>
 </table>
-<p>What is a <strong><em>random variable</em></strong> or <strong><em>RV</em></strong>? We have rows as cases and columns as variales. How is a <em>variable</em> as we know it connected with the idea of a <em>random varible</em>?</p>
+<p>While we know what a <em>variable</em> is, but what is a <strong>random variable</strong> or <strong>RV</strong>? How does a <em>variable</em> as we know it connect with the concept of a <em>random variable</em>?</p>
+<div id="get-a-sample-of-data" class="section level3">
+<h3><span class="header-section-number">5.1.1</span> Get a Sample of Data</h3>
 <blockquote>
 <p>形而上者谓之道 - 在天成象 - 象（无形之概念、蓝图、计划）</p>
-</blockquote>
-<blockquote>
 <p>形而下者谓之器 - 在地成形 - 现象（有形之物、器、案例）</p>
 </blockquote>
-<div class="figure">
-<img src="images/inference_RV.png" />
-
-</div>
-<p>Let’s choose <span class="math inline">\(Y_1, Y_2, Y_3, ..., Y_n\)</span> from the standard normal distribution <span class="math inline">\(N(0,1)\)</span>.</p>
+<p>Let’s get some data, i.e., <span class="math inline">\(y_1, y_2, y_3, ..., y_n\)</span>, from the standard normal distribution <span class="math inline">\(N(0,1)\)</span> and store them as a variable in a table.</p>
+<p><code>TODO</code>: add the first graph with red and gold colors from notes_20180403</p>
+<p>In summary,</p>
 <ul>
 <li>before we see the value of <span class="math inline">\(Y_i\)</span>
 <ul>
-<li><span class="math inline">\(Y_i\)</span> is a <strong>random variable</strong>, which is practically a probability distribution</li>
+<li><span class="math inline">\(Y_i\)</span> is a <strong>random variable</strong>, which is a probability distribution</li>
 <li><span class="math inline">\(Y_1, Y_2, Y_3, ..., Y_n\)</span> is a <strong>random sample</strong></li>
 <li>a statistic (e.g., <span class="math inline">\(\bar{Y} = 1/n \sum Y_i\)</span>) computed from a random sample is another <em>random variable</em> called a <strong>sampling statistic</strong></li>
 </ul></li>
@@ -377,55 +369,58 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li>a statistic (e.g., <span class="math inline">\(m=1/n \sum y_i\)</span>) computed from a sample is a <em>number</em> called a <strong>sample statistic</strong></li>
 </ul></li>
 </ul>
-<p>In this context, the word <strong>random</strong> means <strong>unsettled</strong>. The value of a <em>random</em> variable will not be <em>settled</em> unless it is actually sampled and observed, i.e., an actual data point is collected.</p>
-<div id="iid---independently-and-identically-distributed" class="section level3">
-<h3><span class="header-section-number">4.1.1</span> IID - Independently and Identically Distributed</h3>
-<p>The phrase, let’s choose <span class="math inline">\(Y_1, Y_2, Y_3, ..., Y_n\)</span> from the standard normal distribution <span class="math inline">\(N(0,1)\)</span>, can be succinctly summarized as follows:</p>
+<p>In this context, the word <strong><em>random</em></strong> means <strong><em>unsettled</em></strong>. The value of a <em>random</em> variable will not be <em>settled</em> unless it is actually sampled and observed, i.e., an actual data point is collected.</p>
+</div>
+<div id="iid---independently-and-identically-distributed-1" class="section level3">
+<h3><span class="header-section-number">5.1.2</span> IID - Independently and Identically Distributed</h3>
+<p>The phrase, let’s choose a random sample of <span class="math inline">\(Y_1, Y_2, Y_3, ..., Y_n\)</span> from the standard normal distribution <span class="math inline">\(N(0,1)\)</span>, can be succinctly summarized as follows:</p>
 <p><span class="math display">\[Y_1, Y_2, Y_3, ..., Y_n \overset{iid}{\sim} N(0,1) \]</span> where <strong>iid</strong> means <strong>i</strong>ndependently and <strong>i</strong>dentically <strong>d</strong>istributed.</p>
-<div id="identically-distributed" class="section level4">
-<<<<<<< HEAD
-<h4><span class="header-section-number">4.1.2.1</span> Identically Distributed</h4>
-<div id="htmlwidget-6e186b16566c11c39101" style="width:672px;height:100px;" class="DiagrammeR html-widget"></div>
-<script type="application/json" data-for="htmlwidget-6e186b16566c11c39101">{"x":{"diagram":"\ngraph LR\n\nA((B)) --- B((B)) \nB --- C((B)) \nC --- D((R)) \nD --- E((R))\n\nlinkStyle default stroke-width:0px\nclass A,B,C blacks\nclass D,E reds\nclassDef blacks fill:darkgray\nclassDef reds fill:red\n\n"},"evals":[],"jsHooks":[]}</script>
-=======
-<h4><span class="header-section-number">4.1.1.1</span> Identically Distributed</h4>
-<div id="htmlwidget-a8f04f28f989bfa3f97e" style="width:672px;height:100px;" class="DiagrammeR html-widget"></div>
-<script type="application/json" data-for="htmlwidget-a8f04f28f989bfa3f97e">{"x":{"diagram":"\ngraph LR\n\nA((B)) --- B((B)) \nB --- C((B)) \nC --- D((R)) \nD --- E((R))\n\nlinkStyle default stroke-width:0px\nclass A,B,C blacks\nclass D,E reds\nclassDef blacks fill:darkgray\nclassDef reds fill:red\n\n"},"evals":[],"jsHooks":[]}</script>
->>>>>>> a40a038445030bfdc23cd8ea095ae3ec1cec84f6
+<div id="identically-distributed-1" class="section level4">
+<h4><span class="header-section-number">5.1.2.1</span> Identically Distributed</h4>
+<div id="htmlwidget-443afd31f32377e23bfa" style="width:672px;height:100px;" class="DiagrammeR html-widget"></div>
+<script type="application/json" data-for="htmlwidget-443afd31f32377e23bfa">{"x":{"diagram":"\ngraph LR\n\nA((B)) --- B((B)) \nB --- C((B)) \nC --- D((R)) \nD --- E((R))\n\nlinkStyle default stroke-width:0px\nclass A,B,C blacks\nclass D,E reds\nclassDef blacks fill:darkgray\nclassDef reds fill:red\n\n"},"evals":[],"jsHooks":[]}</script>
 <p>Let’s image that we have 3 black (B) balls and 2 red (R) balls.</p>
 <blockquote>
-<p>If you would randomly choose a ball, what is the probability that it’s black?</p>
+<p><strong>Question</strong>: If you would randomly choose a ball, what is the probability that it’s black?</p>
 </blockquote>
+<blockquote>
 <p><strong>Answer</strong>: <span class="math inline">\(P(B_1) = 3/5\)</span>.</p>
-<blockquote>
-<p>Now if we indeed pick a black ball in our first try and we decide to choose a second ball. Given that we do not put the first ball back, what is the probability that the second one is also black?</p>
 </blockquote>
+<blockquote>
+<p><strong>Question</strong>: Now if we indeed pick a black ball in our first try and we decide to choose a second ball. Given that we do NOT put the first ball back, what is the probability that the second one is also black?</p>
+</blockquote>
+<blockquote>
 <p><strong>Answer</strong>: <span class="math inline">\(P(B_2) = 2/4\)</span>.</p>
-<p>Hence, choosing two balls in this example violates the <strong>identically distributed</strong> assumption.</p>
-<p>Two important ideas emerge in the <em>process of choosing</em> (aka <em>sampling</em>) things.</p>
+</blockquote>
+<p>Hence, choosing two balls in this example violates the <strong><em>identically distributed</em></strong> assumption.</p>
+<p>Two important ideas emerge in the <em>process of choosing</em> (aka <strong>sampling</strong>) things.</p>
 <ul>
-<li>In the previous sampling process, after each draw, if we do not put the balls back, this way of choosing things is called <strong><em>sampling without replacement</em></strong>.</li>
-<li>In contrast, if you do put the balls back after each draw, it is called <strong><em>sampling with replacement</em></strong>.</li>
+<li>In the previous sampling process, after each draw, if we do not put the balls back, this way of choosing things is called <strong>sampling without replacement</strong>.</li>
+<li>In contrast, if you do put the balls back after each draw, it is called <strong>sampling with replacement</strong>.</li>
 </ul>
-<p>It is hence clear that the word <em>replacement</em> in this context practically means <em>putting things back</em> (or more precisely <em>finding a replacement</em> for the one that is drawn).</p>
-<p>In practice, we would rarely sample with relacement. However, if the pool is large enough, we can ignore the slight change in probability after each time one case is drawn.</p>
+<p>It is hence clear that the word <strong><em>replacement</em></strong> in this context practically means <strong><em>putting things back</em></strong> (or more precisely <strong><em>finding a replacement</em></strong> for the one that is drawn).</p>
+<p>In practice, we would rarely <em>sample with relacement</em>. However, if the pool is large enough, we can ignore the slight change in probability after each time one case is drawn.</p>
 </div>
-<div id="independently-distributed" class="section level4">
-<h4><span class="header-section-number">4.1.1.2</span> Independently Distributed</h4>
-<p>Now let’s consider another case. Imagine that at the beginning of a semester, you as a student is trying to find a course to enroll. There are <strong>N</strong> courses in total and all courses are equally attractive (i.e., same probabiliy of being chosen by a student). You and your friend from the same dorm are discussing about the teachers and courses. Eventually, the two of you decide to enroll into the same course denoted as <strong>C</strong>.</p>
+<div id="independently-distributed-1" class="section level4">
+<h4><span class="header-section-number">5.1.2.2</span> Independently Distributed</h4>
+<p>Now let’s consider another case. Imagine that at the beginning of a semester, you as a student is trying to find a course to enroll. There are <strong><em>N</em></strong> courses in total and all courses are equally attractive (i.e., same probabiliy of being chosen by any student). You and your friend from the same dorm are discussing about the teachers and courses. Eventually, the two of you decide to enroll into the same course denoted as <strong><em>C</em></strong>.</p>
 <blockquote>
-<p>What are the probabilities of you and your friend enrolling into course <strong>C</strong>?</p>
+<p><strong>Question</strong>: What are the probabilities of you and your friend enrolling into course <strong><em>C</em></strong>?</p>
 </blockquote>
-<p><strong>Answer</strong>: <span class="math inline">\(P(C_1) = 1/N\)</span> and <span class="math inline">\(P(C_2) = 1/N\)</span>. Since there are <strong>N</strong> courses in total and all are equally attractive, the probabilities of you and your friend enrolling into course <strong>C</strong> are the same.</p>
 <blockquote>
-<p>Is the probability of you enrolling into the course independent of the probability of your friend enrolling into the same course?</p>
+<p><strong>Answer</strong>: <span class="math inline">\(P(C_1) = 1/N\)</span> and <span class="math inline">\(P(C_2) = 1/N\)</span>. Since there are <strong><em>N</em></strong> courses in total and all are equally attractive, the probabilities of you and your friend enrolling into course <strong><em>C</em></strong> are the same.</p>
 </blockquote>
-<p><strong>Answer</strong>: obviously no! Because you and your friend are not making the course enrollment decisions separately, but with much discussion going around.</p>
-<p>Hence, choosing the same course in this example violates the <strong>independently distributed</strong> assumption, even though they are <em>identically distributed</em>.</p>
+<blockquote>
+<p><strong>Question</strong>: Is the probability of you enrolling into the course independent of the probability of your friend enrolling into the same course?</p>
+</blockquote>
+<blockquote>
+<p><strong>Answer</strong>: obviously no! Because you and your friend are not making the course enrollment decisions separately; much discussion has been going around between you two.</p>
+</blockquote>
+<p>Hence, choosing the same course in this example violates the <strong><em>independently distributed</em></strong> assumption, even though they are <em>identically distributed</em>.</p>
 </div>
 </div>
-<div id="random-variable-vs.case" class="section level3">
-<h3><span class="header-section-number">4.1.2</span> Random Variable vs. Case</h3>
+<div id="random-variables-vs.cases" class="section level3">
+<h3><span class="header-section-number">5.1.3</span> Random Variables vs. Cases</h3>
 <table>
 <thead>
 <tr class="header">
@@ -473,9 +468,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </tbody>
 </table>
 </div>
-<div id="properties-of-a-random-variable" class="section level3">
-<h3><span class="header-section-number">4.1.3</span> Properties of a Random Variable</h3>
-<p>Previously, we have <span class="math inline">\(Y_1, Y_2, Y_3, ..., Y_n \overset{iid}{\sim} N(0,1)\)</span> and <span class="math inline">\(\bar{Y} = \frac{1}{n} \sum_{i=1}^{n} Y_i\)</span>, where both <span class="math inline">\(Y_i\)</span>s and <span class="math inline">\(\bar{Y}\)</span> are random variables. In practice, we would encounter a variety of random variables. As a result, we would constantly ask the questions:</p>
+<div id="properties-of-a-random-variable-1" class="section level3">
+<h3><span class="header-section-number">5.1.4</span> Properties of a Random Variable</h3>
+<p>Previously, we have <span class="math inline">\(Y_1, Y_2, Y_3, ..., Y_n \overset{iid}{\sim} N(0,1)\)</span> and <span class="math inline">\(\bar{Y} = \frac{1}{n} \sum_{i=1}^{n} Y_i\)</span>, where <span class="math inline">\(Y_i\)</span>’s and <span class="math inline">\(\bar{Y}\)</span> are all random variables. In practice, we would encounter a variety of random variables. As a result, we would constantly ask the questions:</p>
 <ul>
 <li>What does a RV look like?</li>
 <li>What is the distribution of a RV?</li>
@@ -488,14 +483,14 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul>
 <p>The first two questions are identical. The first one is using informal language and the second using formal academic language. The two questions are reduced to the third question, which is basically asking for a quick summary of a distribution in terms of the <em>center</em>, <em>spread</em>, and <em>shape</em>.</p>
 <p>The properties of a RV can be succintly summarized as</p>
-<p><span class="math display">\[Y \sim \forall(\mu, \sigma^2) \]</span> where <span class="math inline">\(\forall\)</span> stands for <strong><em>any</em></strong>. Notice <span class="math inline">\(\forall\)</span> is just an inverted <strong>A</strong>.</p>
+<p><span class="math display">\[Y \sim \forall(\mu, \sigma^2) \]</span> where <span class="math inline">\(\forall\)</span> means <strong><em>any</em></strong> <em>shape</em>. Notice <span class="math inline">\(\forall\)</span> is just an inverted <strong>A</strong>.</p>
 </div>
 </div>
-<div id="central-limit-theorem" class="section level2">
-<h2><span class="header-section-number">4.2</span> Central Limit Theorem</h2>
-<p><strong>Central Limit Theorem</strong> or <strong>CLT</strong> is the singularly most important theorem in statistics. CLT forms the foundation of <strong>statistical inference</strong>, a subject of perpetual interest in statistics.</p>
-<div id="presenting-central-limit-theorem" class="section level3">
-<h3><span class="header-section-number">4.2.1</span> Presenting Central Limit Theorem</h3>
+<div id="central-limit-theorem-1" class="section level2">
+<h2><span class="header-section-number">5.2</span> Central Limit Theorem</h2>
+<p><strong>Central Limit Theorem</strong> or <strong>CLT</strong> is the singularly most important theorem in statistics. CLT forms the foundation of <strong>statistical inference</strong>, a subject of central concern in statistics.</p>
+<div id="intro-to-central-limit-theorem" class="section level3">
+<h3><span class="header-section-number">5.2.1</span> Intro to Central Limit Theorem</h3>
 <ol style="list-style-type: decimal">
 <li>Given a random variable Y of <strong>any shape</strong> with mean <span class="math inline">\(\mu\)</span> and variance <span class="math inline">\(\sigma^2\)</span>,</li>
 </ol>
@@ -503,28 +498,34 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <ol start="2" style="list-style-type: decimal">
 <li><p>We choose a random sample from Y <span class="math display">\[Y_1, Y_2, Y_3, ..., Y_n ~ \overset{iid}{\sim} ~ \forall(\mu,\sigma^2)\]</span> where each <span class="math inline">\(Y_i\)</span> is a random variable with <span class="math inline">\(E(Y_i) = \mu\)</span> and <span class="math inline">\(Var(Y_i) = \sigma^2\)</span>.</p></li>
 <li><p>We can compute the sampling statistic of the sample mean <span class="math display">\[\bar{Y} = \frac{1}{n} \sum_{i=1}^{n} Y_i\]</span> where <span class="math inline">\(\bar{Y}\)</span> becomes another random variable.</p></li>
-<li><p>Hence, we would immediately ask the question: What are the properties of <span class="math inline">\(\bar{Y}\)</span>?</p></li>
+<li><p>Hence, we would immediately ask the question: What are the properties of <span class="math inline">\(\bar{Y}\)</span>? The answer to this question gives rise to the <strong><em>Central Limit Theorem</em></strong> (see part of the proof of the theorem below).</p></li>
 </ol>
-<p>The answer to this question gives birth to the singularly most important theorem in statistics, known as the <strong><em>Central Limit Theorem</em></strong> or <strong>CLT</strong>. See the proof of part of the theorem below.</p>
+<blockquote>
+<p><strong>Question</strong>: What are the properties of <span class="math inline">\(\bar{Y}\)</span>?</p>
+</blockquote>
+<blockquote>
 <p><strong>Answers</strong>: <span class="math display">\[\bar{Y} \sim N \left( \mu, \frac{\sigma^2}{n} \right)\]</span> or equivalently</p>
 <ul>
 <li><span class="math inline">\(E(\bar{Y}) = \mu\)</span></li>
 <li><span class="math inline">\(Var(\bar{Y}) = \sigma^2 / n\)</span></li>
 <li><span class="math inline">\(shape(\bar{Y}) = N\)</span></li>
 </ul>
+</blockquote>
 <p>The most surprising part of the CLT is the discovery that given a random variable <span class="math inline">\(Y\)</span> of <strong>any</strong> distribution, <span class="math inline">\(\bar{Y}\)</span> is <strong>always</strong> normally distributed as long as two conditions are satisfied:</p>
 <ol style="list-style-type: decimal">
-<li><span class="math inline">\(Y_1, Y_2, Y_3, ..., Y_n ~ \overset{iid}{\sim} ~ \forall(\mu,\sigma^2)\)</span></li>
-<li>sample size n is large enough</li>
+<li><span class="math inline">\(Y_1, Y_2, Y_3, ..., Y_n ~ \overset{iid}{\sim} ~ \forall(\mu,\sigma^2)\)</span>, i.e., the <span class="math inline">\(iid\)</span> assumption</li>
+<li>sample size <span class="math inline">\(n\)</span> is large enough</li>
 </ol>
-<p><code>Proof - Prerequisites</code>:</p>
+<blockquote>
+<p><strong>Proof</strong>:</p>
+<p><code>Prerequisites</code></p>
 <ul>
-<li><span class="math inline">\(E(cX) = c E(X)\)</span></li>
+<li><span class="math inline">\(E(cX) = cE(X)\)</span></li>
 <li><span class="math inline">\(E(X+Y) = E(X) + E(Y)\)</span></li>
-<li><span class="math inline">\(E(cX) = c^2E(X)\)</span></li>
-<li><span class="math inline">\(Var(X+Y) = Var(X) + Var(Y)\)</span> if <span class="math inline">\(X \perp Y\)</span>, i.e., X is independent of Y</li>
+<li><span class="math inline">\(Var(cX) = c^2E(X)\)</span></li>
+<li><span class="math inline">\(Var(X+Y) = Var(X) + 2Cov(X,Y) + Var(Y) \overset{*}{=} Var(X) + Var(Y)\)</span> </br> where <span class="math inline">\(\overset{*}{=}\)</span> holds if <span class="math inline">\(X \perp Y\)</span>, i.e., X is independent of Y.</li>
 </ul>
-<p><code>Proof</code>: <span class="math display">\[E(\bar{Y}) = E( \frac{1}{n} \sum_{i=1}^{n} Y_i ) = \frac{1}{n} E( \sum_{i=1}^{n} Y_i ) 
+<p><code>Proof</code> <span class="math display">\[E(\bar{Y}) = E( \frac{1}{n} \sum_{i=1}^{n} Y_i ) = \frac{1}{n} E( \sum_{i=1}^{n} Y_i ) 
 = \frac{1}{n} \sum_{i=1}^{n} E(Y_i) =  \frac{1}{n} \sum_{i=1}^{n} \mu 
 = \frac{1}{n} n\mu = \mu\]</span></p>
 <p>and</p>
@@ -532,26 +533,17 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 = \frac{1}{n^2} Var( \sum_{i=1}^{n} Y_i ) 
 = \frac{1}{n^2} \sum_{i=1}^{n} Var(Y_i) =  \frac{1}{n^2} \sum_{i=1}^{n} \sigma^2 
 = \frac{1}{n^2} n\sigma^2 = \frac{\sigma^2}{n}\]</span></p>
+</blockquote>
 <p>Note that the proof of <span class="math inline">\(E(\bar{Y}) = \mu\)</span> and <span class="math inline">\(Var(\bar{Y}) = \sigma^2 / n\)</span> are very straitforward. However, showing that the <span class="math inline">\(shape(\bar{Y}) = N\)</span> is much more difficult and is beyond the scope of this book. The third point is in fact the most important contribution of the Central Limit Theorem.</p>
 </div>
-<<<<<<< HEAD
 <div id="more-on-central-limit-theorem" class="section level3">
-<h3><span class="header-section-number">4.2.2</span> More on Central Limit Theorem</h3>
-<div id="htmlwidget-57b041c4fb91e59215ee" style="width:672px;height:250px;" class="DiagrammeR html-widget"></div>
-<script type="application/json" data-for="htmlwidget-57b041c4fb91e59215ee">{"x":{"diagram":"\ngraph LR\n\nA(Random Variable) -->|Sampling|B(Sample)\nB -->|Inference|A\nB --> C(Case1)\nB --> D(Case2)\nB --> E(Case3)\nB --> F(Case4)\n\n"},"evals":[],"jsHooks":[]}</script>
-=======
-<div id="understanding-central-limit-theorem" class="section level3">
-<h3><span class="header-section-number">4.2.2</span> Understanding Central Limit Theorem</h3>
-<div id="htmlwidget-3ba03b5d9847b1d84d38" style="width:672px;height:250px;" class="DiagrammeR html-widget"></div>
-<script type="application/json" data-for="htmlwidget-3ba03b5d9847b1d84d38">{"x":{"diagram":"\ngraph LR\n\nA(Random Variable) -->|Sampling|B(Sample)\nB -->|Inference|A\nB --> C(Case1)\nB --> D(Case2)\nB --> E(Case3)\nB --> F(Case4)\n\n"},"evals":[],"jsHooks":[]}</script>
->>>>>>> a40a038445030bfdc23cd8ea095ae3ec1cec84f6
-<div id="sampling-process" class="section level4">
-<h4><span class="header-section-number">4.2.2.1</span> Sampling Process</h4>
+<h3><span class="header-section-number">5.2.2</span> More on Central Limit Theorem</h3>
+<div id="htmlwidget-54db6d86b6ebc38e44a2" style="width:672px;height:250px;" class="DiagrammeR html-widget"></div>
+<script type="application/json" data-for="htmlwidget-54db6d86b6ebc38e44a2">{"x":{"diagram":"\ngraph LR\n\nA(Random Variable) -->|Sampling|B(Sample)\nB -->|Inference|A\nB --> C(Case1)\nB --> D(Case2)\nB --> E(Case3)\nB --> F(Case4)\n\n"},"evals":[],"jsHooks":[]}</script>
+<div id="sampling-process-1" class="section level4">
+<h4><span class="header-section-number">5.2.2.1</span> Sampling Process</h4>
 <p>Given a random variable, the sampling process is the process of getting a sample of cases. Get a case involves two steps: (1) choose and (2) measure.</p>
-<div class="figure">
-<img src="images/inference_measure.png" />
-
-</div>
+<p><code>TODO</code>: add the graph by the end of the 1st page in notes_20180410.</p>
 <p>To sum up,</p>
 <ol style="list-style-type: decimal">
 <li>Y is a RV <code>&lt;=&gt;</code> <span class="math inline">\(\bar{Y} \sim N(\mu, \sigma^2)\)</span></li>
@@ -559,79 +551,81 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li>choose a sample from Y <code>&lt;=&gt;</code> <span class="math inline">\(y_1, y_2, y_3, ..., y_n\)</span></li>
 </ol>
 </div>
-<div id="inference" class="section level4">
-<h4><span class="header-section-number">4.2.2.2</span> Inference</h4>
+<div id="inference-1" class="section level4">
+<h4><span class="header-section-number">5.2.2.2</span> Inference</h4>
 <p>Given a sample of cases, inference is the process of estimating properties of the original random variable. The first and foremost question to ask is</p>
 <blockquote>
-<p>How to estimate the population mean <span class="math inline">\(\mu\)</span>?</p>
+<p><strong>Question</strong>: How to estimate the population mean <span class="math inline">\(\mu\)</span>?</p>
 </blockquote>
-<p>An intuitive reaction is to consider using sample mean <span class="math inline">\(\bar{y}\)</span> to estimate population mean <span class="math inline">\(\mu\)</span>. Since each time we collect a sample, the sample mean will change. It is thus natural to consider the sampling distribution of sample mean and the answer is readily given by the CLT.</p>
+<blockquote>
+<p><strong>Answer</strong>: An intuitive reaction is to think how about using sample mean <span class="math inline">\(\bar{y}\)</span> to estimate population mean <span class="math inline">\(\mu\)</span>.</p>
+</blockquote>
+<p>Since each time we collect a sample, the sample mean will change. It is thus natural to consider the sampling distribution of the sample mean and the answer is readily given by the CLT.</p>
 <p><span class="math display">\[\bar{Y} \sim N \left( \mu, \frac{\sigma^2}{n} \right)\]</span></p>
-<div class="figure">
-<img src="images/inference_estimate.png" />
-
+<p><code>TODO</code>: add graph by the end of 2nd page in notes_20180410.</p>
 </div>
-</div>
-<div id="further-notes" class="section level4">
-<h4><span class="header-section-number">4.2.2.3</span> Further Notes</h4>
+<div id="further-notes-2" class="section level4">
+<h4><span class="header-section-number">5.2.2.3</span> Further Notes</h4>
 <p>Another way to present CLT is</p>
-<p><span class="math display">\[\sum Y_i = n\bar{Y} \sim N( n\mu, n \sigma^2 )\]</span> which suggests that <strong>any random disturbances added together</strong> would give rise to <strong>a normal distribution</strong>.</p>
+<p><span class="math display">\[\sum Y_i = n\bar{Y} \sim N( n\mu, n \sigma^2 )\]</span> which suggests that <strong><em>any random disturbances added together</em></strong> would give rise to <strong><em>a normal distribution</em></strong>.</p>
 <p>Given the CLT</p>
 <p><span class="math display">\[\bar{Y} \sim N \left( \mu, \frac{\sigma^2}{n} \right)\]</span></p>
-<p>we know that <span class="math inline">\(\bar{Y}\)</span> is called the <strong>sample mean</strong>; <span class="math inline">\(N\)</span> is a probability distribution; <span class="math inline">\(\mu\)</span> is a mean; <span class="math inline">\(\sigma^2/n\)</span> is a variance; and <span class="math inline">\(\sqrt{\sigma^2/n}\)</span> is the standard deviation.</p>
-<p>Since the sampling process and inference are so important, we would invent some new terms.</p>
+<p>we know that <span class="math inline">\(\bar{Y}\)</span> is called the <strong><em>sample mean</em></strong>; <span class="math inline">\(N\)</span> is a probability distribution; <span class="math inline">\(\mu\)</span> is a mean; <span class="math inline">\(\sigma^2/n\)</span> is a variance; and <span class="math inline">\(\sqrt{\sigma^2/n}\)</span> is a standard deviation.</p>
+<p>Since the sampling and inference are so important, we would invent some new terms.</p>
 <ul>
-<li><span class="math inline">\(\bar{Y}\)</span> is the <em>sample mean</em> that is generally known as a <strong>sample statistic</strong></li>
-<li><span class="math inline">\(N\)</span> is called a <strong>sampling distribution</strong>, or in this context, the sampling distribution of the sample mean</li>
-<li><span class="math inline">\(\sqrt{\sigma^2/n}\)</span> is called the <strong>standard error</strong> that is the standard deviation of the sampling distribution of the sample mean</li>
-<li><code>Definition</code>: <strong><em>sampling distribution</em></strong> is the <em>probability distribution</em> of a sample statistic</li>
-<li><code>Definition</code>: <strong><em>standard error</em></strong> that is the <em>standard deviation</em> of a sample statistic</li>
+<li><span class="math inline">\(\bar{Y}\)</span> is generally known as <strong>sample statistic</strong>, or in this context, the sample mean</li>
+<li><span class="math inline">\(N\)</span> is generally known as <strong>sampling distribution</strong>, or in this context, the sampling distribution of the sample mean</li>
+<li><span class="math inline">\(\sqrt{\sigma^2/n}\)</span> is generally known as <strong>standard error</strong>, or in this context, the standard deviation of the sampling distribution of the sample mean</li>
+<li>By definition, <strong>sampling distribution</strong> is the <em>probability distribution</em> of a sample statistic</li>
+<li>By definition, <strong>standard error</strong> is the <em>standard deviation</em> of a sampling distribution</li>
 </ul>
 </div>
 </div>
 </div>
-<div id="statistical-inference-1" class="section level2">
-<h2><span class="header-section-number">4.3</span> Statistical Inference</h2>
-<p>Statistical inference is a formal mathematical technique used to <strong>infer whether a hypothesis is true based on existing evidence</strong>, i.e., data that we have collected.</p>
-<div id="the-diamond-expert" class="section level3">
-<h3><span class="header-section-number">4.3.1</span> The Diamond Expert</h3>
+<div id="intro-to-statistical-inference" class="section level2">
+<h2><span class="header-section-number">5.3</span> Intro to Statistical Inference</h2>
+<p>Statistical inference is a formal mathematical technique used to <strong><em>infer whether a hypothesis is true based on existing evidence</em></strong>, i.e., data that we have collected.</p>
+<div id="the-diamond-expert-1" class="section level3">
+<h3><span class="header-section-number">5.3.1</span> The Diamond Expert</h3>
 <p>Imagine that you are an expert on diamonds. You have studied and seen so many diamonds for so long that you know everything about them. One day a close friend of yours called you and asked you to help him to inspect whether a newly acquired diamond is authentic or not. Let’s pretend that evaluating a diamond would take quite some time and money to do so. Now that your friend comes to your place and gleefully reveals a surprisingly large diamond of 30 cm in diameter. Without doing any technical assessment formally, simply by your gut feeling</p>
 <blockquote>
-<p>Do you think the diamond is authentic or not?</p>
+<p><strong>Question</strong>: Do you think the diamond is authentic or not?</p>
 </blockquote>
+<blockquote>
 <p><strong>Answer</strong>: If you ask me, I would say the diamond is too big to be real. It’s got to be a fake.</p>
-<p>Let’s rationalize this gut feel using some mathematics. Since you are the diamond expert, you know that real diamonds would average 0.5 cm in diameter with a standard deviation of 0.3 cm. As a result, if the diamond is real (this is your hypothesis), 30 cm in diameter would translate into a large z-score of about 98. In other words, the probability of seeing a real diamond as large as 30 cm would be infinitesimally small. At this point you need to make a choice between two possible scenarios:</p>
+</blockquote>
+<p>Let’s rationalize this gut feel using some mathematics. Since you are the diamond expert, you know that real diamonds would average 0.5 cm in diameter with a standard deviation of 0.3 cm. As a result, if the diamond is real (this is your hypothesis now), 30 cm in diameter would translate into a large z-score of about 98. In other words, the probability of seeing a real diamond as large as 30 cm would be infinitesimally small. At this point you need to make a choice between two possible scenarios:</p>
 <ol style="list-style-type: decimal">
 <li>Your hypothesis holds (i.e., the diamond is real) and you are lucky enough to have seen an extremely rare event.</li>
 <li>You cannot be so lucky to see such a rare event. The hypothesis has got to be wrong (i.e., the diamond is fake).</li>
 </ol>
-<p>In our case, since the probability of seeing a gigantic diamond of 30 cm is so small, our gut feeling readily accepts scenario two. In an instant, the convoluted but precise mathematical rationale presented above would be encapsulated by our good intuition that <strong>this diamond is too big to be real!</strong></p>
+<p>In our case, since the probability of seeing a gigantic diamond of 30 cm is so small, our gut feeling readily accepts scenario two. In an instant, the convoluted but precise mathematical rationale presented above would be encapsulated by our good intuition that <strong><em>this diamond is too big to be real!</em></strong></p>
 <p>The gut feeling we have replied on is the essence of statistial inference, i.e., making a decision based on a probability computed under a proposed hypothesis. The process can be formalized as follows:</p>
 <ol style="list-style-type: decimal">
-<li>State a hypothesis</li>
+<li>State the hypothesis (and the alternative hypothesis)</li>
 <li>Compute a probability under the hypotheis</li>
-<li>Make a decision based on pre-determined rule</li>
+<li>Make a decision based on collected data and pre-determined rule</li>
 </ol>
 </div>
-<div id="hypothesis-testing" class="section level3">
-<h3><span class="header-section-number">4.3.2</span> Hypothesis Testing</h3>
-<p>With a specific normal distribution, there is always a small probability, no matter how small, that an extreme case is indeed coming from the normal distribution. As a result, we need to agree on certain pre-determined cutoffs beyond which extreme cases are flagged as highly unlikely, i.e., <strong>too big to be true</strong>. The cutoffs we use would correspond to the tail regions summing up to 5% probability, i.e., <span class="math inline">\(\boldsymbol{\alpha=0.05}\)</span>, where <span class="math inline">\(\alpha\)</span> is formally referred to as the <strong>Type I Error Rate</strong> or <strong>False Positive Rate</strong>.</p>
-<div id="hypothesis-testing-with-n01" class="section level4">
-<h4><span class="header-section-number">4.3.2.1</span> Hypothesis Testing with <span class="math inline">\(N(0,1)\)</span></h4>
-<p><img src="_main_files/figure-html/unnamed-chunk-20-1.png" width="672" /></p>
+<div id="hypothesis-testing-1" class="section level3">
+<h3><span class="header-section-number">5.3.2</span> Hypothesis Testing</h3>
+<p>With a specific normal distribution, there is always a small probability, no matter how small, that an extreme case is indeed coming from the normal distribution. As a result, we need to agree on certain pre-determined cutoffs beyond which extreme cases are flagged as highly unlikely, i.e., <strong><em>too big to be true</em></strong>. The cutoffs we use would correspond to the tail regions summing up to 5% probability, i.e., <span class="math inline">\(\boldsymbol{\alpha=0.05}\)</span>, where <span class="math inline">\(\alpha\)</span> is formally referred to as the <strong>Type I Error Rate</strong> or <strong>False Positive Rate</strong>.</p>
+<div id="hypothesis-testing-with-n01-1" class="section level4">
+<h4><span class="header-section-number">5.3.2.1</span> Hypothesis Testing with <span class="math inline">\(N(0,1)\)</span></h4>
+<p><img src="_main_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
 <p>Under the standard normal distribution, the cutoff for the lower tail <span class="math inline">\(z_L=\)</span> -1.959964, i.e., <code>qnorm(0.025)</code> and the cutoff for the upper tail <span class="math inline">\(z_U=\)</span> 1.959964, i.e., <code>qnorm(0.975)</code>.</p>
 </div>
-<div id="hypothesis-testing-with-known-variance" class="section level4">
-<h4><span class="header-section-number">4.3.2.2</span> Hypothesis Testing with Known Variance</h4>
+<div id="hypothesis-testing-with-known-variance-1" class="section level4">
+<h4><span class="header-section-number">5.3.2.2</span> Hypothesis Testing with Known Variance</h4>
 <p>Let’s now consider the CLT, where both <span class="math inline">\(\mu\)</span> and <span class="math inline">\(\sigma^2\)</span> are population parameters and are hence constants.</p>
 <p><span class="math display">\[\bar{Y} \sim N \left( \mu, \frac{\sigma^2}{n} \right)\]</span></p>
 <p>In hypothesis testing, <span class="math inline">\(\mu\)</span> is a hypothesized value proposed by and hence known to the researcher. For the present, we assume that <span class="math inline">\(\sigma\)</span> is also known to us. To find the cutoffs for <span class="math inline">\(\bar{Y}\)</span>, i.e., <span class="math inline">\(\bar{Y}_L\)</span> and <span class="math inline">\(\bar{Y}_U\)</span>, we would first convert them into z-scores, i.e., <span class="math inline">\(z_L\)</span> and <span class="math inline">\(z_U\)</span></p>
 <p><span class="math display">\[z_L = \frac{\bar{Y}_L - \mu}{\sqrt{\frac{\sigma^2}{n}}}\]</span> and <span class="math display">\[z_U = \frac{\bar{Y}_U - \mu}{\sqrt{\frac{\sigma^2}{n}}}\]</span></p>
 <p>Solving for <span class="math inline">\(\bar{Y}_L\)</span> and <span class="math inline">\(\bar{Y}_U\)</span> and substituting the values of <span class="math inline">\(z_L\)</span> and <span class="math inline">\(z_U\)</span>, we have <span class="math display">\[\bar{Y}_L = \mu + z_L \sqrt{\frac{\sigma^2}{n}} = \mu - 1.96 \sqrt{\frac{\sigma^2}{n}}\]</span> and <span class="math display">\[\bar{Y}_U = \mu + z_U \sqrt{\frac{\sigma^2}{n}} = \mu + 1.96 \sqrt{\frac{\sigma^2}{n}}\]</span></p>
-<p>As a result, given a specific <span class="math inline">\(\bar{y}\)</span> computed from a settled sample, if <span class="math inline">\(\bar{y} &lt; \bar{Y}_L\)</span> or <span class="math inline">\(\bar{y} &gt; \bar{Y}_U\)</span>, we would reject that hypothesis that <span class="math inline">\(\bar{y}\)</span> is coming from a distribution with mean <span class="math inline">\(\mu\)</span>. We would therefore refer to <span class="math inline">\(\bar{y} &lt; \bar{Y}_L\)</span> and <span class="math inline">\(\bar{y} &gt; \bar{Y}_U\)</span> as the <strong>rejection regions</strong>. On the contrary, we will call <span class="math inline">\(\bar{Y}_L \le \bar{y} \le \bar{Y}_U\)</span> or <span class="math inline">\((\bar{Y}_L, \bar{Y}_U)\)</span> the <strong>acceptance regions</strong>.</p>
+<p>As a result, given a specific <span class="math inline">\(\bar{y}\)</span> computed from a settled sample, if <span class="math inline">\(\bar{y} &lt; \bar{Y}_L\)</span> or <span class="math inline">\(\bar{y} &gt; \bar{Y}_U\)</span>, we would reject that hypothesis that <span class="math inline">\(\bar{y}\)</span> is coming from a distribution with mean <span class="math inline">\(\mu\)</span>. We would therefore refer to <span class="math inline">\(\bar{y} &lt; \bar{Y}_L\)</span> and <span class="math inline">\(\bar{y} &gt; \bar{Y}_U\)</span> as the <strong>rejection region</strong>. On the contrary, we will call <span class="math inline">\(\bar{Y}_L \le \bar{y} \le \bar{Y}_U\)</span> or <span class="math inline">\((\bar{Y}_L, \bar{Y}_U)\)</span> the <strong>acceptance region</strong>.</p>
 </div>
-<div id="confidence-interval-with-known-variance" class="section level4">
-<h4><span class="header-section-number">4.3.2.3</span> Confidence Interval with Known Variance</h4>
+<div id="confidence-interval-with-known-variance-1" class="section level4">
+<h4><span class="header-section-number">5.3.2.3</span> Confidence Interval with Known Variance</h4>
 <p>Given the two previous cutoffs, we can have</p>
 <p><span class="math display">\[P(\bar{Y}_L \le \bar{Y} \le \bar{Y}_U) = 0.95\]</span></p>
 <p>To note, this is a valid probability representation, which must have the form <span class="math inline">\(P(a \le X \le b) = p\)</span>, where <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> are constants, <span class="math inline">\(X\)</span> is a random variable, and <span class="math inline">\(0 \le p \le 1\)</span>.</p>
@@ -647,38 +641,38 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>Notice that we are using <code>[]</code> instead of <code>()</code> because this equation above is not a valid probability representation.</p>
 <p>The resulting <span class="math inline">\([LB, UP]\)</span> is called the <strong>confidence interval</strong> or <strong>IC</strong> at 95% level, i.e. <span class="math inline">\(1-\alpha\)</span>.</p>
 </div>
-<div id="margin-of-error" class="section level4">
-<h4><span class="header-section-number">4.3.2.4</span> Margin of Error</h4>
-<p>Previously, we have introduced <span class="math inline">\(\sqrt{\sigma^2/n}\)</span> as the <strong>standard error</strong> or <span class="math inline">\(\mathbf{se}\)</span>. Now we would introduce a new concept called the <strong>margin of error</strong> or <span class="math inline">\(\mathbf{me}\)</span>.</p>
-<p><span class="math display">\[\text{me} = z_{(1-\frac{\alpha}{2})} \sqrt{\frac{\sigma^2}{n}} \]</span> where <span class="math inline">\(z_{(1-\alpha/2)}\)</span> is computed by <code>qnorm(1-alpha/2)</code> and <code>alpha</code> is the type I error rate <span class="math inline">\(\alpha\)</span>. By default, <span class="math inline">\(\alpha = 0.05\)</span> and hence <span class="math inline">\(z_{(1-\alpha/2)} = 1.96\)</span>.</p>
-<p>Hence it should be clear that <span class="math inline">\(\mu \pm \text{me}\)</span> gives the <strong>acceptance regions</strong> and <span class="math inline">\(\bar{y} \pm \text{me}\)</span> gives the <strong>confidence interval</strong>. In other words, with <span class="math inline">\(\mu\)</span> in the center and reaching out to the left and right by <span class="math inline">\(\text{me}\)</span>, we will have the acception regions. With <span class="math inline">\(\bar{y}\)</span> in the center and reaching out to the left and right by <span class="math inline">\(\text{me}\)</span>, we will have the confidence interval.</p>
+<div id="margin-of-error-1" class="section level4">
+<h4><span class="header-section-number">5.3.2.4</span> Margin of Error</h4>
+<p>Previously, we have introduced <span class="math inline">\(\sqrt{\sigma^2/n}\)</span> as the <strong><em>standard error</em></strong> or <strong><em>se</em></strong>. Now we would introduce a new concept called the <strong>margin of error</strong> or <strong>me</strong>.</p>
+<p><span class="math display">\[\mathbf{me} = z_{(1-\frac{\alpha}{2})} \sqrt{\frac{\sigma^2}{n}} \]</span> where <span class="math inline">\(z_{(1-\alpha/2)}\)</span> is computed by <code>qnorm(1-alpha/2)</code> and <code>alpha</code> is the type I error rate <span class="math inline">\(\alpha\)</span>. By default, <span class="math inline">\(\alpha = 0.05\)</span> and hence <span class="math inline">\(z_{(1-\alpha/2)} = 1.96\)</span>.</p>
+<p>Hence it should be clear that <span class="math inline">\(\mu \pm \text{me}\)</span> gives the <strong>acceptance region</strong> and <span class="math inline">\(\bar{y} \pm \text{me}\)</span> gives the <strong>confidence interval</strong>. In other words, with <span class="math inline">\(\mu\)</span> in the center and reaching out to the left and right by <span class="math inline">\(\text{me}\)</span>, we will have the acception regions. With <span class="math inline">\(\bar{y}\)</span> in the center and reaching out to the left and right by <span class="math inline">\(\text{me}\)</span>, we will have the confidence interval.</p>
 </div>
-<div id="further-notes-1" class="section level4">
-<h4><span class="header-section-number">4.3.2.5</span> Further Notes</h4>
+<div id="further-notes-3" class="section level4">
+<h4><span class="header-section-number">5.3.2.5</span> Further Notes</h4>
 <ol style="list-style-type: decimal">
 <li>Interpretation of Confidence Interval</li>
 </ol>
 <p>Given the confidence interval</p>
 <p><span class="math display">\[P \left[\bar{Y} - 1.96 \sqrt{\frac{\sigma^2}{n}} \le \mu \le \bar{Y} + 1.96 \sqrt{\frac{\sigma^2}{n}} \right] = 0.95\]</span></p>
 <p>one should <strong>NOT</strong> interpret it as follows: The probability that the true population mean <span class="math inline">\(\mu\)</span> would fall between LB and UB is 95%.</p>
-<p>The correct interpretation is: The numerous sets of confidence interval as generated by the current estimator <span class="math inline">\(\bar{Y}\)</span> will have a 95% chance of capturing the true population mean <span class="math inline">\(\mu\)</span>.</p>
+<p>The correct interpretation is: The numerous confidence intervals as generated by the current estimator <span class="math inline">\(\bar{Y}\)</span> will have a 95% chance of capturing the true population mean <span class="math inline">\(\mu\)</span>.</p>
 <p>To someone who is new to statistics, chances are that the more you would think about how the two claims are different, the more you will get confused. The differences are more cosmetic than practical. In fact, if you adopt a Bayesian view of statistics, the first claim would turn out to be true. However, frequentists would regard the first claim as categorically wrong, because it violates the valid form of a probability representation, i.e., <span class="math inline">\(P(a \le X \le b) = p\)</span>.</p>
 <ol start="2" style="list-style-type: decimal">
 <li>No Acceptance of a Null Hypothesis</li>
 </ol>
 </div>
 </div>
-<div id="hypothesis-testing-with-unknown-variance" class="section level3">
-<h3><span class="header-section-number">4.3.3</span> Hypothesis Testing with Unknown Variance</h3>
-<div id="pivotal-quantity" class="section level4">
-<h4><span class="header-section-number">4.3.3.1</span> Pivotal Quantity</h4>
+<div id="hypothesis-testing-with-unknown-variance-1" class="section level3">
+<h3><span class="header-section-number">5.3.3</span> Hypothesis Testing with Unknown Variance</h3>
+<div id="pivotal-quantity-1" class="section level4">
+<h4><span class="header-section-number">5.3.3.1</span> Pivotal Quantity</h4>
 <p>Previous discussion on hypothesis testing and confidence interval revolves around a critically important equation, where <span class="math inline">\(z\)</span> is a random variable and is known as the <strong>z statistic</strong>.</p>
 <p><span class="math display">\[z = \frac{\bar{Y} - \mu}{\sqrt{\frac{\sigma^2}{n}}}\]</span></p>
 <p>In this equation, <span class="math inline">\(\bar{Y}\)</span> is called the <strong>estimator</strong> and <span class="math inline">\(\mu\)</span> is called the <strong>estimand</strong>, <span class="math inline">\(z\)</span> is of known distribution, and all the other parameters <span class="math inline">\(\sigma\)</span> and <span class="math inline">\(n\)</span> are known. In situations like this one, the equation is known as a <strong>pivotal quanity</strong>.</p>
 <p>Finding the pivotal quanity is critically important, because both conducting hypothesis testing and finding confidence interval depend on it.</p>
 </div>
-<div id="from-z-to-t-statistic" class="section level4">
-<h4><span class="header-section-number">4.3.3.2</span> From Z to T Statistic</h4>
+<div id="from-z-to-t-statistic-1" class="section level4">
+<h4><span class="header-section-number">5.3.3.2</span> From Z to T Statistic</h4>
 <p>Let’s define some new terms.</p>
 <ul>
 <li>residual <span class="math display">\[R_i = Y_i - \bar{Y}\]</span></li>
@@ -693,13 +687,13 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 = \frac{\bar{Y} - \mu}{\sqrt{\frac{s^2}{\sigma^2} \cdot \frac{\sigma^2}{n}}}
 = \frac{\bar{Y} - \mu}{\sqrt{\frac{s^2}{n}}}\]</span></p>
 <p>The result can be summary as follows. <span class="math display">\[t = \frac{\bar{Y} - \mu}{\sqrt{\frac{s^2}{n}}}\]</span></p>
-<p>To note, compared to the z-statistic, the t-statistic is also a pivotal quantity, where <span class="math inline">\(t\)</span> is of a known distribution and <span class="math inline">\(s^2\)</span> is the sample variance that can be easily computed.</p>
+<p>To note, compared to the z-statistic (it’s a pivotal quantity if <span class="math inline">\(\sigma\)</span> is known, which is almost never true), the t-statistic is a true pivotal quantity, where <span class="math inline">\(t\)</span> is of a known distribution and <span class="math inline">\(s^2\)</span> is the sample variance that can be easily computed.</p>
 </div>
-<div id="hypothesis-testing-revisited" class="section level4">
-<h4><span class="header-section-number">4.3.3.3</span> Hypothesis Testing Revisited</h4>
-<p>To account for the unknown variance <span class="math inline">\(\sigma^2\)</span>, let’s replace z-statistic with t-statistic and redo the previous derivations. We will have</p>
+<div id="hypothesis-testing-revisited-1" class="section level4">
+<h4><span class="header-section-number">5.3.3.3</span> Hypothesis Testing Revisited</h4>
+<p>To account for the unknown variance <span class="math inline">\(\sigma^2\)</span>, let’s replace z-statistic with t-statistic and redo the previous derivations. Eventually, we will have</p>
 <ul>
-<li>acceptance regions for hypothesis testing <span class="math display">\[\mu \pm z_{(1-\frac{\alpha}{2})} \sqrt{\frac{\sigma^2}{n}} 
+<li>acceptance region for hypothesis testing <span class="math display">\[\mu \pm z_{(1-\frac{\alpha}{2})} \sqrt{\frac{\sigma^2}{n}} 
 ~~ \rightarrow ~~ 
 \mu \pm t_{(1-\frac{\alpha}{2})} \sqrt{\frac{s^2}{n}}\]</span></li>
 <li>confidence interval <span class="math display">\[\bar{Y} \pm z_{(1-\frac{\alpha}{2})} \sqrt{\frac{\sigma^2}{n}} 
@@ -708,10 +702,10 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul>
 </div>
 </div>
-<div id="examples-of-hypothesis-testing" class="section level3">
-<h3><span class="header-section-number">4.3.4</span> Examples of Hypothesis Testing</h3>
-<div id="one-sample-t-test" class="section level4">
-<h4><span class="header-section-number">4.3.4.1</span> One-sample T-Test</h4>
+<div id="examples-of-hypothesis-testing-1" class="section level3">
+<h3><span class="header-section-number">5.3.4</span> Examples of Hypothesis Testing</h3>
+<div id="one-sample-t-test-1" class="section level4">
+<h4><span class="header-section-number">5.3.4.1</span> One-sample T-Test</h4>
 <p>We are conducting a survey asking students to rate the overall quality of a specific course. The question is framed on a <strong>Likert scale</strong> from 1 to 6 with 1 being the most negative response and 6 the most positive response. An example of this would be as follows:</p>
 <pre><code>Do you agree with the following statement:
 
@@ -725,7 +719,19 @@ The course is well taught overall.
 <p>Strictly speaking, student rating is an ordinal variable. In practice, however, we would treat it as an interval variable with the assumption that the spacings between any two consecutive ratings are equidistant.</p>
 <p>Let’s pretend we have collected data from a sample of 56 students. The average rating is 3.8 with a standard deviation of 1.2. The question is</p>
 <blockquote>
-<p>Is the average student rating truly different from being neutral?</p>
+<p><strong>Question</strong>: Is the average student rating truly different from being neutral?</p>
+</blockquote>
+<blockquote>
+<p><strong>Answer</strong>:</p>
+</blockquote>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">n =<span class="st"> </span><span class="dv">56</span>; m =<span class="st"> </span><span class="fl">3.8</span>; s =<span class="st"> </span><span class="fl">1.2</span>; mu=<span class="fl">3.5</span>
+q =<span class="st"> </span><span class="kw">qt</span>(<span class="fl">0.975</span>, n<span class="op">-</span><span class="dv">1</span>)
+t =<span class="st"> </span>(m <span class="op">-</span><span class="st"> </span>mu) <span class="op">/</span><span class="st"> </span>(s<span class="op">/</span><span class="kw">sqrt</span>(n))
+p =<span class="st"> </span><span class="kw">round</span>(<span class="dv">2</span><span class="op">*</span>(<span class="dv">1</span><span class="op">-</span><span class="kw">pt</span>(t, <span class="dt">df=</span>n<span class="op">-</span><span class="dv">1</span>)), <span class="dv">3</span>)
+p</code></pre></div>
+<pre><code>## [1] 0.067</code></pre>
+<blockquote>
+
 </blockquote>
 <p>Let’s summarize and present some statistics.</p>
 <ul>
@@ -745,14 +751,14 @@ The course is well taught overall.
 </ol>
 <p>Given p = 0.067 and our pre-determined cutoff is <span class="math inline">\(\alpha = 0.05\)</span>, we should <strong>NOT</strong> reject our hypothesis, since the observed average 3.8 is not <strong>statistically significantly different</strong> from the neurality of 3.5.</p>
 </div>
-<div id="paired-t-test" class="section level4">
-<h4><span class="header-section-number">4.3.4.2</span> Paired T-Test</h4>
+<div id="paired-t-test-1" class="section level4">
+<h4><span class="header-section-number">5.3.4.2</span> Paired T-Test</h4>
 <p>Imagine we are conducting two surveys to measure student interests in the course. One survey is delivered in the beginning of the course and the other by the end of the course. This is a typical <strong>pre-test</strong> and <strong>post-test</strong> scenario.</p>
 <p>Use the following code to generate some data and use the data to conduct the needed statistical test.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">set.seed</span>(<span class="dv">1234</span>)
 rating1 =<span class="st"> </span><span class="kw">sample</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">6</span>, <span class="dt">size=</span><span class="dv">56</span>, <span class="dt">replace=</span>T, <span class="dt">prob=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">2</span>))
 rating2 =<span class="st"> </span><span class="kw">sample</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">6</span>, <span class="dt">size=</span><span class="dv">56</span>, <span class="dt">replace=</span>T, <span class="dt">prob=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">3</span>))</code></pre></div>
-<p>=======</p>
+
 </div>
 </div>
 </div>
@@ -762,8 +768,8 @@ rating2 =<span class="st"> </span><span class="kw">sample</span>(<span class="dv
           </div>
         </div>
       </div>
-<a href="the-fundamentals-of-statistics.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="statistical-inference-2.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="statistical-inference.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="common-statistical-tests.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

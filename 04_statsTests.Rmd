@@ -120,7 +120,9 @@ Make a decison based on pre-determined confidence level, i.e. $1 - \alpha$, wher
 
 ### Statistical Power
 
-`TODO`: add a graph in the beginning of page 3 in notes_20180504.pdf
+(Coursera - Johns Hopkins - DSJH6-10 Statistical Inference/Week 4/Module 11:Power)(Zhu-Qiuxia)
+
+![](images/statsTests_power.png)
 
 - **type I error rate** $\alpha$
 - **specificity** $1-\alpha$
