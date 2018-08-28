@@ -1,0 +1,8 @@
+rmd_files: [
+  "index.Rmd",
+  "intro.Rmd",
+  "inference.Rmd",
+  "statsTests.Rmd",
+  "cor_linearReg.Rmd",
+  "multipleReg.Rmd"
+]
