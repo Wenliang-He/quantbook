@@ -4,5 +4,4 @@ rmd_files: [
   "inference.Rmd",
   "statsTests.Rmd",
   "cor_linearReg.Rmd",
-  "multipleReg.Rmd"
-]
+  "multipleReg.Rmd"]

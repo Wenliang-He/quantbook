@@ -1,28 +1,275 @@
 --- 
 title: "Quantitative Research Methods for Education"
 author: "Wenliang He"
-date: "`r Sys.Date()`"
+date: "`r paste('Updated on', as.character(Sys.Date()))`"
 site: bookdown::bookdown_site
 output: bookdown::gitbook
 documentclass: book
 biblio-style: apalike
 link-citations: yes
-description: "This is the first trial version!"
+description: "This is the 1st Edition"
 ---
 
 # Introduction
 
-Let's test it a little bit!
+Before diving into Statistics, you need to install some software, notably R and RStudio, and register for some accounts. 
 
-## Intro to Rmarkdown
+## Software Installation
 
-## Intro to Bookdown
+### Install R
+
+[R](https://www.r-project.org/) is a free software environment for statistical computing and graphics. 
+
+[CRAN](https://cran.r-project.org/), **C**omprehensive **R** **A**rchive **N**etwork, is a network of web servers around the world that store identical, up-to-date versions of various code for R. 
+
+1. Choose a [CRAN mirror](https://cran.r-project.org/mirrors.html) that is close to you. 
+    - scroll down the list to your country (e.g. China) 
+    - choose a link hosted by an institution that is close to you
+    - `Warning`: If you are not using a mirror, but visiting the official link (https://cran.r-project.org/) to download R. The downloading speed can be painfully slow. If so, consider using a mirror.  
+
+2. Choose the link corresponding to your operating system.  
+
+![](images/rdownload_chooseOS.png)
+
+3. Mac Users
+    - scroll down to the `Lastest release` section
+    - click to download the lastest version that looks similar to `R-3.5.1.pkg`
+
+![](images/rdownload_macpkg.png)
+
+4. Windows Users
+    - click on the link `install R for the first time`
+    - download the lastest version of R that looks similar to `R-3.5.1` as shown below
+    - `Note`: The R version shown below does not distinguish between 32-bit and 64-bit Windows, since two versions are combined into one file to simplify the download. But you would still need to choose one during the installation process (see details below).
+  
+![](images/rdownload_winexe.png)
+
+5. Install R
+    - `Warning`: We highly recommend you to **use English as the default language** for your R. You will search for help on the internet at some point. It is simply easier to communicate when help seekers and help givers are speaking the same language. 
+    - `Warning`: We highly recommend you to **use the default directory (默认路径)** for installation. Third-party packages will look for R. We do not want to make it too hard for them. 
+    - For Mac users, the installation process should be straightforward. 
+    - For Windows users, you need to find out whether your Windows is a 32-bit or 64-bit system and install the one identical to your system. To find out which version is your Windows, right-click on `我的电脑` -> `属性` -> `系统类型`. This is where you can find the information. 
 
 
-## Resources to Rmarkdown
+### Install RStudio
+
+[RStudio](https://www.rstudio.com/) is an IDE (**I**ntegrated **D**evelopment **E**nvironment), a powerful user interface development specifically for R. For individual use, use can download the free open source edition of RStudio. 
+
+`Note`: You can choose to install a [Preview release of RStudio](https://www.rstudio.com/products/rstudio/download/preview/). The preview release has more features than standard release. However, the downloading speed can be painfully slow. In the following, we will demonstrate installation of the standard release. 
+
+1. Go to the [official website for download](https://www.rstudio.com/products/rstudio/download/) and click on the **DOWNLOAD** button for **RStudio Desktop** under the Open Source License, which is completely free. 
 
 
-## Resources to Bookdown
+![](images/rstudiodownload_free.png)
+
+2. Choose the link corresponding to your operating system.  
+
+![](images/rstudiodownload_chooseOS.png)
+
+3. Install RStudio
+
+Run the downloaded program and use the **default directory** for installation. The rest of the installation process should be straightfoward.
+
+4. Open RStudio
+
+The first time you open Rstudio, you might encounter the following error message, which suggests that you are not authorized to run the program. 
+
+To address it, right-click on `rstudio.exe` -> `属性` -> `兼容性` -> `以管理员身份运行`. 
+
+![](wiki_images/install_RStudio_error.png)
+
+5. Change Settings
+
+By default, RStudio is using a CRAN mirror hosted in the US. If you are outside the US (e.g. in China), you may have trouble fetching data/code into R. The solution is to use a local CRAN mirror.  
+
+- after openning RStudio, find `Tools` -> `Global Options` -> `Packages`
+- under `CRAN mirror`, click `Change...`
+- scroll down the list and select the one mirror that is close to you
+- click `OK` to commit the change
+
+
+### Install R Packages
+
+R is an extensible system and many people share useful code they have developed as a package via CRAN and/or GitHub. 
+
+#### Install from CRAN
+
+This is the most commonly used method to install R packages directly from CRAN. In the following, we will install the `ggplot2` package and use it as a running example. 
+
+In the R console, you type 
+
+```
+install.packages("ggplot2")
+```
+
+Note, the input must be a **string** as enclosed by double quotes `""`. 
+
+This is usually good enough. But to be extra-careful, the `dependencies=TRUE` argument is often added to explicitly tell R to install any additional packages that `ggplot2` requires to run its functions. 
+
+```
+install.packages("ggplot2", dependencies = TRUE)
+```
+
+By default, `dependencies = NA` means `c("Depends", "Imports", "LinkingTo")`. Setting `dependencies = TRUE` adds `"Suggests"` to the previous list, which tells R to install all the packages needed to run a package, their examples, tests and vignettes.
+
+For more on managing R packages, please refer to the [R Installation and Administration Manual](https://cran.r-project.org/doc/manuals/R-admin.html#Add_002don-packages).
+
+To install multiple packages, e.g., `pck1` and `pck2`, use 
+
+```
+install.packages(c("pkg1", "pkg2"), dependencies = TRUE)
+```
+
+
+> **Practice**: Install the following packages that will be required later in the course.   
+>
+- [ggplot2](https://ggplot2.tidyverse.org/): A good alternative to R's base graphing packages. 
+- [plotly](https://plot.ly/r/): A tool that enhances ggplot2 by translating static plots into interactive graphs
+- [dygraphs](http://rstudio.github.io/dygraphs/): A graphing tool specifically designed for charting time-series data in R
+- [DiagrammeR](http://rich-iannone.github.io/DiagrammeR/docs.html): A tool for creating diagrams and flowcharts using Graphviz and Mermaid
+- [rmarkdown](https://rmarkdown.rstudio.com/): 
+- [bookdown](https://bookdown.org/yihui/bookdown/): A tool for combining multiple R markdown files into a book
+- [shiny](http://shiny.rstudio.com/): An R package to build interactive web apps
+- [shinyjs](https://deanattali.com/shinyjs/): A tool that empowers shiny apps to perform common JavaScript operations
+- [shinythemes](https://rstudio.github.io/shinythemes/): More themes for shiny apps
+- [DT](https://rstudio.github.io/DT/): A tool to create dynamic tables
+- [dplyr](https://dplyr.tidyverse.org/): A package to perform data manipulation
+>
+
+<br>
+The function defined below would (a) check if required packages exist, (b) install, if not already installed, and (c) load the packages.
+
+```{r, eval=FALSE}
+force_load <- function(pkgs, use_require=FALSE) {
+  # https://gist.github.com/smithdanielle/9913897
+  # https://cran.r-project.org/web/packages/install.load/README.html
+  new_pkgs <- pkgs[!(pkgs %in% installed.packages()[, "Package"])]
+  if (length(new_pkgs)) 
+    install.packages(new_pkgs, dependencies = TRUE)
+  if (use_require) {
+    loaded = sapply(pkgs, require, character.only = TRUE)
+  } else {
+    loaded = sapply(pkgs, library, character.only = TRUE)
+  }
+  return(loaded)
+}
+
+packages = c("ggplot2", "ggthemes", "rmarkdown", "bookdown", "shiny", "Hmisc")
+loaded = force_load(packages)
+loaded
+```
+
+#### Install from Source Code
+Occasionally, you might encounter an error message telling you that the package to be installed requires an R version greater than the one you currently have. You can, of course, choose to re-install R, which might necessitate re-installing all the other packages that are previously installed. What a hassle! Alternatively, you can choose to download the source code for the package and install from the source code directly.
+
+1. In any search engine (e.g. www.baidu.com), search for `CRAN package ggplot2`. This should lead you to the `ggplot2` package hosted on CRAN.
+
+![](images/rpackage_search.png)
+
+2. Scroll down to the **Downloads** section, next to **Package source**, click on the link to the file that ends with `tar.gz`. Save it under a local directory where you can easily find it.
+
+![](images/rpackage_source.png)
+
+3. In R console, type the following
+
+```
+install.packages("download_path/ggplot2_3.0.0.tar.gz", repos = NULL, type = "source")
+```
+
+where `download_path` is the directory that stores the downloaded source file. 
+
+
+#### Commonly Encountered Problems
+
+While installing packages, one type of error messages has the following pattern. 
+
+```
+Warning in install.packages :
+  error message
+```
+
+The specific `error message` you might encounter can be very different from time to time. Some examples are as follows. 
+```
+Warning in install.packages :
+  InternetOpenUrl failed: ''
+
+Warning in install.packages :
+  package ‘packagename’ is not available (for R version 3.5.0)
+
+Warning in install.packages :
+  unable to access index for repository https://cran.rstudio.com/src/contrib:
+  cannot open URL 'https://cran.rstudio.com/src/contrib/PACKAGES'
+Installing package into ‘C:/Users/YourUserName/Documents/R/win-library/3.5’
+(as ‘lib’ is unspecified)
+
+Warning in install.packages :
+  unable to access index for repository https://cran.rstudio.com/src/contrib:
+  cannot open URL 'https://cran.rstudio.com/src/contrib/PACKAGES'
+```
+
+In your R console, type `getOption("repos")`. If you get the following response, it means that you fail to set a local CRAN mirror. See the **Change Settings** section under **Install RStudio** for the solution. 
+
+```
+CRAN 
+"https://cran.rstudio.com/" 
+attr(,"RStudio")
+[1] TRUE
+```
+
+### Update R and R Packages
+
+- Update R
+
+The [CRAN solution](https://cran.r-project.org/bin/windows/base/rw-FAQ.html#What_0027s-the-best-way-to-upgrade_003f) is not particularly good. 
+
+- Update R Packages
+
+```
+update.packages(ask = FALSE, checkBuilt = TRUE)
+```
+
+`Note`: This will only update packages directly installed from CRAN. So if you use a package that lives only on GitHub, you will need to update it manually, e.g. via  `devtools::install_github()`.
+
+### Register a GitHub account
+
+1. Choose a GitHub Username
+
+Choosing a proper GitHub username is **extremely important**. Given the _Username_ you choose, your GitHub account will look like `https://github.com/Username`. This "website" will be the one place to host and showcase all of your coursework. In the information age, when online presence is more important than ever, this is your online portfolio, your "voice", your professional "business card".
+
+Therefore a few tips:
+
+- **Incorporate your actual name**. Using your actual name makes it easier for people to remember. Moreover, people like to know who they are dealing with. 
+- **Make it timeless**. Try to avoid using your current school name, employer, or place of residence etc. As things change, your username might become irrelevant. 
+- **Pick a username you feel comfortable revealing to your future boss**. People are fond of coming up with unique, bold and sassy usernames. But be careful not to go too far. 
+- **Shorter is better than longer**. This should be obvious. 
+- **Remove numbers whenever possible**. Try your best to avoid appending random numbers to your username. 
+- **Use topic words**. If you are creating a themed account posting things for a specific purpose, consider using words evocative of a topic, e.g. Wen4Education, GeoStatsNinja. 
+
+`Note`: The tips presented above are adapted from suggestions given by [Jenny Bryan](http://happygitwithr.com/github-acct.html). 
+
+You can change your username later, but it's better to get it right the first time. 
+
+- https://help.github.com/articles/changing-your-github-username/
+- https://help.github.com/articles/what-happens-when-i-change-my-username/
+
+2. Register a GitHub Account
+
+Go to [GitHub](https://github.com) and register for an account. By default, a regular GitHub account offers only public repositories that are visible and accessible to the general public. To have private repositories, you needs to upgrade to a paid account. 
+
+Here is the good news: For students, faculty, and research staff with `.edu` email accounts, you can upgrade to a [GitHub Education](https://education.github.com/) account that offers free unlimited private repositories. 
+
+
+### 
+
+## Introduction to R
+
+## Introduction to R Markdown
+
+## Introduction to Git & GitHub
+
+## Introduction to ggplot2
+
+## Introduction to Shiny
 
 
 
