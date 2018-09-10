@@ -130,7 +130,6 @@ install.packages(c("pkg1", "pkg2"), dependencies = TRUE)
 - [rmarkdown](https://rmarkdown.rstudio.com/): 
 - [bookdown](https://bookdown.org/yihui/bookdown/): A tool for combining multiple R markdown files into a book
 - [shiny](http://shiny.rstudio.com/): An R package to build interactive web apps
-- [shinyjs](https://deanattali.com/shinyjs/): A tool that empowers shiny apps to perform common JavaScript operations
 - [shinythemes](https://rstudio.github.io/shinythemes/): More themes for shiny apps
 - [DT](https://rstudio.github.io/DT/): A tool to create dynamic tables
 - [dplyr](https://dplyr.tidyverse.org/): A package to perform data manipulation
@@ -236,16 +235,18 @@ update.packages(ask = FALSE, checkBuilt = TRUE)
 
 Choosing a proper GitHub username is **extremely important**. Given the _Username_ you choose, your GitHub account will look like `https://github.com/Username`. This "website" will be the one place to host and showcase all of your coursework. In the information age, when online presence is more important than ever, this is your online portfolio, your "voice", your professional "business card".
 
-Therefore a few tips:
-
-- **Incorporate your actual name**. Using your actual name makes it easier for people to remember. Moreover, people like to know who they are dealing with. 
-- **Make it timeless**. Try to avoid using your current school name, employer, or place of residence etc. As things change, your username might become irrelevant. 
-- **Pick a username you feel comfortable revealing to your future boss**. People are fond of coming up with unique, bold and sassy usernames. But be careful not to go too far. 
-- **Shorter is better than longer**. This should be obvious. 
-- **Remove numbers whenever possible**. Try your best to avoid appending random numbers to your username. 
-- **Use topic words**. If you are creating a themed account posting things for a specific purpose, consider using words evocative of a topic, e.g. Wen4Education, GeoStatsNinja. 
-
-`Note`: The tips presented above are adapted from suggestions given by [Jenny Bryan](http://happygitwithr.com/github-acct.html). 
+```{r, eval=FALSE, echo=FALSE}
+# Therefore a few tips:
+# 
+# - **Incorporate your actual name**. Using your actual name makes it easier for people to remember. Moreover, people like to know who they are dealing with. 
+# - **Make it timeless**. Try to avoid using your current school name, employer, or place of residence etc. As things change, your username might become irrelevant. 
+# - **Pick a username you feel comfortable revealing to your future boss**. People are fond of coming up with unique, bold and sassy usernames. But be careful not to go too far. 
+# - **Shorter is better than longer**. This should be obvious. 
+# - **Remove numbers whenever possible**. Try your best to avoid appending random numbers to your username. 
+# - **Use topic words**. If you are creating a themed account posting things for a specific purpose, consider using words evocative of a topic, e.g. Wen4Education, GeoStatsNinja. 
+# 
+# `Note`: The tips presented above are adapted from suggestions given by [Jenny Bryan](http://happygitwithr.com/github-acct.html). 
+```
 
 You can change your username later, but it's better to get it right the first time. 
 

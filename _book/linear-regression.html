@@ -6,26 +6,25 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Quantitative Research Methods for Education</title>
-  <meta name="description" content="This is the first trial version!">
+  <meta name="description" content="This is the 1st Edition">
   <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
 
   <meta property="og:title" content="Quantitative Research Methods for Education" />
   <meta property="og:type" content="book" />
   
   
-  <meta property="og:description" content="This is the first trial version!" />
+  <meta property="og:description" content="This is the 1st Edition" />
   
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Quantitative Research Methods for Education" />
   
-  <meta name="twitter:description" content="This is the first trial version!" />
+  <meta name="twitter:description" content="This is the 1st Edition" />
   
 
 <meta name="author" content="Wenliang He">
 
 
-<meta name="date" content="2018-08-29">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -115,10 +114,19 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
 <ul class="summary">
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
-<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#intro-to-rmarkdown"><i class="fa fa-check"></i><b>1.1</b> Intro to Rmarkdown</a></li>
-<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#intro-to-bookdown"><i class="fa fa-check"></i><b>1.2</b> Intro to Bookdown</a></li>
-<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#resources-to-rmarkdown"><i class="fa fa-check"></i><b>1.3</b> Resources to Rmarkdown</a></li>
-<li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#resources-to-bookdown"><i class="fa fa-check"></i><b>1.4</b> Resources to Bookdown</a></li>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#software-installation"><i class="fa fa-check"></i><b>1.1</b> Software Installation</a><ul>
+<li class="chapter" data-level="1.1.1" data-path="index.html"><a href="index.html#install-r"><i class="fa fa-check"></i><b>1.1.1</b> Install R</a></li>
+<li class="chapter" data-level="1.1.2" data-path="index.html"><a href="index.html#install-rstudio"><i class="fa fa-check"></i><b>1.1.2</b> Install RStudio</a></li>
+<li class="chapter" data-level="1.1.3" data-path="index.html"><a href="index.html#install-r-packages"><i class="fa fa-check"></i><b>1.1.3</b> Install R Packages</a></li>
+<li class="chapter" data-level="1.1.4" data-path="index.html"><a href="index.html#update-r-and-r-packages"><i class="fa fa-check"></i><b>1.1.4</b> Update R and R Packages</a></li>
+<li class="chapter" data-level="1.1.5" data-path="index.html"><a href="index.html#register-a-github-account"><i class="fa fa-check"></i><b>1.1.5</b> Register a GitHub account</a></li>
+<li class="chapter" data-level="1.1.6" data-path="index.html"><a href="index.html#section"><i class="fa fa-check"></i><b>1.1.6</b> </a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#introduction-to-r"><i class="fa fa-check"></i><b>1.2</b> Introduction to R</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#introduction-to-r-markdown"><i class="fa fa-check"></i><b>1.3</b> Introduction to R Markdown</a></li>
+<li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#introduction-to-git-github"><i class="fa fa-check"></i><b>1.4</b> Introduction to Git &amp; GitHub</a></li>
+<li class="chapter" data-level="1.5" data-path="index.html"><a href="index.html#introduction-to-ggplot2"><i class="fa fa-check"></i><b>1.5</b> Introduction to ggplot2</a></li>
+<li class="chapter" data-level="1.6" data-path="index.html"><a href="index.html#introduction-to-shiny"><i class="fa fa-check"></i><b>1.6</b> Introduction to Shiny</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="the-fundamentals-of-statistics.html"><a href="the-fundamentals-of-statistics.html"><i class="fa fa-check"></i><b>2</b> The Fundamentals of Statistics</a><ul>
 <li class="chapter" data-level="2.1" data-path="the-fundamentals-of-statistics.html"><a href="the-fundamentals-of-statistics.html#why-studying-statistics"><i class="fa fa-check"></i><b>2.1</b> Why Studying Statistics</a><ul>
@@ -316,7 +324,7 @@ xdat =<span class="st"> </span><span class="kw">data.frame</span>(xdat, mid1cat)
         <span class="dt">xlab=</span><span class="st">&quot;First Midterm Score Category&quot;</span>,
         <span class="dt">ylab=</span><span class="st">&quot;Final Exam Score&quot;</span>)
 <span class="kw">abline</span>(<span class="dt">h=</span><span class="kw">mean</span>(xdat$mid3,<span class="dt">na.rm=</span>T), <span class="dt">lty=</span><span class="dv">2</span>)</code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-20-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-22-1.png" width="672" /></p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(mid3 ~<span class="st"> </span>mid1, <span class="dt">data=</span>xdat, 
      <span class="dt">main=</span><span class="st">&quot;Scatterplot of Exam Results&quot;</span>, 
      <span class="dt">xlab=</span><span class="st">&quot;First Midterm Score&quot;</span>, 
@@ -349,7 +357,7 @@ mod =<span class="st"> </span><span class="kw">lm</span>(mid3 ~<span class="st">
 </div>
 <div id="interpretations-of-regression-coefficients" class="section level3">
 <h3><span class="header-section-number">5.3.4</span> Interpretations of Regression Coefficients</h3>
-<p><img src="_main_files/figure-html/unnamed-chunk-21-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-23-1.png" width="672" /></p>
 <ul>
 <li>It should be clear that <strong><span class="math inline">\(b_0\)</span></strong> is the intercept, which is interpreted as <strong>the value of Y when X = 0</strong>. To note, values of X oftentimes cannot be exactly 0, e.g., weight or IQ. In such a case, the interpretation of <span class="math inline">\(b_0\)</span> would not make intuitive sense (since no one would have 0 weight or 0 intelligence); the intercept is there only to make the math work.</li>
 <li>To make the interpretation of <strong><span class="math inline">\(b_0\)</span></strong> meaningful, we can choose to center X with respect to its mean, i.e. <span class="math inline">\(X^* = X - \bar{X}\)</span>. Now <span class="math inline">\(b_0\)</span> is <strong>the value of Y when <span class="math inline">\(X = \bar{X}\)</span></strong>.</li>
@@ -602,7 +610,7 @@ r =<span class="st"> </span><span class="kw">cor</span>(xdat$mid3, xdat$mid1, <s
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">curve</span>(log, <span class="dt">from=</span><span class="fl">0.01</span>, <span class="dt">to=</span><span class="dv">4</span>, <span class="dt">ylim=</span><span class="kw">c</span>(-<span class="dv">4</span>,<span class="dv">4</span>))
 <span class="kw">curve</span>(x<span class="dv">-1</span>, <span class="dt">add=</span>T, <span class="dt">col=</span><span class="dv">2</span>)
 <span class="kw">abline</span>(<span class="dt">v=</span><span class="dv">0</span>, <span class="dt">h=</span><span class="dv">0</span>, <span class="dt">lty=</span><span class="dv">2</span>)</code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-22-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-24-1.png" width="672" /></p>
 <p>In summary, given the discussions above, the following statements are equivalent (or almost equivalent).</p>
 <ul>
 <li>When log(X) increases by 1 unit, Y would change by an average of <span class="math inline">\(b_1\)</span>.</li>
