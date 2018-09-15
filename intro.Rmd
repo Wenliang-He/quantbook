@@ -116,7 +116,7 @@ B --> D
     - e.g., use "School Status" or "IQ" to predict your fate 
 
 - Signal vs. Noise
-    - **question**: do I only need to care about **_fate_** and disregard **_luck_** completely?
+    - **question**: Do I only need to care about **_fate_** and disregard **_luck_** completely?
     - e.g., results of two experimental setups
     - **goal**: construct a ratio to consider **_fate_** and **_luck_** simultaneously
 

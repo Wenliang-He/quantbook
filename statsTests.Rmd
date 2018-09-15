@@ -34,7 +34,7 @@ The **estimand** and **estimator** that are of interest to us are as follows.
 
 The estimand is a constant (because it's a population parameter) and the estimator is a random variable. Hence, we are immediately interested in the properties of the estimator. 
 
-> Question: What are the properties of the estimator $\hat{\Delta}$?
+> **Question**: What are the properties of the estimator $\hat{\Delta}$?
 
 > **Answers**:
 >
