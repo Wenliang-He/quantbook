@@ -636,6 +636,780 @@ There are some resources for learning Markdown, GitHub Markdown, and R Markdown.
 - [emoji cheatsheet](https://www.webpagefx.com/tools/emoji-cheat-sheet/): a great resource for looking up **emoji** `r emo::ji("smile")`, which can be used in GitHub Markdown and R Markdown
 
 
+### Basic Markdown
+
+The following contents are adapted from 
+
+- [Introduction to Markdown by RStudio](https://rmarkdown.rstudio.com/authoring_basics.html)
+- [James Steiger's Blog](http://www.statpower.net/Content/310/R%20Stuff/SampleMarkdown.html)
+- [Archer's blog](http://csrgxtu.github.io/2015/03/20/Writing-Mathematic-Fomulars-in-Markdown/)
+
+
+Before we proceed to learn the Markdown and R Markdown languages. Let us install the [editR](https://github.com/swarm-lab/editR) package first. editR is a R Markdown editor with instant previewing capacity such that you do not have to repeatedly `knit` it to see the outcome. 
+
+In your R console, type
+```
+if (!require("devtools")) install.packages("devtools")
+devtools::install_github("trestletech/shinyAce")
+devtools::install_github("swarm-lab/editR")
+```
+
+After the package is properly installed, run the following code in your R console. 
+```
+library(editR)
+editR()
+```
+
+An interactive prompt will come up and you can use it to open .Rmd files in the same way you would use Microsoft Office to open .docx files. Enjoy the instant previewing. 
+
+
+#### Headers
+
+```
+# Header 1
+## Header 2
+### Header 3
+#### Header 4
+##### Header 5
+##### Header 6
+```
+
+Actual code is removed, because it will mess up header indexing. 
+
+
+<br>
+
+#### Texts in Markdown
+
+**Intervening Spaces**
+
+```
+White spaces between texts do nothing in R Markdown.        Eight whitespaces (or four Tabs)
+and a newline have no effect. 
+```
+
+White spaces between texts do nothing in R Markdown.        Eight whitespaces (or four Tabs)
+and a newline have no effect. 
+
+
+**Two or More Trailing Spaces**
+
+```
+However, adding two or more trailing spaces by the end of the line  (two spaces are here!)
+would break the line.
+```
+
+However, adding two or more trailing spaces by the end of the line  
+would break the line. 
+
+
+**Intervening Newlines**
+
+```
+If there is a newline in between,
+
+it will create a new paragraph. 
+```
+
+If there is a newline in between,
+
+it will create a new paragraph. 
+
+
+#### Code & Quotes {#codequote}
+
+
+**Inline Code**
+
+Inline code such as `x = x+1` can be created by wrapping some text with one backstick sign \` at each end of the equation x = x+1.  
+
+Characters within _inline code_ lose their meaings and are dispalyed verbatim. 
+
+**Code Blocks**
+
+To create a **code block** (aka **code in display mode**), as shown below, surround multiple lines of code with three backstick signs at the preceding and succeding lines. 
+
+```
+x = 1
+y = x + 1
+answer = y * 2
+```
+
+Characters within _code blocks_ lose their meanings and are displayed verbatim (see an exception at [Including R Code & Result](#rcode)). We have been using code blocks all along in the previous sections to contrast snippets of raw code with their effect. 
+
+
+**Block Quotes**
+
+Block quotes follow the same three rules regarding (a) intervening spaces, (b) two trailing spaces, and (c) intervening newlines. The quote below is credited to Sarah Ban Breathnach, a New York Times best-selling author. 
+
+```
+> The world needs dreamers and the world needs        doers. 
+But above all the world needs dreamers who do. 
+```
+
+> The world needs dreamers and the world needs        doers. 
+But above all the world needs dreamers who do. 
+
+```
+> The world needs dreamers and the world needs doers.  (two spaces are here!)
+But above all the world needs dreamers who do. 
+```
+
+> The world needs dreamers and the world needs doers.  
+But above all the world needs dreamers who do. 
+
+```
+> The world needs dreamers and the world needs doers.
+
+> But above all the world needs dreamers who do. 
+```
+
+> The world needs dreamers and the world needs doers.
+
+> But above all the world needs dreamers who do. 
+
+Wait a second, an intervening newline breaks the quote bar. Fix it by adding a `>` in between the two bars to join them together. 
+
+```
+> The world needs dreamers and the world needs doers.
+>
+> But above all the world needs dreamers who do. 
+```
+
+> The world needs dreamers and the world needs doers.
+>
+> But above all the world needs dreamers who do. 
+
+
+
+
+#### Emphasis
+
+The table below contrast code and its effect. 
+
+|Code|Effect|Note|
+|:---|:---:|---|
+|`_italic_`|_italic_| recommened |
+|`*italic*`|*italic*| `*` and `_` are identical |
+|`__bold__`|__bold__|
+|`**bold**`|**bold**| recommened |
+|`___italic-and-bold___`|___italic-and-bold___|
+|`***italic-and-bold***`|***italic-and-bold***|
+|`**_italic-and-bold_**`|**_italic-and-bold_**| recommended |
+|`~~strikethrough~~`|~~strikethrough~~|
+|`X~i~`|X~i~| subscript |
+|`X^2^`|X^2^| superscript |
+|`X~i~^2^`|X~i~^2^| subscript followed by superscript |
+|`X^2^~i~`|X^2^~i~| superscript followed by subscript |
+
+
+**Horizontal Rule**
+
+Three or more asterisks or dashes create a _horizontal rule_, aka **page break**. 
+
+```
+***
+```
+
+***
+
+or 
+
+```
+---
+```
+
+---
+
+#### Links
+
+**Links to Websites**
+
+Links can be either naked or in the form of `[mandatory text](http://somesite.com "optional hover message")`. Operative links must start with `http` or `https`.
+
+```
+www.baidu.com
+
+https://www.baidu.com/
+
+[](https://www.baidu.com/)    # no mandatory text, no links whatsoever
+
+[Baidu Search Engine - malfunctioning](www.baidu.com "This link would not work")
+
+[Baidu Search Engine - functioning](https://www.baidu.com/ "This link would work")
+
+```
+
+www.baidu.com
+
+https://www.baidu.com/
+
+[](https://www.baidu.com/)
+
+[Baidu Search Engine - malfunctioning](www.baidu.com "This link would not work")
+
+[Baidu Search Engine - functioning](https://www.baidu.com/ "This link would work")
+
+
+**Links to Images**
+
+Images on the web or local disks can be loaded in the form of `![optional caption](link to image) "optional hover message"`. The caption is completely optional. 
+
+RStudio(TM)
+
+
+```
+![](images/intro_rule.png)
+
+![Caption: The 68-95-99.7 Rule](images/intro_rule.png)
+
+![Caption: Stormtroopocat](https://octodex.github.com/images/stormtroopocat.jpg "The Stormtroopocat")
+```
+
+![](images/intro_rule.png "The rule that you must know")
+
+
+
+![Caption: The 68-95-99.7 Rule](images/intro_rule.png "The rule that you must know")
+
+![Caption: Stormtroopocat](https://octodex.github.com/images/stormtroopocat.jpg "The Stormtroopocat")
+
+**Reference-style Links**
+
+```
+Hover to see [where this link directs you][id].
+
+[id]: http://www.baidu.com "This is Baidu.com"
+
+This graph represents a well-known rule in statistics:
+![caption not displayed due to absence of line break][id2]
+
+[id2]: images/intro_rule.png "This is the 68-95-99.7 Rule"
+```
+
+
+Hover to see [where this link directs you][id].
+
+[id]: http://www.baidu.com "This is Baidu.com"
+
+
+This graph represents a well-known rule in statistics:
+![caption not displayed due to absence of line break][id2]
+
+[id2]: images/intro_rule.png "This is the 68-95-99.7 Rule"
+
+
+
+
+
+#### Unordered Lists
+
+- Start an unordered list with any one of `-`, `+`, or `*`. They are **completely identical**. 
+- To create nested sub-lists, indent with **four spaces** (or hitting the `tab` key twice to create the equivalent of four spaces). 
+- Unordered lists only work for **two or three levels**, depending on your output format, i.e., html, pdf, or docx. 
+
+To emphasize again, using any one of `-`, `+`, or `*` would give completely identical result. 
+
+```
+- item1
+- item2
+    - item2.1
+    - item2.2
+        - item2.2.1
+        - item2.2.2
+            - item2.2.2.1
+            - item2.2.2.2
+```
+
+- item1
+- item2
+    - item2.1
+    - item2.2
+        - item2.2.1
+        - item2.2.2
+            - item2.2.2.1
+            - item2.2.2.2
+
+
+#### Ordered Lists
+
+| type | works | fails |
+|---|---|---|
+| arabic numerals | `1.` or `(1)` | `1` or `(1).` |
+| English alphabet | `a.` or `(a)` | `a` or `(a).` |
+| roman numerals | `i.` or `(i)` | `i` or `(i).` |
+
+To note, you can of course mix ordered lists with unordered lists. 
+
+```
+2. Item 1
+9. Item 2
+8. Item 3
+    (3) Item 3.1
+    (1) Item 3.2
+7. Item 4
+(4) Item 5
+(1) Item 6
+(1) Item 7
+    2. Item 7.1
+    1. Item 7.2
+```
+
+2. Item 1
+9. Item 2
+8. Item 3
+    (3) Item 3.1
+    (1) Item 3.2
+7. Item 4
+(4) Item 5
+(1) Item 6
+(1) Item 7
+    2. Item 7.1
+    1. Item 7.2
+
+The same rules apply to **English alphabet** and **Roman numerals**.
+
+```
+b. Item 1
+d. Item 2  
+c. Item 3  
+    (c) Item 3.1
+    (a) Item 3.2
+z. Item 4
+(c) Item 5
+(a) Item 6  
+(a) Item 7
+    b. Item 7.1
+    b. Item 7.2
+```
+
+b. Item 1
+d. Item 2  
+c. Item 3  
+    (c) Item 3.1
+    (a) Item 3.2
+z. Item 4
+(c) Item 5
+(a) Item 6  
+(a) Item 7
+    b. Item 7.1
+    b. Item 7.2
+
+
+```
+ii. Item 1
+iv. Item 2  
+viii. Item 3  
+    (iii) Item 3.1
+    (i) Item 3.2
+vii. Item 4  
+(iv) Item 5 
+(i) Item 6
+(i) Item 7
+    ii. Item 7.1
+    i. Item 7.2
+```
+
+ii. Item 1
+iv. Item 2  
+viii. Item 3  
+    (iii) Item 3.1
+    (i) Item 3.2
+vii. Item 4  
+(iv) Item 5 
+(i) Item 6
+(i) Item 7
+    ii. Item 7.1
+    i. Item 7.2
+
+
+#### Tables
+
+```
+|order|name|producing area|price|
+|---|:---|---:|:---:|
+|1|banana|hainan|2￥/kg|
+|2|apple|baishui|4￥/kg|
+|3|mango|zhangzhou|8￥/kg|
+|4|watermelon|jinhua|1￥/kg|
+```
+
+
+|order|name|producing area|price|
+|---|:---|---:|:---:|
+|1|banana|hainan|2￥/kg|
+|2|apple|baishui|4￥/kg|
+|3|mango|zhangzhou|8￥/kg|
+|4|watermelon|jinhua|1￥/kg|
+
+
+
+### R Markdown
+
+
+#### Including R Code & Result {#rcode}
+
+- In Markdown, one backstick sign \` indicates inline code and three represent code blocks. 
+
+- Similarly, in R Markdown, we can include R code and result directly using one backstick \` to introduce inline code and three for code blocks. 
+
+**Inline Code**
+
+Placing an `r` **immediately** after the first backstick sign \` creates inline R code that will always be evaluated, showing only result but not code. 
+
+R has numerous datasets loaded automatically when it is opened. In your console, use the `data()` function to inspect available datasets. We will use the popular **iris** dataset as an example here. 
+
+In the console, if you type `iris` and press Enter, you will see the contents of the iris dataset. If you want to show the number of rows in the iris datasets, you can type `nrow(iris)`. Then you can report the result as follows. This is OK, but you will have to actually take a look at the result of `nrow(iris)`. Instead, we can use incline code. 
+
+```
+The iris dataset has 150 rows. 
+```
+
+The iris dataset has 150 rows. 
+
+
+```
+The iris dataset has `_r nrow(iris)` rows.
+```
+
+The iris dataset has `r nrow(iris)` rows. 
+
+`NOTE`: The underscore sign _ has to be added, or else `nrow(iris)` will be evaluated in the code block, which is an exception to the rule discussed at [Code & Quotes](#codequote). 
+
+
+**Code Blocks**
+
+Placing an `{r}` **immediately** after the first three backstick signs creates an R code block. By default, the code block will be evaluated, showing the code and the result. 
+
+
+```{r}
+summary(cars)
+```
+
+
+```{r}
+plot(cars)
+```
+
+You can control whether to evaluate the code (and hence show the result) or to show the code by changing the `eval` and `echo` arguments. 
+
+| ID | show code | show result | argument | note |
+|---|---|---|---|
+|A|Yes|Yes| `{r eval=TRUE, echo=TRUE}` | the default|
+|B|Yes|No| `{r eval=FALSE, echo=TRUE}` |
+|C|No|Yes| `{r eval=TRUE, echo=FALSE}` |
+|D|No|No| `{r eval=FALSE, echo=FALSE}` |
+
+A
+```{r eval=TRUE, echo=TRUE}
+summary(cars)
+```
+
+B
+```{r eval=FALSE, echo=TRUE}
+summary(cars)
+```
+
+C
+```{r eval=TRUE, echo=FALSE}
+summary(cars)
+```
+
+D
+```{r eval=FALSE, echo=FALSE}
+summary(cars)
+```
+
+
+### Mathematical Symbols in Latex
+
+There are two ways to introduce mathematical equations formatted by **Latex**.
+
+- using `$` for introducing inline equations, e.g. `$x+1$` gives $x+1$
+- using `$$` for presenting stand-alone equations in display mode, e.g. `$$x+1$$` gives $$x+1$$
+
+#### Texts
+
+Surrounded within `$` or `$$` sign, whitespaces lose their meaning. Must use `~` or `\,` to denote a whitespace. For the sake of clarity, use `~` whenever applicable. Note, `~` gives slightly bigger space than `\,`, but who cares.
+
+```
+$$ab, a b, a    b, a~b, a\,b, a~~b, a\,\,b, a~~~b, a\,\,\,b$$
+```
+
+$$ab, a b, a    b, a~b, a\,b, a~~b, a\,\,b, a~~~b, a\,\,\,b$$
+
+By default, texts within `$` are italized. You will have to use special Latex commands to ask for regular non-italized fonts. 
+
+```
+$$ abc, \text{abc}, \boldsymbol{abc}, \mathbf{abc}, \exp(x), \sin, \cos, \lim $$
+```
+
+$$ abc, \text{abc}, \boldsymbol{abc}, \mathbf{abc}, \exp(x), \sin, \cos, \lim $$
+
+
+|Code|Effect|Note|
+|---|---|---|
+|`$abc$`|$abc$| text is italicized by default |
+|`$\text{abc}$`|$\text{abc}$| non-italicized font | 
+|`$\boldsymbol{abc}$`|$\boldsymbol{abc}$| bold and italicized |
+|`$\mathbf{abc}$`|$\mathbf{abc}$| bold and non-italicized font|
+|`$\exp(x)$`|$\exp(x)$| exponentiate |
+|`$\sin$`|$\sin$| sine |
+|`$\cos$`|$\cos$| cosine |
+|`$\lim$`|$\lim$|
+
+#### Greek Letters
+
+|Code|Effect|Note|
+|---|---|---|
+|`$\alpha$`|$\alpha$|
+|`$A$`|$A$|
+|`$\beta$`|$\beta$|
+|`$\gamma$`|$\gamma$|
+|`$\Gamma$`|$\Gamma$|
+|`$\delta$`|$\delta$|
+|`$\Delta$`|$\Delta$|
+|`$\pi$`|$\pi$|
+|`$\Pi$`|$\Pi$|
+|`$\phi$`|$\phi$|
+|`$\Phi$`|$\Phi$|
+|`$\varphi$`|$\varphi$|
+|`$\theta$`|$\theta$|
+
+#### Algebraic Representation
+
+```
+$$ x_i, x_{ij}, x_{i+1}, x^2, x^{2/3}, x_i^2, x^2_i, \sqrt{x}, \sqrt[^n]{x}, \frac{2}{3}, \binom{n}{k} $$
+```
+
+$$ x_i, x_{ij}, x_{i+1}, x^2, x^{2/3}, x_i^2, x^2_i, \sqrt{x}, \sqrt[^n]{x}, \frac{2}{3}, \binom{n}{k} $$
+
+
+|Code|Effect|Note|
+|:---|:---|:---|
+|`$x_i$`|$x_i$| subscript |
+|`$x_{ij}$`|$x_{ij}$| must use `{}` with more than one character |
+|`$x_{i+1}$`|$x_{i+1}$| another example |
+|`$x^2$`|$x^2$| superscript |
+|`$x^{2/3}$`|$x^{2/3}$| another example |
+|`$x_i^2$`|$x_i^2$| subscript and superscript |
+|`$x^2_i$`|$x^2_i$| superscript and subscript (identical; order does not matter) |
+|`$\sqrt{x}$`|$\sqrt{x}$| square root |
+|`$\sqrt[^n]{x}$`|$\sqrt[^n]{x}$|
+|`$\frac{2}{3}$`|$\frac{2}{3}$| fraction |
+|`$\binom{n}{k}$`|$\binom{n}{k}$| binomial coeffcient |
+
+
+#### Algebraic Operations
+
+```
+$$ \times, \div, \pm, \mp, \ne, \le, \ge, \ll, \gg, \approx, \sim, \equiv, \cong, \propto, \infty $$
+```
+
+$$ \times, \div, \pm, \mp, \ne, \le, \ge, \ll, \gg, \approx, \sim, \equiv, \cong, \propto, \infty $$
+
+
+|Code|Effect|Note|
+|:---|:---|---|
+|`$\times$`|$\times$| multiplication sign |
+|`$\div$`|$\div$| division sign |
+|`$\pm$`|$\pm$| plus and minus |
+|`$\mp$`|$\mp$| minus and plus |
+|`$\ne$`|$\ne$| not equal |
+|`$\le$`|$\le$| less than or equal to |
+|`$\ge$`|$\ge$| greater than or equal to |
+|`$\ll$`|$\ll$| much less than |
+|`$\gg$`|$\gg$| much greater than |
+|`$\approx$`|$\approx$| approximate to |
+|`$\sim$`|$\sim$| similar to |
+|`$\equiv$`|$\equiv$| equivalent to |
+|`$\cong$`|$\cong$| 
+|`$\propto$`|$\propto$| proportion to |
+|`$\infty$`|$\infty$| infinity |
+
+#### Set Operations
+
+```
+$$ \forall, \exists, \nexists, \cup, \cap, \in, \ni, \emptyset $$
+```
+
+$$ \forall, \exists, \nexists, \cup, \cap, \in, \ni, \emptyset $$
+
+|Code|Effect|Note|
+|---|---|---|
+|`$\forall$`|$\forall$|
+|`$\exists$`|$\exists$|
+|`$\nexists$`|$\nexists$|
+|`$\cup$`|$\cup$|
+|`$\cap$`|$\cap$|
+|`$\in$`|$\in$|
+|`$\ni$`|$\ni$|
+|`$\emptyset $`|$\emptyset$|
+
+
+
+#### Calculus Symbols
+
+$$ \sum, \prod, \partial{x}, \int,    $$
+
+|Code|Effect|Note|
+|---|---|---|
+|`$\sum$`|$\sum$|
+|`$\prod$`|$\prod$|
+|`$\coprod$`|$\coprod$|
+|`$\partial{x}$`|$\partial{x}$|
+|`$\int$`|$\int$|
+|`$\int x \,\mathrm{d}x$`|$\int x \,\mathrm{d}x$|
+|`$\oint$`|$\oint$|
+|`$\iint$`|$\iint$|
+|`$\idotsint$`|$\idotsint$|
+|`$\int_a^b$`|$\int_a^b$|
+|`$\int\limits_a^b$`|$\int\limits_a^b$|
+
+
+#### Statistics & Linear Algebra Symbols
+
+```
+$$ \overset{iid}{\sim}, \underset{(1)}{=}, \underset{\text{below}}{\overset{\text{above}}{=}} $$
+```
+
+$$ \overset{iid}{\sim}, \underset{(1)}{=}, \underset{\text{below}}{\overset{\text{above}}{=}} $$
+
+```
+$$  \therefore, \cdot, \cdots, \dots, \ldots, \vdots, \ddots, \bullet, \dot A, \dot \forall $$
+```
+
+$$  \therefore, \cdot, \cdots, \dots, \ldots, \vdots, \ddots, \bullet, \dot A, \dot \forall $$
+
+
+|Code|Effect|Note|
+|---|---|---|
+|`$\hat{a}$`|$\hat{a}$|
+|`$\bar{a}$`|$\bar{a}$|
+|`$\vec{a}$`|$\vec{a}$|
+|`$\overset{iid}{\sim}$`|$\overset{iid}{\sim}$|
+|`$\underset{(1)}{=}$`|$\underset{(1)}{=}$|
+|`$\underset{b}{\overset{a}{=}}$`|$\underset{b}{\overset{a}{=}}$|
+|`$\cdot$`|$\cdot$|
+|`$\cdots$`|$\cdots$|
+|`$\dots$`|$\dots$|
+|`$\ldots$`|$\ldots$|
+|`$\vdots$`|$\vdots$|
+|`$\ddots$`|$\ddots$|
+|`$\bullet$`|$\bullet$|
+|`$\dot A$`|$\dot A$|
+|`$\dot\forall$`|$\dot\forall$|
+|`$\therefore$`|$\therefore$|
+|`$\overrightarrow{AB}$`|$\overrightarrow{AB}$|
+|`$\overline{aaa}$`|$\overline{aaa}$|
+|`$\bigoplus$`|$\bigoplus$|
+|`$\bigotimes$`|$\bigotimes$|
+|`$\bigodot$`|$\bigodot$|
+|`$\bigotimes$`|$\bigotimes$|
+|`$\biguplus$`|$\biguplus$|
+|`$\bigsqcup$`|$\bigsqcup$|
+|`$\bigvee$`|$\bigvee$|
+|`$\bigwedge$`|$\bigwedge$|
+
+
+#### Other Mathematical Symbols
+
+|Code|Effect|Note|
+|---|---|---|
+|`$\nabla$`|$\nabla$|
+|`$\grave{a}$`|$\grave{a}$|
+|`$\acute{a}$`|$\acute{a}$|
+|`$\dot{a}$`|$\dot{a}$|
+|`$\ddot{a}$`|$\ddot{a}$|
+|`$\ddot{a}$`|$\ddot{a}$|
+|`$\mathring{a}$`|$\mathring{a}$|
+|`$\check{a}$`|$\check{a}$|
+|`$\underline{aaa}$`|$\underline{aaa}$|
+|`$\to$`|$\to$|
+|`$\rightarrow$`|$\rightarrow$|
+|`$\gets$`|$\gets$|
+|`$\leftarrow$`|$\leftarrow$|
+|`$\uparrow$`|$\uparrow$|
+|`$\downarrow$`|$\downarrow$|
+|`$\leftrightarrow$`|$\leftrightarrow$|
+|`$(a)$`|$(a)$|
+|`$[a]$`|$[a]$|
+|`$\langle f \rangle$`|$\langle f \rangle$|
+|`$\lfloor f \rfloor$`|$\lfloor f \rfloor$|
+|`$\lceil f \rceil$`|$\lceil f \rceil$|
+|`$\ulcorner f \urcorner$`|$\ulcorner f \urcorner$|
+
+#### Matrices
+
+- a matrix begins with `\begin{array}` and ends with `\end{array}`
+- we use the code `{rrr}` to indicate that each column is right justified
+- cells are separated by the `&` symbol
+- each line (except the last) is terminated by `\\`
+
+```
+$$
+\begin{array}
+{rrr}
+1 & 2 & 3 \\
+4 & 5 & 6 \\
+7 & 8 & 9
+\end{array}
+$$
+```
+
+$$
+\begin{array}
+{rrr}
+1 & 2 & 3 \\
+4 & 5 & 6 \\
+7 & 8 & 9
+\end{array}
+$$
+
+In math textbooks, matrices are often surrounded by brackets, and are assigned to a boldface letter.  Here is an example
+
+```
+$$
+\mathbf{X} = \left[\begin{array}
+{rrr}
+1 & 2 & 3 \\
+4 & 5 & 6 \\
+7 & 8 & 9
+\end{array}\right]
+$$
+```
+
+$$
+\mathbf{X} = \left[\begin{array}
+{rrr}
+1 & 2 & 3 \\
+4 & 5 & 6 \\
+7 & 8 & 9
+\end{array}\right]
+$$
+
+
+#### Practice
+
+Try to reproduce the code for the following formulas. 
+
+```
+$$\sum_{i=1}^{n}\left( \frac{X_i}{Y_i} \right)$$
+```
+$$\sum_{i=1}^{n}\left( \frac{X_i}{Y_i} \right)$$
+
+Hint: In LaTeX, you can create parentheses, brackets, and braces which size themselves automatically to contain large expressions. You do this using the `\left` and `\right` operators.  Here is an example
+
+
+```
+$$ \sum_{i=1}^{n} (X_i - \bar{X})(Y_i - \bar{Y}) $$
+```
+$$ \sum_{i=1}^{n} (X_i - \bar{X})(Y_i - \bar{Y}) $$
+
+```
+$$\int_0^{2\pi} \sin x~dx$$
+```
+$$\int_0^{2\pi} \sin x~dx$$
 
 
 

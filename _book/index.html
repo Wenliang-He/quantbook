@@ -122,7 +122,11 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="1.2.4" data-path="index.html"><a href="index.html#indexing"><i class="fa fa-check"></i><b>1.2.4</b> Indexing</a></li>
 <li class="chapter" data-level="1.2.5" data-path="index.html"><a href="index.html#factor"><i class="fa fa-check"></i><b>1.2.5</b> Factors</a></li>
 </ul></li>
-<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#introduction-to-r-markdown"><i class="fa fa-check"></i><b>1.3</b> Introduction to R Markdown</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#introduction-to-r-markdown"><i class="fa fa-check"></i><b>1.3</b> Introduction to R Markdown</a><ul>
+<li class="chapter" data-level="1.3.1" data-path="index.html"><a href="index.html#basic-markdown"><i class="fa fa-check"></i><b>1.3.1</b> Basic Markdown</a></li>
+<li class="chapter" data-level="1.3.2" data-path="index.html"><a href="index.html#r-markdown"><i class="fa fa-check"></i><b>1.3.2</b> R Markdown</a></li>
+<li class="chapter" data-level="1.3.3" data-path="index.html"><a href="index.html#mathematical-symbols-in-latex"><i class="fa fa-check"></i><b>1.3.3</b> Mathematical Symbols in Latex</a></li>
+</ul></li>
 <li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#introduction-to-git-github"><i class="fa fa-check"></i><b>1.4</b> Introduction to Git &amp; GitHub</a></li>
 <li class="chapter" data-level="1.5" data-path="index.html"><a href="index.html#introduction-to-ggplot2"><i class="fa fa-check"></i><b>1.5</b> Introduction to ggplot2</a></li>
 <li class="chapter" data-level="1.6" data-path="index.html"><a href="index.html#introduction-to-shiny"><i class="fa fa-check"></i><b>1.6</b> Introduction to Shiny</a></li>
@@ -257,7 +261,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div id="header">
 <h1 class="title">Quantitative Research Methods for Education</h1>
 <h4 class="author"><em>Wenliang He</em></h4>
-<h4 class="date"><em>Updated on 2018-09-13</em></h4>
+<h4 class="date"><em>Updated on 2018-09-16</em></h4>
 </div>
 <div id="introduction" class="section level1">
 <h1><span class="header-section-number">1</span> Introduction</h1>
@@ -907,8 +911,8 @@ fac =<span class="st"> </span><span class="kw">factor</span>(var3); fac         
 </div>
 <div id="introduction-to-r-markdown" class="section level2">
 <h2><span class="header-section-number">1.3</span> Introduction to R Markdown</h2>
-<div id="htmlwidget-338b78286e425752d4e2" style="width:672px;height:200px;" class="DiagrammeR html-widget"></div>
-<script type="application/json" data-for="htmlwidget-338b78286e425752d4e2">{"x":{"diagram":"\ngraph LR\nMU(Markup) --> MD(Markdown) \nMD --> PDMD(Pandoc Markdown)\nMD --> GHMD(GitHub Markdown)\nMD --> PHPMD(PHP Markdown)\nPDMD --> RMD(R Markdown)\nRMD --> BD(Bookdown)\n"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-cd63b4f0298d9b17d9ad" style="width:672px;height:200px;" class="DiagrammeR html-widget"></div>
+<script type="application/json" data-for="htmlwidget-cd63b4f0298d9b17d9ad">{"x":{"diagram":"\ngraph LR\nMU(Markup) --> MD(Markdown) \nMD --> PDMD(Pandoc Markdown)\nMD --> GHMD(GitHub Markdown)\nMD --> PHPMD(PHP Markdown)\nPDMD --> RMD(R Markdown)\nRMD --> BD(Bookdown)\n"},"evals":[],"jsHooks":[]}</script>
 <p>There are some resources for learning Markdown, GitHub Markdown, and R Markdown.</p>
 <p><strong>Markdown Tutorials</strong></p>
 <ul>
@@ -924,6 +928,1279 @@ fac =<span class="st"> </span><span class="kw">factor</span>(var3); fac         
 <li><a href="https://rmarkdown.rstudio.com/lesson-1.html">rstudio.com - detailed</a>: the official R Markdown tutorial with more details</li>
 <li><a href="https://www.webpagefx.com/tools/emoji-cheat-sheet/">emoji cheatsheet</a>: a great resource for looking up <strong>emoji</strong> 😄, which can be used in GitHub Markdown and R Markdown</li>
 </ul>
+<div id="basic-markdown" class="section level3">
+<h3><span class="header-section-number">1.3.1</span> Basic Markdown</h3>
+<p>The following contents are adapted from</p>
+<ul>
+<li><a href="https://rmarkdown.rstudio.com/authoring_basics.html">Introduction to Markdown by RStudio</a></li>
+<li><a href="http://www.statpower.net/Content/310/R%20Stuff/SampleMarkdown.html">James Steiger’s Blog</a></li>
+<li><a href="http://csrgxtu.github.io/2015/03/20/Writing-Mathematic-Fomulars-in-Markdown/">Archer’s blog</a></li>
+</ul>
+<p>Before we proceed to learn the Markdown and R Markdown languages. Let us install the <a href="https://github.com/swarm-lab/editR">editR</a> package first. editR is a R Markdown editor with instant previewing capacity such that you do not have to repeatedly <code>knit</code> it to see the outcome.</p>
+<p>In your R console, type</p>
+<pre><code>if (!require(&quot;devtools&quot;)) install.packages(&quot;devtools&quot;)
+devtools::install_github(&quot;trestletech/shinyAce&quot;)
+devtools::install_github(&quot;swarm-lab/editR&quot;)</code></pre>
+<p>After the package is properly installed, run the following code in your R console.</p>
+<pre><code>library(editR)
+editR()</code></pre>
+<p>An interactive prompt will come up and you can use it to open .Rmd files in the same way you would use Microsoft Office to open .docx files. Enjoy the instant previewing.</p>
+<div id="headers" class="section level4">
+<h4><span class="header-section-number">1.3.1.1</span> Headers</h4>
+<pre><code># Header 1
+## Header 2
+### Header 3
+#### Header 4
+##### Header 5
+##### Header 6</code></pre>
+<p>Actual code is removed, because it will mess up header indexing.</p>
+<p><br></p>
+</div>
+<div id="texts-in-markdown" class="section level4">
+<h4><span class="header-section-number">1.3.1.2</span> Texts in Markdown</h4>
+<p><strong>Intervening Spaces</strong></p>
+<pre><code>White spaces between texts do nothing in R Markdown.        Eight whitespaces (or four Tabs)
+and a newline have no effect. </code></pre>
+<p>White spaces between texts do nothing in R Markdown. Eight whitespaces (or four Tabs) and a newline have no effect.</p>
+<p><strong>Two or More Trailing Spaces</strong></p>
+<pre><code>However, adding two or more trailing spaces by the end of the line  (two spaces are here!)
+would break the line.</code></pre>
+<p>However, adding two or more trailing spaces by the end of the line<br />
+would break the line.</p>
+<p><strong>Intervening Newlines</strong></p>
+<pre><code>If there is a newline in between,
+
+it will create a new paragraph. </code></pre>
+<p>If there is a newline in between,</p>
+<p>it will create a new paragraph.</p>
+</div>
+<div id="codequote" class="section level4">
+<h4><span class="header-section-number">1.3.1.3</span> Code &amp; Quotes</h4>
+<p><strong>Inline Code</strong></p>
+<p>Inline code such as <code>x = x+1</code> can be created by wrapping some text with one backstick sign ` at each end of the equation x = x+1.</p>
+<p>Characters within <em>inline code</em> lose their meaings and are dispalyed verbatim.</p>
+<p><strong>Code Blocks</strong></p>
+<p>To create a <strong>code block</strong> (aka <strong>code in display mode</strong>), as shown below, surround multiple lines of code with three backstick signs at the preceding and succeding lines.</p>
+<pre><code>x = 1
+y = x + 1
+answer = y * 2</code></pre>
+<p>Characters within <em>code blocks</em> lose their meanings and are displayed verbatim (see an exception at <a href="index.html#rcode">Including R Code &amp; Result</a>). We have been using code blocks all along in the previous sections to contrast snippets of raw code with their effect.</p>
+<p><strong>Block Quotes</strong></p>
+<p>Block quotes follow the same three rules regarding (a) intervening spaces, (b) two trailing spaces, and (c) intervening newlines. The quote below is credited to Sarah Ban Breathnach, a New York Times best-selling author.</p>
+<pre><code>&gt; The world needs dreamers and the world needs        doers. 
+But above all the world needs dreamers who do. </code></pre>
+<blockquote>
+<p>The world needs dreamers and the world needs doers. But above all the world needs dreamers who do.</p>
+</blockquote>
+<pre><code>&gt; The world needs dreamers and the world needs doers.  (two spaces are here!)
+But above all the world needs dreamers who do. </code></pre>
+<blockquote>
+<p>The world needs dreamers and the world needs doers.<br />
+But above all the world needs dreamers who do.</p>
+</blockquote>
+<pre><code>&gt; The world needs dreamers and the world needs doers.
+
+&gt; But above all the world needs dreamers who do. </code></pre>
+<blockquote>
+<p>The world needs dreamers and the world needs doers.</p>
+</blockquote>
+<blockquote>
+<p>But above all the world needs dreamers who do.</p>
+</blockquote>
+<p>Wait a second, an intervening newline breaks the quote bar. Fix it by adding a <code>&gt;</code> in between the two bars to join them together.</p>
+<pre><code>&gt; The world needs dreamers and the world needs doers.
+&gt;
+&gt; But above all the world needs dreamers who do. </code></pre>
+<blockquote>
+<p>The world needs dreamers and the world needs doers.</p>
+<p>But above all the world needs dreamers who do.</p>
+</blockquote>
+</div>
+<div id="emphasis" class="section level4">
+<h4><span class="header-section-number">1.3.1.4</span> Emphasis</h4>
+<p>The table below contrast code and its effect.</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Code</th>
+<th align="center">Effect</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code>_italic_</code></td>
+<td align="center"><em>italic</em></td>
+<td>recommened</td>
+</tr>
+<tr class="even">
+<td align="left"><code>*italic*</code></td>
+<td align="center"><em>italic</em></td>
+<td><code>*</code> and <code>_</code> are identical</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>__bold__</code></td>
+<td align="center"><strong>bold</strong></td>
+<td></td>
+</tr>
+<tr class="even">
+<td align="left"><code>**bold**</code></td>
+<td align="center"><strong>bold</strong></td>
+<td>recommened</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>___italic-and-bold___</code></td>
+<td align="center"><strong><em>italic-and-bold</em></strong></td>
+<td></td>
+</tr>
+<tr class="even">
+<td align="left"><code>***italic-and-bold***</code></td>
+<td align="center"><strong><em>italic-and-bold</em></strong></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td align="left"><code>**_italic-and-bold_**</code></td>
+<td align="center"><strong><em>italic-and-bold</em></strong></td>
+<td>recommended</td>
+</tr>
+<tr class="even">
+<td align="left"><code>~~strikethrough~~</code></td>
+<td align="center"><del>strikethrough</del></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td align="left"><code>X~i~</code></td>
+<td align="center">X<sub>i</sub></td>
+<td>subscript</td>
+</tr>
+<tr class="even">
+<td align="left"><code>X^2^</code></td>
+<td align="center">X<sup>2</sup></td>
+<td>superscript</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>X~i~^2^</code></td>
+<td align="center">X<sub>i</sub><sup>2</sup></td>
+<td>subscript followed by superscript</td>
+</tr>
+<tr class="even">
+<td align="left"><code>X^2^~i~</code></td>
+<td align="center">X<sup>2</sup><sub>i</sub></td>
+<td>superscript followed by subscript</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Horizontal Rule</strong></p>
+<p>Three or more asterisks or dashes create a <em>horizontal rule</em>, aka <strong>page break</strong>.</p>
+<pre><code>***</code></pre>
+<hr />
+<p>or</p>
+<pre><code>---</code></pre>
+<hr />
+</div>
+<div id="links" class="section level4">
+<h4><span class="header-section-number">1.3.1.5</span> Links</h4>
+<p><strong>Links to Websites</strong></p>
+<p>Links can be either naked or in the form of <code>[mandatory text](http://somesite.com &quot;optional hover message&quot;)</code>. Operative links must start with <code>http</code> or <code>https</code>.</p>
+<pre><code>www.baidu.com
+
+https://www.baidu.com/
+
+[](https://www.baidu.com/)    # no mandatory text, no links whatsoever
+
+[Baidu Search Engine - malfunctioning](www.baidu.com &quot;This link would not work&quot;)
+
+[Baidu Search Engine - functioning](https://www.baidu.com/ &quot;This link would work&quot;)
+</code></pre>
+<p>www.baidu.com</p>
+<p><a href="https://www.baidu.com/" class="uri">https://www.baidu.com/</a></p>
+<p><a href="https://www.baidu.com/"></a></p>
+<p><a href="www.baidu.com" title="This link would not work">Baidu Search Engine - malfunctioning</a></p>
+<p><a href="https://www.baidu.com/" title="This link would work">Baidu Search Engine - functioning</a></p>
+<p><strong>Links to Images</strong></p>
+<p>Images on the web or local disks can be loaded in the form of <code>![optional caption](link to image) &quot;optional hover message&quot;</code>. The caption is completely optional.</p>
+<p>RStudio(TM)</p>
+<pre><code>![](images/intro_rule.png)
+
+![Caption: The 68-95-99.7 Rule](images/intro_rule.png)
+
+![Caption: Stormtroopocat](https://octodex.github.com/images/stormtroopocat.jpg &quot;The Stormtroopocat&quot;)</code></pre>
+<div class="figure">
+<img src="images/intro_rule.png" title="The rule that you must know" />
+
+</div>
+<div class="figure">
+<img src="images/intro_rule.png" title="The rule that you must know" alt="Caption: The 68-95-99.7 Rule" />
+<p class="caption">Caption: The 68-95-99.7 Rule</p>
+</div>
+<div class="figure">
+<img src="https://octodex.github.com/images/stormtroopocat.jpg" title="The Stormtroopocat" alt="Caption: Stormtroopocat" />
+<p class="caption">Caption: Stormtroopocat</p>
+</div>
+<p><strong>Reference-style Links</strong></p>
+<pre><code>Hover to see [where this link directs you][id].
+
+[id]: http://www.baidu.com &quot;This is Baidu.com&quot;
+
+This graph represents a well-known rule in statistics:
+![caption not displayed due to absence of line break][id2]
+
+[id2]: images/intro_rule.png &quot;This is the 68-95-99.7 Rule&quot;</code></pre>
+<p>Hover to see <a href="http://www.baidu.com" title="This is Baidu.com">where this link directs you</a>.</p>
+<p>This graph represents a well-known rule in statistics: <img src="images/intro_rule.png" title="This is the 68-95-99.7 Rule" alt="caption not displayed due to absence of line break" /></p>
+</div>
+<div id="unordered-lists" class="section level4">
+<h4><span class="header-section-number">1.3.1.6</span> Unordered Lists</h4>
+<ul>
+<li>Start an unordered list with any one of <code>-</code>, <code>+</code>, or <code>*</code>. They are <strong>completely identical</strong>.</li>
+<li>To create nested sub-lists, indent with <strong>four spaces</strong> (or hitting the <code>tab</code> key twice to create the equivalent of four spaces).</li>
+<li>Unordered lists only work for <strong>two or three levels</strong>, depending on your output format, i.e., html, pdf, or docx.</li>
+</ul>
+<p>To emphasize again, using any one of <code>-</code>, <code>+</code>, or <code>*</code> would give completely identical result.</p>
+<pre><code>- item1
+- item2
+    - item2.1
+    - item2.2
+        - item2.2.1
+        - item2.2.2
+            - item2.2.2.1
+            - item2.2.2.2</code></pre>
+<ul>
+<li>item1</li>
+<li>item2
+<ul>
+<li>item2.1</li>
+<li>item2.2
+<ul>
+<li>item2.2.1</li>
+<li>item2.2.2
+<ul>
+<li>item2.2.2.1</li>
+<li>item2.2.2.2</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+<div id="ordered-lists" class="section level4">
+<h4><span class="header-section-number">1.3.1.7</span> Ordered Lists</h4>
+<table>
+<thead>
+<tr class="header">
+<th>type</th>
+<th>works</th>
+<th>fails</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>arabic numerals</td>
+<td><code>1.</code> or <code>(1)</code></td>
+<td><code>1</code> or <code>(1).</code></td>
+</tr>
+<tr class="even">
+<td>English alphabet</td>
+<td><code>a.</code> or <code>(a)</code></td>
+<td><code>a</code> or <code>(a).</code></td>
+</tr>
+<tr class="odd">
+<td>roman numerals</td>
+<td><code>i.</code> or <code>(i)</code></td>
+<td><code>i</code> or <code>(i).</code></td>
+</tr>
+</tbody>
+</table>
+<p>To note, you can of course mix ordered lists with unordered lists.</p>
+<pre><code>2. Item 1
+9. Item 2
+8. Item 3
+    (3) Item 3.1
+    (1) Item 3.2
+7. Item 4
+(4) Item 5
+(1) Item 6
+(1) Item 7
+    2. Item 7.1
+    1. Item 7.2</code></pre>
+<ol start="2" style="list-style-type: decimal">
+<li>Item 1</li>
+<li>Item 2</li>
+<li>Item 3
+<ol start="3" style="list-style-type: decimal">
+<li>Item 3.1</li>
+<li>Item 3.2</li>
+</ol></li>
+<li>Item 4</li>
+</ol>
+<ol start="4" style="list-style-type: decimal">
+<li>Item 5</li>
+<li>Item 6</li>
+<li>Item 7
+<ol start="2" style="list-style-type: decimal">
+<li>Item 7.1</li>
+<li>Item 7.2</li>
+</ol></li>
+</ol>
+<p>The same rules apply to <strong>English alphabet</strong> and <strong>Roman numerals</strong>.</p>
+<pre><code>b. Item 1
+d. Item 2  
+c. Item 3  
+    (c) Item 3.1
+    (a) Item 3.2
+z. Item 4
+(c) Item 5
+(a) Item 6  
+(a) Item 7
+    b. Item 7.1
+    b. Item 7.2</code></pre>
+<ol start="2" style="list-style-type: lower-alpha">
+<li>Item 1</li>
+<li>Item 2<br />
+</li>
+<li>Item 3
+<ol start="3" style="list-style-type: lower-alpha">
+<li>Item 3.1</li>
+<li>Item 3.2</li>
+</ol></li>
+<li>Item 4</li>
+</ol>
+<ol start="3" style="list-style-type: lower-alpha">
+<li>Item 5</li>
+<li>Item 6<br />
+</li>
+<li>Item 7
+<ol start="2" style="list-style-type: lower-alpha">
+<li>Item 7.1</li>
+<li>Item 7.2</li>
+</ol></li>
+</ol>
+<pre><code>ii. Item 1
+iv. Item 2  
+viii. Item 3  
+    (iii) Item 3.1
+    (i) Item 3.2
+vii. Item 4  
+(iv) Item 5 
+(i) Item 6
+(i) Item 7
+    ii. Item 7.1
+    i. Item 7.2</code></pre>
+<ol start="2" style="list-style-type: lower-roman">
+<li>Item 1</li>
+<li>Item 2<br />
+</li>
+<li>Item 3
+<ol start="3" style="list-style-type: lower-roman">
+<li>Item 3.1</li>
+<li>Item 3.2</li>
+</ol></li>
+<li>Item 4<br />
+</li>
+</ol>
+<ol start="4" style="list-style-type: lower-roman">
+<li>Item 5</li>
+<li>Item 6</li>
+<li>Item 7
+<ol start="2" style="list-style-type: lower-roman">
+<li>Item 7.1</li>
+<li>Item 7.2</li>
+</ol></li>
+</ol>
+</div>
+<div id="tables" class="section level4">
+<h4><span class="header-section-number">1.3.1.8</span> Tables</h4>
+<pre><code>|order|name|producing area|price|
+|---|:---|---:|:---:|
+|1|banana|hainan|2￥/kg|
+|2|apple|baishui|4￥/kg|
+|3|mango|zhangzhou|8￥/kg|
+|4|watermelon|jinhua|1￥/kg|</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th>order</th>
+<th align="left">name</th>
+<th align="right">producing area</th>
+<th align="center">price</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td align="left">banana</td>
+<td align="right">hainan</td>
+<td align="center">2￥/kg</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td align="left">apple</td>
+<td align="right">baishui</td>
+<td align="center">4￥/kg</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td align="left">mango</td>
+<td align="right">zhangzhou</td>
+<td align="center">8￥/kg</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td align="left">watermelon</td>
+<td align="right">jinhua</td>
+<td align="center">1￥/kg</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="r-markdown" class="section level3">
+<h3><span class="header-section-number">1.3.2</span> R Markdown</h3>
+<div id="rcode" class="section level4">
+<h4><span class="header-section-number">1.3.2.1</span> Including R Code &amp; Result</h4>
+<ul>
+<li><p>In Markdown, one backstick sign ` indicates inline code and three represent code blocks.</p></li>
+<li><p>Similarly, in R Markdown, we can include R code and result directly using one backstick ` to introduce inline code and three for code blocks.</p></li>
+</ul>
+<p><strong>Inline Code</strong></p>
+<p>Placing an <code>r</code> <strong>immediately</strong> after the first backstick sign ` creates inline R code that will always be evaluated, showing only result but not code.</p>
+<p>R has numerous datasets loaded automatically when it is opened. In your console, use the <code>data()</code> function to inspect available datasets. We will use the popular <strong>iris</strong> dataset as an example here.</p>
+<p>In the console, if you type <code>iris</code> and press Enter, you will see the contents of the iris dataset. If you want to show the number of rows in the iris datasets, you can type <code>nrow(iris)</code>. Then you can report the result as follows. This is OK, but you will have to actually take a look at the result of <code>nrow(iris)</code>. Instead, we can use incline code.</p>
+<pre><code>The iris dataset has 150 rows. </code></pre>
+<p>The iris dataset has 150 rows.</p>
+<pre><code>The iris dataset has `_r nrow(iris)` rows.</code></pre>
+<p>The iris dataset has 150 rows.</p>
+<p><code>NOTE</code>: The underscore sign _ has to be added, or else <code>nrow(iris)</code> will be evaluated in the code block, which is an exception to the rule discussed at <a href="index.html#codequote">Code &amp; Quotes</a>.</p>
+<p><strong>Code Blocks</strong></p>
+<p>Placing an <code>{r}</code> <strong>immediately</strong> after the first three backstick signs creates an R code block. By default, the code block will be evaluated, showing the code and the result.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(cars)</code></pre></div>
+<pre><code>##      speed           dist       
+##  Min.   : 4.0   Min.   :  2.00  
+##  1st Qu.:12.0   1st Qu.: 26.00  
+##  Median :15.0   Median : 36.00  
+##  Mean   :15.4   Mean   : 42.98  
+##  3rd Qu.:19.0   3rd Qu.: 56.00  
+##  Max.   :25.0   Max.   :120.00</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(cars)</code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-40-1.png" width="672" /></p>
+<p>You can control whether to evaluate the code (and hence show the result) or to show the code by changing the <code>eval</code> and <code>echo</code> arguments.</p>
+<table>
+<thead>
+<tr class="header">
+<th>ID</th>
+<th>show code</th>
+<th>show result</th>
+<th>argument</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>A</td>
+<td>Yes</td>
+<td>Yes</td>
+<td><code>{r eval=TRUE, echo=TRUE}</code></td>
+</tr>
+<tr class="even">
+<td>B</td>
+<td>Yes</td>
+<td>No</td>
+<td><code>{r eval=FALSE, echo=TRUE}</code></td>
+</tr>
+<tr class="odd">
+<td>C</td>
+<td>No</td>
+<td>Yes</td>
+<td><code>{r eval=TRUE, echo=FALSE}</code></td>
+</tr>
+<tr class="even">
+<td>D</td>
+<td>No</td>
+<td>No</td>
+<td><code>{r eval=FALSE, echo=FALSE}</code></td>
+</tr>
+</tbody>
+</table>
+<p>A</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(cars)</code></pre></div>
+<pre><code>##      speed           dist       
+##  Min.   : 4.0   Min.   :  2.00  
+##  1st Qu.:12.0   1st Qu.: 26.00  
+##  Median :15.0   Median : 36.00  
+##  Mean   :15.4   Mean   : 42.98  
+##  3rd Qu.:19.0   3rd Qu.: 56.00  
+##  Max.   :25.0   Max.   :120.00</code></pre>
+<p>B</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(cars)</code></pre></div>
+<p>C</p>
+<pre><code>##      speed           dist       
+##  Min.   : 4.0   Min.   :  2.00  
+##  1st Qu.:12.0   1st Qu.: 26.00  
+##  Median :15.0   Median : 36.00  
+##  Mean   :15.4   Mean   : 42.98  
+##  3rd Qu.:19.0   3rd Qu.: 56.00  
+##  Max.   :25.0   Max.   :120.00</code></pre>
+<p>D</p>
+</div>
+</div>
+<div id="mathematical-symbols-in-latex" class="section level3">
+<h3><span class="header-section-number">1.3.3</span> Mathematical Symbols in Latex</h3>
+<p>There are two ways to introduce mathematical equations formatted by <strong>Latex</strong>.</p>
+<ul>
+<li>using <code>$</code> for introducing inline equations, e.g. <code>$x+1$</code> gives <span class="math inline">\(x+1\)</span></li>
+<li>using <code>$$</code> for presenting stand-alone equations in display mode, e.g. <code>$$x+1$$</code> gives <span class="math display">\[x+1\]</span></li>
+</ul>
+<div id="texts" class="section level4">
+<h4><span class="header-section-number">1.3.3.1</span> Texts</h4>
+<p>Surrounded within <code>$</code> or <code>$$</code> sign, whitespaces lose their meaning. Must use <code>~</code> or <code>\,</code> to denote a whitespace. For the sake of clarity, use <code>~</code> whenever applicable. Note, <code>~</code> gives slightly bigger space than <code>\,</code>, but who cares.</p>
+<pre><code>$$ab, a b, a    b, a~b, a\,b, a~~b, a\,\,b, a~~~b, a\,\,\,b$$</code></pre>
+<p><span class="math display">\[ab, a b, a    b, a~b, a\,b, a~~b, a\,\,b, a~~~b, a\,\,\,b\]</span></p>
+<p>By default, texts within <code>$</code> are italized. You will have to use special Latex commands to ask for regular non-italized fonts.</p>
+<pre><code>$$ abc, \text{abc}, \boldsymbol{abc}, \mathbf{abc}, \exp(x), \sin, \cos, \lim $$</code></pre>
+<p><span class="math display">\[ abc, \text{abc}, \boldsymbol{abc}, \mathbf{abc}, \exp(x), \sin, \cos, \lim \]</span></p>
+<table>
+<thead>
+<tr class="header">
+<th>Code</th>
+<th>Effect</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>$abc$</code></td>
+<td><span class="math inline">\(abc\)</span></td>
+<td>text is italicized by default</td>
+</tr>
+<tr class="even">
+<td><code>$\text{abc}$</code></td>
+<td><span class="math inline">\(\text{abc}\)</span></td>
+<td>non-italicized font</td>
+</tr>
+<tr class="odd">
+<td><code>$\boldsymbol{abc}$</code></td>
+<td><span class="math inline">\(\boldsymbol{abc}\)</span></td>
+<td>bold and italicized</td>
+</tr>
+<tr class="even">
+<td><code>$\mathbf{abc}$</code></td>
+<td><span class="math inline">\(\mathbf{abc}\)</span></td>
+<td>bold and non-italicized font</td>
+</tr>
+<tr class="odd">
+<td><code>$\exp(x)$</code></td>
+<td><span class="math inline">\(\exp(x)\)</span></td>
+<td>exponentiate</td>
+</tr>
+<tr class="even">
+<td><code>$\sin$</code></td>
+<td><span class="math inline">\(\sin\)</span></td>
+<td>sine</td>
+</tr>
+<tr class="odd">
+<td><code>$\cos$</code></td>
+<td><span class="math inline">\(\cos\)</span></td>
+<td>cosine</td>
+</tr>
+<tr class="even">
+<td><code>$\lim$</code></td>
+<td><span class="math inline">\(\lim\)</span></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="greek-letters" class="section level4">
+<h4><span class="header-section-number">1.3.3.2</span> Greek Letters</h4>
+<table>
+<thead>
+<tr class="header">
+<th>Code</th>
+<th>Effect</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>$\alpha$</code></td>
+<td><span class="math inline">\(\alpha\)</span></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><code>$A$</code></td>
+<td><span class="math inline">\(A\)</span></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><code>$\beta$</code></td>
+<td><span class="math inline">\(\beta\)</span></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><code>$\gamma$</code></td>
+<td><span class="math inline">\(\gamma\)</span></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><code>$\Gamma$</code></td>
+<td><span class="math inline">\(\Gamma\)</span></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><code>$\delta$</code></td>
+<td><span class="math inline">\(\delta\)</span></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><code>$\Delta$</code></td>
+<td><span class="math inline">\(\Delta\)</span></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><code>$\pi$</code></td>
+<td><span class="math inline">\(\pi\)</span></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><code>$\Pi$</code></td>
+<td><span class="math inline">\(\Pi\)</span></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><code>$\phi$</code></td>
+<td><span class="math inline">\(\phi\)</span></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><code>$\Phi$</code></td>
+<td><span class="math inline">\(\Phi\)</span></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><code>$\varphi$</code></td>
+<td><span class="math inline">\(\varphi\)</span></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><code>$\theta$</code></td>
+<td><span class="math inline">\(\theta\)</span></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="algebraic-representation" class="section level4">
+<h4><span class="header-section-number">1.3.3.3</span> Algebraic Representation</h4>
+<pre><code>$$ x_i, x_{ij}, x_{i+1}, x^2, x^{2/3}, x_i^2, x^2_i, \sqrt{x}, \sqrt[^n]{x}, \frac{2}{3}, \binom{n}{k} $$</code></pre>
+<p><span class="math display">\[ x_i, x_{ij}, x_{i+1}, x^2, x^{2/3}, x_i^2, x^2_i, \sqrt{x}, \sqrt[^n]{x}, \frac{2}{3}, \binom{n}{k} \]</span></p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Code</th>
+<th align="left">Effect</th>
+<th align="left">Note</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code>$x_i$</code></td>
+<td align="left"><span class="math inline">\(x_i\)</span></td>
+<td align="left">subscript</td>
+</tr>
+<tr class="even">
+<td align="left"><code>$x_{ij}$</code></td>
+<td align="left"><span class="math inline">\(x_{ij}\)</span></td>
+<td align="left">must use <code>{}</code> with more than one character</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>$x_{i+1}$</code></td>
+<td align="left"><span class="math inline">\(x_{i+1}\)</span></td>
+<td align="left">another example</td>
+</tr>
+<tr class="even">
+<td align="left"><code>$x^2$</code></td>
+<td align="left"><span class="math inline">\(x^2\)</span></td>
+<td align="left">superscript</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>$x^{2/3}$</code></td>
+<td align="left"><span class="math inline">\(x^{2/3}\)</span></td>
+<td align="left">another example</td>
+</tr>
+<tr class="even">
+<td align="left"><code>$x_i^2$</code></td>
+<td align="left"><span class="math inline">\(x_i^2\)</span></td>
+<td align="left">subscript and superscript</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>$x^2_i$</code></td>
+<td align="left"><span class="math inline">\(x^2_i\)</span></td>
+<td align="left">superscript and subscript (identical; order does not matter)</td>
+</tr>
+<tr class="even">
+<td align="left"><code>$\sqrt{x}$</code></td>
+<td align="left"><span class="math inline">\(\sqrt{x}\)</span></td>
+<td align="left">square root</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>$\sqrt[^n]{x}$</code></td>
+<td align="left"><span class="math inline">\(\sqrt[^n]{x}\)</span></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left"><code>$\frac{2}{3}$</code></td>
+<td align="left"><span class="math inline">\(\frac{2}{3}\)</span></td>
+<td align="left">fraction</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>$\binom{n}{k}$</code></td>
+<td align="left"><span class="math inline">\(\binom{n}{k}\)</span></td>
+<td align="left">binomial coeffcient</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="algebraic-operations" class="section level4">
+<h4><span class="header-section-number">1.3.3.4</span> Algebraic Operations</h4>
+<pre><code>$$ \times, \div, \pm, \mp, \ne, \le, \ge, \ll, \gg, \approx, \sim, \equiv, \cong, \propto, \infty $$</code></pre>
+<p><span class="math display">\[ \times, \div, \pm, \mp, \ne, \le, \ge, \ll, \gg, \approx, \sim, \equiv, \cong, \propto, \infty \]</span></p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Code</th>
+<th align="left">Effect</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code>$\times$</code></td>
+<td align="left"><span class="math inline">\(\times\)</span></td>
+<td>multiplication sign</td>
+</tr>
+<tr class="even">
+<td align="left"><code>$\div$</code></td>
+<td align="left"><span class="math inline">\(\div\)</span></td>
+<td>division sign</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>$\pm$</code></td>
+<td align="left"><span class="math inline">\(\pm\)</span></td>
+<td>plus and minus</td>
+</tr>
+<tr class="even">
+<td align="left"><code>$\mp$</code></td>
+<td align="left"><span class="math inline">\(\mp\)</span></td>
+<td>minus and plus</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>$\ne$</code></td>
+<td align="left"><span class="math inline">\(\ne\)</span></td>
+<td>not equal</td>
+</tr>
+<tr class="even">
+<td align="left"><code>$\le$</code></td>
+<td align="left"><span class="math inline">\(\le\)</span></td>
+<td>less than or equal to</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>$\ge$</code></td>
+<td align="left"><span class="math inline">\(\ge\)</span></td>
+<td>greater than or equal to</td>
+</tr>
+<tr class="even">
+<td align="left"><code>$\ll$</code></td>
+<td align="left"><span class="math inline">\(\ll\)</span></td>
+<td>much less than</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>$\gg$</code></td>
+<td align="left"><span class="math inline">\(\gg\)</span></td>
+<td>much greater than</td>
+</tr>
+<tr class="even">
+<td align="left"><code>$\approx$</code></td>
+<td align="left"><span class="math inline">\(\approx\)</span></td>
+<td>approximate to</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>$\sim$</code></td>
+<td align="left"><span class="math inline">\(\sim\)</span></td>
+<td>similar to</td>
+</tr>
+<tr class="even">
+<td align="left"><code>$\equiv$</code></td>
+<td align="left"><span class="math inline">\(\equiv\)</span></td>
+<td>equivalent to</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>$\cong$</code></td>
+<td align="left"><span class="math inline">\(\cong\)</span></td>
+<td></td>
+</tr>
+<tr class="even">
+<td align="left"><code>$\propto$</code></td>
+<td align="left"><span class="math inline">\(\propto\)</span></td>
+<td>proportion to</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>$\infty$</code></td>
+<td align="left"><span class="math inline">\(\infty\)</span></td>
+<td>infinity</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="set-operations" class="section level4">
+<h4><span class="header-section-number">1.3.3.5</span> Set Operations</h4>
+<pre><code>$$ \forall, \exists, \nexists, \cup, \cap, \in, \ni, \emptyset $$</code></pre>
+<p><span class="math display">\[ \forall, \exists, \nexists, \cup, \cap, \in, \ni, \emptyset \]</span></p>
+<table>
+<thead>
+<tr class="header">
+<th>Code</th>
+<th>Effect</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>$\forall$</code></td>
+<td><span class="math inline">\(\forall\)</span></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><code>$\exists$</code></td>
+<td><span class="math inline">\(\exists\)</span></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><code>$\nexists$</code></td>
+<td><span class="math inline">\(\nexists\)</span></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><code>$\cup$</code></td>
+<td><span class="math inline">\(\cup\)</span></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><code>$\cap$</code></td>
+<td><span class="math inline">\(\cap\)</span></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><code>$\in$</code></td>
+<td><span class="math inline">\(\in\)</span></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><code>$\ni$</code></td>
+<td><span class="math inline">\(\ni\)</span></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><code>$\emptyset $</code></td>
+<td><span class="math inline">\(\emptyset\)</span></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="calculus-symbols" class="section level4">
+<h4><span class="header-section-number">1.3.3.6</span> Calculus Symbols</h4>
+<p><span class="math display">\[ \sum, \prod, \partial{x}, \int,    \]</span></p>
+<table>
+<thead>
+<tr class="header">
+<th>Code</th>
+<th>Effect</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>$\sum$</code></td>
+<td><span class="math inline">\(\sum\)</span></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><code>$\prod$</code></td>
+<td><span class="math inline">\(\prod\)</span></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><code>$\coprod$</code></td>
+<td><span class="math inline">\(\coprod\)</span></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><code>$\partial{x}$</code></td>
+<td><span class="math inline">\(\partial{x}\)</span></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><code>$\int$</code></td>
+<td><span class="math inline">\(\int\)</span></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><code>$\int x \,\mathrm{d}x$</code></td>
+<td><span class="math inline">\(\int x \,\mathrm{d}x\)</span></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><code>$\oint$</code></td>
+<td><span class="math inline">\(\oint\)</span></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><code>$\iint$</code></td>
+<td><span class="math inline">\(\iint\)</span></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><code>$\idotsint$</code></td>
+<td><span class="math inline">\(\idotsint\)</span></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><code>$\int_a^b$</code></td>
+<td><span class="math inline">\(\int_a^b\)</span></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><code>$\int\limits_a^b$</code></td>
+<td><span class="math inline">\(\int\limits_a^b\)</span></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="statistics-linear-algebra-symbols" class="section level4">
+<h4><span class="header-section-number">1.3.3.7</span> Statistics &amp; Linear Algebra Symbols</h4>
+<pre><code>$$ \overset{iid}{\sim}, \underset{(1)}{=}, \underset{\text{below}}{\overset{\text{above}}{=}} $$</code></pre>
+<p><span class="math display">\[ \overset{iid}{\sim}, \underset{(1)}{=}, \underset{\text{below}}{\overset{\text{above}}{=}} \]</span></p>
+<pre><code>$$  \therefore, \cdot, \cdots, \dots, \ldots, \vdots, \ddots, \bullet, \dot A, \dot \forall $$</code></pre>
+<p><span class="math display">\[  \therefore, \cdot, \cdots, \dots, \ldots, \vdots, \ddots, \bullet, \dot A, \dot \forall \]</span></p>
+<table>
+<thead>
+<tr class="header">
+<th>Code</th>
+<th>Effect</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>$\hat{a}$</code></td>
+<td><span class="math inline">\(\hat{a}\)</span></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><code>$\bar{a}$</code></td>
+<td><span class="math inline">\(\bar{a}\)</span></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><code>$\vec{a}$</code></td>
+<td><span class="math inline">\(\vec{a}\)</span></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><code>$\overset{iid}{\sim}$</code></td>
+<td><span class="math inline">\(\overset{iid}{\sim}\)</span></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><code>$\underset{(1)}{=}$</code></td>
+<td><span class="math inline">\(\underset{(1)}{=}\)</span></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><code>$\underset{b}{\overset{a}{=}}$</code></td>
+<td><span class="math inline">\(\underset{b}{\overset{a}{=}}\)</span></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><code>$\cdot$</code></td>
+<td><span class="math inline">\(\cdot\)</span></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><code>$\cdots$</code></td>
+<td><span class="math inline">\(\cdots\)</span></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><code>$\dots$</code></td>
+<td><span class="math inline">\(\dots\)</span></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><code>$\ldots$</code></td>
+<td><span class="math inline">\(\ldots\)</span></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><code>$\vdots$</code></td>
+<td><span class="math inline">\(\vdots\)</span></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><code>$\ddots$</code></td>
+<td><span class="math inline">\(\ddots\)</span></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><code>$\bullet$</code></td>
+<td><span class="math inline">\(\bullet\)</span></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><code>$\dot A$</code></td>
+<td><span class="math inline">\(\dot A\)</span></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><code>$\dot\forall$</code></td>
+<td><span class="math inline">\(\dot\forall\)</span></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><code>$\therefore$</code></td>
+<td><span class="math inline">\(\therefore\)</span></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><code>$\overrightarrow{AB}$</code></td>
+<td><span class="math inline">\(\overrightarrow{AB}\)</span></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><code>$\overline{aaa}$</code></td>
+<td><span class="math inline">\(\overline{aaa}\)</span></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><code>$\bigoplus$</code></td>
+<td><span class="math inline">\(\bigoplus\)</span></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><code>$\bigotimes$</code></td>
+<td><span class="math inline">\(\bigotimes\)</span></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><code>$\bigodot$</code></td>
+<td><span class="math inline">\(\bigodot\)</span></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><code>$\bigotimes$</code></td>
+<td><span class="math inline">\(\bigotimes\)</span></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><code>$\biguplus$</code></td>
+<td><span class="math inline">\(\biguplus\)</span></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><code>$\bigsqcup$</code></td>
+<td><span class="math inline">\(\bigsqcup\)</span></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><code>$\bigvee$</code></td>
+<td><span class="math inline">\(\bigvee\)</span></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><code>$\bigwedge$</code></td>
+<td><span class="math inline">\(\bigwedge\)</span></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="other-mathematical-symbols" class="section level4">
+<h4><span class="header-section-number">1.3.3.8</span> Other Mathematical Symbols</h4>
+<table>
+<thead>
+<tr class="header">
+<th>Code</th>
+<th>Effect</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>$\nabla$</code></td>
+<td><span class="math inline">\(\nabla\)</span></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><code>$\grave{a}$</code></td>
+<td><span class="math inline">\(\grave{a}\)</span></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><code>$\acute{a}$</code></td>
+<td><span class="math inline">\(\acute{a}\)</span></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><code>$\dot{a}$</code></td>
+<td><span class="math inline">\(\dot{a}\)</span></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><code>$\ddot{a}$</code></td>
+<td><span class="math inline">\(\ddot{a}\)</span></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><code>$\ddot{a}$</code></td>
+<td><span class="math inline">\(\ddot{a}\)</span></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><code>$\mathring{a}$</code></td>
+<td><span class="math inline">\(\mathring{a}\)</span></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><code>$\check{a}$</code></td>
+<td><span class="math inline">\(\check{a}\)</span></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><code>$\underline{aaa}$</code></td>
+<td><span class="math inline">\(\underline{aaa}\)</span></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><code>$\to$</code></td>
+<td><span class="math inline">\(\to\)</span></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><code>$\rightarrow$</code></td>
+<td><span class="math inline">\(\rightarrow\)</span></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><code>$\gets$</code></td>
+<td><span class="math inline">\(\gets\)</span></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><code>$\leftarrow$</code></td>
+<td><span class="math inline">\(\leftarrow\)</span></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><code>$\uparrow$</code></td>
+<td><span class="math inline">\(\uparrow\)</span></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><code>$\downarrow$</code></td>
+<td><span class="math inline">\(\downarrow\)</span></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><code>$\leftrightarrow$</code></td>
+<td><span class="math inline">\(\leftrightarrow\)</span></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><code>$(a)$</code></td>
+<td><span class="math inline">\((a)\)</span></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><code>$[a]$</code></td>
+<td><span class="math inline">\([a]\)</span></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><code>$\langle f \rangle$</code></td>
+<td><span class="math inline">\(\langle f \rangle\)</span></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><code>$\lfloor f \rfloor$</code></td>
+<td><span class="math inline">\(\lfloor f \rfloor\)</span></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><code>$\lceil f \rceil$</code></td>
+<td><span class="math inline">\(\lceil f \rceil\)</span></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><code>$\ulcorner f \urcorner$</code></td>
+<td><span class="math inline">\(\ulcorner f \urcorner\)</span></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="matrices" class="section level4">
+<h4><span class="header-section-number">1.3.3.9</span> Matrices</h4>
+<ul>
+<li>a matrix begins with <code>\begin{array}</code> and ends with <code>\end{array}</code></li>
+<li>we use the code <code>{rrr}</code> to indicate that each column is right justified</li>
+<li>cells are separated by the <code>&amp;</code> symbol</li>
+<li>each line (except the last) is terminated by <code>\\</code></li>
+</ul>
+<pre><code>$$
+\begin{array}
+{rrr}
+1 &amp; 2 &amp; 3 \\
+4 &amp; 5 &amp; 6 \\
+7 &amp; 8 &amp; 9
+\end{array}
+$$</code></pre>
+<p><span class="math display">\[
+\begin{array}
+{rrr}
+1 &amp; 2 &amp; 3 \\
+4 &amp; 5 &amp; 6 \\
+7 &amp; 8 &amp; 9
+\end{array}
+\]</span></p>
+<p>In math textbooks, matrices are often surrounded by brackets, and are assigned to a boldface letter. Here is an example</p>
+<pre><code>$$
+\mathbf{X} = \left[\begin{array}
+{rrr}
+1 &amp; 2 &amp; 3 \\
+4 &amp; 5 &amp; 6 \\
+7 &amp; 8 &amp; 9
+\end{array}\right]
+$$</code></pre>
+<p><span class="math display">\[
+\mathbf{X} = \left[\begin{array}
+{rrr}
+1 &amp; 2 &amp; 3 \\
+4 &amp; 5 &amp; 6 \\
+7 &amp; 8 &amp; 9
+\end{array}\right]
+\]</span></p>
+</div>
+<div id="practice" class="section level4">
+<h4><span class="header-section-number">1.3.3.10</span> Practice</h4>
+<p>Try to reproduce the code for the following formulas.</p>
+<pre><code>$$\sum_{i=1}^{n}\left( \frac{X_i}{Y_i} \right)$$</code></pre>
+<p><span class="math display">\[\sum_{i=1}^{n}\left( \frac{X_i}{Y_i} \right)\]</span></p>
+<p>Hint: In LaTeX, you can create parentheses, brackets, and braces which size themselves automatically to contain large expressions. You do this using the <code>\left</code> and <code>\right</code> operators. Here is an example</p>
+<pre><code>$$ \sum_{i=1}^{n} (X_i - \bar{X})(Y_i - \bar{Y}) $$</code></pre>
+<p><span class="math display">\[ \sum_{i=1}^{n} (X_i - \bar{X})(Y_i - \bar{Y}) \]</span></p>
+<pre><code>$$\int_0^{2\pi} \sin x~dx$$</code></pre>
+<p><span class="math display">\[\int_0^{2\pi} \sin x~dx\]</span></p>
+</div>
+</div>
 </div>
 <div id="introduction-to-git-github" class="section level2">
 <h2><span class="header-section-number">1.4</span> Introduction to Git &amp; GitHub</h2>
