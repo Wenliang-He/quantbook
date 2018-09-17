@@ -16,11 +16,6 @@ Before diving into Statistics, you need to install some software, notably R and 
 
 ## Software Installation {#install}
 
-- section title is [Indexing Lists] 
-- [section on indexing lists][Indexing Lists]
-- [section on indexing lists](#index-lst)
-- section number is \@ref(index-lst)
-
 ### Install R
 
 [R](https://www.r-project.org/) is a free software environment for statistical computing and graphics. 
@@ -554,12 +549,7 @@ dat[,1,drop=F]; dat[,"id",drop=F]   # identical
 
 #### Indexing Lists {#index-lst}
 
-- section title is [Software Installation] 
-- [section on software installation][Software Installation]
-- [section on software installation](#install)
-- section number is \@ref(install)
-
- - Indexing by position
+- Indexing by position
 ```{r}
 lst[1]							                # return a list with the first object
 lst[1:2] 							              # return a list with the first two objects
@@ -570,7 +560,7 @@ lst[[2]][3]						              # select 3rd element in the 2nd ojbect
 lst[[c(2,3)]]                       # identical
 ```
 
- - Indexing by name
+- Indexing by name
 ```{r}
 names(lst) 							            # NULL indicates no names
 names(lst) = c("var1","var3","mat1","dat") 	# give names to the list
@@ -578,7 +568,7 @@ lst[["var3"]] 						          # calling out contents of the cell called "var3"
 lst$var3 							              # identical; '$' sign is a shorthand
 ```
 
- - Indexing by a logical vector
+- Indexing by a logical vector
 ```{r}
 lst[c(T, T, F, F)] 						      # same idea applied to calling contents from lists
 ```
@@ -662,6 +652,7 @@ editR()
 
 An interactive prompt will come up and you can use it to open .Rmd files in the same way you would use Microsoft Office to open .docx files. Enjoy the instant previewing. 
 
+Raw code for the following contents can be found [here](_markdown.Rmd).
 
 #### Headers
 
