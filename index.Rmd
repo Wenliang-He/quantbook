@@ -31,18 +31,19 @@ Before diving into Statistics, you need to install some software, notably R and 
 
 ![](images/rdownload_chooseOS.png)
 
-3. Mac Users
-    - scroll down to the `Lastest release` section
-    - click to download the lastest version that looks similar to `R-3.5.1.pkg`
-
-![](images/rdownload_macpkg.png)
-
-4. Windows Users
+3. Windows Users
     - click on the link `install R for the first time`
     - download the lastest version of R that looks similar to `R-3.5.1` as shown below
     - `Note`: The R version shown below does not distinguish between 32-bit and 64-bit Windows, since two versions are combined into one file to simplify the download. But you would still need to choose one during the installation process (see details below).
   
 ![](images/rdownload_winexe.png)
+
+
+4. Mac Users
+    - scroll down to the `Lastest release` section
+    - click to download the lastest version that looks similar to `R-3.5.1.pkg`
+
+![](images/rdownload_macpkg.png)
 
 5. Install R
     - `Warning`: We highly recommend you to **use English as the default language** for your R. You will search for help on the internet at some point. It is simply easier to communicate when help seekers and help givers are speaking the same language. 
@@ -273,6 +274,25 @@ Here is the good news: For students, faculty, and research staff with `.edu` ema
 
 
 ### Install Git
+
+1. Windows Users
+
+- download Git from [this link](https://git-scm.com/download/win) 
+
+If the download does not automatically start, click the link as highlighted in the graph below (if your windows is 64-bit, otherwise clink the one immediately above it). 
+
+![](images/gitdownload_win.png) 
+
+
+2. Mac Users
+
+- download Git from [this link](https://git-scm.com/download/mac) 
+
+If the download does not automatically start, click the link as highlighted in the graph below. 
+
+![](images/gitdownload_mac.png) 
+
+
 
 
 ## Introduction to R
@@ -1405,6 +1425,9 @@ $$\int_0^{2\pi} \sin x~dx$$
 
 
 ## Introduction to Git & GitHub
+
+
+
 
 ## Introduction to ggplot2
 

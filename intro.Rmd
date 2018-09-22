@@ -147,13 +147,13 @@ DT::datatable(data.frame(ID=1:nrow(iris), iris),
 
 Three major data types: **_nominal_** variable < **_ordinal_** variable < **_interval_** variable
 
-| Variable Type | Type | Treatment | Examples |
+| Class | Variable Type | Treatment | Examples |
 |:---|:---|:---|:---|
-| dummy | categorical | dummy | gender |
-| nominal | categorical | dummy | city |
-| ordinal | categorical | nominal or continuous|education level |
-| interval | continuous | continuous | temperature in Celsius |
-| ratio | continuous | continuous | temperature in Kelvin |
+| categorical | dummy | dummy | gender |
+| categorical | nominal | dummy | city |
+| categorical | ordinal | nominal or continuous|education level |
+| continuous | interval | continuous | temperature in Celsius |
+| continuous | ratio | continuous | temperature in Kelvin |
 
 
 - For categorical variables, i.e., nominal and ordinal variables, each unique value is called a **_level_**.
@@ -201,7 +201,7 @@ knitr::asis_output(htmltools::htmlPreserve("
     <td align='center'>frequency table</td>
     <td> <ul><li>bargraph</li><li>pie chart</li></ul> </td>
   </tr>
-    <td>categorical variable</td>
+    <td>continuous variable</td>
     <td><ol>
         <li><strong>center</strong></li>
           <ul><li>mean</li>
@@ -234,7 +234,7 @@ Why do we need any statistics? Because we need to summarize a load of data effic
 
 #### Center: Mean vs. Median
 
-$$ m = \frac{1}{n} \sum_{i=1}^n x_i$$
+$$m = \frac{1}{n} \sum_{i=1}^n x_i$$
 By convention, we usually use $m$ to represent sample mean. Don't mind the word _sample_ for now; focus on the word _mean_.
 
 ```{r}
@@ -248,9 +248,18 @@ samp3 = c(1, 2, 5, 8, 10, 100)
 # compute the means
 c(mean(samp1), mean(samp2), mean(samp3))
 
+```
+
+Notice that the mean suddenly increases from sample 1 to sample 2.
+
+```{r}
 # compute the medians
 c(median(samp1), median(samp2), median(samp3))
 ```
+
+The medians, however, remain relatively stable across samples. 
+
+In summary,
 
 - mean
     - easy to compute
@@ -261,42 +270,56 @@ c(median(samp1), median(samp2), median(samp3))
     - insensitive to outliers
     - has nice mathematical properties of a different kind
 
+> `QUESTION`: How do you interpret median? For example, how do you interpret the statement that "the median annual household income is $50,000 in Smallville"?
+
 
 #### Spread: Variance & Standard Deviations
 
-If the average of $x_i$ is the mean, then what is the aveage of $(x_i-m)$ and $(x_i-m)^2$?
+$$v = \frac{1}{n-1} \sum_{i=1}^{n} (x_i - m)^2$$
+and
+
+$$s = \sqrt{v}$$
+where $v$ stands for **variance** and $s$ for **standard deviation**. 
+
+> `QUESTION`: Is variance sensitive to outliers?
+
+> `QUESTION`: Why do we compute the average of $(x_i-m)^2$ instead of $(x_i-m)$. 
+
+If the average of $x_i$ is the mean, then what are the aveages of $(x_i-m)$ and $(x_i-m)^2$?
 
 1. $E(X) = \bar{X}$
 2. $E(X - \bar{X}) = E(X) - E(\bar{X}) = \bar{X} - \bar{X} = 0$
 
 On average, if there is a data point at some distance away from the mean to the right, there is as if another data point of the same distance from the mean lying on the left. Image a seesaw, where data points are of the same weights but lying at different positions specified by their values. Mean is the balancing point. 
 
-![mean_balance](images/intro_mean_balance.png)
+![](images/intro_mean_balance.png)
 
 
 Since mean is sensitive to outliers and median is not, logic dictates that
 
-![mean_sensitive](images/intro_mean_sensitive.png)
+![](images/intro_mean_sensitive.png)
 
 3. Let $E(X-c)^2 = Q1$ where $c$ is a constant. Q1 will reach its smallest possible value when $c$ equals the mean. In other words, **_mean_** is the value that makes the average of the **_squared distances_** the smallest. 
 
 4. Let $E(|X-c|) = Q2$ where $c$ is a constant. Q2 will reach its smallest possible value when $c$ equals the median In other words, **_median_** is the value that makes the average of the **_absolute distances_** the smallest. 
 
 
-> Questions: Is variance sensitive to outliers?
+> `QUESTION`: In data analysis reports, we will use standard deviation much more frequently than variance. Why is this the case?
 
 
 #### Spread: Quartiles and Percentiles
 
 Since a quarter is 1/4 or 25%, 
 
-- The **_first quartiles_** is also called the **_25th percentile_**
-- The **_second quartiles_** is also called the **_50th percentile_** (a.k.a. median)
-- The **_third quartiles_** is also called the **_75th percentile_**
+- The **_first quartile_** is also called the **_25th percentile_**
+- The **_second quartile_** is also called the **_50th percentile_** (a.k.a. median)
+- The **_third quartile_** is also called the **_75th percentile_**
 
 **_IQR_** = **_interquartile range_** = 3rd quartile - 1st quartile
 
 **_Five-number Summary_**  is (1) the minimum, (2) 1st quartiles, (3) median, (4) 3rd quartile, and (5) the maximum
+
+> `QUESTION`: Are statistics from the five-number summary susceptible to outliers? 
 
 `NOTE`: In R, `quantile()` is the command for getting percentiles. But why does R use the word **quantile** instead **percentile**? I would really hate to say that **percentile** and **quantile** mean exactly the same thing in HERE. However, they are two completely different concepts when used in the context of probability functions, which we will discuss below with normal distributions. That being said, **quantile** is a more apt term in that context, and R are using the two terms consistently. But other sources, e.g. textbooks, might use them interchangably. As a result, you will have to rely on context to decide whether they mean the same thing or not. 
 
@@ -306,7 +329,7 @@ Since a quarter is 1/4 or 25%,
 - **inner fences** span between **_1.5_** times the IQR above the 3rd quartile and below the 1st quartile. Data points lying beyond the inner fences are regarded as **_potential outliers_**. 
 - **outer fences** span between **_3.0_** times the IQR above the 3rd quartile and below the 1st quartile. Data points lying beyond the outer fences are regarded as **_practically outliers_**. 
 
-![IQR](images/intro_IQR.png)
+![](images/intro_IQR.png)
 
 #### Shape: Skewness and Kurtosis
 
@@ -329,8 +352,8 @@ Since a quarter is 1/4 or 25%,
 | excess kurtosis > 0 | | shoulder mass shits to the tails and/or centers |
 | excess kurtosis < 0 | | the opposite is true |
 
-
 > Question: What are the averages of z-score and z-score squared?
+
 
 #### Effects of Linear Transformations
 
@@ -357,7 +380,7 @@ $$z_y = \frac{y - m_y}{sd_y} = \frac{(a + bx) - (a + bm_x)}{b \cdot sd_x}
 
 - We don't need to worry about units of measurement anymore.
 - Different features are now somewhat comparable.
-- We have some idea about SDs.
+- We have some ideas about the magnitude of SDs.
 
 
 ### Normal Distributions
