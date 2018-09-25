@@ -277,22 +277,34 @@ Here is the good news: For students, faculty, and research staff with `.edu` ema
 
 1. Windows Users
 
-- download Git from [this link](https://git-scm.com/download/win) 
+Install **Git for Windows**, aka `msysgit` or "Git Bash", which installs Git along with other useful tools, such as the Bash shell. 
 
-If the download does not automatically start, click the link as highlighted in the graph below (if your windows is 64-bit, otherwise clink the one immediately above it). 
+* Go to [gitforwindows.org](https://gitforwindows.org/) and press Download.
 
-![](images/gitdownload_win.png) 
+* On the download page, click on either the 32-bit or 64-bit version depending on your Windows system. 
+
+![](images/gitdownload_win.png){width=500}
 
 
-2. Mac Users
 
-- download Git from [this link](https://git-scm.com/download/mac) 
+`NOTE`: You can also go to [git-scm.com](https://git-scm.com/download/win) and the download would automatically start. However, it will download the 32-bit version by default, which is inconvenient if you want the 64-bit one. It does not matter which link you use, since the two would eventually go to the same place fetching for the same installation program. 
+
+
+2. Install Git
+
+* Please use the default path, i.e. `C:/Program Files`, which makes it easier for RStudio to find Git. 
+
+* During Git installation, select (a) Use Git from Windows Command Prompt, and (b) Enable Git Credential Manager. 
+
+
+3. Mac Users
+
+* Download Git from [git-scm.com](https://git-scm.com/download/mac).
 
 If the download does not automatically start, click the link as highlighted in the graph below. 
+![](images/gitdownload_mac.png){width=500}
 
-![](images/gitdownload_mac.png) 
-
-
+* Installation should be straightfoward for Mac users. 
 
 
 ## Introduction to R
@@ -637,13 +649,14 @@ There are some resources for learning Markdown, GitHub Markdown, and R Markdown.
 - [markdown guide - basics](https://www.markdownguide.org/basic-syntax): a more detailed Markdown tutorial juxtaposing _code_ and _effect_
 - [markdown guide - extended](https://www.markdownguide.org/extended-syntax): more contents in addition to the basics
 - [gitlab.com](https://about.gitlab.com/handbook/product/technical-writing/markdown-guide/): a much more detailed tutorial on Markdown
+- [emoji cheatsheet](https://www.webpagefx.com/tools/emoji-cheat-sheet/): a great resource for looking up **emoji** `r emo::ji("smile")`, which can be used in GitHub Markdown and R Markdown
+
 
 **R Markdown Tutorials**
 
 - [Jacolien's blog](http://www.jacolienvanrij.com/Tutorials/tutorialMarkdown.html): a simple R Markdown tutorial
 - [rstudio.com - basics](https://rmarkdown.rstudio.com/articles_intro.html): a quick intro to R Markdown, similar in difficulty to Jacolien's tutorial
 - [rstudio.com - detailed](https://rmarkdown.rstudio.com/lesson-1.html): the official R Markdown tutorial with more details
-- [emoji cheatsheet](https://www.webpagefx.com/tools/emoji-cheat-sheet/): a great resource for looking up **emoji** `r emo::ji("smile")`, which can be used in GitHub Markdown and R Markdown
 
 
 ### Basic Markdown
@@ -672,7 +685,7 @@ editR()
 
 An interactive prompt will come up and you can use it to open .Rmd files in the same way you would use Microsoft Office to open .docx files. Enjoy the instant previewing. 
 
-Raw code for the following contents can be found [here](_markdown.Rmd).
+Raw code for the following contents can be found [here](code/rmarkdown.Rmd).
 
 #### Headers
 

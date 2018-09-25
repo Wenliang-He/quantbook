@@ -268,7 +268,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div id="header">
 <h1 class="title">Quantitative Research Methods for Education</h1>
 <h4 class="author"><em>Wenliang He</em></h4>
-<h4 class="date"><em>Updated on 2018-09-22</em></h4>
+<h4 class="date"><em>Updated on 2018-09-25</em></h4>
 </div>
 <div id="introduction" class="section level1">
 <h1><span class="header-section-number">1</span> Introduction</h1>
@@ -509,25 +509,33 @@ attr(,&quot;RStudio&quot;)
 <ol style="list-style-type: decimal">
 <li>Windows Users</li>
 </ol>
+<p>Install <strong>Git for Windows</strong>, aka <code>msysgit</code> or “Git Bash”, which installs Git along with other useful tools, such as the Bash shell.</p>
 <ul>
-<li>download Git from <a href="https://git-scm.com/download/win">this link</a></li>
+<li><p>Go to <a href="https://gitforwindows.org/">gitforwindows.org</a> and press Download.</p></li>
+<li><p>On the download page, click on either the 32-bit or 64-bit version depending on your Windows system.</p></li>
 </ul>
-<p>If the download does not automatically start, click the link as highlighted in the graph below (if your windows is 64-bit, otherwise clink the one immediately above it).</p>
 <div class="figure">
-<img src="images/gitdownload_win.png" />
+<img src="images/gitdownload_win.png" width="500" />
 
 </div>
+<p><code>NOTE</code>: You can also go to <a href="https://git-scm.com/download/win">git-scm.com</a> and the download would automatically start. However, it will download the 32-bit version by default, which is inconvenient if you want the 64-bit one. It does not matter which link you use, since the two would eventually go to the same place fetching for the same installation program.</p>
 <ol start="2" style="list-style-type: decimal">
+<li>Install Git</li>
+</ol>
+<ul>
+<li><p>Please use the default path, i.e. <code>C:/Program Files</code>, which makes it easier for RStudio to find Git.</p></li>
+<li><p>During Git installation, select (a) Use Git from Windows Command Prompt, and (b) Enable Git Credential Manager.</p></li>
+</ul>
+<ol start="3" style="list-style-type: decimal">
 <li>Mac Users</li>
 </ol>
 <ul>
-<li>download Git from <a href="https://git-scm.com/download/mac">this link</a></li>
+<li>Download Git from <a href="https://git-scm.com/download/mac">git-scm.com</a>.</li>
 </ul>
-<p>If the download does not automatically start, click the link as highlighted in the graph below.</p>
-<div class="figure">
-<img src="images/gitdownload_mac.png" />
-
-</div>
+<p>If the download does not automatically start, click the link as highlighted in the graph below. <img src="images/gitdownload_mac.png" width="500" /></p>
+<ul>
+<li>Installation should be straightfoward for Mac users.</li>
+</ul>
 </div>
 </div>
 <div id="introduction-to-r" class="section level2">
@@ -930,8 +938,8 @@ fac =<span class="st"> </span><span class="kw">factor</span>(var3); fac         
 </div>
 <div id="introduction-to-r-markdown" class="section level2">
 <h2><span class="header-section-number">1.3</span> Introduction to R Markdown</h2>
-<div id="htmlwidget-ac1038f4086a76bd8c1c" style="width:672px;height:200px;" class="DiagrammeR html-widget"></div>
-<script type="application/json" data-for="htmlwidget-ac1038f4086a76bd8c1c">{"x":{"diagram":"\ngraph LR\nMU(Markup) --> MD(Markdown) \nMD --> PDMD(Pandoc Markdown)\nMD --> GHMD(GitHub Markdown)\nMD --> PHPMD(PHP Markdown)\nPDMD --> RMD(R Markdown)\nRMD --> BD(Bookdown)\n"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-0055636b57474b173e92" style="width:672px;height:200px;" class="DiagrammeR html-widget"></div>
+<script type="application/json" data-for="htmlwidget-0055636b57474b173e92">{"x":{"diagram":"\ngraph LR\nMU(Markup) --> MD(Markdown) \nMD --> PDMD(Pandoc Markdown)\nMD --> GHMD(GitHub Markdown)\nMD --> PHPMD(PHP Markdown)\nPDMD --> RMD(R Markdown)\nRMD --> BD(Bookdown)\n"},"evals":[],"jsHooks":[]}</script>
 <p>There are some resources for learning Markdown, GitHub Markdown, and R Markdown.</p>
 <p><strong>Markdown Tutorials</strong></p>
 <ul>
@@ -939,13 +947,13 @@ fac =<span class="st"> </span><span class="kw">factor</span>(var3); fac         
 <li><a href="https://www.markdownguide.org/basic-syntax">markdown guide - basics</a>: a more detailed Markdown tutorial juxtaposing <em>code</em> and <em>effect</em></li>
 <li><a href="https://www.markdownguide.org/extended-syntax">markdown guide - extended</a>: more contents in addition to the basics</li>
 <li><a href="https://about.gitlab.com/handbook/product/technical-writing/markdown-guide/">gitlab.com</a>: a much more detailed tutorial on Markdown</li>
+<li><a href="https://www.webpagefx.com/tools/emoji-cheat-sheet/">emoji cheatsheet</a>: a great resource for looking up <strong>emoji</strong> 😄, which can be used in GitHub Markdown and R Markdown</li>
 </ul>
 <p><strong>R Markdown Tutorials</strong></p>
 <ul>
 <li><a href="http://www.jacolienvanrij.com/Tutorials/tutorialMarkdown.html">Jacolien’s blog</a>: a simple R Markdown tutorial</li>
 <li><a href="https://rmarkdown.rstudio.com/articles_intro.html">rstudio.com - basics</a>: a quick intro to R Markdown, similar in difficulty to Jacolien’s tutorial</li>
 <li><a href="https://rmarkdown.rstudio.com/lesson-1.html">rstudio.com - detailed</a>: the official R Markdown tutorial with more details</li>
-<li><a href="https://www.webpagefx.com/tools/emoji-cheat-sheet/">emoji cheatsheet</a>: a great resource for looking up <strong>emoji</strong> 😄, which can be used in GitHub Markdown and R Markdown</li>
 </ul>
 <div id="basic-markdown" class="section level3">
 <h3><span class="header-section-number">1.3.1</span> Basic Markdown</h3>
@@ -964,7 +972,7 @@ devtools::install_github(&quot;swarm-lab/editR&quot;)</code></pre>
 <pre><code>library(editR)
 editR()</code></pre>
 <p>An interactive prompt will come up and you can use it to open .Rmd files in the same way you would use Microsoft Office to open .docx files. Enjoy the instant previewing.</p>
-<p>Raw code for the following contents can be found <a href="_markdown.Rmd">here</a>.</p>
+<p>Raw code for the following contents can be found <a href="code/rmarkdown.Rmd">here</a>.</p>
 <div id="headers" class="section level4">
 <h4><span class="header-section-number">1.3.1.1</span> Headers</h4>
 <pre><code># Header 1
