@@ -1487,323 +1487,293 @@ $$\int_0^{2\pi} \sin x~dx$$
 
 ## Introduction to Git & GitHub
 
-### what's Git & GitHub
+Git is a version control system. When a **folder** (or **directory**) on your local computer is monitered by Git, the folder is now called a Git **repository** (or Git **repo** for short).
 
-Git is a *version control* system. Git manages the evolution of a set of files – called a *repository* – in a sane, highly structured way.
+GitHub hosts your local Git repos on the internet.
 
-GitHub provides a home for your Git-based projects on the internet.
+### Introduction to Git
 
-### Connect Git, GitHub, Rstudio
+#### The Three Areas of a Git repo
 
-Objective: make sure that you can pull from and push to GitHub from your computer.
+- **working area**: For people unaware of Git, working area is just your regular folder. All visible files within a Git repo are in the working area, where you work on a daily basis to add, modify, and delete files. 
+- **staging area**: This is part of the `.git` invisible folder. It temporarily stores files that you would like to take a "snapshot" of and hence commit it to history. 
+- **history**: This constitutes the other part of the `.git` invisible folder. Each commit (or "snapshot") will be permanently recorded in history.  
 
-##### introduce yourself to Git
+![](images/git_3area.png){width=500}
 
-In the shell (Git Bash) print the following code:
 
-git config --global user.name 'Jennifer Bryan'
-git config --global user.email 'jenny@stat.ubc.ca'
-git config --global --list
+Use the Git **commit graph** to represent history. 
 
-substituting your name and the email associated with your GitHub account.
+![](images/git_commitgraph.png){width=500}
 
-### New project, GitHub first
 
-We create a new Project, with the preferred “GitHub first, then RStudio” sequence. Why do we prefer this? Because this method of copying the Project from GitHub to your computer also sets up the local Git repository for immediate pulling and pushing. Under the hood, we are doing `git clone`.
+#### Git in Shell
 
-##### Make a repo on GitHub
-
-Go to https://github.com and make sure you are logged in.
-
-Click green “New repository” button. Or, if you are on your own profile page, click on “Repositories”, then click the green “New” button.
-
-Repository name: `myrepo` (or whatever you wish, we will delete this)
-choose the *Public* and *YES Initialize this repository with a README*
-
-![](images/create_a_new_repo.PNG)
-
-Click big green button “Create repository.”
-
-Copy the HTTPS clone URL to your clipboard via the green “Clone or Download” button.
-
-#### New RStudio Project via git clone
-
-In RStudio, start a new Project:
-
-- *File>New Project>Version Control>Git*. In the “repository URL” paste the URL of your new GitHub repository. It will be something like this `https://github.com/jennybc/myrepo.git`.
-- Be intentional about where you create this Project.
-- Suggest you check the box “Open in new session”.
-- Click “Create Project” to create a new directory, which will be all of these things:
-    - a directory or “folder” on your computer
-    - a Git repository, linked to a remote GitHub repository
-    - an RStudio Project
-- **In the absence of other constraints, I suggest that all of your R projects have exactly this set-up.**
-
-This should download the *README.md* file that we created on GitHub in the previous step. Look in RStudio’s file browser pane for the *README.md* file.
-
-There’s a big advantage to the “GitHub first, then RStudio” workflow: the remote GitHub repo is added as a remote for your local repo and your local *master* branch is now tracking *master* on GitHub. This is a technical but important point about Git. The practical implication is that you are now set up to push and pull. No need to fanny around setting up Git remotes and tracking branches on the command line.
-  
-#### Make local changes, save, commit
-
- **Do this every time you finish a valuable chunk of work, probably many times a day.**
-
-From RStudio, modify the *README.md* file, e.g., by adding the line “This is a line from RStudio”. Save your changes.
-
-Commit these changes to your local repo. How?
-
-- Click the “Git” tab in upper right pane
-- Check “Staged” box for any files whose existence or modifications you want to commit.
-    - To see more detail on what’s changed in file since the last commit, click on “Diff” for a Git pop-up
-- If you’re not already in the Git pop-up, click “Commit”
-- Type a message in “Commit message”, such as “Commit from RStudio”.
-- Click “Commit”
-
-#### Push your local changes to GitHub
-
- **Do this a few times a day, but possibly less often than you commit.**
- 
-You have new work in your local Git repository, but the changes are not online yet.
-
-This will seem counterintuitive, but first let’s stop and pull from GitHub.
-
-Why? Establish this habit for the future! If you make changes to the repo in the browser or from another machine or (one day) a collaborator has pushed, you will be happier if you pull those changes in before you attempt to push.
-
-Click the blue “Pull” button in the “Git” tab in RStudio. I doubt anything will happen, i.e. you’ll get the message “Already up-to-date.” This is just to establish a habit.
-
-Click the green “Push” button to send your local changes to GitHub. You should see some message along these lines.
+Three shell commands, i.e. `pwd`, `cd`, and `ls`, to get you started. 
 
 ```
-[master dc671f0] blah
- 3 files changed, 22 insertions(+)
- create mode 100644 .gitignore
- create mode 100644 myrepo.Rproj
-```
-#### Confirm the local change propagated to the GitHub remote
-
-Go back to the browser. I assume we’re still viewing your new GitHub repo.
-
-Refresh this page.
-
-You should see the new “This is a line from RStudio” in the README.
-
-If you click on “commits,” you should see one with the message “Commit from RStudio”.
-
-#### Make a change on GitHub
-
-Click on README.md in the file listing on GitHub.
-
-In the upper right corner, click on the pencil for “Edit this file”.
-
-![](images/edit_file.PNG)
-
-Add a line to this file, such as “Line added from GitHub.”
-
-Edit the commit message in “Commit changes” or accept the default.
-
-Click the big green button “Commit changes.”
-
-#### Pull from GitHub
-
-Back in RStudio locally …
-
-Inspect your README.md. It should NOT have the line “Line added from GitHub”. It should be as you left it. Verify that.
-
-Click the blue Pull button.
-
-Look at README.md again. You should now see the new line there.
-
-#### The end
-
-Now just … repeat. Do work somewhere. Commit it. Push it or pull it depending on where you did it, but get local and remote “synced up”.
-Repeat.
-
-**Note that** in general (and especially in future when collaborating with other developers) you will usually need to pull changes from the remote (GitHub) before pushing the local changes you have made. For this reason, it’s a good idea to try and get into the habit of pulling before you attempt to push.
-
-### Existing project, GitHub first
-
-A novice-friendly workflow for bringing an existing R project into the RStudio and Git/GitHub universe.
-
-We do this in a slightly awkward way, in order to avoid using Git at the command line. You won’t want to work this way forever, but it’s perfectly fine as you’re getting started!
-
-We assume you’ve got your existing R project isolated in a directory on your computer. If that’s not already true, make it so. Create a directory and marshal all the existing data and R scripts there. It doesn’t really matter where you do this, but note where the project currently lives.
-
-#### Make a repo on GitHub
-
-We have do this before and now repeat the steps.
-
-Go to https://github.com and make sure you are logged in.
-
-Click green “New repository” button. Or, if you are on your own profile page, click on “Repositories”, then click the green “New” button.
-
-Repository name: `myrepo` (or whatever you wish, we will delete this)
-choose the *Public* and *YES Initialize this repository with a README*
-
-![](images/create_a_new_repo.PNG)
-
-Click big green button “Create repository.”
-
-Copy the HTTPS clone URL to your clipboard via the green “Clone or Download” button.
-
-#### New RStudio Project via git clone
-
-We have do this before and now repeat the steps.
-
-In RStudio, start a new Project:
-
-- *File>New Project>Version Control>Git*. In the “repository URL” paste the URL of your new GitHub repository. It will be something like this `https://github.com/jennybc/myrepo.git`.
-- Be intentional about where you create this Project.
-- Suggest you check the box “Open in new session”.
-- Click “Create Project” to create a new directory, which will be all of these things:
-    - a directory or “folder” on your computer
-    - a Git repository, linked to a remote GitHub repository
-    - an RStudio Project
-- **In the absence of other constraints, I suggest that all of your R projects have exactly this set-up.**
-
-This should download the *README.md* file that we created on GitHub in the previous step. Look in RStudio’s file browser pane for the *README.md* file.
-
-#### Bring your existing project over
-
-Using your favorite method of moving or copying files, copy the files that constitute your existing project into the directory for this new project.
-
-In RStudio, consult the Git pane and the file browser.
-
-- Are you seeing all the files? They should be here if your move/copy was successful.
-- Are they showing up in the Git pane with questions marks? They should be appearing as new untracked files.
-
-#### Stage and commit
-
-Commit your files to this repo. How?
-
-- Click the “Git” tab in upper right pane
-- Check “Staged” box for all files you want to commit.
-    - Default: stage it.
-    - When to reconsider: this will all go to GitHub. So do consider if that is appropriate for each file. **You can absolutely keep a file locally, without committing it to the Git repo and sending to GitHub**. Just let it sit there in your Git pane, without being staged. No harm will be done. If this is a long-term situation, list the file in .gitignore.
-- If you’re not already in the Git pop-up, click “Commit”
-- Type a message in “Commit message”, such as “init”.
-- Click “Commit”
-
-#### Push your local changes to GitHub
-
-Click the green “Push” button to send your local changes to GitHub. You should see some message along these lines.
+pwd            # check present working directory
+cd subfolder   # change directory to a subfolder under current working directory
+cd .           # change directory to .     (stays at the current working directory)
+cd ..          # change directory to ..    (one folder up current working directory)
+cd ../..       # change directory to ../.. (two folders up current working directory)
+ls             # list files and folders under currnet working directory; ls is short for list
+ls -aF         # list all files and mark folders; -a shows all, -F marks folder with a "/" sign
 
 ```
-[master dc671f0] blah
- 3 files changed, 22 insertions(+)
- create mode 100644 .gitignore
- create mode 100644 myrepo.Rproj
-```
-#### Confirm the local change propagated to the GitHub remote
 
-Go back to the browser. I assume we’re still viewing your new GitHub repo.
 
-Refresh.
+1. **Create a New Git repo**
 
-You should see all the project files you committed there.
+- Go to an existing folder (named e.g. `somefolder`) on your computer where you will create a new folder as the Git repo. 
+- Find out the path leading down to this folder.
+    - We will refer to this path as `path_to_somefolder`.
+    - For Windows, the path should look like `E:/folder1/folder2/somefolder`
+    - For Mac, the path should look like `/Users/username/folder1/folder2/somefolder`.
+- Open shell
+- Type in the following shell commands line by line. 
 
-If you click on “commits”,you should see one with the message “init”.
-
-#### The end
-
-Now just … repeat. Do work somewhere. Commit it. Push it or pull it depending on where you did it, but get local and remote “synced up”.
-Repeat.
-
-**Note that** in general (and especially in future when collaborating with other developers) you will usually need to pull changes from the remote (GitHub) before pushing the local changes you have made. For this reason, it’s a good idea to try and get into the habit of pulling before you attempt to push.
-
-### Existing project, GitHub last
-
-#### Make or verify an RStudio Project
-
-We assume you’ve got your existing R project isolated in a directory on your computer.
-
-If it’s not already an RStudio Project, make it so:
-
-- If you use the [usethis](https://cran.r-project.org/web/packages/usethis/index.html) package, set the existing directory as the current project with `proj_set()`, then do `usethis::use_rstudio()`.
-- Within RStudio you can do: File > New Project > Existing Directory and, if you wish, “Open in new session”.
-
-If your project is already an RStudio Project, launch it.
-
-#### Make or verify a Git repo
-
-You should be in RStudio now, in your project.
-
-Is it already a Git repository? The presence of the Git pane should tip you off. If yes, you’re done.
-
-If not, you have several options:
-
-- If you have the [usethis](https://cran.r-project.org/web/packages/usethis/index.html) package, call `usethis::use_git()`.
-- In RStudio, go to *Tools > Project Options … > Git/SVN*. Under “Version control system”, select “Git”. Confirm New Git Repository? Yes!
-- In the shell, in Project’s directory, do `git init`.
-
-If you used RStudio or usethis, the Project should re-launch in RStudio. Do that yourself if you did `git init`. RStudio should now have a Git pane.
-
-#### Stage and commit
-
-If your local project was already a Git repo and was up-to-date, move on. Otherwise, you probably need to stage and commit.
-
-- Click the “Git” tab in upper right pane
-- Check “Staged” box for all files you want to commit.
-    - Default: stage everything
-    - When to do otherwise: this will all go to GitHub. So consider if that is appropriate for each file. **You can absolutely keep a file locally, without committing it to the Git repo and sending to GitHub**. Just let it sit there in your Git pane, without being staged. No harm will be done. If this is a long-term situation, list the file in .gitignore.
-- If you’re not already in the Git pop-up, click “Commit”
-- Type a message in “Commit message”.
-- Click “Commit”
-
-#### Make and connect a GitHub repo, option 1
-
-If you use the [usethis](https://cran.r-project.org/web/packages/usethis/index.html) package AND you have configured a GitHub Personal Access Token (PAT), do this in
 
 ```
-R:usethis::use_github()
-```
-This will create a new repo on GitHub, add it as a remote, set up a tracking branch, and open it in your browser. Read the `use_github()` help to learn about its arguments and advice on configuring a PAT. This is extremely handy for a variety of workflows that call the GitHub API. Consider setting this up if you use usethis, devtools, or gh regularly.
+cd "path_to_somefolder"   # go to the folder where you will create a new folder 
+mkdir git_test            # create a new folder called "git_test"; mkdir is short for make directory
+cd git_test               # go into the "git_test" folder
+ls                        # nothing exists; it's completely empty
+ls -aF                    # you see only "./" and "../", which means you can stay or go up one folder
 
-#### Make and connect a GitHub repo, option 2
-
-##### Make a new repo on GitHub
-
-We have do this before and now repeat the steps.
-
-#####  Connect local repo to GitHub repo
-
-You can do this in the shell or, with recent versions of RStudio, via RStudio.
-
-##### In RStudio
-
-Click on the “two purple boxes and a white square” in the Git pane. Click “Add remote”. Paste the URL here and pick a remote name, almost certainly `origin`. Now “Add”.
-
-We should be back in the “New Branch” dialog (if not, click on the “two purple boxes and a white square” in the Git pane again). I assume you’re on the `master` branch want it to track `master` on GitHub. Enter `master` as the branch name and make sure “Sync branch with remote” is checked. Click “Create” (yes, even though the branch already exists). In the next dialog, choose “overwrite”.
-
-##### In a shell
-
-In a shell, do this, substituting your URL:
+git init                  # make the folder a Git repo; init is for initiate
+ls                        # still empty by appearance
+ls -aF                    # a hidden folder named ".git" appears 
+ls .git                   # a lof of files are stored in ".git"
 
 ```
-git remote add origin https://github.com/jennybc/myrepo.git
-```
 
-Push and cement the tracking relationship between your local `master` branch and `master` on GitHub:
+2. **First Git commit**
 
 ```
-git push --set-upstream origin master
+git status                # check current Git status
+
+nano txt                  # create a file called "txt" and add some text in it
+                          # "Control + X" to stop editing
+                          # "Y" to save changes
+                          # "Enter" to quit nano
+ls                        # txt appears
+cat txt                   # show contents of txt
+
+git status                # txt is shown as an untracked file
+git add txt               # add txt from "working area" to "staging area"
+git status                # txt is shown as a tracked file, but not committed to any history
+git commit -m "add txt file"   # commit it to history and add a message informative of what you did
+git status                # no untracked files, no uncommitted file
+git log                   # 1st commit is now logged in history
+
 ```
 
-#### Confirm the local files propagated to the GitHub remote
+3. **Second Git commit**
 
-Go back to the browser. I assume we’re still viewing your new GitHub repo.
+```
+nano dat                  # create a new file and add some numbers as data
+nano temp		              # create a new file and add some text
+nano txt                  # change or add some text 
+ls                        # three files exist
 
-Refresh.
+git status                # one file modified; two files untracked
+git add txt dat           # add txt and dat from "working area" to "staging area"
+git status                # txt and dat are now ready for commit; temp remains untracked
+git commit -m "edit txt and add dat"  # commit and add an informative commit message
+git status                # temp is still not tracked (it's OK; it's a temporary file)
+git log                   # 2nd commit is logged in history
 
-You should see all the project files you committed there.
+```
 
-If this project already had a Git history, it should be reflected on GitHub.
+4. **Check out a Previous commit**
 
-#### The end
+```
+git log                   # record like the one below is called a "SHA ID"
+                          # e1328e1c9e66ed759a53a638c9539da35a8246d7
+                          # we only need the first several characters to refer to it
+git checkout e1328e       # check out the 1st commit; notice how files change in the folder
+git checkout master       # come back to the latest commit
 
-Now just … repeat. Do work somewhere. Commit it. Push it or pull it depending on where you did it, but get local and remote “synced up”. Repeat.
+```
 
-Note that in general (and especially in future when collaborating with other developers) you will usually need to pull changes from the remote (GitHub) before pushing the local changes you have made. For this reason, it’s a good idea to try and get into the habit of pulling before you attempt to push.
 
-## Introduction to ggplot2
+### Introduction to GitHub
+
+You will use GitHub in one of two ways:
+
+- You have some contents on a local computer and want to upload them to your GitHub account.
+- Some contents (maybe yours or not) are on GitHub and you want to download them to a local computer.
+
+It does not matter which is the use case, to make things simpler for starters, we will **always** use a "GitHub first" approach:
+
+- Create or fork a repo on GitHub first.
+- Clone the repo down to local computer. 
+- If you do have some contents already, put them into the cloned repo. Done!
+
+
+#### Create a repo on GitHub {#create-repo}
+
+1. Go to your GitHub account at `https://github.com/username`
+    - `username` is your GitHub username
+
+1. Click "Repositories" located between "Overview" and "Stars"
+
+1. Click the green "New" button, on the "Create a new repository" page
+    - name your new repo under "Repository name" (e.g. `reponame`)
+    - choose "Public" 
+    - check **"Initialize this repository with a README"**
+    - click the green "Create repository" button
+
+1. Check your URL
+    - it should look like `https://github.com/username/reponame`
+    - `reponame` is the name of the repo you have just created
+
+
+
+#### Fork a repo on GitHub {#fork-repo}
+
+If you have discovered a really good GitHub repo that you would like to make a copy of, you can get it in one of three ways: download, clone, fork (and then clone). 
+
+More specifically, you can (a) directly download or (b) directly clone it from someone else's GitHub repo to your local computer, or you can (c) fork it from someone else's GitHub repo into your GitHub repo and then download or clone it from your GitHub repo to your local computer. 
+
+Which method to use depends on how you would like to use the downloaded repo in the future.  
+
+| Action | Is Git repo | To Contribute/Collaborate | Use Case |
+|---|:---:|:---:|---|
+| download | No | No | you want the latest version only under no version control |
+| clone | Yes | No | you want contents with commit history |
+| fork |  Yes | Yes | you want repo unde control, and will contribute |
+
+Let's pretend you would like to contribute later and talk about fork. 
+
+Forking someone else's repo is easy. 
+
+1. Go to the GitHub repo you would like to fork at `https://github.com/username/reponame`
+    - `username` is someone else's GitHub username
+    - `reponame` is the repo you would like to make a copy of
+
+1. Click the `Fork` button on the right corner on top of the page
+
+1. Select an account of yours to host the repo
+
+1. Wait for a few seconds and you are done
+
+1. Check the url and it should look like `https://github.com/your-username/reponame`
+    - `your-username` is your GitHub username
+    - `reponame` is identical to someone else's `reponame` that you have copied from
+
+Now that this repo is already in your GitHub account, you can either download it or clone it from your account. 
+
+
+
+#### Clone a repo to your local computer {#clone-repo}
+
+Regardless of whether you are cloning from your or someone else's GitHub account, you can clone a repo in the following steps. 
+
+1. Decide in which directory you want to store the repo locally
+    - create folders if necessary for storing the repo
+
+1. Go to the repo that you would like to make a copy of at `https://github.com/username/reponame`
+    - `username` can be either your or someone else's GitHub account
+    - `reponame` is the name of the repo you would like to get
+
+1. Click the green "Clone or download" button
+    - this is where you can directly **download** the repo if that's what you really want
+    - you should see "Clone with HTTPS"
+    - if you see "Clone with SSH", click "Use HTTPS" in blue
+
+1. Click the clipboard icon to copy the URL into your clipboard
+    - or you can click on the URL and use Control + C to copy it
+    - the URL should look like `https://github.com/username/reponame.git`
+
+1. In RStudio, go to "File" > "New Project ..."
+
+1. In the popup window, select "Version Control" > "Git"
+
+1. In the new popup window,
+    - in "Repository URL", paste the URL you have copied from Step 4
+    - RStudio may automatically fill in "Project directory name", which is the `reponame`
+    - if RStudio fails to perform automatic fill-in, simply type in the `reponame` on your own
+    - in "Create project as subdirectory of", click "Browse..." and browse to the directory where you have chosen in Step 1
+    - check the box for "Open in new session"
+    - click "Create Project"
+
+1. You are Done! 
+    - check out the folder in the directory of your choice from Step 1
+
+
+#### Make Changes and Push Changes Back {#push-back}
+
+Assume you have cloned a repo from your GitHub account to your local computer. We will make some changes to downloaded files, add changes to local Git repo, commit changes, and push changes back to GitHub repo. 
+
+`NOTE`: You can only push back commits to your own repo. You cannot directly push commits back to a repo cloned from someone else, unless the other person has added you as a collaborator with write access to the original repo. 
+
+
+1. In RStudio, under the "Files" tab in the lower right corner
+    - click "README.md"
+    - in the popup script, write say "add one line from RStudio"
+    - save the change
+    
+2. Click the "Gib" tab in the upper right corner 
+    - check the boxes under "Staged" to **add** changes to the **staging area**
+    - click "Commit" 
+
+3. In the popup window, 
+    - write some message into "Commit message" describing what changes are made
+    - click the "Commit" button
+    - wait for the popup window to execute **commit**
+    - click the "Close" button to close the popup window
+    - click the "Push" button in the top right corner to **push** changes back to the GitHub repo
+
+4. Confirm the changes in GitHub repo
+
+
+References
+
+- [Git and GitHub << R Packages << Hadley Wickham](http://r-pkgs.had.co.nz/git.html)
+- [Using Git within RStudio](https://cfss.uchicago.edu/git05.html) 
+- [Setup Git and GitHub](https://cfss.uchicago.edu/git04.html): See how to clone a repo, make changes, add and commit changes, and push commits using Bash shell. 
+
+
+#### Cache Credentials {#cred}
+
+When pushing to GitHub using HTTPS, if you are constantly being queried for username and password, you can choose to (a) cache your credentials (username, password), or (b) set up SSH keys. 
+
+Since GitHub is recommending using HTTPS, we will introduce how to cache credentials. Setting up SSH keys is more secure way of connecting to GitHub, but it requires some work and you will have to pull/push to GitHub using SSH instead HTTPS later. 
+
+- **Windows users**: In shell, enter `git config --global credential.helper wincred` 
+- **Mac users**: In shell, enter `git config --global credential.helper osxkeychain`
+
+After you setup your credential helper, next time you push, you will be asked to enter your username and password one last time.  
+
+
+#### Contribution and/or Collaboration
+
+1. [Fork a repo](#fork-repo) from someone else to your GitHub account
+2. [Clone the forked repo](#clone-repo) from your GitHub account to your local computer
+
+Only need to do Steps 1-2 once. 
+
+3. [Make changes and push them back](#push-back) to your GitHub account
+4. Make a pull request
+5. Resolve conflicts if necessary
+6. [Update from the original repo] hosted on someone else's GitHub account
+
+Repeat from Steps 3-6 over and over and over again. 
+
+
+#### Make a Pull Request
+
+
+#### Resolve Conflicts
+
+
+#### Update from Original repo
+
+
+
+
 
 ## Introduction to Shiny
 

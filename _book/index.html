@@ -54,6 +54,13 @@
 <link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
 <script src="libs/chromatography-0.1/chromatography.js"></script>
 <script src="libs/DiagrammeR-binding-1.0.0/DiagrammeR.js"></script>
+<link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
+<script src="libs/datatables-binding-0.4/datatables.js"></script>
+<link href="libs/dt-core-1.10.16/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="libs/dt-core-1.10.16/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="libs/dt-core-1.10.16/js/jquery.dataTables.min.js"></script>
+<link href="libs/crosstalk-1.0.0/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.0.0/js/crosstalk.min.js"></script>
 
 
 <style type="text/css">
@@ -128,14 +135,10 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="1.3.3" data-path="index.html"><a href="index.html#mathematical-symbols-in-latex"><i class="fa fa-check"></i><b>1.3.3</b> Mathematical Symbols in Latex</a></li>
 </ul></li>
 <li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#introduction-to-git-github"><i class="fa fa-check"></i><b>1.4</b> Introduction to Git &amp; GitHub</a><ul>
-<li class="chapter" data-level="1.4.1" data-path="index.html"><a href="index.html#whats-git-github"><i class="fa fa-check"></i><b>1.4.1</b> what’s Git &amp; GitHub</a></li>
-<li class="chapter" data-level="1.4.2" data-path="index.html"><a href="index.html#connect-git-github-rstudio"><i class="fa fa-check"></i><b>1.4.2</b> Connect Git, GitHub, Rstudio</a></li>
-<li class="chapter" data-level="1.4.3" data-path="index.html"><a href="index.html#new-project-github-first"><i class="fa fa-check"></i><b>1.4.3</b> New project, GitHub first</a></li>
-<li class="chapter" data-level="1.4.4" data-path="index.html"><a href="index.html#existing-project-github-first"><i class="fa fa-check"></i><b>1.4.4</b> Existing project, GitHub first</a></li>
-<li class="chapter" data-level="1.4.5" data-path="index.html"><a href="index.html#existing-project-github-last"><i class="fa fa-check"></i><b>1.4.5</b> Existing project, GitHub last</a></li>
+<li class="chapter" data-level="1.4.1" data-path="index.html"><a href="index.html#introduction-to-git"><i class="fa fa-check"></i><b>1.4.1</b> Introduction to Git</a></li>
+<li class="chapter" data-level="1.4.2" data-path="index.html"><a href="index.html#introduction-to-github"><i class="fa fa-check"></i><b>1.4.2</b> Introduction to GitHub</a></li>
 </ul></li>
-<li class="chapter" data-level="1.5" data-path="index.html"><a href="index.html#introduction-to-ggplot2"><i class="fa fa-check"></i><b>1.5</b> Introduction to ggplot2</a></li>
-<li class="chapter" data-level="1.6" data-path="index.html"><a href="index.html#introduction-to-shiny"><i class="fa fa-check"></i><b>1.6</b> Introduction to Shiny</a></li>
+<li class="chapter" data-level="1.5" data-path="index.html"><a href="index.html#introduction-to-shiny"><i class="fa fa-check"></i><b>1.5</b> Introduction to Shiny</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="the-fundamentals-of-statistics.html"><a href="the-fundamentals-of-statistics.html"><i class="fa fa-check"></i><b>2</b> The Fundamentals of Statistics</a><ul>
 <li class="chapter" data-level="2.1" data-path="the-fundamentals-of-statistics.html"><a href="the-fundamentals-of-statistics.html#why-studying-statistics"><i class="fa fa-check"></i><b>2.1</b> Why Studying Statistics</a><ul>
@@ -267,11 +270,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div id="header">
 <h1 class="title">Quantitative Research Methods for Education</h1>
 <h4 class="author"><em>Wenliang He</em></h4>
-<<<<<<< HEAD
-<h4 class="date"><em>Updated on 2018-09-26</em></h4>
-=======
-<h4 class="date"><em>Updated on 2018-09-25</em></h4>
->>>>>>> f10972dd30841ef5f8a14aa69095dd494299dde9
+<h4 class="date"><em>Updated on 2018-09-27</em></h4>
 </div>
 <div id="introduction" class="section level1">
 <h1><span class="header-section-number">1</span> Introduction</h1>
@@ -409,15 +408,15 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul>
 </blockquote>
 <p><br> The function defined below would (a) check if required packages exist, (b) install, if not already installed, and (c) load the packages.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">force_load &lt;-<span class="st"> </span><span class="cf">function</span>(pkgs, <span class="dt">use_require=</span><span class="ot">FALSE</span>) {
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">force_load &lt;-<span class="st"> </span>function(pkgs, <span class="dt">use_require=</span><span class="ot">FALSE</span>) {
   <span class="co"># https://gist.github.com/smithdanielle/9913897</span>
   <span class="co"># https://cran.r-project.org/web/packages/install.load/README.html</span>
-  new_pkgs &lt;-<span class="st"> </span>pkgs[<span class="op">!</span>(pkgs <span class="op">%in%</span><span class="st"> </span><span class="kw">installed.packages</span>()[, <span class="st">&quot;Package&quot;</span>])]
-  <span class="cf">if</span> (<span class="kw">length</span>(new_pkgs)) 
+  new_pkgs &lt;-<span class="st"> </span>pkgs[!(pkgs %in%<span class="st"> </span><span class="kw">installed.packages</span>()[, <span class="st">&quot;Package&quot;</span>])]
+  if (<span class="kw">length</span>(new_pkgs)) 
     <span class="kw">install.packages</span>(new_pkgs, <span class="dt">dependencies =</span> <span class="ot">TRUE</span>)
-  <span class="cf">if</span> (use_require) {
+  if (use_require) {
     loaded =<span class="st"> </span><span class="kw">sapply</span>(pkgs, require, <span class="dt">character.only =</span> <span class="ot">TRUE</span>)
-  } <span class="cf">else</span> {
+  } else {
     loaded =<span class="st"> </span><span class="kw">sapply</span>(pkgs, library, <span class="dt">character.only =</span> <span class="ot">TRUE</span>)
   }
   <span class="kw">return</span>(loaded)
@@ -509,36 +508,82 @@ attr(,&quot;RStudio&quot;)
 </div>
 <div id="install-git" class="section level3">
 <h3><span class="header-section-number">1.1.6</span> Install Git</h3>
+<div id="windows-users" class="section level4">
+<h4><span class="header-section-number">1.1.6.1</span> Windows Users</h4>
+<p>Install <strong>Git for Windows</strong>, also known as <code>msysgit</code> or “Git Bash”, which installs Git along with other useful tools, such as the Bash shell.</p>
 <ol style="list-style-type: decimal">
-<li>Windows Users</li>
-</ol>
-<p>Install <strong>Git for Windows</strong>, aka <code>msysgit</code> or “Git Bash”, which installs Git along with other useful tools, such as the Bash shell.</p>
+<li>Download the <strong>Git for Windows</strong> installer
 <ul>
-<li><p>Go to <a href="https://gitforwindows.org/">gitforwindows.org</a> and press Download.</p></li>
-<li><p>On the download page, click on either the 32-bit or 64-bit version depending on your Windows system.</p></li>
-</ul>
+<li>Go to <a href="https://gitforwindows.org/">gitforwindows.org</a> and press Download.</li>
+<li>On the download page, click on either the 32-bit or 64-bit version depending on your Windows system. The latest version by the time of writing this guide is v2.19.0.</li>
+</ul></li>
+</ol>
 <div class="figure">
 <img src="images/gitdownload_win.png" width="500" />
 
 </div>
 <p><code>NOTE</code>: You can also go to <a href="https://git-scm.com/download/win">git-scm.com</a> and the download would automatically start. However, it will download the 32-bit version by default, which is inconvenient if you want the 64-bit one. It does not matter which link you use, since the two would eventually go to the same place fetching for the same installation program.</p>
 <ol start="2" style="list-style-type: decimal">
-<li>Install Git</li>
+<li>Run the installer and follow the steps below
+<ol style="list-style-type: decimal">
+<li>Click “Next”</li>
+<li>Click “Next”</li>
+<li>Click “Next”</li>
+<li>Click “Next”</li>
+<li>Click “Next”</li>
+<li>Select <strong>“Use Git from the Windows Command Prompt”</strong> and click “Next”. It’s critical that you select this. Otherwise, you need to rerun the installer.</li>
+<li>Click “Next”. Keep “Checkout Windows-style, commit Unix-style line endings” selected.</li>
+<li>Select <strong>“Use Windows’ default console window”</strong> and click “Next”.</li>
+<li>Click “Next”</li>
+<li>Click “Finish”</li>
+</ol></li>
 </ol>
+<p>Please use the default <code>C:/Program Files</code>, which makes it easier for RStudio to find Git.</p>
+<p>During Git installation, select “Enable Git Credential Manager”.</p>
+</div>
+<div id="mac-users" class="section level4">
+<h4><span class="header-section-number">1.1.6.2</span> Mac Users</h4>
+<p>Since Bash shell is included in Mac OS, you only need to download and install Git.</p>
 <ul>
-<li><p>Please use the default path, i.e. <code>C:/Program Files</code>, which makes it easier for RStudio to find Git.</p></li>
-<li><p>During Git installation, select (a) Use Git from Windows Command Prompt, and (b) Enable Git Credential Manager.</p></li>
-</ul>
-<ol start="3" style="list-style-type: decimal">
-<li>Mac Users</li>
-</ol>
-<ul>
-<li>Download Git from <a href="https://git-scm.com/download/mac">git-scm.com</a>.</li>
+<li><p>Download Git installer from <a href="https://git-scm.com/download/mac">git-scm.com</a>.</p></li>
+<li><p>Installation should be straightfoward for Mac users.</p></li>
 </ul>
 <p>If the download does not automatically start, click the link as highlighted in the graph below. <img src="images/gitdownload_mac.png" width="500" /></p>
+</div>
+<div id="configure-git" class="section level4">
+<h4><span class="header-section-number">1.1.6.3</span> Configure Git</h4>
+<p>After installation, your need to configure your Git. You only need to do this once.</p>
+<p>Open shell and type the following commands into shell and press Enter. Please make sure that you have changed the code accordingly based on your personal information. For example, <code>your-first-name</code> should be really your first name.</p>
+<pre><code>git config --global user.name &quot;your-first-name your-last-name&quot;   # set user.name
+git config --global user.email &quot;your-github-email&quot;               # set user.email
+git config --global core.editor &quot;nano&quot;                           # set text editor
+git config --global --list                                       # check settings
+</code></pre>
 <ul>
-<li>Installation should be straightfoward for Mac users.</li>
+<li><strong>open shell</strong>
+<ul>
+<li><strong>easiest way</strong>: For Windows and Mac, in RStudio, go to <em>Tools &gt; Shell…</em></li>
+<li><strong>another way</strong>: For Windows, open a new program called Git Bash. You have just installed it while installing Git.</li>
+<li><strong>another way</strong>: For Mac, go to <em>Finder</em> &gt; <em>Command + Option + Space</em> &gt; type <code>terminal</code> and press Enter</li>
+</ul></li>
+<li><strong>set user.name</strong>: <code>git config --global user.name &quot;your-first-name your-last-name&quot;</code>
+<ul>
+<li>The <code>your-first-name your-last-name</code> is a Git username, <strong>NOT</strong> your GitHub username. It can be any name you want (in this course, however, please observe the first-name-last-name convention, which is informative for others). Git uses it to associate commits with an identity such that others can see which commit is made by which user. Changing a Git username affects future commits, not past commits.</li>
+</ul></li>
+<li><strong>set user.email</strong>: <code>git config --global user.email &quot;your-github-email&quot;</code>
+<ul>
+<li>The <code>your-github-email</code> <strong>must</strong> be your GitHub email. This email is officially called <strong>Git commit email address</strong>. GitHub uses it to associate commits with your GitHub account such that GitHub knows if it should allow a certain commit to be pushed to a specific GitHub account.</li>
+</ul></li>
+<li><strong>set text editor</strong>: <code>git config --global core.editor &quot;nano&quot;</code>
+<ul>
+<li>Set your default Git text editor to be nano, a light-weight easy to use text editor that comes with both Windows and Mac OS. Git may use Vim by default, which is powerful, but not the easiest editor to use.</li>
+</ul></li>
+<li><strong>check settings</strong>: <code>git config --global --list</code>
+<ul>
+<li>Check to ensure everything is set correctly.</li>
+</ul></li>
 </ul>
+</div>
 </div>
 </div>
 <div id="introduction-to-r" class="section level2">
@@ -570,7 +615,7 @@ attr(,&quot;RStudio&quot;)
 <pre><code>## [1] &quot;logical&quot;</code></pre>
 <p>To note, you <strong>MUST NOT</strong> use <code>True</code> or <code>False</code>, which would result in an error.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">True</code></pre></div>
-<pre><code>## Error in eval(expr, envir, enclos): 找不到对象&#39;True&#39;</code></pre>
+<pre><code>## Error in eval(expr, envir, enclos): object &#39;True&#39; not found</code></pre>
 </div>
 <div id="integer" class="section level4">
 <h4><span class="header-section-number">1.2.2.2</span> Integer</h4>
@@ -627,9 +672,9 @@ attr(,&quot;RStudio&quot;)
 <p>Vector is the workhorse of R computing. Elements of a vector MUST be of the same dtype.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">var1 =<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>)              <span class="co"># var1 is a vector, it includes numbers 1,2,3,4</span>
                                   <span class="co"># c() is a function, where c stands for concatenate</span>
-var2 =<span class="st"> </span><span class="dv">1</span><span class="op">:</span><span class="dv">4</span>                        <span class="co"># practically identical</span></code></pre></div>
+var2 =<span class="st"> </span><span class="dv">1</span>:<span class="dv">4</span>                        <span class="co"># practically identical</span></code></pre></div>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">var3 =<span class="st"> </span><span class="kw">c</span>(<span class="st">&#39;a&#39;</span>,<span class="st">&#39;b&#39;</span>,<span class="st">&#39;c&#39;</span>,<span class="st">&#39;d&#39;</span>)                   <span class="co"># create a third vector of a different dtype</span>
-var3 =<span class="st"> </span>letters[<span class="dv">1</span><span class="op">:</span><span class="dv">4</span>]                           <span class="co"># identical</span></code></pre></div>
+var3 =<span class="st"> </span>letters[<span class="dv">1</span>:<span class="dv">4</span>]                           <span class="co"># identical</span></code></pre></div>
 <p>To check the data type of vector’s elements, use <code>class()</code> too.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">class</span>(var1); <span class="kw">class</span>(var2)                    </code></pre></div>
 <pre><code>## [1] &quot;numeric&quot;</code></pre>
@@ -654,18 +699,19 @@ var3 =<span class="st"> </span>letters[<span class="dv">1</span><span class="op"
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">c</span>(var1, var3)                                 </code></pre></div>
 <pre><code>## [1] &quot;1&quot; &quot;2&quot; &quot;3&quot; &quot;4&quot; &quot;a&quot; &quot;b&quot; &quot;c&quot; &quot;d&quot;</code></pre>
 <p>Vectors can ????????????</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">var1 <span class="op">+</span><span class="st"> </span>var2                                     <span class="co"># vectorized operation operates on each element</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">var1 +<span class="st"> </span>var2                                     <span class="co"># vectorized operation operates on each element</span></code></pre></div>
 <pre><code>## [1] 2 4 6 8</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">var1 <span class="op">==</span><span class="st"> </span><span class="dv">3</span>                                         <span class="co"># &#39;==&#39; means &#39;compare&#39; and &#39;=&#39; means &#39;assign&#39;</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">var1 ==<span class="st"> </span><span class="dv">3</span>                                         <span class="co"># &#39;==&#39; means &#39;compare&#39; and &#39;=&#39; means &#39;assign&#39;</span></code></pre></div>
 <pre><code>## [1] FALSE FALSE  TRUE FALSE</code></pre>
 <p><strong>Broadcasting</strong>: When operate with vectors of different lengths,the shorter vector is recycled to the full length, this is called broadcasting.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">var1 <span class="op">+</span><span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>)                               </code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">var1 +<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>)                               </code></pre></div>
 <pre><code>## [1] 2 4 4 6</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">var1 <span class="op">+</span><span class="st"> </span><span class="dv">2</span>                                           </code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">var1 +<span class="st"> </span><span class="dv">2</span>                                           </code></pre></div>
 <pre><code>## [1] 3 4 5 6</code></pre>
 <p>To note: vectors interact with one element only works if one is multiple times longer than the other.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">var1 <span class="op">+</span><span class="st"> </span><span class="dv">1</span><span class="op">:</span><span class="dv">3</span>                                </code></pre></div>
-<pre><code>## Warning in var1 + 1:3: 长的对象长度不是短的对象长度的整倍数</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">var1 +<span class="st"> </span><span class="dv">1</span>:<span class="dv">3</span>                                </code></pre></div>
+<pre><code>## Warning in var1 + 1:3: longer object length is not a multiple of shorter
+## object length</code></pre>
 <pre><code>## [1] 2 4 6 5</code></pre>
 </div>
 <div id="matrix" class="section level4">
@@ -751,20 +797,20 @@ var3 =<span class="st"> </span>letters[<span class="dv">1</span><span class="op"
 <pre><code>## [1] &quot;d&quot;</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">var3[<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">4</span>)]                                <span class="co"># multiple selection</span></code></pre></div>
 <pre><code>## [1] &quot;a&quot; &quot;a&quot; &quot;c&quot; &quot;d&quot;</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">var3[<span class="dv">2</span><span class="op">:</span><span class="dv">4</span>]                                       <span class="co"># slicing</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">var3[<span class="dv">2</span>:<span class="dv">4</span>]                                       <span class="co"># slicing</span></code></pre></div>
 <pre><code>## [1] &quot;b&quot; &quot;c&quot; &quot;d&quot;</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">var3[<span class="op">-</span><span class="dv">1</span>]                                            <span class="co"># reverse single selection; select all but the first</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">var3[-<span class="dv">1</span>]                                            <span class="co"># reverse single selection; select all but the first</span></code></pre></div>
 <pre><code>## [1] &quot;b&quot; &quot;c&quot; &quot;d&quot;</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">var3[<span class="op">-</span><span class="kw">length</span>(var1)]                         <span class="co"># reverse single selection; select all but the first</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">var3[-<span class="kw">length</span>(var1)]                         <span class="co"># reverse single selection; select all but the first</span></code></pre></div>
 <pre><code>## [1] &quot;a&quot; &quot;b&quot; &quot;c&quot;</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">var3[<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">4</span>)]                                <span class="co"># reverse multiple selection; all but the specified</span></code></pre></div>
 <pre><code>## [1] &quot;a&quot; &quot;a&quot; &quot;c&quot; &quot;d&quot;</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">var3[<span class="op">-</span><span class="kw">c</span>(<span class="dv">2</span><span class="op">:</span><span class="dv">4</span>)]                                     <span class="co"># reverse slicing; MUST NOT var[-2:4]</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">var3[-<span class="kw">c</span>(<span class="dv">2</span>:<span class="dv">4</span>)]                                     <span class="co"># reverse slicing; MUST NOT var[-2:4]</span></code></pre></div>
 <pre><code>## [1] &quot;a&quot;</code></pre>
 <ul>
 <li>Indexing by name</li>
 </ul>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">names</span>(var1) =<span class="st"> </span>letters[<span class="dv">1</span><span class="op">:</span><span class="dv">4</span>]; var1                <span class="co"># give names to each element of a vector</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">names</span>(var1) =<span class="st"> </span>letters[<span class="dv">1</span>:<span class="dv">4</span>]; var1                <span class="co"># give names to each element of a vector</span></code></pre></div>
 <pre><code>## a b c d 
 ## 1 2 3 4</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">var1 =<span class="st"> </span><span class="kw">c</span>(<span class="dt">a=</span><span class="dv">1</span>, <span class="dt">b=</span><span class="dv">2</span>, <span class="dt">c=</span><span class="dv">3</span>, <span class="dt">d=</span><span class="dv">4</span>); var1        <span class="co"># identical</span></code></pre></div>
@@ -787,7 +833,7 @@ var3 =<span class="st"> </span>letters[<span class="dv">1</span><span class="op"
 <ul>
 <li>Indexing by a logical vector</li>
 </ul>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">idx =<span class="st"> </span>var1 <span class="op">&lt;=</span><span class="st"> </span><span class="dv">2</span>; idx                            <span class="co"># create an index vector of the logical dtype</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">idx =<span class="st"> </span>var1 &lt;=<span class="st"> </span><span class="dv">2</span>; idx                            <span class="co"># create an index vector of the logical dtype</span></code></pre></div>
 <pre><code>##     a     b     c     d 
 ##  TRUE  TRUE FALSE FALSE</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">var1[idx]                                       <span class="co"># call out values according to the index vector</span></code></pre></div>
@@ -802,7 +848,7 @@ var3 =<span class="st"> </span>letters[<span class="dv">1</span><span class="op"
 <li>Indexing by position</li>
 </ul>
 <p><code>matrix/dataframe[row_indices, column_indices]</code></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">dat[<span class="dv">1</span><span class="op">:</span><span class="dv">3</span>, <span class="dv">1</span>]                                     </code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">dat[<span class="dv">1</span>:<span class="dv">3</span>, <span class="dv">1</span>]                                     </code></pre></div>
 <pre><code>## [1] 1 2 3</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">dat[<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">3</span>), ]                                     <span class="co"># select the 1st and 3rd rows only</span></code></pre></div>
 <pre><code>##   var1 var3
@@ -818,7 +864,7 @@ var3 =<span class="st"> </span>letters[<span class="dv">1</span><span class="op"
 <li>Indexing by name</li>
 </ul>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">colnames</span>(dat) =<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;id&quot;</span>, <span class="st">&quot;group&quot;</span>)        <span class="co"># give column names to our dataframe</span>
-<span class="kw">rownames</span>(dat) =<span class="st"> </span>letters[<span class="dv">1</span><span class="op">:</span><span class="dv">4</span>]              <span class="co"># give row names to our dataframe</span>
+<span class="kw">rownames</span>(dat) =<span class="st"> </span>letters[<span class="dv">1</span>:<span class="dv">4</span>]              <span class="co"># give row names to our dataframe</span>
 dat[<span class="kw">c</span>(<span class="st">&#39;a&#39;</span>, <span class="st">&#39;b&#39;</span>, <span class="st">&#39;c&#39;</span>), <span class="st">&quot;id&quot;</span>]                 <span class="co"># identical to dat[1:3, 1]</span></code></pre></div>
 <pre><code>## [1] 1 2 3</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">dat[<span class="kw">c</span>(<span class="st">&#39;a&#39;</span>, <span class="st">&#39;c&#39;</span>), ]                            <span class="co"># identical to dat[c(1,3), ]</span></code></pre></div>
@@ -834,14 +880,14 @@ dat[<span class="kw">c</span>(<span class="st">&#39;a&#39;</span>, <span class="
 <ul>
 <li>Index rows by position, columns by name</li>
 </ul>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">dat[<span class="dv">1</span><span class="op">:</span><span class="dv">3</span>, <span class="st">&quot;id&quot;</span>]                                </code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">dat[<span class="dv">1</span>:<span class="dv">3</span>, <span class="st">&quot;id&quot;</span>]                                </code></pre></div>
 <pre><code>## [1] 1 2 3</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">dat[,<span class="dv">1</span>]; dat[,<span class="st">&quot;id&quot;</span>]                           <span class="co"># return a vector that is the &#39;id&#39; column</span></code></pre></div>
 <pre><code>## [1] 1 2 3 4</code></pre>
 <pre><code>## [1] 1 2 3 4</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">dat<span class="op">$</span>id                                            <span class="co"># identical; &#39;$&#39; sign is a shorthand</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">dat$id                                            <span class="co"># identical; &#39;$&#39; sign is a shorthand</span></code></pre></div>
 <pre><code>## [1] 1 2 3 4</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">dat<span class="op">$</span>i; dat<span class="op">$</span>g                        <span class="co"># &quot;$&quot; sign does partial matching</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">dat$i; dat$g                        <span class="co"># &quot;$&quot; sign does partial matching</span></code></pre></div>
 <pre><code>## [1] 1 2 3 4</code></pre>
 <pre><code>## [1] a b c d
 ## Levels: a b c d</code></pre>
@@ -879,7 +925,7 @@ dat[<span class="kw">c</span>(<span class="st">&#39;a&#39;</span>, <span class="
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">lst[<span class="dv">1</span>]                                          <span class="co"># return a list with the first object</span></code></pre></div>
 <pre><code>## [[1]]
 ## [1] 1 2 3 4</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">lst[<span class="dv">1</span><span class="op">:</span><span class="dv">2</span>]                                          <span class="co"># return a list with the first two objects</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">lst[<span class="dv">1</span>:<span class="dv">2</span>]                                          <span class="co"># return a list with the first two objects</span></code></pre></div>
 <pre><code>## [[1]]
 ## [1] 1 2 3 4
 ## 
@@ -903,7 +949,7 @@ dat[<span class="kw">c</span>(<span class="st">&#39;a&#39;</span>, <span class="
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">names</span>(lst) =<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;var1&quot;</span>,<span class="st">&quot;var3&quot;</span>,<span class="st">&quot;mat1&quot;</span>,<span class="st">&quot;dat&quot;</span>)  <span class="co"># give names to the list</span>
 lst[[<span class="st">&quot;var3&quot;</span>]]                                 <span class="co"># calling out contents of the cell called &quot;var3&quot;</span></code></pre></div>
 <pre><code>## [1] &quot;a&quot; &quot;b&quot; &quot;c&quot; &quot;d&quot;</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">lst<span class="op">$</span>var3                                          <span class="co"># identical; &#39;$&#39; sign is a shorthand</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">lst$var3                                          <span class="co"># identical; &#39;$&#39; sign is a shorthand</span></code></pre></div>
 <pre><code>## [1] &quot;a&quot; &quot;b&quot; &quot;c&quot; &quot;d&quot;</code></pre>
 <ul>
 <li>Indexing by a logical vector</li>
@@ -940,13 +986,8 @@ fac =<span class="st"> </span><span class="kw">factor</span>(var3); fac         
 </div>
 <div id="introduction-to-r-markdown" class="section level2">
 <h2><span class="header-section-number">1.3</span> Introduction to R Markdown</h2>
-<<<<<<< HEAD
-<div id="htmlwidget-a9715bd8e583b852eeb9" style="width:672px;height:200px;" class="DiagrammeR html-widget"></div>
-<script type="application/json" data-for="htmlwidget-a9715bd8e583b852eeb9">{"x":{"diagram":"\ngraph LR\nMU(Markup) --> MD(Markdown) \nMD --> PDMD(Pandoc Markdown)\nMD --> GHMD(GitHub Markdown)\nMD --> PHPMD(PHP Markdown)\nPDMD --> RMD(R Markdown)\nRMD --> BD(Bookdown)\n"},"evals":[],"jsHooks":[]}</script>
-=======
-<div id="htmlwidget-0055636b57474b173e92" style="width:672px;height:200px;" class="DiagrammeR html-widget"></div>
-<script type="application/json" data-for="htmlwidget-0055636b57474b173e92">{"x":{"diagram":"\ngraph LR\nMU(Markup) --> MD(Markdown) \nMD --> PDMD(Pandoc Markdown)\nMD --> GHMD(GitHub Markdown)\nMD --> PHPMD(PHP Markdown)\nPDMD --> RMD(R Markdown)\nRMD --> BD(Bookdown)\n"},"evals":[],"jsHooks":[]}</script>
->>>>>>> f10972dd30841ef5f8a14aa69095dd494299dde9
+<div id="htmlwidget-2e3479637dcde6683a44" style="width:672px;height:200px;" class="DiagrammeR html-widget"></div>
+<script type="application/json" data-for="htmlwidget-2e3479637dcde6683a44">{"x":{"diagram":"\ngraph LR\nMU(Markup) --> MD(Markdown) \nMD --> PDMD(Pandoc Markdown)\nMD --> GHMD(GitHub Markdown)\nMD --> PHPMD(PHP Markdown)\nPDMD --> RMD(R Markdown)\nRMD --> BD(Bookdown)\n"},"evals":[],"jsHooks":[]}</script>
 <p>There are some resources for learning Markdown, GitHub Markdown, and R Markdown.</p>
 <p><strong>Markdown Tutorials</strong></p>
 <ul>
@@ -1416,7 +1457,7 @@ vii. Item 4
 ##  3rd Qu.:19.0   3rd Qu.: 56.00  
 ##  Max.   :25.0   Max.   :120.00</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(cars)</code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-40-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-41-1.png" width="672" /></p>
 <p>You can control whether to evaluate the code (and hence show the result) or to show the code by changing the <code>eval</code> and <code>echo</code> arguments.</p>
 <table>
 <thead>
@@ -2239,283 +2280,309 @@ $$</code></pre>
 </div>
 <div id="introduction-to-git-github" class="section level2">
 <h2><span class="header-section-number">1.4</span> Introduction to Git &amp; GitHub</h2>
-<div id="whats-git-github" class="section level3">
-<h3><span class="header-section-number">1.4.1</span> what’s Git &amp; GitHub</h3>
-<p>Git is a <em>version control</em> system. Git manages the evolution of a set of files – called a <em>repository</em> – in a sane, highly structured way.</p>
-<p>GitHub provides a home for your Git-based projects on the internet.</p>
-</div>
-<div id="connect-git-github-rstudio" class="section level3">
-<h3><span class="header-section-number">1.4.2</span> Connect Git, GitHub, Rstudio</h3>
-<p>Objective: make sure that you can pull from and push to GitHub from your computer.</p>
-<div id="introduce-yourself-to-git" class="section level5">
-<h5><span class="header-section-number">1.4.2.0.1</span> introduce yourself to Git</h5>
-<p>In the shell (Git Bash) print the following code:</p>
-<p>git config –global user.name ‘Jennifer Bryan’ git config –global user.email ‘<a href="mailto:jenny@stat.ubc.ca">jenny@stat.ubc.ca</a>’ git config –global –list</p>
-<p>substituting your name and the email associated with your GitHub account.</p>
-</div>
-</div>
-<div id="new-project-github-first" class="section level3">
-<h3><span class="header-section-number">1.4.3</span> New project, GitHub first</h3>
-<p>We create a new Project, with the preferred “GitHub first, then RStudio” sequence. Why do we prefer this? Because this method of copying the Project from GitHub to your computer also sets up the local Git repository for immediate pulling and pushing. Under the hood, we are doing <code>git clone</code>.</p>
-<div id="make-a-repo-on-github" class="section level5">
-<h5><span class="header-section-number">1.4.3.0.1</span> Make a repo on GitHub</h5>
-<p>Go to <a href="https://github.com" class="uri">https://github.com</a> and make sure you are logged in.</p>
-<p>Click green “New repository” button. Or, if you are on your own profile page, click on “Repositories”, then click the green “New” button.</p>
-<p>Repository name: <code>myrepo</code> (or whatever you wish, we will delete this) choose the <em>Public</em> and <em>YES Initialize this repository with a README</em></p>
+<p>Git is a version control system. When a <strong>folder</strong> (or <strong>directory</strong>) on your local computer is monitered by Git, the folder is now called a Git <strong>repository</strong> (or Git <strong>repo</strong> for short).</p>
+<p>GitHub hosts your local Git repos on the internet.</p>
+<div id="introduction-to-git" class="section level3">
+<h3><span class="header-section-number">1.4.1</span> Introduction to Git</h3>
+<div id="the-three-areas-of-a-git-repo" class="section level4">
+<h4><span class="header-section-number">1.4.1.1</span> The Three Areas of a Git repo</h4>
+<ul>
+<li><strong>working area</strong>: For people unaware of Git, working area is just your regular folder. All visible files within a Git repo are in the working area, where you work on a daily basis to add, modify, and delete files.</li>
+<li><strong>staging area</strong>: This is part of the <code>.git</code> invisible folder. It temporarily stores files that you would like to take a “snapshot” of and hence commit it to history.</li>
+<li><strong>history</strong>: This constitutes the other part of the <code>.git</code> invisible folder. Each commit (or “snapshot”) will be permanently recorded in history.</li>
+</ul>
 <div class="figure">
-<img src="images/create_a_new_repo.PNG" />
+<img src="images/git_3area.png" width="500" />
 
 </div>
-<p>Click big green button “Create repository.”</p>
-<p>Copy the HTTPS clone URL to your clipboard via the green “Clone or Download” button.</p>
-</div>
-<div id="new-rstudio-project-via-git-clone" class="section level4">
-<h4><span class="header-section-number">1.4.3.1</span> New RStudio Project via git clone</h4>
-<p>In RStudio, start a new Project:</p>
-<ul>
-<li><em>File&gt;New Project&gt;Version Control&gt;Git</em>. In the “repository URL” paste the URL of your new GitHub repository. It will be something like this <code>https://github.com/jennybc/myrepo.git</code>.</li>
-<li>Be intentional about where you create this Project.</li>
-<li>Suggest you check the box “Open in new session”.</li>
-<li>Click “Create Project” to create a new directory, which will be all of these things:
-<ul>
-<li>a directory or “folder” on your computer</li>
-<li>a Git repository, linked to a remote GitHub repository</li>
-<li>an RStudio Project</li>
-</ul></li>
-<li><strong>In the absence of other constraints, I suggest that all of your R projects have exactly this set-up.</strong></li>
-</ul>
-<p>This should download the <em>README.md</em> file that we created on GitHub in the previous step. Look in RStudio’s file browser pane for the <em>README.md</em> file.</p>
-<p>There’s a big advantage to the “GitHub first, then RStudio” workflow: the remote GitHub repo is added as a remote for your local repo and your local <em>master</em> branch is now tracking <em>master</em> on GitHub. This is a technical but important point about Git. The practical implication is that you are now set up to push and pull. No need to fanny around setting up Git remotes and tracking branches on the command line.</p>
-</div>
-<div id="make-local-changes-save-commit" class="section level4">
-<h4><span class="header-section-number">1.4.3.2</span> Make local changes, save, commit</h4>
-<p><strong>Do this every time you finish a valuable chunk of work, probably many times a day.</strong></p>
-<p>From RStudio, modify the <em>README.md</em> file, e.g., by adding the line “This is a line from RStudio”. Save your changes.</p>
-<p>Commit these changes to your local repo. How?</p>
-<ul>
-<li>Click the “Git” tab in upper right pane</li>
-<li>Check “Staged” box for any files whose existence or modifications you want to commit.
-<ul>
-<li>To see more detail on what’s changed in file since the last commit, click on “Diff” for a Git pop-up</li>
-</ul></li>
-<li>If you’re not already in the Git pop-up, click “Commit”</li>
-<li>Type a message in “Commit message”, such as “Commit from RStudio”.</li>
-<li>Click “Commit”</li>
-</ul>
-</div>
-<div id="push-your-local-changes-to-github" class="section level4">
-<h4><span class="header-section-number">1.4.3.3</span> Push your local changes to GitHub</h4>
-<p><strong>Do this a few times a day, but possibly less often than you commit.</strong></p>
-<p>You have new work in your local Git repository, but the changes are not online yet.</p>
-<p>This will seem counterintuitive, but first let’s stop and pull from GitHub.</p>
-<p>Why? Establish this habit for the future! If you make changes to the repo in the browser or from another machine or (one day) a collaborator has pushed, you will be happier if you pull those changes in before you attempt to push.</p>
-<p>Click the blue “Pull” button in the “Git” tab in RStudio. I doubt anything will happen, i.e. you’ll get the message “Already up-to-date.” This is just to establish a habit.</p>
-<p>Click the green “Push” button to send your local changes to GitHub. You should see some message along these lines.</p>
-<pre><code>[master dc671f0] blah
- 3 files changed, 22 insertions(+)
- create mode 100644 .gitignore
- create mode 100644 myrepo.Rproj</code></pre>
-</div>
-<div id="confirm-the-local-change-propagated-to-the-github-remote" class="section level4">
-<h4><span class="header-section-number">1.4.3.4</span> Confirm the local change propagated to the GitHub remote</h4>
-<p>Go back to the browser. I assume we’re still viewing your new GitHub repo.</p>
-<p>Refresh this page.</p>
-<p>You should see the new “This is a line from RStudio” in the README.</p>
-<p>If you click on “commits,” you should see one with the message “Commit from RStudio”.</p>
-</div>
-<div id="make-a-change-on-github" class="section level4">
-<h4><span class="header-section-number">1.4.3.5</span> Make a change on GitHub</h4>
-<p>Click on README.md in the file listing on GitHub.</p>
-<p>In the upper right corner, click on the pencil for “Edit this file”.</p>
+<p>Use the Git <strong>commit graph</strong> to represent history.</p>
 <div class="figure">
-<img src="images/edit_file.PNG" />
+<img src="images/git_commitgraph.png" width="500" />
 
 </div>
-<p>Add a line to this file, such as “Line added from GitHub.”</p>
-<p>Edit the commit message in “Commit changes” or accept the default.</p>
-<p>Click the big green button “Commit changes.”</p>
 </div>
-<div id="pull-from-github" class="section level4">
-<h4><span class="header-section-number">1.4.3.6</span> Pull from GitHub</h4>
-<p>Back in RStudio locally …</p>
-<p>Inspect your README.md. It should NOT have the line “Line added from GitHub”. It should be as you left it. Verify that.</p>
-<p>Click the blue Pull button.</p>
-<p>Look at README.md again. You should now see the new line there.</p>
-</div>
-<div id="the-end" class="section level4">
-<h4><span class="header-section-number">1.4.3.7</span> The end</h4>
-<p>Now just … repeat. Do work somewhere. Commit it. Push it or pull it depending on where you did it, but get local and remote “synced up”. Repeat.</p>
-<p><strong>Note that</strong> in general (and especially in future when collaborating with other developers) you will usually need to pull changes from the remote (GitHub) before pushing the local changes you have made. For this reason, it’s a good idea to try and get into the habit of pulling before you attempt to push.</p>
-</div>
-</div>
-<div id="existing-project-github-first" class="section level3">
-<h3><span class="header-section-number">1.4.4</span> Existing project, GitHub first</h3>
-<p>A novice-friendly workflow for bringing an existing R project into the RStudio and Git/GitHub universe.</p>
-<p>We do this in a slightly awkward way, in order to avoid using Git at the command line. You won’t want to work this way forever, but it’s perfectly fine as you’re getting started!</p>
-<p>We assume you’ve got your existing R project isolated in a directory on your computer. If that’s not already true, make it so. Create a directory and marshal all the existing data and R scripts there. It doesn’t really matter where you do this, but note where the project currently lives.</p>
-<div id="make-a-repo-on-github-1" class="section level4">
-<h4><span class="header-section-number">1.4.4.1</span> Make a repo on GitHub</h4>
-<p>We have do this before and now repeat the steps.</p>
-<p>Go to <a href="https://github.com" class="uri">https://github.com</a> and make sure you are logged in.</p>
-<p>Click green “New repository” button. Or, if you are on your own profile page, click on “Repositories”, then click the green “New” button.</p>
-<p>Repository name: <code>myrepo</code> (or whatever you wish, we will delete this) choose the <em>Public</em> and <em>YES Initialize this repository with a README</em></p>
-<div class="figure">
-<img src="images/create_a_new_repo.PNG" />
+<div id="git-in-shell" class="section level4">
+<h4><span class="header-section-number">1.4.1.2</span> Git in Shell</h4>
+<p>Three shell commands, i.e. <code>pwd</code>, <code>cd</code>, and <code>ls</code>, to get you started.</p>
+<pre><code>pwd            # check present working directory
+cd subfolder   # change directory to a subfolder under current working directory
+cd .           # change directory to .     (stays at the current working directory)
+cd ..          # change directory to ..    (one folder up current working directory)
+cd ../..       # change directory to ../.. (two folders up current working directory)
+ls             # list files and folders under currnet working directory; ls is short for list
+ls -aF         # list all files and mark folders; -a shows all, -F marks folder with a &quot;/&quot; sign
+</code></pre>
+<ol style="list-style-type: decimal">
+<li><strong>Create a New Git repo</strong></li>
+</ol>
+<ul>
+<li>Go to an existing folder (named e.g. <code>somefolder</code>) on your computer where you will create a new folder as the Git repo.</li>
+<li>Find out the path leading down to this folder.
+<ul>
+<li>We will refer to this path as <code>path_to_somefolder</code>.</li>
+<li>For Windows, the path should look like <code>E:/folder1/folder2/somefolder</code></li>
+<li>For Mac, the path should look like <code>/Users/username/folder1/folder2/somefolder</code>.</li>
+</ul></li>
+<li>Open shell</li>
+<li>Type in the following shell commands line by line.</li>
+</ul>
+<pre><code>cd &quot;path_to_somefolder&quot;   # go to the folder where you will create a new folder 
+mkdir git_test            # create a new folder called &quot;git_test&quot;; mkdir is short for make directory
+cd git_test               # go into the &quot;git_test&quot; folder
+ls                        # nothing exists; it&#39;s completely empty
+ls -aF                    # you see only &quot;./&quot; and &quot;../&quot;, which means you can stay or go up one folder
 
+git init                  # make the folder a Git repo; init is for initiate
+ls                        # still empty by appearance
+ls -aF                    # a hidden folder named &quot;.git&quot; appears 
+ls .git                   # a lof of files are stored in &quot;.git&quot;
+</code></pre>
+<ol start="2" style="list-style-type: decimal">
+<li><strong>First Git commit</strong></li>
+</ol>
+<pre><code>git status                # check current Git status
+
+nano txt                  # create a file called &quot;txt&quot; and add some text in it
+                          # &quot;Control + X&quot; to stop editing
+                          # &quot;Y&quot; to save changes
+                          # &quot;Enter&quot; to quit nano
+ls                        # txt appears
+cat txt                   # show contents of txt
+
+git status                # txt is shown as an untracked file
+git add txt               # add txt from &quot;working area&quot; to &quot;staging area&quot;
+git status                # txt is shown as a tracked file, but not committed to any history
+git commit -m &quot;add txt file&quot;   # commit it to history and add a message informative of what you did
+git status                # no untracked files, no uncommitted file
+git log                   # 1st commit is now logged in history
+</code></pre>
+<ol start="3" style="list-style-type: decimal">
+<li><strong>Second Git commit</strong></li>
+</ol>
+<pre><code>nano dat                  # create a new file and add some numbers as data
+nano temp                     # create a new file and add some text
+nano txt                  # change or add some text 
+ls                        # three files exist
+
+git status                # one file modified; two files untracked
+git add txt dat           # add txt and dat from &quot;working area&quot; to &quot;staging area&quot;
+git status                # txt and dat are now ready for commit; temp remains untracked
+git commit -m &quot;edit txt and add dat&quot;  # commit and add an informative commit message
+git status                # temp is still not tracked (it&#39;s OK; it&#39;s a temporary file)
+git log                   # 2nd commit is logged in history
+</code></pre>
+<ol start="4" style="list-style-type: decimal">
+<li><strong>Check out a Previous commit</strong></li>
+</ol>
+<pre><code>git log                   # record like the one below is called a &quot;SHA ID&quot;
+                          # e1328e1c9e66ed759a53a638c9539da35a8246d7
+                          # we only need the first several characters to refer to it
+git checkout e1328e       # check out the 1st commit; notice how files change in the folder
+git checkout master       # come back to the latest commit
+</code></pre>
 </div>
-<p>Click big green button “Create repository.”</p>
-<p>Copy the HTTPS clone URL to your clipboard via the green “Clone or Download” button.</p>
 </div>
-<div id="new-rstudio-project-via-git-clone-1" class="section level4">
-<h4><span class="header-section-number">1.4.4.2</span> New RStudio Project via git clone</h4>
-<p>We have do this before and now repeat the steps.</p>
-<p>In RStudio, start a new Project:</p>
+<div id="introduction-to-github" class="section level3">
+<h3><span class="header-section-number">1.4.2</span> Introduction to GitHub</h3>
+<p>You will use GitHub in one of two ways:</p>
 <ul>
-<li><em>File&gt;New Project&gt;Version Control&gt;Git</em>. In the “repository URL” paste the URL of your new GitHub repository. It will be something like this <code>https://github.com/jennybc/myrepo.git</code>.</li>
-<li>Be intentional about where you create this Project.</li>
-<li>Suggest you check the box “Open in new session”.</li>
-<li>Click “Create Project” to create a new directory, which will be all of these things:
+<li>You have some contents on a local computer and want to upload them to your GitHub account.</li>
+<li>Some contents (maybe yours or not) are on GitHub and you want to download them to a local computer.</li>
+</ul>
+<p>It does not matter which is the use case, to make things simpler for starters, we will <strong>always</strong> use a “GitHub first” approach:</p>
 <ul>
-<li>a directory or “folder” on your computer</li>
-<li>a Git repository, linked to a remote GitHub repository</li>
-<li>an RStudio Project</li>
+<li>Create or fork a repo on GitHub first.</li>
+<li>Clone the repo down to local computer.</li>
+<li>If you do have some contents already, put them into the cloned repo. Done!</li>
+</ul>
+<div id="create-repo" class="section level4">
+<h4><span class="header-section-number">1.4.2.1</span> Create a repo on GitHub</h4>
+<ol style="list-style-type: decimal">
+<li>Go to your GitHub account at <code>https://github.com/username</code>
+<ul>
+<li><code>username</code> is your GitHub username</li>
 </ul></li>
-<li><strong>In the absence of other constraints, I suggest that all of your R projects have exactly this set-up.</strong></li>
-</ul>
-<p>This should download the <em>README.md</em> file that we created on GitHub in the previous step. Look in RStudio’s file browser pane for the <em>README.md</em> file.</p>
-</div>
-<div id="bring-your-existing-project-over" class="section level4">
-<h4><span class="header-section-number">1.4.4.3</span> Bring your existing project over</h4>
-<p>Using your favorite method of moving or copying files, copy the files that constitute your existing project into the directory for this new project.</p>
-<p>In RStudio, consult the Git pane and the file browser.</p>
+<li><p>Click “Repositories” located between “Overview” and “Stars”</p></li>
+<li>Click the green “New” button, on the “Create a new repository” page
 <ul>
-<li>Are you seeing all the files? They should be here if your move/copy was successful.</li>
-<li>Are they showing up in the Git pane with questions marks? They should be appearing as new untracked files.</li>
-</ul>
-</div>
-<div id="stage-and-commit" class="section level4">
-<h4><span class="header-section-number">1.4.4.4</span> Stage and commit</h4>
-<p>Commit your files to this repo. How?</p>
-<ul>
-<li>Click the “Git” tab in upper right pane</li>
-<li>Check “Staged” box for all files you want to commit.
-<ul>
-<li>Default: stage it.</li>
-<li>When to reconsider: this will all go to GitHub. So do consider if that is appropriate for each file. <strong>You can absolutely keep a file locally, without committing it to the Git repo and sending to GitHub</strong>. Just let it sit there in your Git pane, without being staged. No harm will be done. If this is a long-term situation, list the file in .gitignore.</li>
+<li>name your new repo under “Repository name” (e.g. <code>reponame</code>)</li>
+<li>choose “Public”</li>
+<li>check <strong>“Initialize this repository with a README”</strong></li>
+<li>click the green “Create repository” button</li>
 </ul></li>
-<li>If you’re not already in the Git pop-up, click “Commit”</li>
-<li>Type a message in “Commit message”, such as “init”.</li>
-<li>Click “Commit”</li>
-</ul>
-</div>
-<div id="push-your-local-changes-to-github-1" class="section level4">
-<h4><span class="header-section-number">1.4.4.5</span> Push your local changes to GitHub</h4>
-<p>Click the green “Push” button to send your local changes to GitHub. You should see some message along these lines.</p>
-<pre><code>[master dc671f0] blah
- 3 files changed, 22 insertions(+)
- create mode 100644 .gitignore
- create mode 100644 myrepo.Rproj</code></pre>
-</div>
-<div id="confirm-the-local-change-propagated-to-the-github-remote-1" class="section level4">
-<h4><span class="header-section-number">1.4.4.6</span> Confirm the local change propagated to the GitHub remote</h4>
-<p>Go back to the browser. I assume we’re still viewing your new GitHub repo.</p>
-<p>Refresh.</p>
-<p>You should see all the project files you committed there.</p>
-<p>If you click on “commits”,you should see one with the message “init”.</p>
-</div>
-<div id="the-end-1" class="section level4">
-<h4><span class="header-section-number">1.4.4.7</span> The end</h4>
-<p>Now just … repeat. Do work somewhere. Commit it. Push it or pull it depending on where you did it, but get local and remote “synced up”. Repeat.</p>
-<p><strong>Note that</strong> in general (and especially in future when collaborating with other developers) you will usually need to pull changes from the remote (GitHub) before pushing the local changes you have made. For this reason, it’s a good idea to try and get into the habit of pulling before you attempt to push.</p>
-</div>
-</div>
-<div id="existing-project-github-last" class="section level3">
-<h3><span class="header-section-number">1.4.5</span> Existing project, GitHub last</h3>
-<div id="make-or-verify-an-rstudio-project" class="section level4">
-<h4><span class="header-section-number">1.4.5.1</span> Make or verify an RStudio Project</h4>
-<p>We assume you’ve got your existing R project isolated in a directory on your computer.</p>
-<p>If it’s not already an RStudio Project, make it so:</p>
+<li>Check your URL
 <ul>
-<li>If you use the <a href="https://cran.r-project.org/web/packages/usethis/index.html">usethis</a> package, set the existing directory as the current project with <code>proj_set()</code>, then do <code>usethis::use_rstudio()</code>.</li>
-<li>Within RStudio you can do: File &gt; New Project &gt; Existing Directory and, if you wish, “Open in new session”.</li>
-</ul>
-<p>If your project is already an RStudio Project, launch it.</p>
-</div>
-<div id="make-or-verify-a-git-repo" class="section level4">
-<h4><span class="header-section-number">1.4.5.2</span> Make or verify a Git repo</h4>
-<p>You should be in RStudio now, in your project.</p>
-<p>Is it already a Git repository? The presence of the Git pane should tip you off. If yes, you’re done.</p>
-<p>If not, you have several options:</p>
-<ul>
-<li>If you have the <a href="https://cran.r-project.org/web/packages/usethis/index.html">usethis</a> package, call <code>usethis::use_git()</code>.</li>
-<li>In RStudio, go to <em>Tools &gt; Project Options … &gt; Git/SVN</em>. Under “Version control system”, select “Git”. Confirm New Git Repository? Yes!</li>
-<li>In the shell, in Project’s directory, do <code>git init</code>.</li>
-</ul>
-<p>If you used RStudio or usethis, the Project should re-launch in RStudio. Do that yourself if you did <code>git init</code>. RStudio should now have a Git pane.</p>
-</div>
-<div id="stage-and-commit-1" class="section level4">
-<h4><span class="header-section-number">1.4.5.3</span> Stage and commit</h4>
-<p>If your local project was already a Git repo and was up-to-date, move on. Otherwise, you probably need to stage and commit.</p>
-<ul>
-<li>Click the “Git” tab in upper right pane</li>
-<li>Check “Staged” box for all files you want to commit.
-<ul>
-<li>Default: stage everything</li>
-<li>When to do otherwise: this will all go to GitHub. So consider if that is appropriate for each file. <strong>You can absolutely keep a file locally, without committing it to the Git repo and sending to GitHub</strong>. Just let it sit there in your Git pane, without being staged. No harm will be done. If this is a long-term situation, list the file in .gitignore.</li>
+<li>it should look like <code>https://github.com/username/reponame</code></li>
+<li><code>reponame</code> is the name of the repo you have just created</li>
 </ul></li>
-<li>If you’re not already in the Git pop-up, click “Commit”</li>
-<li>Type a message in “Commit message”.</li>
-<li>Click “Commit”</li>
+</ol>
+</div>
+<div id="fork-repo" class="section level4">
+<h4><span class="header-section-number">1.4.2.2</span> Fork a repo on GitHub</h4>
+<p>If you have discovered a really good GitHub repo that you would like to make a copy of, you can get it in one of three ways: download, clone, fork (and then clone).</p>
+<p>More specifically, you can (a) directly download or (b) directly clone it from someone else’s GitHub repo to your local computer, or you can (c) fork it from someone else’s GitHub repo into your GitHub repo and then download or clone it from your GitHub repo to your local computer.</p>
+<p>Which method to use depends on how you would like to use the downloaded repo in the future.</p>
+<table>
+<thead>
+<tr class="header">
+<th>Action</th>
+<th align="center">Is Git repo</th>
+<th align="center">To Contribute/Collaborate</th>
+<th>Use Case</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>download</td>
+<td align="center">No</td>
+<td align="center">No</td>
+<td>you want the latest version only under no version control</td>
+</tr>
+<tr class="even">
+<td>clone</td>
+<td align="center">Yes</td>
+<td align="center">No</td>
+<td>you want contents with commit history</td>
+</tr>
+<tr class="odd">
+<td>fork</td>
+<td align="center">Yes</td>
+<td align="center">Yes</td>
+<td>you want repo unde control, and will contribute</td>
+</tr>
+</tbody>
+</table>
+<p>Let’s pretend you would like to contribute later and talk about fork.</p>
+<p>Forking someone else’s repo is easy.</p>
+<ol style="list-style-type: decimal">
+<li>Go to the GitHub repo you would like to fork at <code>https://github.com/username/reponame</code>
+<ul>
+<li><code>username</code> is someone else’s GitHub username</li>
+<li><code>reponame</code> is the repo you would like to make a copy of</li>
+</ul></li>
+<li><p>Click the <code>Fork</code> button on the right corner on top of the page</p></li>
+<li><p>Select an account of yours to host the repo</p></li>
+<li><p>Wait for a few seconds and you are done</p></li>
+<li>Check the url and it should look like <code>https://github.com/your-username/reponame</code>
+<ul>
+<li><code>your-username</code> is your GitHub username</li>
+<li><code>reponame</code> is identical to someone else’s <code>reponame</code> that you have copied from</li>
+</ul></li>
+</ol>
+<p>Now that this repo is already in your GitHub account, you can either download it or clone it from your account.</p>
+</div>
+<div id="clone-repo" class="section level4">
+<h4><span class="header-section-number">1.4.2.3</span> Clone a repo to your local computer</h4>
+<p>Regardless of whether you are cloning from your or someone else’s GitHub account, you can clone a repo in the following steps.</p>
+<ol style="list-style-type: decimal">
+<li>Decide in which directory you want to store the repo locally
+<ul>
+<li>create folders if necessary for storing the repo</li>
+</ul></li>
+<li>Go to the repo that you would like to make a copy of at <code>https://github.com/username/reponame</code>
+<ul>
+<li><code>username</code> can be either your or someone else’s GitHub account</li>
+<li><code>reponame</code> is the name of the repo you would like to get</li>
+</ul></li>
+<li>Click the green “Clone or download” button
+<ul>
+<li>this is where you can directly <strong>download</strong> the repo if that’s what you really want</li>
+<li>you should see “Clone with HTTPS”</li>
+<li>if you see “Clone with SSH”, click “Use HTTPS” in blue</li>
+</ul></li>
+<li>Click the clipboard icon to copy the URL into your clipboard
+<ul>
+<li>or you can click on the URL and use Control + C to copy it</li>
+<li>the URL should look like <code>https://github.com/username/reponame.git</code></li>
+</ul></li>
+<li><p>In RStudio, go to “File” &gt; “New Project …”</p></li>
+<li><p>In the popup window, select “Version Control” &gt; “Git”</p></li>
+<li>In the new popup window,
+<ul>
+<li>in “Repository URL”, paste the URL you have copied from Step 4</li>
+<li>RStudio may automatically fill in “Project directory name”, which is the <code>reponame</code></li>
+<li>if RStudio fails to perform automatic fill-in, simply type in the <code>reponame</code> on your own</li>
+<li>in “Create project as subdirectory of”, click “Browse…” and browse to the directory where you have chosen in Step 1</li>
+<li>check the box for “Open in new session”</li>
+<li>click “Create Project”</li>
+</ul></li>
+<li>You are Done!
+<ul>
+<li>check out the folder in the directory of your choice from Step 1</li>
+</ul></li>
+</ol>
+</div>
+<div id="push-back" class="section level4">
+<h4><span class="header-section-number">1.4.2.4</span> Make Changes and Push Changes Back</h4>
+<p>Assume you have cloned a repo from your GitHub account to your local computer. We will make some changes to downloaded files, add changes to local Git repo, commit changes, and push changes back to GitHub repo.</p>
+<p><code>NOTE</code>: You can only push back commits to your own repo. You cannot directly push commits back to a repo cloned from someone else, unless the other person has added you as a collaborator with write access to the original repo.</p>
+<ol style="list-style-type: decimal">
+<li>In RStudio, under the “Files” tab in the lower right corner
+<ul>
+<li>click “README.md”</li>
+<li>in the popup script, write say “add one line from RStudio”</li>
+<li>save the change</li>
+</ul></li>
+<li>Click the “Gib” tab in the upper right corner
+<ul>
+<li>check the boxes under “Staged” to <strong>add</strong> changes to the <strong>staging area</strong></li>
+<li>click “Commit”</li>
+</ul></li>
+<li>In the popup window,
+<ul>
+<li>write some message into “Commit message” describing what changes are made</li>
+<li>click the “Commit” button</li>
+<li>wait for the popup window to execute <strong>commit</strong></li>
+<li>click the “Close” button to close the popup window</li>
+<li>click the “Push” button in the top right corner to <strong>push</strong> changes back to the GitHub repo</li>
+</ul></li>
+<li>Confirm the changes in GitHub repo</li>
+</ol>
+<p>References</p>
+<ul>
+<li><a href="http://r-pkgs.had.co.nz/git.html">Git and GitHub &lt;&lt; R Packages &lt;&lt; Hadley Wickham</a></li>
+<li><a href="https://cfss.uchicago.edu/git05.html">Using Git within RStudio</a></li>
+<li><a href="https://cfss.uchicago.edu/git04.html">Setup Git and GitHub</a>: See how to clone a repo, make changes, add and commit changes, and push commits using Bash shell.</li>
 </ul>
 </div>
-<div id="make-and-connect-a-github-repo-option-1" class="section level4">
-<h4><span class="header-section-number">1.4.5.4</span> Make and connect a GitHub repo, option 1</h4>
-<p>If you use the <a href="https://cran.r-project.org/web/packages/usethis/index.html">usethis</a> package AND you have configured a GitHub Personal Access Token (PAT), do this in</p>
-<pre><code>R:usethis::use_github()</code></pre>
-<p>This will create a new repo on GitHub, add it as a remote, set up a tracking branch, and open it in your browser. Read the <code>use_github()</code> help to learn about its arguments and advice on configuring a PAT. This is extremely handy for a variety of workflows that call the GitHub API. Consider setting this up if you use usethis, devtools, or gh regularly.</p>
+<div id="cred" class="section level4">
+<h4><span class="header-section-number">1.4.2.5</span> Cache Credentials</h4>
+<p>When pushing to GitHub using HTTPS, if you are constantly being queried for username and password, you can choose to (a) cache your credentials (username, password), or (b) set up SSH keys.</p>
+<p>Since GitHub is recommending using HTTPS, we will introduce how to cache credentials. Setting up SSH keys is more secure way of connecting to GitHub, but it requires some work and you will have to pull/push to GitHub using SSH instead HTTPS later.</p>
+<ul>
+<li><strong>Windows users</strong>: In shell, enter <code>git config --global credential.helper wincred</code></li>
+<li><strong>Mac users</strong>: In shell, enter <code>git config --global credential.helper osxkeychain</code></li>
+</ul>
+<p>After you setup your credential helper, next time you push, you will be asked to enter your username and password one last time.</p>
 </div>
-<div id="make-and-connect-a-github-repo-option-2" class="section level4">
-<h4><span class="header-section-number">1.4.5.5</span> Make and connect a GitHub repo, option 2</h4>
-<div id="make-a-new-repo-on-github" class="section level5">
-<h5><span class="header-section-number">1.4.5.5.1</span> Make a new repo on GitHub</h5>
-<p>We have do this before and now repeat the steps.</p>
+<div id="contribution-andor-collaboration" class="section level4">
+<h4><span class="header-section-number">1.4.2.6</span> Contribution and/or Collaboration</h4>
+<ol style="list-style-type: decimal">
+<li><a href="index.html#fork-repo">Fork a repo</a> from someone else to your GitHub account</li>
+<li><a href="index.html#clone-repo">Clone the forked repo</a> from your GitHub account to your local computer</li>
+</ol>
+<p>Only need to do Steps 1-2 once.</p>
+<ol start="3" style="list-style-type: decimal">
+<li><a href="index.html#push-back">Make changes and push them back</a> to your GitHub account</li>
+<li>Make a pull request</li>
+<li>Resolve conflicts if necessary</li>
+<li>[Update from the original repo] hosted on someone else’s GitHub account</li>
+</ol>
+<p>Repeat from Steps 3-6 over and over and over again.</p>
 </div>
-<div id="connect-local-repo-to-github-repo" class="section level5">
-<h5><span class="header-section-number">1.4.5.5.2</span> Connect local repo to GitHub repo</h5>
-<p>You can do this in the shell or, with recent versions of RStudio, via RStudio.</p>
+<div id="make-a-pull-request" class="section level4">
+<h4><span class="header-section-number">1.4.2.7</span> Make a Pull Request</h4>
 </div>
-<div id="in-rstudio" class="section level5">
-<h5><span class="header-section-number">1.4.5.5.3</span> In RStudio</h5>
-<p>Click on the “two purple boxes and a white square” in the Git pane. Click “Add remote”. Paste the URL here and pick a remote name, almost certainly <code>origin</code>. Now “Add”.</p>
-<p>We should be back in the “New Branch” dialog (if not, click on the “two purple boxes and a white square” in the Git pane again). I assume you’re on the <code>master</code> branch want it to track <code>master</code> on GitHub. Enter <code>master</code> as the branch name and make sure “Sync branch with remote” is checked. Click “Create” (yes, even though the branch already exists). In the next dialog, choose “overwrite”.</p>
+<div id="resolve-conflicts" class="section level4">
+<h4><span class="header-section-number">1.4.2.8</span> Resolve Conflicts</h4>
 </div>
-<div id="in-a-shell" class="section level5">
-<h5><span class="header-section-number">1.4.5.5.4</span> In a shell</h5>
-<p>In a shell, do this, substituting your URL:</p>
-<pre><code>git remote add origin https://github.com/jennybc/myrepo.git</code></pre>
-<p>Push and cement the tracking relationship between your local <code>master</code> branch and <code>master</code> on GitHub:</p>
-<pre><code>git push --set-upstream origin master</code></pre>
-</div>
-</div>
-<div id="confirm-the-local-files-propagated-to-the-github-remote" class="section level4">
-<h4><span class="header-section-number">1.4.5.6</span> Confirm the local files propagated to the GitHub remote</h4>
-<p>Go back to the browser. I assume we’re still viewing your new GitHub repo.</p>
-<p>Refresh.</p>
-<p>You should see all the project files you committed there.</p>
-<p>If this project already had a Git history, it should be reflected on GitHub.</p>
-</div>
-<div id="the-end-2" class="section level4">
-<h4><span class="header-section-number">1.4.5.7</span> The end</h4>
-<p>Now just … repeat. Do work somewhere. Commit it. Push it or pull it depending on where you did it, but get local and remote “synced up”. Repeat.</p>
-<p>Note that in general (and especially in future when collaborating with other developers) you will usually need to pull changes from the remote (GitHub) before pushing the local changes you have made. For this reason, it’s a good idea to try and get into the habit of pulling before you attempt to push.</p>
+<div id="update-from-original-repo" class="section level4">
+<h4><span class="header-section-number">1.4.2.9</span> Update from Original repo</h4>
 </div>
 </div>
-</div>
-<div id="introduction-to-ggplot2" class="section level2">
-<h2><span class="header-section-number">1.5</span> Introduction to ggplot2</h2>
 </div>
 <div id="introduction-to-shiny" class="section level2">
-<h2><span class="header-section-number">1.6</span> Introduction to Shiny</h2>
+<h2><span class="header-section-number">1.5</span> Introduction to Shiny</h2>
 
 </div>
 </div>
