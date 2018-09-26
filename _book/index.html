@@ -54,13 +54,6 @@
 <link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
 <script src="libs/chromatography-0.1/chromatography.js"></script>
 <script src="libs/DiagrammeR-binding-1.0.0/DiagrammeR.js"></script>
-<link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
-<script src="libs/datatables-binding-0.4/datatables.js"></script>
-<link href="libs/dt-core-1.10.16/css/jquery.dataTables.min.css" rel="stylesheet" />
-<link href="libs/dt-core-1.10.16/css/jquery.dataTables.extra.css" rel="stylesheet" />
-<script src="libs/dt-core-1.10.16/js/jquery.dataTables.min.js"></script>
-<link href="libs/crosstalk-1.0.0/css/crosstalk.css" rel="stylesheet" />
-<script src="libs/crosstalk-1.0.0/js/crosstalk.min.js"></script>
 
 
 <style type="text/css">
@@ -134,7 +127,13 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="1.3.2" data-path="index.html"><a href="index.html#r-markdown"><i class="fa fa-check"></i><b>1.3.2</b> R Markdown</a></li>
 <li class="chapter" data-level="1.3.3" data-path="index.html"><a href="index.html#mathematical-symbols-in-latex"><i class="fa fa-check"></i><b>1.3.3</b> Mathematical Symbols in Latex</a></li>
 </ul></li>
-<li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#introduction-to-git-github"><i class="fa fa-check"></i><b>1.4</b> Introduction to Git &amp; GitHub</a></li>
+<li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#introduction-to-git-github"><i class="fa fa-check"></i><b>1.4</b> Introduction to Git &amp; GitHub</a><ul>
+<li class="chapter" data-level="1.4.1" data-path="index.html"><a href="index.html#whats-git-github"><i class="fa fa-check"></i><b>1.4.1</b> what’s Git &amp; GitHub</a></li>
+<li class="chapter" data-level="1.4.2" data-path="index.html"><a href="index.html#connect-git-github-rstudio"><i class="fa fa-check"></i><b>1.4.2</b> Connect Git, GitHub, Rstudio</a></li>
+<li class="chapter" data-level="1.4.3" data-path="index.html"><a href="index.html#new-project-github-first"><i class="fa fa-check"></i><b>1.4.3</b> New project, GitHub first</a></li>
+<li class="chapter" data-level="1.4.4" data-path="index.html"><a href="index.html#existing-project-github-first"><i class="fa fa-check"></i><b>1.4.4</b> Existing project, GitHub first</a></li>
+<li class="chapter" data-level="1.4.5" data-path="index.html"><a href="index.html#existing-project-github-last"><i class="fa fa-check"></i><b>1.4.5</b> Existing project, GitHub last</a></li>
+</ul></li>
 <li class="chapter" data-level="1.5" data-path="index.html"><a href="index.html#introduction-to-ggplot2"><i class="fa fa-check"></i><b>1.5</b> Introduction to ggplot2</a></li>
 <li class="chapter" data-level="1.6" data-path="index.html"><a href="index.html#introduction-to-shiny"><i class="fa fa-check"></i><b>1.6</b> Introduction to Shiny</a></li>
 </ul></li>
@@ -268,7 +267,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div id="header">
 <h1 class="title">Quantitative Research Methods for Education</h1>
 <h4 class="author"><em>Wenliang He</em></h4>
-<h4 class="date"><em>Updated on 2018-09-22</em></h4>
+<h4 class="date"><em>Updated on 2018-09-26</em></h4>
 </div>
 <div id="introduction" class="section level1">
 <h1><span class="header-section-number">1</span> Introduction</h1>
@@ -406,15 +405,15 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul>
 </blockquote>
 <p><br> The function defined below would (a) check if required packages exist, (b) install, if not already installed, and (c) load the packages.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">force_load &lt;-<span class="st"> </span>function(pkgs, <span class="dt">use_require=</span><span class="ot">FALSE</span>) {
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">force_load &lt;-<span class="st"> </span><span class="cf">function</span>(pkgs, <span class="dt">use_require=</span><span class="ot">FALSE</span>) {
   <span class="co"># https://gist.github.com/smithdanielle/9913897</span>
   <span class="co"># https://cran.r-project.org/web/packages/install.load/README.html</span>
-  new_pkgs &lt;-<span class="st"> </span>pkgs[!(pkgs %in%<span class="st"> </span><span class="kw">installed.packages</span>()[, <span class="st">&quot;Package&quot;</span>])]
-  if (<span class="kw">length</span>(new_pkgs)) 
+  new_pkgs &lt;-<span class="st"> </span>pkgs[<span class="op">!</span>(pkgs <span class="op">%in%</span><span class="st"> </span><span class="kw">installed.packages</span>()[, <span class="st">&quot;Package&quot;</span>])]
+  <span class="cf">if</span> (<span class="kw">length</span>(new_pkgs)) 
     <span class="kw">install.packages</span>(new_pkgs, <span class="dt">dependencies =</span> <span class="ot">TRUE</span>)
-  if (use_require) {
+  <span class="cf">if</span> (use_require) {
     loaded =<span class="st"> </span><span class="kw">sapply</span>(pkgs, require, <span class="dt">character.only =</span> <span class="ot">TRUE</span>)
-  } else {
+  } <span class="cf">else</span> {
     loaded =<span class="st"> </span><span class="kw">sapply</span>(pkgs, library, <span class="dt">character.only =</span> <span class="ot">TRUE</span>)
   }
   <span class="kw">return</span>(loaded)
@@ -559,7 +558,7 @@ attr(,&quot;RStudio&quot;)
 <pre><code>## [1] &quot;logical&quot;</code></pre>
 <p>To note, you <strong>MUST NOT</strong> use <code>True</code> or <code>False</code>, which would result in an error.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">True</code></pre></div>
-<pre><code>## Error in eval(expr, envir, enclos): object &#39;True&#39; not found</code></pre>
+<pre><code>## Error in eval(expr, envir, enclos): 找不到对象&#39;True&#39;</code></pre>
 </div>
 <div id="integer" class="section level4">
 <h4><span class="header-section-number">1.2.2.2</span> Integer</h4>
@@ -616,9 +615,9 @@ attr(,&quot;RStudio&quot;)
 <p>Vector is the workhorse of R computing. Elements of a vector MUST be of the same dtype.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">var1 =<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>)              <span class="co"># var1 is a vector, it includes numbers 1,2,3,4</span>
                                   <span class="co"># c() is a function, where c stands for concatenate</span>
-var2 =<span class="st"> </span><span class="dv">1</span>:<span class="dv">4</span>                        <span class="co"># practically identical</span></code></pre></div>
+var2 =<span class="st"> </span><span class="dv">1</span><span class="op">:</span><span class="dv">4</span>                        <span class="co"># practically identical</span></code></pre></div>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">var3 =<span class="st"> </span><span class="kw">c</span>(<span class="st">&#39;a&#39;</span>,<span class="st">&#39;b&#39;</span>,<span class="st">&#39;c&#39;</span>,<span class="st">&#39;d&#39;</span>)                   <span class="co"># create a third vector of a different dtype</span>
-var3 =<span class="st"> </span>letters[<span class="dv">1</span>:<span class="dv">4</span>]                           <span class="co"># identical</span></code></pre></div>
+var3 =<span class="st"> </span>letters[<span class="dv">1</span><span class="op">:</span><span class="dv">4</span>]                           <span class="co"># identical</span></code></pre></div>
 <p>To check the data type of vector’s elements, use <code>class()</code> too.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">class</span>(var1); <span class="kw">class</span>(var2)                    </code></pre></div>
 <pre><code>## [1] &quot;numeric&quot;</code></pre>
@@ -643,19 +642,18 @@ var3 =<span class="st"> </span>letters[<span class="dv">1</span>:<span class="dv
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">c</span>(var1, var3)                                 </code></pre></div>
 <pre><code>## [1] &quot;1&quot; &quot;2&quot; &quot;3&quot; &quot;4&quot; &quot;a&quot; &quot;b&quot; &quot;c&quot; &quot;d&quot;</code></pre>
 <p>Vectors can ????????????</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">var1 +<span class="st"> </span>var2                                     <span class="co"># vectorized operation operates on each element</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">var1 <span class="op">+</span><span class="st"> </span>var2                                     <span class="co"># vectorized operation operates on each element</span></code></pre></div>
 <pre><code>## [1] 2 4 6 8</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">var1 ==<span class="st"> </span><span class="dv">3</span>                                         <span class="co"># &#39;==&#39; means &#39;compare&#39; and &#39;=&#39; means &#39;assign&#39;</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">var1 <span class="op">==</span><span class="st"> </span><span class="dv">3</span>                                         <span class="co"># &#39;==&#39; means &#39;compare&#39; and &#39;=&#39; means &#39;assign&#39;</span></code></pre></div>
 <pre><code>## [1] FALSE FALSE  TRUE FALSE</code></pre>
 <p><strong>Broadcasting</strong>: When operate with vectors of different lengths,the shorter vector is recycled to the full length, this is called broadcasting.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">var1 +<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>)                               </code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">var1 <span class="op">+</span><span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>)                               </code></pre></div>
 <pre><code>## [1] 2 4 4 6</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">var1 +<span class="st"> </span><span class="dv">2</span>                                           </code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">var1 <span class="op">+</span><span class="st"> </span><span class="dv">2</span>                                           </code></pre></div>
 <pre><code>## [1] 3 4 5 6</code></pre>
 <p>To note: vectors interact with one element only works if one is multiple times longer than the other.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">var1 +<span class="st"> </span><span class="dv">1</span>:<span class="dv">3</span>                                </code></pre></div>
-<pre><code>## Warning in var1 + 1:3: longer object length is not a multiple of shorter
-## object length</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">var1 <span class="op">+</span><span class="st"> </span><span class="dv">1</span><span class="op">:</span><span class="dv">3</span>                                </code></pre></div>
+<pre><code>## Warning in var1 + 1:3: 长的对象长度不是短的对象长度的整倍数</code></pre>
 <pre><code>## [1] 2 4 6 5</code></pre>
 </div>
 <div id="matrix" class="section level4">
@@ -741,20 +739,20 @@ var3 =<span class="st"> </span>letters[<span class="dv">1</span>:<span class="dv
 <pre><code>## [1] &quot;d&quot;</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">var3[<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">4</span>)]                                <span class="co"># multiple selection</span></code></pre></div>
 <pre><code>## [1] &quot;a&quot; &quot;a&quot; &quot;c&quot; &quot;d&quot;</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">var3[<span class="dv">2</span>:<span class="dv">4</span>]                                       <span class="co"># slicing</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">var3[<span class="dv">2</span><span class="op">:</span><span class="dv">4</span>]                                       <span class="co"># slicing</span></code></pre></div>
 <pre><code>## [1] &quot;b&quot; &quot;c&quot; &quot;d&quot;</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">var3[-<span class="dv">1</span>]                                            <span class="co"># reverse single selection; select all but the first</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">var3[<span class="op">-</span><span class="dv">1</span>]                                            <span class="co"># reverse single selection; select all but the first</span></code></pre></div>
 <pre><code>## [1] &quot;b&quot; &quot;c&quot; &quot;d&quot;</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">var3[-<span class="kw">length</span>(var1)]                         <span class="co"># reverse single selection; select all but the first</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">var3[<span class="op">-</span><span class="kw">length</span>(var1)]                         <span class="co"># reverse single selection; select all but the first</span></code></pre></div>
 <pre><code>## [1] &quot;a&quot; &quot;b&quot; &quot;c&quot;</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">var3[<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">4</span>)]                                <span class="co"># reverse multiple selection; all but the specified</span></code></pre></div>
 <pre><code>## [1] &quot;a&quot; &quot;a&quot; &quot;c&quot; &quot;d&quot;</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">var3[-<span class="kw">c</span>(<span class="dv">2</span>:<span class="dv">4</span>)]                                     <span class="co"># reverse slicing; MUST NOT var[-2:4]</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">var3[<span class="op">-</span><span class="kw">c</span>(<span class="dv">2</span><span class="op">:</span><span class="dv">4</span>)]                                     <span class="co"># reverse slicing; MUST NOT var[-2:4]</span></code></pre></div>
 <pre><code>## [1] &quot;a&quot;</code></pre>
 <ul>
 <li>Indexing by name</li>
 </ul>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">names</span>(var1) =<span class="st"> </span>letters[<span class="dv">1</span>:<span class="dv">4</span>]; var1                <span class="co"># give names to each element of a vector</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">names</span>(var1) =<span class="st"> </span>letters[<span class="dv">1</span><span class="op">:</span><span class="dv">4</span>]; var1                <span class="co"># give names to each element of a vector</span></code></pre></div>
 <pre><code>## a b c d 
 ## 1 2 3 4</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">var1 =<span class="st"> </span><span class="kw">c</span>(<span class="dt">a=</span><span class="dv">1</span>, <span class="dt">b=</span><span class="dv">2</span>, <span class="dt">c=</span><span class="dv">3</span>, <span class="dt">d=</span><span class="dv">4</span>); var1        <span class="co"># identical</span></code></pre></div>
@@ -777,7 +775,7 @@ var3 =<span class="st"> </span>letters[<span class="dv">1</span>:<span class="dv
 <ul>
 <li>Indexing by a logical vector</li>
 </ul>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">idx =<span class="st"> </span>var1 &lt;=<span class="st"> </span><span class="dv">2</span>; idx                            <span class="co"># create an index vector of the logical dtype</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">idx =<span class="st"> </span>var1 <span class="op">&lt;=</span><span class="st"> </span><span class="dv">2</span>; idx                            <span class="co"># create an index vector of the logical dtype</span></code></pre></div>
 <pre><code>##     a     b     c     d 
 ##  TRUE  TRUE FALSE FALSE</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">var1[idx]                                       <span class="co"># call out values according to the index vector</span></code></pre></div>
@@ -792,7 +790,7 @@ var3 =<span class="st"> </span>letters[<span class="dv">1</span>:<span class="dv
 <li>Indexing by position</li>
 </ul>
 <p><code>matrix/dataframe[row_indices, column_indices]</code></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">dat[<span class="dv">1</span>:<span class="dv">3</span>, <span class="dv">1</span>]                                     </code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">dat[<span class="dv">1</span><span class="op">:</span><span class="dv">3</span>, <span class="dv">1</span>]                                     </code></pre></div>
 <pre><code>## [1] 1 2 3</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">dat[<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">3</span>), ]                                     <span class="co"># select the 1st and 3rd rows only</span></code></pre></div>
 <pre><code>##   var1 var3
@@ -808,7 +806,7 @@ var3 =<span class="st"> </span>letters[<span class="dv">1</span>:<span class="dv
 <li>Indexing by name</li>
 </ul>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">colnames</span>(dat) =<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;id&quot;</span>, <span class="st">&quot;group&quot;</span>)        <span class="co"># give column names to our dataframe</span>
-<span class="kw">rownames</span>(dat) =<span class="st"> </span>letters[<span class="dv">1</span>:<span class="dv">4</span>]              <span class="co"># give row names to our dataframe</span>
+<span class="kw">rownames</span>(dat) =<span class="st"> </span>letters[<span class="dv">1</span><span class="op">:</span><span class="dv">4</span>]              <span class="co"># give row names to our dataframe</span>
 dat[<span class="kw">c</span>(<span class="st">&#39;a&#39;</span>, <span class="st">&#39;b&#39;</span>, <span class="st">&#39;c&#39;</span>), <span class="st">&quot;id&quot;</span>]                 <span class="co"># identical to dat[1:3, 1]</span></code></pre></div>
 <pre><code>## [1] 1 2 3</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">dat[<span class="kw">c</span>(<span class="st">&#39;a&#39;</span>, <span class="st">&#39;c&#39;</span>), ]                            <span class="co"># identical to dat[c(1,3), ]</span></code></pre></div>
@@ -824,14 +822,14 @@ dat[<span class="kw">c</span>(<span class="st">&#39;a&#39;</span>, <span class="
 <ul>
 <li>Index rows by position, columns by name</li>
 </ul>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">dat[<span class="dv">1</span>:<span class="dv">3</span>, <span class="st">&quot;id&quot;</span>]                                </code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">dat[<span class="dv">1</span><span class="op">:</span><span class="dv">3</span>, <span class="st">&quot;id&quot;</span>]                                </code></pre></div>
 <pre><code>## [1] 1 2 3</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">dat[,<span class="dv">1</span>]; dat[,<span class="st">&quot;id&quot;</span>]                           <span class="co"># return a vector that is the &#39;id&#39; column</span></code></pre></div>
 <pre><code>## [1] 1 2 3 4</code></pre>
 <pre><code>## [1] 1 2 3 4</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">dat$id                                            <span class="co"># identical; &#39;$&#39; sign is a shorthand</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">dat<span class="op">$</span>id                                            <span class="co"># identical; &#39;$&#39; sign is a shorthand</span></code></pre></div>
 <pre><code>## [1] 1 2 3 4</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">dat$i; dat$g                        <span class="co"># &quot;$&quot; sign does partial matching</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">dat<span class="op">$</span>i; dat<span class="op">$</span>g                        <span class="co"># &quot;$&quot; sign does partial matching</span></code></pre></div>
 <pre><code>## [1] 1 2 3 4</code></pre>
 <pre><code>## [1] a b c d
 ## Levels: a b c d</code></pre>
@@ -869,7 +867,7 @@ dat[<span class="kw">c</span>(<span class="st">&#39;a&#39;</span>, <span class="
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">lst[<span class="dv">1</span>]                                          <span class="co"># return a list with the first object</span></code></pre></div>
 <pre><code>## [[1]]
 ## [1] 1 2 3 4</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">lst[<span class="dv">1</span>:<span class="dv">2</span>]                                          <span class="co"># return a list with the first two objects</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">lst[<span class="dv">1</span><span class="op">:</span><span class="dv">2</span>]                                          <span class="co"># return a list with the first two objects</span></code></pre></div>
 <pre><code>## [[1]]
 ## [1] 1 2 3 4
 ## 
@@ -893,7 +891,7 @@ dat[<span class="kw">c</span>(<span class="st">&#39;a&#39;</span>, <span class="
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">names</span>(lst) =<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;var1&quot;</span>,<span class="st">&quot;var3&quot;</span>,<span class="st">&quot;mat1&quot;</span>,<span class="st">&quot;dat&quot;</span>)  <span class="co"># give names to the list</span>
 lst[[<span class="st">&quot;var3&quot;</span>]]                                 <span class="co"># calling out contents of the cell called &quot;var3&quot;</span></code></pre></div>
 <pre><code>## [1] &quot;a&quot; &quot;b&quot; &quot;c&quot; &quot;d&quot;</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">lst$var3                                          <span class="co"># identical; &#39;$&#39; sign is a shorthand</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">lst<span class="op">$</span>var3                                          <span class="co"># identical; &#39;$&#39; sign is a shorthand</span></code></pre></div>
 <pre><code>## [1] &quot;a&quot; &quot;b&quot; &quot;c&quot; &quot;d&quot;</code></pre>
 <ul>
 <li>Indexing by a logical vector</li>
@@ -930,8 +928,8 @@ fac =<span class="st"> </span><span class="kw">factor</span>(var3); fac         
 </div>
 <div id="introduction-to-r-markdown" class="section level2">
 <h2><span class="header-section-number">1.3</span> Introduction to R Markdown</h2>
-<div id="htmlwidget-ac1038f4086a76bd8c1c" style="width:672px;height:200px;" class="DiagrammeR html-widget"></div>
-<script type="application/json" data-for="htmlwidget-ac1038f4086a76bd8c1c">{"x":{"diagram":"\ngraph LR\nMU(Markup) --> MD(Markdown) \nMD --> PDMD(Pandoc Markdown)\nMD --> GHMD(GitHub Markdown)\nMD --> PHPMD(PHP Markdown)\nPDMD --> RMD(R Markdown)\nRMD --> BD(Bookdown)\n"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-a9715bd8e583b852eeb9" style="width:672px;height:200px;" class="DiagrammeR html-widget"></div>
+<script type="application/json" data-for="htmlwidget-a9715bd8e583b852eeb9">{"x":{"diagram":"\ngraph LR\nMU(Markup) --> MD(Markdown) \nMD --> PDMD(Pandoc Markdown)\nMD --> GHMD(GitHub Markdown)\nMD --> PHPMD(PHP Markdown)\nPDMD --> RMD(R Markdown)\nRMD --> BD(Bookdown)\n"},"evals":[],"jsHooks":[]}</script>
 <p>There are some resources for learning Markdown, GitHub Markdown, and R Markdown.</p>
 <p><strong>Markdown Tutorials</strong></p>
 <ul>
@@ -2224,6 +2222,277 @@ $$</code></pre>
 </div>
 <div id="introduction-to-git-github" class="section level2">
 <h2><span class="header-section-number">1.4</span> Introduction to Git &amp; GitHub</h2>
+<div id="whats-git-github" class="section level3">
+<h3><span class="header-section-number">1.4.1</span> what’s Git &amp; GitHub</h3>
+<p>Git is a <em>version control</em> system. Git manages the evolution of a set of files – called a <em>repository</em> – in a sane, highly structured way.</p>
+<p>GitHub provides a home for your Git-based projects on the internet.</p>
+</div>
+<div id="connect-git-github-rstudio" class="section level3">
+<h3><span class="header-section-number">1.4.2</span> Connect Git, GitHub, Rstudio</h3>
+<p>Objective: make sure that you can pull from and push to GitHub from your computer.</p>
+<div id="introduce-yourself-to-git" class="section level5">
+<h5><span class="header-section-number">1.4.2.0.1</span> introduce yourself to Git</h5>
+<p>In the shell (Git Bash) print the following code:</p>
+<p>git config –global user.name ‘Jennifer Bryan’ git config –global user.email ‘<a href="mailto:jenny@stat.ubc.ca">jenny@stat.ubc.ca</a>’ git config –global –list</p>
+<p>substituting your name and the email associated with your GitHub account.</p>
+</div>
+</div>
+<div id="new-project-github-first" class="section level3">
+<h3><span class="header-section-number">1.4.3</span> New project, GitHub first</h3>
+<p>We create a new Project, with the preferred “GitHub first, then RStudio” sequence. Why do we prefer this? Because this method of copying the Project from GitHub to your computer also sets up the local Git repository for immediate pulling and pushing. Under the hood, we are doing <code>git clone</code>.</p>
+<div id="make-a-repo-on-github" class="section level5">
+<h5><span class="header-section-number">1.4.3.0.1</span> Make a repo on GitHub</h5>
+<p>Go to <a href="https://github.com" class="uri">https://github.com</a> and make sure you are logged in.</p>
+<p>Click green “New repository” button. Or, if you are on your own profile page, click on “Repositories”, then click the green “New” button.</p>
+<p>Repository name: <code>myrepo</code> (or whatever you wish, we will delete this) choose the <em>Public</em> and <em>YES Initialize this repository with a README</em></p>
+<div class="figure">
+<img src="images/create_a_new_repo.PNG" />
+
+</div>
+<p>Click big green button “Create repository.”</p>
+<p>Copy the HTTPS clone URL to your clipboard via the green “Clone or Download” button.</p>
+</div>
+<div id="new-rstudio-project-via-git-clone" class="section level4">
+<h4><span class="header-section-number">1.4.3.1</span> New RStudio Project via git clone</h4>
+<p>In RStudio, start a new Project:</p>
+<ul>
+<li><em>File&gt;New Project&gt;Version Control&gt;Git</em>. In the “repository URL” paste the URL of your new GitHub repository. It will be something like this <code>https://github.com/jennybc/myrepo.git</code>.</li>
+<li>Be intentional about where you create this Project.</li>
+<li>Suggest you check the box “Open in new session”.</li>
+<li>Click “Create Project” to create a new directory, which will be all of these things:
+<ul>
+<li>a directory or “folder” on your computer</li>
+<li>a Git repository, linked to a remote GitHub repository</li>
+<li>an RStudio Project</li>
+</ul></li>
+<li><strong>In the absence of other constraints, I suggest that all of your R projects have exactly this set-up.</strong></li>
+</ul>
+<p>This should download the <em>README.md</em> file that we created on GitHub in the previous step. Look in RStudio’s file browser pane for the <em>README.md</em> file.</p>
+<p>There’s a big advantage to the “GitHub first, then RStudio” workflow: the remote GitHub repo is added as a remote for your local repo and your local <em>master</em> branch is now tracking <em>master</em> on GitHub. This is a technical but important point about Git. The practical implication is that you are now set up to push and pull. No need to fanny around setting up Git remotes and tracking branches on the command line.</p>
+</div>
+<div id="make-local-changes-save-commit" class="section level4">
+<h4><span class="header-section-number">1.4.3.2</span> Make local changes, save, commit</h4>
+<p><strong>Do this every time you finish a valuable chunk of work, probably many times a day.</strong></p>
+<p>From RStudio, modify the <em>README.md</em> file, e.g., by adding the line “This is a line from RStudio”. Save your changes.</p>
+<p>Commit these changes to your local repo. How?</p>
+<ul>
+<li>Click the “Git” tab in upper right pane</li>
+<li>Check “Staged” box for any files whose existence or modifications you want to commit.
+<ul>
+<li>To see more detail on what’s changed in file since the last commit, click on “Diff” for a Git pop-up</li>
+</ul></li>
+<li>If you’re not already in the Git pop-up, click “Commit”</li>
+<li>Type a message in “Commit message”, such as “Commit from RStudio”.</li>
+<li>Click “Commit”</li>
+</ul>
+</div>
+<div id="push-your-local-changes-to-github" class="section level4">
+<h4><span class="header-section-number">1.4.3.3</span> Push your local changes to GitHub</h4>
+<p><strong>Do this a few times a day, but possibly less often than you commit.</strong></p>
+<p>You have new work in your local Git repository, but the changes are not online yet.</p>
+<p>This will seem counterintuitive, but first let’s stop and pull from GitHub.</p>
+<p>Why? Establish this habit for the future! If you make changes to the repo in the browser or from another machine or (one day) a collaborator has pushed, you will be happier if you pull those changes in before you attempt to push.</p>
+<p>Click the blue “Pull” button in the “Git” tab in RStudio. I doubt anything will happen, i.e. you’ll get the message “Already up-to-date.” This is just to establish a habit.</p>
+<p>Click the green “Push” button to send your local changes to GitHub. You should see some message along these lines.</p>
+<pre><code>[master dc671f0] blah
+ 3 files changed, 22 insertions(+)
+ create mode 100644 .gitignore
+ create mode 100644 myrepo.Rproj</code></pre>
+</div>
+<div id="confirm-the-local-change-propagated-to-the-github-remote" class="section level4">
+<h4><span class="header-section-number">1.4.3.4</span> Confirm the local change propagated to the GitHub remote</h4>
+<p>Go back to the browser. I assume we’re still viewing your new GitHub repo.</p>
+<p>Refresh this page.</p>
+<p>You should see the new “This is a line from RStudio” in the README.</p>
+<p>If you click on “commits,” you should see one with the message “Commit from RStudio”.</p>
+</div>
+<div id="make-a-change-on-github" class="section level4">
+<h4><span class="header-section-number">1.4.3.5</span> Make a change on GitHub</h4>
+<p>Click on README.md in the file listing on GitHub.</p>
+<p>In the upper right corner, click on the pencil for “Edit this file”.</p>
+<div class="figure">
+<img src="images/edit_file.PNG" />
+
+</div>
+<p>Add a line to this file, such as “Line added from GitHub.”</p>
+<p>Edit the commit message in “Commit changes” or accept the default.</p>
+<p>Click the big green button “Commit changes.”</p>
+</div>
+<div id="pull-from-github" class="section level4">
+<h4><span class="header-section-number">1.4.3.6</span> Pull from GitHub</h4>
+<p>Back in RStudio locally …</p>
+<p>Inspect your README.md. It should NOT have the line “Line added from GitHub”. It should be as you left it. Verify that.</p>
+<p>Click the blue Pull button.</p>
+<p>Look at README.md again. You should now see the new line there.</p>
+</div>
+<div id="the-end" class="section level4">
+<h4><span class="header-section-number">1.4.3.7</span> The end</h4>
+<p>Now just … repeat. Do work somewhere. Commit it. Push it or pull it depending on where you did it, but get local and remote “synced up”. Repeat.</p>
+<p><strong>Note that</strong> in general (and especially in future when collaborating with other developers) you will usually need to pull changes from the remote (GitHub) before pushing the local changes you have made. For this reason, it’s a good idea to try and get into the habit of pulling before you attempt to push.</p>
+</div>
+</div>
+<div id="existing-project-github-first" class="section level3">
+<h3><span class="header-section-number">1.4.4</span> Existing project, GitHub first</h3>
+<p>A novice-friendly workflow for bringing an existing R project into the RStudio and Git/GitHub universe.</p>
+<p>We do this in a slightly awkward way, in order to avoid using Git at the command line. You won’t want to work this way forever, but it’s perfectly fine as you’re getting started!</p>
+<p>We assume you’ve got your existing R project isolated in a directory on your computer. If that’s not already true, make it so. Create a directory and marshal all the existing data and R scripts there. It doesn’t really matter where you do this, but note where the project currently lives.</p>
+<div id="make-a-repo-on-github-1" class="section level4">
+<h4><span class="header-section-number">1.4.4.1</span> Make a repo on GitHub</h4>
+<p>We have do this before and now repeat the steps.</p>
+<p>Go to <a href="https://github.com" class="uri">https://github.com</a> and make sure you are logged in.</p>
+<p>Click green “New repository” button. Or, if you are on your own profile page, click on “Repositories”, then click the green “New” button.</p>
+<p>Repository name: <code>myrepo</code> (or whatever you wish, we will delete this) choose the <em>Public</em> and <em>YES Initialize this repository with a README</em></p>
+<div class="figure">
+<img src="images/create_a_new_repo.PNG" />
+
+</div>
+<p>Click big green button “Create repository.”</p>
+<p>Copy the HTTPS clone URL to your clipboard via the green “Clone or Download” button.</p>
+</div>
+<div id="new-rstudio-project-via-git-clone-1" class="section level4">
+<h4><span class="header-section-number">1.4.4.2</span> New RStudio Project via git clone</h4>
+<p>We have do this before and now repeat the steps.</p>
+<p>In RStudio, start a new Project:</p>
+<ul>
+<li><em>File&gt;New Project&gt;Version Control&gt;Git</em>. In the “repository URL” paste the URL of your new GitHub repository. It will be something like this <code>https://github.com/jennybc/myrepo.git</code>.</li>
+<li>Be intentional about where you create this Project.</li>
+<li>Suggest you check the box “Open in new session”.</li>
+<li>Click “Create Project” to create a new directory, which will be all of these things:
+<ul>
+<li>a directory or “folder” on your computer</li>
+<li>a Git repository, linked to a remote GitHub repository</li>
+<li>an RStudio Project</li>
+</ul></li>
+<li><strong>In the absence of other constraints, I suggest that all of your R projects have exactly this set-up.</strong></li>
+</ul>
+<p>This should download the <em>README.md</em> file that we created on GitHub in the previous step. Look in RStudio’s file browser pane for the <em>README.md</em> file.</p>
+</div>
+<div id="bring-your-existing-project-over" class="section level4">
+<h4><span class="header-section-number">1.4.4.3</span> Bring your existing project over</h4>
+<p>Using your favorite method of moving or copying files, copy the files that constitute your existing project into the directory for this new project.</p>
+<p>In RStudio, consult the Git pane and the file browser.</p>
+<ul>
+<li>Are you seeing all the files? They should be here if your move/copy was successful.</li>
+<li>Are they showing up in the Git pane with questions marks? They should be appearing as new untracked files.</li>
+</ul>
+</div>
+<div id="stage-and-commit" class="section level4">
+<h4><span class="header-section-number">1.4.4.4</span> Stage and commit</h4>
+<p>Commit your files to this repo. How?</p>
+<ul>
+<li>Click the “Git” tab in upper right pane</li>
+<li>Check “Staged” box for all files you want to commit.
+<ul>
+<li>Default: stage it.</li>
+<li>When to reconsider: this will all go to GitHub. So do consider if that is appropriate for each file. <strong>You can absolutely keep a file locally, without committing it to the Git repo and sending to GitHub</strong>. Just let it sit there in your Git pane, without being staged. No harm will be done. If this is a long-term situation, list the file in .gitignore.</li>
+</ul></li>
+<li>If you’re not already in the Git pop-up, click “Commit”</li>
+<li>Type a message in “Commit message”, such as “init”.</li>
+<li>Click “Commit”</li>
+</ul>
+</div>
+<div id="push-your-local-changes-to-github-1" class="section level4">
+<h4><span class="header-section-number">1.4.4.5</span> Push your local changes to GitHub</h4>
+<p>Click the green “Push” button to send your local changes to GitHub. You should see some message along these lines.</p>
+<pre><code>[master dc671f0] blah
+ 3 files changed, 22 insertions(+)
+ create mode 100644 .gitignore
+ create mode 100644 myrepo.Rproj</code></pre>
+</div>
+<div id="confirm-the-local-change-propagated-to-the-github-remote-1" class="section level4">
+<h4><span class="header-section-number">1.4.4.6</span> Confirm the local change propagated to the GitHub remote</h4>
+<p>Go back to the browser. I assume we’re still viewing your new GitHub repo.</p>
+<p>Refresh.</p>
+<p>You should see all the project files you committed there.</p>
+<p>If you click on “commits”,you should see one with the message “init”.</p>
+</div>
+<div id="the-end-1" class="section level4">
+<h4><span class="header-section-number">1.4.4.7</span> The end</h4>
+<p>Now just … repeat. Do work somewhere. Commit it. Push it or pull it depending on where you did it, but get local and remote “synced up”. Repeat.</p>
+<p><strong>Note that</strong> in general (and especially in future when collaborating with other developers) you will usually need to pull changes from the remote (GitHub) before pushing the local changes you have made. For this reason, it’s a good idea to try and get into the habit of pulling before you attempt to push.</p>
+</div>
+</div>
+<div id="existing-project-github-last" class="section level3">
+<h3><span class="header-section-number">1.4.5</span> Existing project, GitHub last</h3>
+<div id="make-or-verify-an-rstudio-project" class="section level4">
+<h4><span class="header-section-number">1.4.5.1</span> Make or verify an RStudio Project</h4>
+<p>We assume you’ve got your existing R project isolated in a directory on your computer.</p>
+<p>If it’s not already an RStudio Project, make it so:</p>
+<ul>
+<li>If you use the <a href="https://cran.r-project.org/web/packages/usethis/index.html">usethis</a> package, set the existing directory as the current project with <code>proj_set()</code>, then do <code>usethis::use_rstudio()</code>.</li>
+<li>Within RStudio you can do: File &gt; New Project &gt; Existing Directory and, if you wish, “Open in new session”.</li>
+</ul>
+<p>If your project is already an RStudio Project, launch it.</p>
+</div>
+<div id="make-or-verify-a-git-repo" class="section level4">
+<h4><span class="header-section-number">1.4.5.2</span> Make or verify a Git repo</h4>
+<p>You should be in RStudio now, in your project.</p>
+<p>Is it already a Git repository? The presence of the Git pane should tip you off. If yes, you’re done.</p>
+<p>If not, you have several options:</p>
+<ul>
+<li>If you have the <a href="https://cran.r-project.org/web/packages/usethis/index.html">usethis</a> package, call <code>usethis::use_git()</code>.</li>
+<li>In RStudio, go to <em>Tools &gt; Project Options … &gt; Git/SVN</em>. Under “Version control system”, select “Git”. Confirm New Git Repository? Yes!</li>
+<li>In the shell, in Project’s directory, do <code>git init</code>.</li>
+</ul>
+<p>If you used RStudio or usethis, the Project should re-launch in RStudio. Do that yourself if you did <code>git init</code>. RStudio should now have a Git pane.</p>
+</div>
+<div id="stage-and-commit-1" class="section level4">
+<h4><span class="header-section-number">1.4.5.3</span> Stage and commit</h4>
+<p>If your local project was already a Git repo and was up-to-date, move on. Otherwise, you probably need to stage and commit.</p>
+<ul>
+<li>Click the “Git” tab in upper right pane</li>
+<li>Check “Staged” box for all files you want to commit.
+<ul>
+<li>Default: stage everything</li>
+<li>When to do otherwise: this will all go to GitHub. So consider if that is appropriate for each file. <strong>You can absolutely keep a file locally, without committing it to the Git repo and sending to GitHub</strong>. Just let it sit there in your Git pane, without being staged. No harm will be done. If this is a long-term situation, list the file in .gitignore.</li>
+</ul></li>
+<li>If you’re not already in the Git pop-up, click “Commit”</li>
+<li>Type a message in “Commit message”.</li>
+<li>Click “Commit”</li>
+</ul>
+</div>
+<div id="make-and-connect-a-github-repo-option-1" class="section level4">
+<h4><span class="header-section-number">1.4.5.4</span> Make and connect a GitHub repo, option 1</h4>
+<p>If you use the <a href="https://cran.r-project.org/web/packages/usethis/index.html">usethis</a> package AND you have configured a GitHub Personal Access Token (PAT), do this in</p>
+<pre><code>R:usethis::use_github()</code></pre>
+<p>This will create a new repo on GitHub, add it as a remote, set up a tracking branch, and open it in your browser. Read the <code>use_github()</code> help to learn about its arguments and advice on configuring a PAT. This is extremely handy for a variety of workflows that call the GitHub API. Consider setting this up if you use usethis, devtools, or gh regularly.</p>
+</div>
+<div id="make-and-connect-a-github-repo-option-2" class="section level4">
+<h4><span class="header-section-number">1.4.5.5</span> Make and connect a GitHub repo, option 2</h4>
+<div id="make-a-new-repo-on-github" class="section level5">
+<h5><span class="header-section-number">1.4.5.5.1</span> Make a new repo on GitHub</h5>
+<p>We have do this before and now repeat the steps.</p>
+</div>
+<div id="connect-local-repo-to-github-repo" class="section level5">
+<h5><span class="header-section-number">1.4.5.5.2</span> Connect local repo to GitHub repo</h5>
+<p>You can do this in the shell or, with recent versions of RStudio, via RStudio.</p>
+</div>
+<div id="in-rstudio" class="section level5">
+<h5><span class="header-section-number">1.4.5.5.3</span> In RStudio</h5>
+<p>Click on the “two purple boxes and a white square” in the Git pane. Click “Add remote”. Paste the URL here and pick a remote name, almost certainly <code>origin</code>. Now “Add”.</p>
+<p>We should be back in the “New Branch” dialog (if not, click on the “two purple boxes and a white square” in the Git pane again). I assume you’re on the <code>master</code> branch want it to track <code>master</code> on GitHub. Enter <code>master</code> as the branch name and make sure “Sync branch with remote” is checked. Click “Create” (yes, even though the branch already exists). In the next dialog, choose “overwrite”.</p>
+</div>
+<div id="in-a-shell" class="section level5">
+<h5><span class="header-section-number">1.4.5.5.4</span> In a shell</h5>
+<p>In a shell, do this, substituting your URL:</p>
+<pre><code>git remote add origin https://github.com/jennybc/myrepo.git</code></pre>
+<p>Push and cement the tracking relationship between your local <code>master</code> branch and <code>master</code> on GitHub:</p>
+<pre><code>git push --set-upstream origin master</code></pre>
+</div>
+</div>
+<div id="confirm-the-local-files-propagated-to-the-github-remote" class="section level4">
+<h4><span class="header-section-number">1.4.5.6</span> Confirm the local files propagated to the GitHub remote</h4>
+<p>Go back to the browser. I assume we’re still viewing your new GitHub repo.</p>
+<p>Refresh.</p>
+<p>You should see all the project files you committed there.</p>
+<p>If this project already had a Git history, it should be reflected on GitHub.</p>
+</div>
+<div id="the-end-2" class="section level4">
+<h4><span class="header-section-number">1.4.5.7</span> The end</h4>
+<p>Now just … repeat. Do work somewhere. Commit it. Push it or pull it depending on where you did it, but get local and remote “synced up”. Repeat.</p>
+<p>Note that in general (and especially in future when collaborating with other developers) you will usually need to pull changes from the remote (GitHub) before pushing the local changes you have made. For this reason, it’s a good idea to try and get into the habit of pulling before you attempt to push.</p>
+</div>
+</div>
 </div>
 <div id="introduction-to-ggplot2" class="section level2">
 <h2><span class="header-section-number">1.5</span> Introduction to ggplot2</h2>
