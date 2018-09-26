@@ -1,0 +1,2584 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Quantitative Research Methods for Education</title>
+  <meta name="description" content="This is the 1st Edition">
+  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Quantitative Research Methods for Education" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This is the 1st Edition" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Quantitative Research Methods for Education" />
+  
+  <meta name="twitter:description" content="This is the 1st Edition" />
+  
+
+<meta name="author" content="Wenliang He">
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+
+<link rel="next" href="the-fundamentals-of-statistics.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+<script src="libs/htmlwidgets-1.2/htmlwidgets.js"></script>
+<script src="libs/d3-3.3.8/d3.min.js"></script>
+<script src="libs/dagre-0.4.0/dagre-d3.min.js"></script>
+<link href="libs/mermaid-0.3.0/dist/mermaid.css" rel="stylesheet" />
+<script src="libs/mermaid-0.3.0/dist/mermaid.slim.min.js"></script>
+<link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
+<script src="libs/chromatography-0.1/chromatography.js"></script>
+<script src="libs/DiagrammeR-binding-1.0.0/DiagrammeR.js"></script>
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#install"><i class="fa fa-check"></i><b>1.1</b> Software Installation</a><ul>
+<li class="chapter" data-level="1.1.1" data-path="index.html"><a href="index.html#install-r"><i class="fa fa-check"></i><b>1.1.1</b> Install R</a></li>
+<li class="chapter" data-level="1.1.2" data-path="index.html"><a href="index.html#install-rstudio"><i class="fa fa-check"></i><b>1.1.2</b> Install RStudio</a></li>
+<li class="chapter" data-level="1.1.3" data-path="index.html"><a href="index.html#install-r-packages"><i class="fa fa-check"></i><b>1.1.3</b> Install R Packages</a></li>
+<li class="chapter" data-level="1.1.4" data-path="index.html"><a href="index.html#update-r-and-r-packages"><i class="fa fa-check"></i><b>1.1.4</b> Update R and R Packages</a></li>
+<li class="chapter" data-level="1.1.5" data-path="index.html"><a href="index.html#register-a-github-account"><i class="fa fa-check"></i><b>1.1.5</b> Register a GitHub account</a></li>
+<li class="chapter" data-level="1.1.6" data-path="index.html"><a href="index.html#install-git"><i class="fa fa-check"></i><b>1.1.6</b> Install Git</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#introduction-to-r"><i class="fa fa-check"></i><b>1.2</b> Introduction to R</a><ul>
+<li class="chapter" data-level="1.2.1" data-path="index.html"><a href="index.html#r-basics"><i class="fa fa-check"></i><b>1.2.1</b> Essential Basics</a></li>
+<li class="chapter" data-level="1.2.2" data-path="index.html"><a href="index.html#atomic-dtype"><i class="fa fa-check"></i><b>1.2.2</b> Atomic Data Types</a></li>
+<li class="chapter" data-level="1.2.3" data-path="index.html"><a href="index.html#object-types"><i class="fa fa-check"></i><b>1.2.3</b> R Object Types</a></li>
+<li class="chapter" data-level="1.2.4" data-path="index.html"><a href="index.html#indexing"><i class="fa fa-check"></i><b>1.2.4</b> Indexing</a></li>
+<li class="chapter" data-level="1.2.5" data-path="index.html"><a href="index.html#factor"><i class="fa fa-check"></i><b>1.2.5</b> Factors</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#introduction-to-r-markdown"><i class="fa fa-check"></i><b>1.3</b> Introduction to R Markdown</a><ul>
+<li class="chapter" data-level="1.3.1" data-path="index.html"><a href="index.html#basic-markdown"><i class="fa fa-check"></i><b>1.3.1</b> Basic Markdown</a></li>
+<li class="chapter" data-level="1.3.2" data-path="index.html"><a href="index.html#r-markdown"><i class="fa fa-check"></i><b>1.3.2</b> R Markdown</a></li>
+<li class="chapter" data-level="1.3.3" data-path="index.html"><a href="index.html#mathematical-symbols-in-latex"><i class="fa fa-check"></i><b>1.3.3</b> Mathematical Symbols in Latex</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#introduction-to-git-github"><i class="fa fa-check"></i><b>1.4</b> Introduction to Git &amp; GitHub</a><ul>
+<li class="chapter" data-level="1.4.1" data-path="index.html"><a href="index.html#whats-git-github"><i class="fa fa-check"></i><b>1.4.1</b> what’s Git &amp; GitHub</a></li>
+<li class="chapter" data-level="1.4.2" data-path="index.html"><a href="index.html#connect-git-github-rstudio"><i class="fa fa-check"></i><b>1.4.2</b> Connect Git, GitHub, Rstudio</a></li>
+<li class="chapter" data-level="1.4.3" data-path="index.html"><a href="index.html#new-project-github-first"><i class="fa fa-check"></i><b>1.4.3</b> New project, GitHub first</a></li>
+<li class="chapter" data-level="1.4.4" data-path="index.html"><a href="index.html#existing-project-github-first"><i class="fa fa-check"></i><b>1.4.4</b> Existing project, GitHub first</a></li>
+<li class="chapter" data-level="1.4.5" data-path="index.html"><a href="index.html#existing-project-github-last"><i class="fa fa-check"></i><b>1.4.5</b> Existing project, GitHub last</a></li>
+</ul></li>
+<li class="chapter" data-level="1.5" data-path="index.html"><a href="index.html#introduction-to-ggplot2"><i class="fa fa-check"></i><b>1.5</b> Introduction to ggplot2</a></li>
+<li class="chapter" data-level="1.6" data-path="index.html"><a href="index.html#introduction-to-shiny"><i class="fa fa-check"></i><b>1.6</b> Introduction to Shiny</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="the-fundamentals-of-statistics.html"><a href="the-fundamentals-of-statistics.html"><i class="fa fa-check"></i><b>2</b> The Fundamentals of Statistics</a><ul>
+<li class="chapter" data-level="2.1" data-path="the-fundamentals-of-statistics.html"><a href="the-fundamentals-of-statistics.html#why-studying-statistics"><i class="fa fa-check"></i><b>2.1</b> Why Studying Statistics</a><ul>
+<li class="chapter" data-level="2.1.1" data-path="the-fundamentals-of-statistics.html"><a href="the-fundamentals-of-statistics.html#understanding-the-world"><i class="fa fa-check"></i><b>2.1.1</b> Understanding the World</a></li>
+<li class="chapter" data-level="2.1.2" data-path="the-fundamentals-of-statistics.html"><a href="the-fundamentals-of-statistics.html#science-vs.philosophy"><i class="fa fa-check"></i><b>2.1.2</b> Science vs. Philosophy</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="the-fundamentals-of-statistics.html"><a href="the-fundamentals-of-statistics.html#the-big-picture"><i class="fa fa-check"></i><b>2.2</b> The Big Picture</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="the-fundamentals-of-statistics.html"><a href="the-fundamentals-of-statistics.html#central-themes-in-statistics"><i class="fa fa-check"></i><b>2.2.1</b> Central Themes in Statistics</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="the-fundamentals-of-statistics.html"><a href="the-fundamentals-of-statistics.html#the-fundamentals-of-statistics-1"><i class="fa fa-check"></i><b>2.3</b> The Fundamentals of Statistics</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="the-fundamentals-of-statistics.html"><a href="the-fundamentals-of-statistics.html#storing-data-in-tables"><i class="fa fa-check"></i><b>2.3.1</b> Storing Data in Tables</a></li>
+<li class="chapter" data-level="2.3.2" data-path="the-fundamentals-of-statistics.html"><a href="the-fundamentals-of-statistics.html#variable-types"><i class="fa fa-check"></i><b>2.3.2</b> Variable Types</a></li>
+<li class="chapter" data-level="2.3.3" data-path="the-fundamentals-of-statistics.html"><a href="the-fundamentals-of-statistics.html#exploratory-data-analysis-checking-distributions"><i class="fa fa-check"></i><b>2.3.3</b> Exploratory Data Analysis: Checking Distributions</a></li>
+<li class="chapter" data-level="2.3.4" data-path="the-fundamentals-of-statistics.html"><a href="the-fundamentals-of-statistics.html#normal-distributions"><i class="fa fa-check"></i><b>2.3.4</b> Normal Distributions</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="statistical-inference.html"><a href="statistical-inference.html"><i class="fa fa-check"></i><b>3</b> Statistical Inference</a><ul>
+<li class="chapter" data-level="3.1" data-path="statistical-inference.html"><a href="statistical-inference.html#random-variable"><i class="fa fa-check"></i><b>3.1</b> Random Variable</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="statistical-inference.html"><a href="statistical-inference.html#iid---independently-and-identically-distributed"><i class="fa fa-check"></i><b>3.1.1</b> IID - Independently and Identically Distributed</a></li>
+<li class="chapter" data-level="3.1.2" data-path="statistical-inference.html"><a href="statistical-inference.html#random-variable-vs.case"><i class="fa fa-check"></i><b>3.1.2</b> Random Variable vs. Case</a></li>
+<li class="chapter" data-level="3.1.3" data-path="statistical-inference.html"><a href="statistical-inference.html#properties-of-a-random-variable"><i class="fa fa-check"></i><b>3.1.3</b> Properties of a Random Variable</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="statistical-inference.html"><a href="statistical-inference.html#central-limit-theorem"><i class="fa fa-check"></i><b>3.2</b> Central Limit Theorem</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="statistical-inference.html"><a href="statistical-inference.html#presenting-central-limit-theorem"><i class="fa fa-check"></i><b>3.2.1</b> Presenting Central Limit Theorem</a></li>
+<li class="chapter" data-level="3.2.2" data-path="statistical-inference.html"><a href="statistical-inference.html#understanding-central-limit-theorem"><i class="fa fa-check"></i><b>3.2.2</b> Understanding Central Limit Theorem</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="statistical-inference.html"><a href="statistical-inference.html#statistical-inference-1"><i class="fa fa-check"></i><b>3.3</b> Statistical Inference</a><ul>
+<li class="chapter" data-level="3.3.1" data-path="statistical-inference.html"><a href="statistical-inference.html#the-diamond-expert"><i class="fa fa-check"></i><b>3.3.1</b> The Diamond Expert</a></li>
+<li class="chapter" data-level="3.3.2" data-path="statistical-inference.html"><a href="statistical-inference.html#hypothesis-testing"><i class="fa fa-check"></i><b>3.3.2</b> Hypothesis Testing</a></li>
+<li class="chapter" data-level="3.3.3" data-path="statistical-inference.html"><a href="statistical-inference.html#hypothesis-testing-with-unknown-variance"><i class="fa fa-check"></i><b>3.3.3</b> Hypothesis Testing with Unknown Variance</a></li>
+<li class="chapter" data-level="3.3.4" data-path="statistical-inference.html"><a href="statistical-inference.html#examples-of-hypothesis-testing"><i class="fa fa-check"></i><b>3.3.4</b> Examples of Hypothesis Testing</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="common-statistical-tests.html"><a href="common-statistical-tests.html"><i class="fa fa-check"></i><b>4</b> Common Statistical Tests</a><ul>
+<li class="chapter" data-level="4.1" data-path="common-statistical-tests.html"><a href="common-statistical-tests.html#dummy-x---continuous-y"><i class="fa fa-check"></i><b>4.1</b> Dummy (X) - Continuous (Y)</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="common-statistical-tests.html"><a href="common-statistical-tests.html#two-sample-t-test"><i class="fa fa-check"></i><b>4.1.1</b> Two-sample T-Test</a></li>
+<li class="chapter" data-level="4.1.2" data-path="common-statistical-tests.html"><a href="common-statistical-tests.html#statistical-power"><i class="fa fa-check"></i><b>4.1.2</b> Statistical Power</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="common-statistical-tests.html"><a href="common-statistical-tests.html#dummy-x---dummy-y"><i class="fa fa-check"></i><b>4.2</b> Dummy (X) - Dummy (Y)</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="common-statistical-tests.html"><a href="common-statistical-tests.html#basics"><i class="fa fa-check"></i><b>4.2.1</b> Basics</a></li>
+<li class="chapter" data-level="4.2.2" data-path="common-statistical-tests.html"><a href="common-statistical-tests.html#difference-in-proportions"><i class="fa fa-check"></i><b>4.2.2</b> Difference in Proportions</a></li>
+<li class="chapter" data-level="4.2.3" data-path="common-statistical-tests.html"><a href="common-statistical-tests.html#relative-risks"><i class="fa fa-check"></i><b>4.2.3</b> Relative Risks</a></li>
+<li class="chapter" data-level="4.2.4" data-path="common-statistical-tests.html"><a href="common-statistical-tests.html#odds-ratio"><i class="fa fa-check"></i><b>4.2.4</b> Odds Ratio</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="common-statistical-tests.html"><a href="common-statistical-tests.html#categorical-x---dummy-y"><i class="fa fa-check"></i><b>4.3</b> Categorical (X) - Dummy (Y)</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="common-statistical-tests.html"><a href="common-statistical-tests.html#basics-1"><i class="fa fa-check"></i><b>4.3.1</b> Basics</a></li>
+<li class="chapter" data-level="4.3.2" data-path="common-statistical-tests.html"><a href="common-statistical-tests.html#chi-squared-test"><i class="fa fa-check"></i><b>4.3.2</b> Chi-squared Test</a></li>
+<li class="chapter" data-level="4.3.3" data-path="common-statistical-tests.html"><a href="common-statistical-tests.html#g-square-test"><i class="fa fa-check"></i><b>4.3.3</b> G-square Test</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="common-statistical-tests.html"><a href="common-statistical-tests.html#categorical-x---continuous-y"><i class="fa fa-check"></i><b>4.4</b> Categorical (X) - Continuous (Y)</a><ul>
+<li class="chapter" data-level="4.4.1" data-path="common-statistical-tests.html"><a href="common-statistical-tests.html#anova"><i class="fa fa-check"></i><b>4.4.1</b> ANOVA</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="linear-regression.html"><a href="linear-regression.html"><i class="fa fa-check"></i><b>5</b> Linear Regression</a><ul>
+<li class="chapter" data-level="5.1" data-path="linear-regression.html"><a href="linear-regression.html#table-of-contents"><i class="fa fa-check"></i><b>5.1</b> Table of Contents</a></li>
+<li class="chapter" data-level="5.2" data-path="linear-regression.html"><a href="linear-regression.html#pearson-product-moment-correlation-coefficient"><i class="fa fa-check"></i><b>5.2</b> Pearson Product-Moment Correlation Coefficient</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="linear-regression.html"><a href="linear-regression.html#definition"><i class="fa fa-check"></i><b>5.2.1</b> Definition</a></li>
+<li class="chapter" data-level="5.2.2" data-path="linear-regression.html"><a href="linear-regression.html#properties-of-pearson-correlation"><i class="fa fa-check"></i><b>5.2.2</b> Properties of Pearson Correlation</a></li>
+<li class="chapter" data-level="5.2.3" data-path="linear-regression.html"><a href="linear-regression.html#limitations-of-pearson-correlation"><i class="fa fa-check"></i><b>5.2.3</b> Limitations of Pearson Correlation</a></li>
+<li class="chapter" data-level="5.2.4" data-path="linear-regression.html"><a href="linear-regression.html#other-issues-on-the-usage-of-pearson-correlation"><i class="fa fa-check"></i><b>5.2.4</b> Other Issues on the Usage of Pearson Correlation</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="linear-regression.html"><a href="linear-regression.html#simple-linear-regression"><i class="fa fa-check"></i><b>5.3</b> Simple Linear Regression</a><ul>
+<li class="chapter" data-level="5.3.1" data-path="linear-regression.html"><a href="linear-regression.html#independent-variable-from-categorical-to-continuous"><i class="fa fa-check"></i><b>5.3.1</b> Independent Variable: From Categorical to Continuous</a></li>
+<li class="chapter" data-level="5.3.2" data-path="linear-regression.html"><a href="linear-regression.html#fitting-a-straight-line-to-data"><i class="fa fa-check"></i><b>5.3.2</b> Fitting a Straight Line to Data</a></li>
+<li class="chapter" data-level="5.3.3" data-path="linear-regression.html"><a href="linear-regression.html#the-least-squares-method"><i class="fa fa-check"></i><b>5.3.3</b> The Least-Squares Method</a></li>
+<li class="chapter" data-level="5.3.4" data-path="linear-regression.html"><a href="linear-regression.html#interpretations-of-regression-coefficients"><i class="fa fa-check"></i><b>5.3.4</b> Interpretations of Regression Coefficients</a></li>
+<li class="chapter" data-level="5.3.5" data-path="linear-regression.html"><a href="linear-regression.html#understanding-the-estimators"><i class="fa fa-check"></i><b>5.3.5</b> Understanding the Estimators</a></li>
+<li class="chapter" data-level="5.3.6" data-path="linear-regression.html"><a href="linear-regression.html#residual-variance"><i class="fa fa-check"></i><b>5.3.6</b> Residual Variance</a></li>
+<li class="chapter" data-level="5.3.7" data-path="linear-regression.html"><a href="linear-regression.html#standard-error-of-the-slope"><i class="fa fa-check"></i><b>5.3.7</b> Standard Error of the Slope</a></li>
+<li class="chapter" data-level="5.3.8" data-path="linear-regression.html"><a href="linear-regression.html#effect-size-and-standardized-coefficients"><i class="fa fa-check"></i><b>5.3.8</b> Effect Size and Standardized Coefficients</a></li>
+<li class="chapter" data-level="5.3.9" data-path="linear-regression.html"><a href="linear-regression.html#anova-for-regression"><i class="fa fa-check"></i><b>5.3.9</b> ANOVA for Regression</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="linear-regression.html"><a href="linear-regression.html#non-linear-relations"><i class="fa fa-check"></i><b>5.4</b> Non-linear Relations</a><ul>
+<li class="chapter" data-level="5.4.1" data-path="linear-regression.html"><a href="linear-regression.html#log-transformations"><i class="fa fa-check"></i><b>5.4.1</b> Log-transformations</a></li>
+<li class="chapter" data-level="5.4.2" data-path="linear-regression.html"><a href="linear-regression.html#quadratic-relations"><i class="fa fa-check"></i><b>5.4.2</b> Quadratic Relations</a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="linear-regression.html"><a href="linear-regression.html#the-assumptions-of-simple-linear-regression"><i class="fa fa-check"></i><b>5.5</b> The Assumptions of Simple Linear Regression</a></li>
+<li class="chapter" data-level="5.6" data-path="linear-regression.html"><a href="linear-regression.html#assumption-diagnostics"><i class="fa fa-check"></i><b>5.6</b> Assumption Diagnostics</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="multiple-linear-regression.html"><a href="multiple-linear-regression.html"><i class="fa fa-check"></i><b>6</b> Multiple Linear Regression</a><ul>
+<li class="chapter" data-level="6.1" data-path="multiple-linear-regression.html"><a href="multiple-linear-regression.html#regression-models---the-base-form"><i class="fa fa-check"></i><b>6.1</b> Regression Models - The Base Form</a><ul>
+<li class="chapter" data-level="6.1.1" data-path="multiple-linear-regression.html"><a href="multiple-linear-regression.html#model-specification-with-population-parameters"><i class="fa fa-check"></i><b>6.1.1</b> Model Specification with Population Parameters</a></li>
+<li class="chapter" data-level="6.1.2" data-path="multiple-linear-regression.html"><a href="multiple-linear-regression.html#model-specification-with-sample-parameters"><i class="fa fa-check"></i><b>6.1.2</b> Model Specification with Sample Parameters</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="multiple-linear-regression.html"><a href="multiple-linear-regression.html#the-ordinary-least-squres-method"><i class="fa fa-check"></i><b>6.2</b> The Ordinary Least-Squres Method</a><ul>
+<li class="chapter" data-level="6.2.1" data-path="multiple-linear-regression.html"><a href="multiple-linear-regression.html#interpretations-of-regression-coefficients-1"><i class="fa fa-check"></i><b>6.2.1</b> Interpretations of Regression Coefficients</a></li>
+<li class="chapter" data-level="6.2.2" data-path="multiple-linear-regression.html"><a href="multiple-linear-regression.html#residual-variance-1"><i class="fa fa-check"></i><b>6.2.2</b> Residual Variance</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="multiple-linear-regression.html"><a href="multiple-linear-regression.html#standard-errors-of-regression-coefficients"><i class="fa fa-check"></i><b>6.3</b> Standard Errors of Regression Coefficients</a><ul>
+<li class="chapter" data-level="6.3.1" data-path="multiple-linear-regression.html"><a href="multiple-linear-regression.html#variance-inflation-factor"><i class="fa fa-check"></i><b>6.3.1</b> Variance Inflation Factor</a></li>
+<li class="chapter" data-level="6.3.2" data-path="multiple-linear-regression.html"><a href="multiple-linear-regression.html#significance-of-vif"><i class="fa fa-check"></i><b>6.3.2</b> Significance of VIF</a></li>
+<li class="chapter" data-level="6.3.3" data-path="multiple-linear-regression.html"><a href="multiple-linear-regression.html#multicollinearity"><i class="fa fa-check"></i><b>6.3.3</b> Multicollinearity</a></li>
+<li class="chapter" data-level="6.3.4" data-path="multiple-linear-regression.html"><a href="multiple-linear-regression.html#influencing-factors-on-standard-errors"><i class="fa fa-check"></i><b>6.3.4</b> Influencing Factors on Standard Errors</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="multiple-linear-regression.html"><a href="multiple-linear-regression.html#r2-and-anova-for-multiple-regression"><i class="fa fa-check"></i><b>6.4</b> <span class="math inline">\(R^2\)</span> and ANOVA for Multiple Regression</a></li>
+<li class="chapter" data-level="6.5" data-path="multiple-linear-regression.html"><a href="multiple-linear-regression.html#regression-models-extended---categorical-features"><i class="fa fa-check"></i><b>6.5</b> Regression Models Extended - Categorical Features</a><ul>
+<li class="chapter" data-level="6.5.1" data-path="multiple-linear-regression.html"><a href="multiple-linear-regression.html#dummy-variables"><i class="fa fa-check"></i><b>6.5.1</b> Dummy Variables</a></li>
+<li class="chapter" data-level="6.5.2" data-path="multiple-linear-regression.html"><a href="multiple-linear-regression.html#nominal-variables"><i class="fa fa-check"></i><b>6.5.2</b> Nominal Variables</a></li>
+</ul></li>
+<li class="chapter" data-level="6.6" data-path="multiple-linear-regression.html"><a href="multiple-linear-regression.html#regression-models-extended---interaction-effects"><i class="fa fa-check"></i><b>6.6</b> Regression Models Extended - Interaction Effects</a><ul>
+<li class="chapter" data-level="6.6.1" data-path="multiple-linear-regression.html"><a href="multiple-linear-regression.html#dummy-dummy-interactions"><i class="fa fa-check"></i><b>6.6.1</b> Dummy-Dummy Interactions</a></li>
+<li class="chapter" data-level="6.6.2" data-path="multiple-linear-regression.html"><a href="multiple-linear-regression.html#dummy-continuous-interactions"><i class="fa fa-check"></i><b>6.6.2</b> Dummy-Continuous Interactions</a></li>
+<li class="chapter" data-level="6.6.3" data-path="multiple-linear-regression.html"><a href="multiple-linear-regression.html#continuous-continuous-interactions"><i class="fa fa-check"></i><b>6.6.3</b> Continuous-Continuous Interactions</a></li>
+</ul></li>
+<li class="chapter" data-level="6.7" data-path="multiple-linear-regression.html"><a href="multiple-linear-regression.html#regression-models-extended---nonlinear-relations"><i class="fa fa-check"></i><b>6.7</b> Regression Models Extended - Nonlinear Relations</a></li>
+<li class="chapter" data-level="6.8" data-path="multiple-linear-regression.html"><a href="multiple-linear-regression.html#model-comparision-evaluation"><i class="fa fa-check"></i><b>6.8</b> Model Comparision &amp; Evaluation</a><ul>
+<li class="chapter" data-level="6.8.1" data-path="multiple-linear-regression.html"><a href="multiple-linear-regression.html#f-test-for-nested-models"><i class="fa fa-check"></i><b>6.8.1</b> F-test for Nested Models</a></li>
+<li class="chapter" data-level="6.8.2" data-path="multiple-linear-regression.html"><a href="multiple-linear-regression.html#adjusted-r-squared"><i class="fa fa-check"></i><b>6.8.2</b> Adjusted R-Squared</a></li>
+<li class="chapter" data-level="6.8.3" data-path="multiple-linear-regression.html"><a href="multiple-linear-regression.html#information-criteria"><i class="fa fa-check"></i><b>6.8.3</b> Information Criteria</a></li>
+</ul></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Quantitative Research Methods for Education</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="header">
+<h1 class="title">Quantitative Research Methods for Education</h1>
+<h4 class="author"><em>Wenliang He</em></h4>
+<<<<<<< HEAD
+<h4 class="date"><em>Updated on 2018-09-26</em></h4>
+=======
+<h4 class="date"><em>Updated on 2018-09-25</em></h4>
+>>>>>>> f10972dd30841ef5f8a14aa69095dd494299dde9
+</div>
+<div id="introduction" class="section level1">
+<h1><span class="header-section-number">1</span> Introduction</h1>
+<p>Before diving into Statistics, you need to install some software, notably R and RStudio, and register for some accounts.</p>
+<div id="install" class="section level2">
+<h2><span class="header-section-number">1.1</span> Software Installation</h2>
+<div id="install-r" class="section level3">
+<h3><span class="header-section-number">1.1.1</span> Install R</h3>
+<p><a href="https://www.r-project.org/">R</a> is a free software environment for statistical computing and graphics.</p>
+<p><a href="https://cran.r-project.org/">CRAN</a>, <strong>C</strong>omprehensive <strong>R</strong> <strong>A</strong>rchive <strong>N</strong>etwork, is a network of web servers around the world that store identical, up-to-date versions of various code for R.</p>
+<ol style="list-style-type: decimal">
+<li>Choose a <a href="https://cran.r-project.org/mirrors.html">CRAN mirror</a> that is close to you.
+<ul>
+<li>scroll down the list to your country (e.g. China)</li>
+<li>choose a link hosted by an institution that is close to you</li>
+<li><code>Warning</code>: If you are not using a mirror, but visiting the official link (<a href="https://cran.r-project.org/" class="uri">https://cran.r-project.org/</a>) to download R. The downloading speed can be painfully slow. If so, consider using a mirror.</li>
+</ul></li>
+<li>Choose the link corresponding to your operating system.</li>
+</ol>
+<div class="figure">
+<img src="images/rdownload_chooseOS.png" />
+
+</div>
+<ol start="3" style="list-style-type: decimal">
+<li>Windows Users
+<ul>
+<li>click on the link <code>install R for the first time</code></li>
+<li>download the lastest version of R that looks similar to <code>R-3.5.1</code> as shown below</li>
+<li><code>Note</code>: The R version shown below does not distinguish between 32-bit and 64-bit Windows, since two versions are combined into one file to simplify the download. But you would still need to choose one during the installation process (see details below).</li>
+</ul></li>
+</ol>
+<div class="figure">
+<img src="images/rdownload_winexe.png" />
+
+</div>
+<ol start="4" style="list-style-type: decimal">
+<li>Mac Users
+<ul>
+<li>scroll down to the <code>Lastest release</code> section</li>
+<li>click to download the lastest version that looks similar to <code>R-3.5.1.pkg</code></li>
+</ul></li>
+</ol>
+<div class="figure">
+<img src="images/rdownload_macpkg.png" />
+
+</div>
+<ol start="5" style="list-style-type: decimal">
+<li>Install R
+<ul>
+<li><code>Warning</code>: We highly recommend you to <strong>use English as the default language</strong> for your R. You will search for help on the internet at some point. It is simply easier to communicate when help seekers and help givers are speaking the same language.</li>
+<li><code>Warning</code>: We highly recommend you to <strong>use the default directory (默认路径)</strong> for installation. Third-party packages will look for R. We do not want to make it too hard for them.</li>
+<li>For Mac users, the installation process should be straightforward.</li>
+<li>For Windows users, you need to find out whether your Windows is a 32-bit or 64-bit system and install the one identical to your system. To find out which version is your Windows, right-click on <code>我的电脑</code> -&gt; <code>属性</code> -&gt; <code>系统类型</code>. This is where you can find the information.</li>
+</ul></li>
+</ol>
+</div>
+<div id="install-rstudio" class="section level3">
+<h3><span class="header-section-number">1.1.2</span> Install RStudio</h3>
+<p><a href="https://www.rstudio.com/">RStudio</a> is an IDE (<strong>I</strong>ntegrated <strong>D</strong>evelopment <strong>E</strong>nvironment), a powerful user interface development specifically for R. For individual use, use can download the free open source edition of RStudio.</p>
+<p><code>Note</code>: You can choose to install a <a href="https://www.rstudio.com/products/rstudio/download/preview/">Preview release of RStudio</a>. The preview release has more features than standard release. However, the downloading speed can be painfully slow. In the following, we will demonstrate installation of the standard release.</p>
+<ol style="list-style-type: decimal">
+<li>Go to the <a href="https://www.rstudio.com/products/rstudio/download/">official website for download</a> and click on the <strong>DOWNLOAD</strong> button for <strong>RStudio Desktop</strong> under the Open Source License, which is completely free.</li>
+</ol>
+<div class="figure">
+<img src="images/rstudiodownload_free.png" />
+
+</div>
+<ol start="2" style="list-style-type: decimal">
+<li>Choose the link corresponding to your operating system.</li>
+</ol>
+<div class="figure">
+<img src="images/rstudiodownload_chooseOS.png" />
+
+</div>
+<ol start="3" style="list-style-type: decimal">
+<li>Install RStudio</li>
+</ol>
+<p>Run the downloaded program and use the <strong>default directory</strong> for installation. The rest of the installation process should be straightfoward.</p>
+<ol start="4" style="list-style-type: decimal">
+<li>Open RStudio</li>
+</ol>
+<p>The first time you open Rstudio, you might encounter the following error message, which suggests that you are not authorized to run the program.</p>
+<p>To address it, right-click on <code>rstudio.exe</code> -&gt; <code>属性</code> -&gt; <code>兼容性</code> -&gt; <code>以管理员身份运行</code>.</p>
+<div class="figure">
+<img src="wiki_images/install_RStudio_error.png" />
+
+</div>
+<ol start="5" style="list-style-type: decimal">
+<li>Change Settings</li>
+</ol>
+<p>By default, RStudio is using a CRAN mirror hosted in the US. If you are outside the US (e.g. in China), you may have trouble fetching data/code into R. The solution is to use a local CRAN mirror.</p>
+<ul>
+<li>after openning RStudio, find <code>Tools</code> -&gt; <code>Global Options</code> -&gt; <code>Packages</code></li>
+<li>under <code>CRAN mirror</code>, click <code>Change...</code></li>
+<li>scroll down the list and select the one mirror that is close to you</li>
+<li>click <code>OK</code> to commit the change</li>
+</ul>
+<p>Now that you have installed R and RStudio, some additional resources are available.</p>
+<ul>
+<li><a href="http://stat545.com/block002_hello-r-workspace-wd-project.html">Take a quick look at R and RStudio</a>: You can checkout other links later. Highly recommend to take a look at this link to familiar yourself with R and RStudio. <code>TODO</code>: make a video on this</li>
+<li><a href="https://support.rstudio.com/hc/en-us/articles/200549016-Customizing-RStudio">Customizing RStudio</a>: It contains more information about changing the default settings of RStudio. You may want to check out the sections on <strong>Source Code</strong> or choose a different Editor theme under <strong>Appearance</strong> to make your RStudio looks different/cooler.</li>
+<li><a href="https://support.rstudio.com/hc/en-us/articles/200711853-Keyboard-Shortcuts">Keyboard Shortcuts</a>: Shortcuts are always helpful. This help page actually sits on your own computer already. In RStudio menu, <code>Tools =&gt; Keyboard Shortcuts Help</code>, which will gives you identical contents.</li>
+<li><a href="https://support.rstudio.com/hc/en-us/sections/200107586-Using-the-RStudio-IDE">RStudio IDE Documentation</a>: The two external links above are coming from this documentation, which contains much more information regarding varied topics of using RStudio IDE.</li>
+<li><a href="https://support.rstudio.com/hc/en-us/categories/200035113-Documentation">RStudio Documentation</a>: Official documentation on varied RStudio<sup>TM</sup> products, including RStudio IDE and more.</li>
+</ul>
+</div>
+<div id="install-r-packages" class="section level3">
+<h3><span class="header-section-number">1.1.3</span> Install R Packages</h3>
+<p>R is an extensible system and many people share useful code they have developed as a package via CRAN and/or GitHub.</p>
+<div id="install-from-cran" class="section level4">
+<h4><span class="header-section-number">1.1.3.1</span> Install from CRAN</h4>
+<p>This is the most commonly used method to install R packages directly from CRAN. In the following, we will install the <code>ggplot2</code> package and use it as a running example.</p>
+<p>In the R console, you type</p>
+<pre><code>install.packages(&quot;ggplot2&quot;)</code></pre>
+<p>Note, the input must be a <strong>string</strong> as enclosed by double quotes <code>&quot;&quot;</code>.</p>
+<p>This is usually good enough. But to be extra-careful, the <code>dependencies=TRUE</code> argument is often added to explicitly tell R to install any additional packages that <code>ggplot2</code> requires to run its functions.</p>
+<pre><code>install.packages(&quot;ggplot2&quot;, dependencies = TRUE)</code></pre>
+<p>By default, <code>dependencies = NA</code> means <code>c(&quot;Depends&quot;, &quot;Imports&quot;, &quot;LinkingTo&quot;)</code>. Setting <code>dependencies = TRUE</code> adds <code>&quot;Suggests&quot;</code> to the previous list, which tells R to install all the packages needed to run a package, their examples, tests and vignettes.</p>
+<p>For more on managing R packages, please refer to the <a href="https://cran.r-project.org/doc/manuals/R-admin.html#Add_002don-packages">R Installation and Administration Manual</a>.</p>
+<p>To install multiple packages, e.g., <code>pck1</code> and <code>pck2</code>, use</p>
+<pre><code>install.packages(c(&quot;pkg1&quot;, &quot;pkg2&quot;), dependencies = TRUE)</code></pre>
+<blockquote>
+<p><strong>Practice</strong>: Install the following packages that will be required later in the course.</p>
+<ul>
+<li><a href="https://ggplot2.tidyverse.org/">ggplot2</a>: A good alternative to R’s base graphing packages.</li>
+<li><a href="https://plot.ly/r/">plotly</a>: A tool that enhances ggplot2 by translating static plots into interactive graphs</li>
+<li><a href="http://rstudio.github.io/dygraphs/">dygraphs</a>: A graphing tool specifically designed for charting time-series data in R</li>
+<li><a href="http://rich-iannone.github.io/DiagrammeR/docs.html">DiagrammeR</a>: A tool for creating diagrams and flowcharts using Graphviz and Mermaid</li>
+<li><a href="https://rmarkdown.rstudio.com/">rmarkdown</a>:</li>
+<li><a href="https://bookdown.org/yihui/bookdown/">bookdown</a>: A tool for combining multiple R markdown files into a book</li>
+<li><a href="http://shiny.rstudio.com/">shiny</a>: An R package to build interactive web apps</li>
+<li><a href="https://rstudio.github.io/shinythemes/">shinythemes</a>: More themes for shiny apps</li>
+<li><a href="https://rstudio.github.io/DT/">DT</a>: A tool to create dynamic tables</li>
+<li><a href="https://dplyr.tidyverse.org/">dplyr</a>: A package to perform data manipulation</li>
+</ul>
+</blockquote>
+<p><br> The function defined below would (a) check if required packages exist, (b) install, if not already installed, and (c) load the packages.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">force_load &lt;-<span class="st"> </span><span class="cf">function</span>(pkgs, <span class="dt">use_require=</span><span class="ot">FALSE</span>) {
+  <span class="co"># https://gist.github.com/smithdanielle/9913897</span>
+  <span class="co"># https://cran.r-project.org/web/packages/install.load/README.html</span>
+  new_pkgs &lt;-<span class="st"> </span>pkgs[<span class="op">!</span>(pkgs <span class="op">%in%</span><span class="st"> </span><span class="kw">installed.packages</span>()[, <span class="st">&quot;Package&quot;</span>])]
+  <span class="cf">if</span> (<span class="kw">length</span>(new_pkgs)) 
+    <span class="kw">install.packages</span>(new_pkgs, <span class="dt">dependencies =</span> <span class="ot">TRUE</span>)
+  <span class="cf">if</span> (use_require) {
+    loaded =<span class="st"> </span><span class="kw">sapply</span>(pkgs, require, <span class="dt">character.only =</span> <span class="ot">TRUE</span>)
+  } <span class="cf">else</span> {
+    loaded =<span class="st"> </span><span class="kw">sapply</span>(pkgs, library, <span class="dt">character.only =</span> <span class="ot">TRUE</span>)
+  }
+  <span class="kw">return</span>(loaded)
+}
+
+packages =<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;ggplot2&quot;</span>, <span class="st">&quot;ggthemes&quot;</span>, <span class="st">&quot;rmarkdown&quot;</span>, <span class="st">&quot;bookdown&quot;</span>, <span class="st">&quot;shiny&quot;</span>, <span class="st">&quot;Hmisc&quot;</span>)
+loaded =<span class="st"> </span><span class="kw">force_load</span>(packages)
+loaded</code></pre></div>
+</div>
+<div id="install-from-source-code" class="section level4">
+<h4><span class="header-section-number">1.1.3.2</span> Install from Source Code</h4>
+<p>Occasionally, you might encounter an error message telling you that the package to be installed requires an R version greater than the one you currently have. You can, of course, choose to re-install R, which might necessitate re-installing all the other packages that are previously installed. What a hassle! Alternatively, you can choose to download the source code for the package and install from the source code directly.</p>
+<ol style="list-style-type: decimal">
+<li>In any search engine (e.g. www.baidu.com), search for <code>CRAN package ggplot2</code>. This should lead you to the <code>ggplot2</code> package hosted on CRAN.</li>
+</ol>
+<div class="figure">
+<img src="images/rpackage_search.png" />
+
+</div>
+<ol start="2" style="list-style-type: decimal">
+<li>Scroll down to the <strong>Downloads</strong> section, next to <strong>Package source</strong>, click on the link to the file that ends with <code>tar.gz</code>. Save it under a local directory where you can easily find it.</li>
+</ol>
+<div class="figure">
+<img src="images/rpackage_source.png" />
+
+</div>
+<ol start="3" style="list-style-type: decimal">
+<li>In R console, type the following</li>
+</ol>
+<pre><code>install.packages(&quot;download_path/ggplot2_3.0.0.tar.gz&quot;, repos = NULL, type = &quot;source&quot;)</code></pre>
+<p>where <code>download_path</code> is the directory that stores the downloaded source file.</p>
+</div>
+<div id="commonly-encountered-problems" class="section level4">
+<h4><span class="header-section-number">1.1.3.3</span> Commonly Encountered Problems</h4>
+<p>While installing packages, one type of error messages has the following pattern.</p>
+<pre><code>Warning in install.packages :
+  error message</code></pre>
+<p>The specific <code>error message</code> you might encounter can be very different from time to time. Some examples are as follows.</p>
+<pre><code>Warning in install.packages :
+  InternetOpenUrl failed: &#39;&#39;
+
+Warning in install.packages :
+  package ‘packagename’ is not available (for R version 3.5.0)
+
+Warning in install.packages :
+  unable to access index for repository https://cran.rstudio.com/src/contrib:
+  cannot open URL &#39;https://cran.rstudio.com/src/contrib/PACKAGES&#39;
+Installing package into ‘C:/Users/YourUserName/Documents/R/win-library/3.5’
+(as ‘lib’ is unspecified)
+
+Warning in install.packages :
+  unable to access index for repository https://cran.rstudio.com/src/contrib:
+  cannot open URL &#39;https://cran.rstudio.com/src/contrib/PACKAGES&#39;</code></pre>
+<p>In your R console, type <code>getOption(&quot;repos&quot;)</code>. If you get the following response, it means that you fail to set a local CRAN mirror. See the <strong>Change Settings</strong> section under <strong>Install RStudio</strong> for the solution.</p>
+<pre><code>CRAN 
+&quot;https://cran.rstudio.com/&quot; 
+attr(,&quot;RStudio&quot;)
+[1] TRUE</code></pre>
+</div>
+</div>
+<div id="update-r-and-r-packages" class="section level3">
+<h3><span class="header-section-number">1.1.4</span> Update R and R Packages</h3>
+<ul>
+<li>Update R</li>
+</ul>
+<p>The <a href="https://cran.r-project.org/bin/windows/base/rw-FAQ.html#What_0027s-the-best-way-to-upgrade_003f">CRAN solution</a> is not particularly good.</p>
+<ul>
+<li>Update R Packages</li>
+</ul>
+<pre><code>update.packages(ask = FALSE, checkBuilt = TRUE)</code></pre>
+<p><code>Note</code>: This will only update packages directly installed from CRAN. So if you use a package that lives only on GitHub, you will need to update it manually, e.g. via <code>devtools::install_github()</code>.</p>
+</div>
+<div id="register-a-github-account" class="section level3">
+<h3><span class="header-section-number">1.1.5</span> Register a GitHub account</h3>
+<ol style="list-style-type: decimal">
+<li>Choose a GitHub Username</li>
+</ol>
+<p>Choosing a proper GitHub username is <strong>extremely important</strong>. Given the <em>Username</em> you choose, your GitHub account will look like <code>https://github.com/Username</code>. This “website” will be the one place to host and showcase all of your coursework. In the information age, when online presence is more important than ever, this is your online portfolio, your “voice”, your professional “business card”.</p>
+<p>You can change your username later, but it’s better to get it right the first time.</p>
+<ul>
+<li><a href="https://help.github.com/articles/changing-your-github-username/" class="uri">https://help.github.com/articles/changing-your-github-username/</a></li>
+<li><a href="https://help.github.com/articles/what-happens-when-i-change-my-username/" class="uri">https://help.github.com/articles/what-happens-when-i-change-my-username/</a></li>
+</ul>
+<ol start="2" style="list-style-type: decimal">
+<li>Register a GitHub Account</li>
+</ol>
+<p>Go to <a href="https://github.com">GitHub</a> and register for a free account. By default, a free GitHub account offers only public repositories that are visible and accessible to the general public. To have private repositories, you needs to upgrade to a paid account.</p>
+<p>Here is the good news: For students, faculty, and research staff with <code>.edu</code> email accounts, you can upgrade to a <a href="https://education.github.com/">GitHub Education</a> account that offers free unlimited private repositories. Rejoice and enjoy!</p>
+</div>
+<div id="install-git" class="section level3">
+<h3><span class="header-section-number">1.1.6</span> Install Git</h3>
+<ol style="list-style-type: decimal">
+<li>Windows Users</li>
+</ol>
+<p>Install <strong>Git for Windows</strong>, aka <code>msysgit</code> or “Git Bash”, which installs Git along with other useful tools, such as the Bash shell.</p>
+<ul>
+<li><p>Go to <a href="https://gitforwindows.org/">gitforwindows.org</a> and press Download.</p></li>
+<li><p>On the download page, click on either the 32-bit or 64-bit version depending on your Windows system.</p></li>
+</ul>
+<div class="figure">
+<img src="images/gitdownload_win.png" width="500" />
+
+</div>
+<p><code>NOTE</code>: You can also go to <a href="https://git-scm.com/download/win">git-scm.com</a> and the download would automatically start. However, it will download the 32-bit version by default, which is inconvenient if you want the 64-bit one. It does not matter which link you use, since the two would eventually go to the same place fetching for the same installation program.</p>
+<ol start="2" style="list-style-type: decimal">
+<li>Install Git</li>
+</ol>
+<ul>
+<li><p>Please use the default path, i.e. <code>C:/Program Files</code>, which makes it easier for RStudio to find Git.</p></li>
+<li><p>During Git installation, select (a) Use Git from Windows Command Prompt, and (b) Enable Git Credential Manager.</p></li>
+</ul>
+<ol start="3" style="list-style-type: decimal">
+<li>Mac Users</li>
+</ol>
+<ul>
+<li>Download Git from <a href="https://git-scm.com/download/mac">git-scm.com</a>.</li>
+</ul>
+<p>If the download does not automatically start, click the link as highlighted in the graph below. <img src="images/gitdownload_mac.png" width="500" /></p>
+<ul>
+<li>Installation should be straightfoward for Mac users.</li>
+</ul>
+</div>
+</div>
+<div id="introduction-to-r" class="section level2">
+<h2><span class="header-section-number">1.2</span> Introduction to R</h2>
+<div id="r-basics" class="section level3">
+<h3><span class="header-section-number">1.2.1</span> Essential Basics</h3>
+<p>In R, every method is a function: <code>name</code> + <code>()</code>. For example, in your R console, try type <code>help()</code>.</p>
+</div>
+<div id="atomic-dtype" class="section level3">
+<h3><span class="header-section-number">1.2.2</span> Atomic Data Types</h3>
+<p>There are four commonly used atomic data types.</p>
+<ul>
+<li>logical: e.g. TRUE, FALSE</li>
+<li>integer: e.g. -2, 0, 1, 2</li>
+<li>numeric: e.g., -2.0, 0.05, 1.2</li>
+<li>character: e.g., “-2.0”, “cat”, “dog”</li>
+</ul>
+<div id="logical" class="section level4">
+<h4><span class="header-section-number">1.2.2.1</span> Logical</h4>
+<p>Logical is simply <code>TRUE</code> or <code>FALSE</code>. To note, <code>T</code> is a shorthand for <code>TRUE</code>. They are strictly identical.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="ot">TRUE</span></code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">T</code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+<p>To check the data type of <code>TRUE</code>, use the <code>class()</code> function.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">class</span>(<span class="ot">TRUE</span>)</code></pre></div>
+<pre><code>## [1] &quot;logical&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">class</span>(T)</code></pre></div>
+<pre><code>## [1] &quot;logical&quot;</code></pre>
+<p>To note, you <strong>MUST NOT</strong> use <code>True</code> or <code>False</code>, which would result in an error.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">True</code></pre></div>
+<pre><code>## Error in eval(expr, envir, enclos): 找不到对象&#39;True&#39;</code></pre>
+</div>
+<div id="integer" class="section level4">
+<h4><span class="header-section-number">1.2.2.2</span> Integer</h4>
+<p>If you directly type <code>2</code> into the R console, you might think it’s an integer, but it is in fact of numeric data type. To note, numeric data type is also called <strong>floating point</strong> in other programming languages.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="dv">2</span>; <span class="kw">class</span>(<span class="dv">2</span>)</code></pre></div>
+<pre><code>## [1] 2</code></pre>
+<pre><code>## [1] &quot;numeric&quot;</code></pre>
+<p>The <code>;</code> sign is used to separate commands such that two lines can be written succinctly in one line. In our case, <code>2; class(2)</code> is identical to</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="dv">2</span>
+<span class="kw">class</span>(<span class="dv">2</span>)</code></pre></div>
+<p>To have an integer, you can attach an <code>L</code> to the integer.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">2L; <span class="kw">class</span>(2L)</code></pre></div>
+<pre><code>## [1] 2</code></pre>
+<pre><code>## [1] &quot;integer&quot;</code></pre>
+</div>
+<div id="numeric" class="section level4">
+<h4><span class="header-section-number">1.2.2.3</span> Numeric</h4>
+<p>Numeric is synonymous to floating point.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="fl">2.0</span>; <span class="kw">class</span>(<span class="fl">2.0</span>)</code></pre></div>
+<pre><code>## [1] 2</code></pre>
+<pre><code>## [1] &quot;numeric&quot;</code></pre>
+</div>
+<div id="character" class="section level4">
+<h4><span class="header-section-number">1.2.2.4</span> Character</h4>
+<p>Character is synonymous to string.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="st">&quot;hi there&quot;</span>; <span class="kw">class</span>(<span class="st">&quot;hi there&quot;</span>)</code></pre></div>
+<pre><code>## [1] &quot;hi there&quot;</code></pre>
+<pre><code>## [1] &quot;character&quot;</code></pre>
+<p>To note: Any things if it has double quotes, it must be characters. e.g.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">class</span>(<span class="st">&quot;2.0&quot;</span>)</code></pre></div>
+<pre><code>## [1] &quot;character&quot;</code></pre>
+<p>Data type precedence: logical &lt; integer&lt; numeric &lt; character And they can be converted to each other. We can see these examples:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">as.integer</span>(<span class="dv">2</span>)                           <span class="co"># as.integer() converts values to integer</span></code></pre></div>
+<pre><code>## [1] 2</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">class</span>(<span class="kw">as.integer</span>(<span class="dv">2</span>))                        <span class="co"># integer</span></code></pre></div>
+<pre><code>## [1] &quot;integer&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">as.integer</span>(<span class="ot">TRUE</span>)                              <span class="co"># convert logical to integer</span></code></pre></div>
+<pre><code>## [1] 1</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">as.numeric</span>(<span class="ot">TRUE</span>)                              <span class="co"># convert logical to numeric</span></code></pre></div>
+<pre><code>## [1] 1</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">as.logical</span>(<span class="dv">100</span>)                     <span class="co"># convert numeric to logical</span></code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">                                    <span class="co"># TRUE is for 1; FALSE is for 0.</span>
+<span class="kw">as.character</span>(<span class="fl">1.2</span>)                           <span class="co"># convert numeric to character</span></code></pre></div>
+<pre><code>## [1] &quot;1.2&quot;</code></pre>
+<p><strong>Conclusion</strong>: as.+ data type () means what we want convert to.</p>
+</div>
+</div>
+<div id="object-types" class="section level3">
+<h3><span class="header-section-number">1.2.3</span> R Object Types</h3>
+<p>There are four basic object types in R.</p>
+<div id="vector" class="section level4">
+<h4><span class="header-section-number">1.2.3.1</span> Vector</h4>
+<p>Vector is the workhorse of R computing. Elements of a vector MUST be of the same dtype.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">var1 =<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>)              <span class="co"># var1 is a vector, it includes numbers 1,2,3,4</span>
+                                  <span class="co"># c() is a function, where c stands for concatenate</span>
+var2 =<span class="st"> </span><span class="dv">1</span><span class="op">:</span><span class="dv">4</span>                        <span class="co"># practically identical</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">var3 =<span class="st"> </span><span class="kw">c</span>(<span class="st">&#39;a&#39;</span>,<span class="st">&#39;b&#39;</span>,<span class="st">&#39;c&#39;</span>,<span class="st">&#39;d&#39;</span>)                   <span class="co"># create a third vector of a different dtype</span>
+var3 =<span class="st"> </span>letters[<span class="dv">1</span><span class="op">:</span><span class="dv">4</span>]                           <span class="co"># identical</span></code></pre></div>
+<p>To check the data type of vector’s elements, use <code>class()</code> too.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">class</span>(var1); <span class="kw">class</span>(var2)                    </code></pre></div>
+<pre><code>## [1] &quot;numeric&quot;</code></pre>
+<pre><code>## [1] &quot;integer&quot;</code></pre>
+<p>A vector has a length, can use <code>length()</code> to get.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">length</span>(var1); <span class="kw">length</span>(var1)  </code></pre></div>
+<pre><code>## [1] 4</code></pre>
+<pre><code>## [1] 4</code></pre>
+<p>Remember: logical &lt; numeric &lt; character</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">c</span>(<span class="ot">TRUE</span>, <span class="dv">2</span>)                                     </code></pre></div>
+<pre><code>## [1] 1 2</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">c</span>(<span class="ot">TRUE</span>, <span class="dv">2</span>, <span class="fl">3.0</span>)                                 </code></pre></div>
+<pre><code>## [1] 1 2 3</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">c</span>(<span class="ot">TRUE</span>, <span class="dv">2</span>, <span class="fl">3.1</span>)                                 </code></pre></div>
+<pre><code>## [1] 1.0 2.0 3.1</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">c</span>(<span class="ot">TRUE</span>, <span class="dv">2</span>, <span class="fl">3.1</span>, <span class="st">&#39;four&#39;</span>)                    </code></pre></div>
+<pre><code>## [1] &quot;TRUE&quot; &quot;2&quot;    &quot;3.1&quot;  &quot;four&quot;</code></pre>
+<p>Concatenating vectors gives a vector.</p>
+<p>Remember to follow the same dtype precedence rule</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">c</span>(var1, var2)                                 </code></pre></div>
+<pre><code>## [1] 1 2 3 4 1 2 3 4</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">c</span>(var1, var3)                                 </code></pre></div>
+<pre><code>## [1] &quot;1&quot; &quot;2&quot; &quot;3&quot; &quot;4&quot; &quot;a&quot; &quot;b&quot; &quot;c&quot; &quot;d&quot;</code></pre>
+<p>Vectors can ????????????</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">var1 <span class="op">+</span><span class="st"> </span>var2                                     <span class="co"># vectorized operation operates on each element</span></code></pre></div>
+<pre><code>## [1] 2 4 6 8</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">var1 <span class="op">==</span><span class="st"> </span><span class="dv">3</span>                                         <span class="co"># &#39;==&#39; means &#39;compare&#39; and &#39;=&#39; means &#39;assign&#39;</span></code></pre></div>
+<pre><code>## [1] FALSE FALSE  TRUE FALSE</code></pre>
+<p><strong>Broadcasting</strong>: When operate with vectors of different lengths,the shorter vector is recycled to the full length, this is called broadcasting.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">var1 <span class="op">+</span><span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>)                               </code></pre></div>
+<pre><code>## [1] 2 4 4 6</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">var1 <span class="op">+</span><span class="st"> </span><span class="dv">2</span>                                           </code></pre></div>
+<pre><code>## [1] 3 4 5 6</code></pre>
+<p>To note: vectors interact with one element only works if one is multiple times longer than the other.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">var1 <span class="op">+</span><span class="st"> </span><span class="dv">1</span><span class="op">:</span><span class="dv">3</span>                                </code></pre></div>
+<pre><code>## Warning in var1 + 1:3: 长的对象长度不是短的对象长度的整倍数</code></pre>
+<pre><code>## [1] 2 4 6 5</code></pre>
+</div>
+<div id="matrix" class="section level4">
+<h4><span class="header-section-number">1.2.3.2</span> Matrix</h4>
+<p>Matrix is xxx</p>
+<p>A matrix should have only one data type.</p>
+<p>We can bind vectors of same length and <strong>same</strong> data type gives a matrix.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">mat1 =<span class="st"> </span><span class="kw">cbind</span>(var1, var2);mat1</code></pre></div>
+<pre><code>##      var1 var2
+## [1,]    1    1
+## [2,]    2    2
+## [3,]    3    3
+## [4,]    4    4</code></pre>
+<p>We can see the data type and dimension of the matrix, the dtype will change to the upper dtype.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">class</span>(mat1)                                   </code></pre></div>
+<pre><code>## [1] &quot;matrix&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">dim</span>(mat1)                                         <span class="co"># 4 rows, 2 column</span></code></pre></div>
+<pre><code>## [1] 4 2</code></pre>
+<p>If we bind vectors of same length, different dtype.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">mat2 =<span class="st"> </span><span class="kw">cbind</span>(var1, var3);mat2       <span class="co"># numeric changed to character</span></code></pre></div>
+<pre><code>##      var1 var3
+## [1,] &quot;1&quot;  &quot;a&quot; 
+## [2,] &quot;2&quot;  &quot;b&quot; 
+## [3,] &quot;3&quot;  &quot;c&quot; 
+## [4,] &quot;4&quot;  &quot;d&quot;</code></pre>
+</div>
+<div id="dataframe" class="section level4">
+<h4><span class="header-section-number">1.2.3.3</span> Dataframe</h4>
+<p>Binding vectors of same length, <strong>different</strong> dtypes gives a dataframe.</p>
+<p>Use <code>data.frame()</code> function.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">dat =<span class="st"> </span><span class="kw">data.frame</span>(var1, var3);dat</code></pre></div>
+<pre><code>##   var1 var3
+## 1    1    a
+## 2    2    b
+## 3    3    c
+## 4    4    d</code></pre>
+<p>Check the class and the dimension of the data.frame.</p>
+<p>Hint: a dataframe is essentially a dataset.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">class</span>(dat)                                      </code></pre></div>
+<pre><code>## [1] &quot;data.frame&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">dim</span>(dat)                                    </code></pre></div>
+<pre><code>## [1] 4 2</code></pre>
+</div>
+<div id="list" class="section level4">
+<h4><span class="header-section-number">1.2.3.4</span> List</h4>
+<p>Binding any objects gives a list.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">lst =<span class="st"> </span><span class="kw">list</span>(var1, var3, mat1, dat);lst</code></pre></div>
+<pre><code>## [[1]]
+## [1] 1 2 3 4
+## 
+## [[2]]
+## [1] &quot;a&quot; &quot;b&quot; &quot;c&quot; &quot;d&quot;
+## 
+## [[3]]
+##      var1 var2
+## [1,]    1    1
+## [2,]    2    2
+## [3,]    3    3
+## [4,]    4    4
+## 
+## [[4]]
+##   var1 var3
+## 1    1    a
+## 2    2    b
+## 3    3    c
+## 4    4    d</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">class</span>(lst); <span class="kw">length</span>(lst)                                     <span class="co"># a list class with 4 elements</span></code></pre></div>
+<pre><code>## [1] &quot;list&quot;</code></pre>
+<pre><code>## [1] 4</code></pre>
+</div>
+</div>
+<div id="indexing" class="section level3">
+<h3><span class="header-section-number">1.2.4</span> Indexing</h3>
+<p>In R, <code>any_name[]</code> implies <code>any_name</code> is an object, and <code>[]</code> implies calling out values from objects.</p>
+<div id="index-vec" class="section level4">
+<h4><span class="header-section-number">1.2.4.1</span> Indexing Vectors</h4>
+<ul>
+<li>Indexing by position</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">var3[<span class="dv">1</span>]                                           <span class="co"># single selection; select the first element</span></code></pre></div>
+<pre><code>## [1] &quot;a&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">var3[<span class="kw">length</span>(var1)]                          <span class="co"># single selection; select the last element</span></code></pre></div>
+<pre><code>## [1] &quot;d&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">var3[<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">4</span>)]                                <span class="co"># multiple selection</span></code></pre></div>
+<pre><code>## [1] &quot;a&quot; &quot;a&quot; &quot;c&quot; &quot;d&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">var3[<span class="dv">2</span><span class="op">:</span><span class="dv">4</span>]                                       <span class="co"># slicing</span></code></pre></div>
+<pre><code>## [1] &quot;b&quot; &quot;c&quot; &quot;d&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">var3[<span class="op">-</span><span class="dv">1</span>]                                            <span class="co"># reverse single selection; select all but the first</span></code></pre></div>
+<pre><code>## [1] &quot;b&quot; &quot;c&quot; &quot;d&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">var3[<span class="op">-</span><span class="kw">length</span>(var1)]                         <span class="co"># reverse single selection; select all but the first</span></code></pre></div>
+<pre><code>## [1] &quot;a&quot; &quot;b&quot; &quot;c&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">var3[<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">4</span>)]                                <span class="co"># reverse multiple selection; all but the specified</span></code></pre></div>
+<pre><code>## [1] &quot;a&quot; &quot;a&quot; &quot;c&quot; &quot;d&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">var3[<span class="op">-</span><span class="kw">c</span>(<span class="dv">2</span><span class="op">:</span><span class="dv">4</span>)]                                     <span class="co"># reverse slicing; MUST NOT var[-2:4]</span></code></pre></div>
+<pre><code>## [1] &quot;a&quot;</code></pre>
+<ul>
+<li>Indexing by name</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">names</span>(var1) =<span class="st"> </span>letters[<span class="dv">1</span><span class="op">:</span><span class="dv">4</span>]; var1                <span class="co"># give names to each element of a vector</span></code></pre></div>
+<pre><code>## a b c d 
+## 1 2 3 4</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">var1 =<span class="st"> </span><span class="kw">c</span>(<span class="dt">a=</span><span class="dv">1</span>, <span class="dt">b=</span><span class="dv">2</span>, <span class="dt">c=</span><span class="dv">3</span>, <span class="dt">d=</span><span class="dv">4</span>); var1        <span class="co"># identical</span></code></pre></div>
+<pre><code>## a b c d 
+## 1 2 3 4</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">var1[<span class="dv">1</span>]; var1[<span class="st">&quot;a&quot;</span>]                        <span class="co"># call out the first element</span></code></pre></div>
+<pre><code>## a 
+## 1</code></pre>
+<pre><code>## a 
+## 1</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">var1[<span class="kw">c</span>(<span class="st">&#39;a&#39;</span>, <span class="st">&#39;a&#39;</span>, <span class="st">&#39;c&#39;</span>, <span class="st">&#39;d&#39;</span>)]                   <span class="co"># identical to var1[c(1,1,3,4)] with more typing</span></code></pre></div>
+<pre><code>## a a c d 
+## 1 1 3 4</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">var1[[<span class="dv">1</span>]]; var1[[<span class="st">&quot;a&quot;</span>]]                    <span class="co"># notice the difference with var1[1] or var1[&quot;a&quot;]</span></code></pre></div>
+<pre><code>## [1] 1</code></pre>
+<pre><code>## [1] 1</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">unname</span>(var1[[<span class="dv">1</span>]]); <span class="kw">unname</span>(var1[[<span class="st">&quot;a&quot;</span>]])    <span class="co"># identical</span></code></pre></div>
+<pre><code>## [1] 1</code></pre>
+<pre><code>## [1] 1</code></pre>
+<ul>
+<li>Indexing by a logical vector</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">idx =<span class="st"> </span>var1 <span class="op">&lt;=</span><span class="st"> </span><span class="dv">2</span>; idx                            <span class="co"># create an index vector of the logical dtype</span></code></pre></div>
+<pre><code>##     a     b     c     d 
+##  TRUE  TRUE FALSE FALSE</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">var1[idx]                                       <span class="co"># call out values according to the index vector</span></code></pre></div>
+<pre><code>## a b 
+## 1 2</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">var3[idx]                                       <span class="co"># call out values according to the index vector</span></code></pre></div>
+<pre><code>## [1] &quot;a&quot; &quot;b&quot;</code></pre>
+</div>
+<div id="index-matdat" class="section level4">
+<h4><span class="header-section-number">1.2.4.2</span> Indexing Matrices/Dataframes</h4>
+<ul>
+<li>Indexing by position</li>
+</ul>
+<p><code>matrix/dataframe[row_indices, column_indices]</code></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">dat[<span class="dv">1</span><span class="op">:</span><span class="dv">3</span>, <span class="dv">1</span>]                                     </code></pre></div>
+<pre><code>## [1] 1 2 3</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">dat[<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">3</span>), ]                                     <span class="co"># select the 1st and 3rd rows only</span></code></pre></div>
+<pre><code>##   var1 var3
+## 1    1    a
+## 3    3    c</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">dat[, <span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">2</span>)]                               <span class="co"># select 1st column twice, 2nd once</span></code></pre></div>
+<pre><code>##   var1 var1.1 var3
+## 1    1      1    a
+## 2    2      2    b
+## 3    3      3    c
+## 4    4      4    d</code></pre>
+<ul>
+<li>Indexing by name</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">colnames</span>(dat) =<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;id&quot;</span>, <span class="st">&quot;group&quot;</span>)        <span class="co"># give column names to our dataframe</span>
+<span class="kw">rownames</span>(dat) =<span class="st"> </span>letters[<span class="dv">1</span><span class="op">:</span><span class="dv">4</span>]              <span class="co"># give row names to our dataframe</span>
+dat[<span class="kw">c</span>(<span class="st">&#39;a&#39;</span>, <span class="st">&#39;b&#39;</span>, <span class="st">&#39;c&#39;</span>), <span class="st">&quot;id&quot;</span>]                 <span class="co"># identical to dat[1:3, 1]</span></code></pre></div>
+<pre><code>## [1] 1 2 3</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">dat[<span class="kw">c</span>(<span class="st">&#39;a&#39;</span>, <span class="st">&#39;c&#39;</span>), ]                            <span class="co"># identical to dat[c(1,3), ]</span></code></pre></div>
+<pre><code>##   id group
+## a  1     a
+## c  3     c</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">dat[,<span class="kw">c</span>(<span class="st">&quot;id&quot;</span>,<span class="st">&quot;id&quot;</span>,<span class="st">&quot;group&quot;</span>)]                <span class="co"># identical to dat[, c(1,1,2)]</span></code></pre></div>
+<pre><code>##   id id.1 group
+## a  1    1     a
+## b  2    2     b
+## c  3    3     c
+## d  4    4     d</code></pre>
+<ul>
+<li>Index rows by position, columns by name</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">dat[<span class="dv">1</span><span class="op">:</span><span class="dv">3</span>, <span class="st">&quot;id&quot;</span>]                                </code></pre></div>
+<pre><code>## [1] 1 2 3</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">dat[,<span class="dv">1</span>]; dat[,<span class="st">&quot;id&quot;</span>]                           <span class="co"># return a vector that is the &#39;id&#39; column</span></code></pre></div>
+<pre><code>## [1] 1 2 3 4</code></pre>
+<pre><code>## [1] 1 2 3 4</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">dat<span class="op">$</span>id                                            <span class="co"># identical; &#39;$&#39; sign is a shorthand</span></code></pre></div>
+<pre><code>## [1] 1 2 3 4</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">dat<span class="op">$</span>i; dat<span class="op">$</span>g                        <span class="co"># &quot;$&quot; sign does partial matching</span></code></pre></div>
+<pre><code>## [1] 1 2 3 4</code></pre>
+<pre><code>## [1] a b c d
+## Levels: a b c d</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">dat[[<span class="dv">1</span>]]; dat[[<span class="st">&quot;id&quot;</span>]]               <span class="co"># identical</span></code></pre></div>
+<pre><code>## [1] 1 2 3 4</code></pre>
+<pre><code>## [1] 1 2 3 4</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">dat[<span class="dv">1</span>]; dat[<span class="st">&quot;id&quot;</span>]                             <span class="co"># return a data.frame with &#39;id&#39; as the only column</span></code></pre></div>
+<pre><code>##   id
+## a  1
+## b  2
+## c  3
+## d  4</code></pre>
+<pre><code>##   id
+## a  1
+## b  2
+## c  3
+## d  4</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">dat[,<span class="dv">1</span>,drop=F]; dat[,<span class="st">&quot;id&quot;</span>,drop=F]   <span class="co"># identical</span></code></pre></div>
+<pre><code>##   id
+## a  1
+## b  2
+## c  3
+## d  4</code></pre>
+<pre><code>##   id
+## a  1
+## b  2
+## c  3
+## d  4</code></pre>
+</div>
+<div id="index-lst" class="section level4">
+<h4><span class="header-section-number">1.2.4.3</span> Indexing Lists</h4>
+<ul>
+<li>Indexing by position</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">lst[<span class="dv">1</span>]                                          <span class="co"># return a list with the first object</span></code></pre></div>
+<pre><code>## [[1]]
+## [1] 1 2 3 4</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">lst[<span class="dv">1</span><span class="op">:</span><span class="dv">2</span>]                                          <span class="co"># return a list with the first two objects</span></code></pre></div>
+<pre><code>## [[1]]
+## [1] 1 2 3 4
+## 
+## [[2]]
+## [1] &quot;a&quot; &quot;b&quot; &quot;c&quot; &quot;d&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">lst[[<span class="dv">1</span>]]                                          <span class="co"># return var1</span></code></pre></div>
+<pre><code>## [1] 1 2 3 4</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">lst[[<span class="dv">1</span>]][<span class="dv">1</span>]                                   <span class="co"># select 1st element in the 1st object</span></code></pre></div>
+<pre><code>## [1] 1</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">lst[[<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">1</span>)]]                       <span class="co"># identical</span></code></pre></div>
+<pre><code>## [1] 1</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">lst[[<span class="dv">2</span>]][<span class="dv">3</span>]                                   <span class="co"># select 3rd element in the 2nd ojbect</span></code></pre></div>
+<pre><code>## [1] &quot;c&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">lst[[<span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">3</span>)]]                       <span class="co"># identical</span></code></pre></div>
+<pre><code>## [1] &quot;c&quot;</code></pre>
+<ul>
+<li>Indexing by name</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">names</span>(lst)                                      <span class="co"># NULL indicates no names</span></code></pre></div>
+<pre><code>## NULL</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">names</span>(lst) =<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;var1&quot;</span>,<span class="st">&quot;var3&quot;</span>,<span class="st">&quot;mat1&quot;</span>,<span class="st">&quot;dat&quot;</span>)  <span class="co"># give names to the list</span>
+lst[[<span class="st">&quot;var3&quot;</span>]]                                 <span class="co"># calling out contents of the cell called &quot;var3&quot;</span></code></pre></div>
+<pre><code>## [1] &quot;a&quot; &quot;b&quot; &quot;c&quot; &quot;d&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">lst<span class="op">$</span>var3                                          <span class="co"># identical; &#39;$&#39; sign is a shorthand</span></code></pre></div>
+<pre><code>## [1] &quot;a&quot; &quot;b&quot; &quot;c&quot; &quot;d&quot;</code></pre>
+<ul>
+<li>Indexing by a logical vector</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">lst[<span class="kw">c</span>(T, T, F, F)]                            <span class="co"># same idea applied to calling contents from lists</span></code></pre></div>
+<pre><code>## $var1
+## [1] 1 2 3 4
+## 
+## $var3
+## [1] &quot;a&quot; &quot;b&quot; &quot;c&quot; &quot;d&quot;</code></pre>
+</div>
+</div>
+<div id="factor" class="section level3">
+<h3><span class="header-section-number">1.2.5</span> Factors</h3>
+<p>Factor is special data type.</p>
+<p>Continuous/ordinal variables as numeric vectors;categorical variables as character vectors</p>
+<p><a href="http://www.ats.ucla.edu/stat/r/modules/factor_variables.htm">Tutorial on factors</a></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># fac = dat[,&quot;var3&quot;]; fac                         # storing character vectors in dataframes</span>
+                                      <span class="co"># gives us factor variables/vectors (a.k.a. factors)</span>
+fac =<span class="st"> </span><span class="kw">factor</span>(var3); fac                       <span class="co"># identical; convert character vectors into factors</span></code></pre></div>
+<pre><code>## [1] a b c d
+## Levels: a b c d</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">class</span>(fac)                                        <span class="co"># &#39;factor&#39;</span></code></pre></div>
+<pre><code>## [1] &quot;factor&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">levels</span>(fac)                                       <span class="co"># levels of a factor variable is its categories</span></code></pre></div>
+<pre><code>## [1] &quot;a&quot; &quot;b&quot; &quot;c&quot; &quot;d&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">fac[<span class="dv">1</span>]</code></pre></div>
+<pre><code>## [1] a
+## Levels: a b c d</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">fac[<span class="dv">1</span>, drop=<span class="ot">TRUE</span>]</code></pre></div>
+<pre><code>## [1] a
+## Levels: a</code></pre>
+</div>
+</div>
+<div id="introduction-to-r-markdown" class="section level2">
+<h2><span class="header-section-number">1.3</span> Introduction to R Markdown</h2>
+<<<<<<< HEAD
+<div id="htmlwidget-a9715bd8e583b852eeb9" style="width:672px;height:200px;" class="DiagrammeR html-widget"></div>
+<script type="application/json" data-for="htmlwidget-a9715bd8e583b852eeb9">{"x":{"diagram":"\ngraph LR\nMU(Markup) --> MD(Markdown) \nMD --> PDMD(Pandoc Markdown)\nMD --> GHMD(GitHub Markdown)\nMD --> PHPMD(PHP Markdown)\nPDMD --> RMD(R Markdown)\nRMD --> BD(Bookdown)\n"},"evals":[],"jsHooks":[]}</script>
+=======
+<div id="htmlwidget-0055636b57474b173e92" style="width:672px;height:200px;" class="DiagrammeR html-widget"></div>
+<script type="application/json" data-for="htmlwidget-0055636b57474b173e92">{"x":{"diagram":"\ngraph LR\nMU(Markup) --> MD(Markdown) \nMD --> PDMD(Pandoc Markdown)\nMD --> GHMD(GitHub Markdown)\nMD --> PHPMD(PHP Markdown)\nPDMD --> RMD(R Markdown)\nRMD --> BD(Bookdown)\n"},"evals":[],"jsHooks":[]}</script>
+>>>>>>> f10972dd30841ef5f8a14aa69095dd494299dde9
+<p>There are some resources for learning Markdown, GitHub Markdown, and R Markdown.</p>
+<p><strong>Markdown Tutorials</strong></p>
+<ul>
+<li><a href="http://eherrera.net/markdowntutorial/">eherrera.net</a>: a fast way to learn Markdown basics plus an interactive tutorial</li>
+<li><a href="https://www.markdownguide.org/basic-syntax">markdown guide - basics</a>: a more detailed Markdown tutorial juxtaposing <em>code</em> and <em>effect</em></li>
+<li><a href="https://www.markdownguide.org/extended-syntax">markdown guide - extended</a>: more contents in addition to the basics</li>
+<li><a href="https://about.gitlab.com/handbook/product/technical-writing/markdown-guide/">gitlab.com</a>: a much more detailed tutorial on Markdown</li>
+<li><a href="https://www.webpagefx.com/tools/emoji-cheat-sheet/">emoji cheatsheet</a>: a great resource for looking up <strong>emoji</strong> 😄, which can be used in GitHub Markdown and R Markdown</li>
+</ul>
+<p><strong>R Markdown Tutorials</strong></p>
+<ul>
+<li><a href="http://www.jacolienvanrij.com/Tutorials/tutorialMarkdown.html">Jacolien’s blog</a>: a simple R Markdown tutorial</li>
+<li><a href="https://rmarkdown.rstudio.com/articles_intro.html">rstudio.com - basics</a>: a quick intro to R Markdown, similar in difficulty to Jacolien’s tutorial</li>
+<li><a href="https://rmarkdown.rstudio.com/lesson-1.html">rstudio.com - detailed</a>: the official R Markdown tutorial with more details</li>
+</ul>
+<div id="basic-markdown" class="section level3">
+<h3><span class="header-section-number">1.3.1</span> Basic Markdown</h3>
+<p>The following contents are adapted from</p>
+<ul>
+<li><a href="https://rmarkdown.rstudio.com/authoring_basics.html">Introduction to Markdown by RStudio</a></li>
+<li><a href="http://www.statpower.net/Content/310/R%20Stuff/SampleMarkdown.html">James Steiger’s Blog</a></li>
+<li><a href="http://csrgxtu.github.io/2015/03/20/Writing-Mathematic-Fomulars-in-Markdown/">Archer’s blog</a></li>
+</ul>
+<p>Before we proceed to learn the Markdown and R Markdown languages. Let us install the <a href="https://github.com/swarm-lab/editR">editR</a> package first. editR is a R Markdown editor with instant previewing capacity such that you do not have to repeatedly <code>knit</code> it to see the outcome.</p>
+<p>In your R console, type</p>
+<pre><code>if (!require(&quot;devtools&quot;)) install.packages(&quot;devtools&quot;)
+devtools::install_github(&quot;trestletech/shinyAce&quot;)
+devtools::install_github(&quot;swarm-lab/editR&quot;)</code></pre>
+<p>After the package is properly installed, run the following code in your R console.</p>
+<pre><code>library(editR)
+editR()</code></pre>
+<p>An interactive prompt will come up and you can use it to open .Rmd files in the same way you would use Microsoft Office to open .docx files. Enjoy the instant previewing.</p>
+<p>Raw code for the following contents can be found <a href="code/rmarkdown.Rmd">here</a>.</p>
+<div id="headers" class="section level4">
+<h4><span class="header-section-number">1.3.1.1</span> Headers</h4>
+<pre><code># Header 1
+## Header 2
+### Header 3
+#### Header 4
+##### Header 5
+##### Header 6</code></pre>
+<p>Actual code is removed, because it will mess up header indexing.</p>
+<p><br></p>
+</div>
+<div id="texts-in-markdown" class="section level4">
+<h4><span class="header-section-number">1.3.1.2</span> Texts in Markdown</h4>
+<p><strong>Intervening Spaces</strong></p>
+<pre><code>White spaces between texts do nothing in R Markdown.        Eight whitespaces (or four Tabs)
+and a newline have no effect. </code></pre>
+<p>White spaces between texts do nothing in R Markdown. Eight whitespaces (or four Tabs) and a newline have no effect.</p>
+<p><strong>Two or More Trailing Spaces</strong></p>
+<pre><code>However, adding two or more trailing spaces by the end of the line  (two spaces are here!)
+would break the line.</code></pre>
+<p>However, adding two or more trailing spaces by the end of the line<br />
+would break the line.</p>
+<p><strong>Intervening Newlines</strong></p>
+<pre><code>If there is a newline in between,
+
+it will create a new paragraph. </code></pre>
+<p>If there is a newline in between,</p>
+<p>it will create a new paragraph.</p>
+</div>
+<div id="codequote" class="section level4">
+<h4><span class="header-section-number">1.3.1.3</span> Code &amp; Quotes</h4>
+<p><strong>Inline Code</strong></p>
+<p>Inline code such as <code>x = x+1</code> can be created by wrapping some text with one backstick sign ` at each end of the equation x = x+1.</p>
+<p>Characters within <em>inline code</em> lose their meaings and are dispalyed verbatim.</p>
+<p><strong>Code Blocks</strong></p>
+<p>To create a <strong>code block</strong> (aka <strong>code in display mode</strong>), as shown below, surround multiple lines of code with three backstick signs at the preceding and succeding lines.</p>
+<pre><code>x = 1
+y = x + 1
+answer = y * 2</code></pre>
+<p>Characters within <em>code blocks</em> lose their meanings and are displayed verbatim (see an exception at <a href="index.html#rcode">Including R Code &amp; Result</a>). We have been using code blocks all along in the previous sections to contrast snippets of raw code with their effect.</p>
+<p><strong>Block Quotes</strong></p>
+<p>Block quotes follow the same three rules regarding (a) intervening spaces, (b) two trailing spaces, and (c) intervening newlines. The quote below is credited to Sarah Ban Breathnach, a New York Times best-selling author.</p>
+<pre><code>&gt; The world needs dreamers and the world needs        doers. 
+But above all the world needs dreamers who do. </code></pre>
+<blockquote>
+<p>The world needs dreamers and the world needs doers. But above all the world needs dreamers who do.</p>
+</blockquote>
+<pre><code>&gt; The world needs dreamers and the world needs doers.  (two spaces are here!)
+But above all the world needs dreamers who do. </code></pre>
+<blockquote>
+<p>The world needs dreamers and the world needs doers.<br />
+But above all the world needs dreamers who do.</p>
+</blockquote>
+<pre><code>&gt; The world needs dreamers and the world needs doers.
+
+&gt; But above all the world needs dreamers who do. </code></pre>
+<blockquote>
+<p>The world needs dreamers and the world needs doers.</p>
+</blockquote>
+<blockquote>
+<p>But above all the world needs dreamers who do.</p>
+</blockquote>
+<p>Wait a second, an intervening newline breaks the quote bar. Fix it by adding a <code>&gt;</code> in between the two bars to join them together.</p>
+<pre><code>&gt; The world needs dreamers and the world needs doers.
+&gt;
+&gt; But above all the world needs dreamers who do. </code></pre>
+<blockquote>
+<p>The world needs dreamers and the world needs doers.</p>
+<p>But above all the world needs dreamers who do.</p>
+</blockquote>
+</div>
+<div id="emphasis" class="section level4">
+<h4><span class="header-section-number">1.3.1.4</span> Emphasis</h4>
+<p>The table below contrast code and its effect.</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Code</th>
+<th align="center">Effect</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code>_italic_</code></td>
+<td align="center"><em>italic</em></td>
+<td>recommened</td>
+</tr>
+<tr class="even">
+<td align="left"><code>*italic*</code></td>
+<td align="center"><em>italic</em></td>
+<td><code>*</code> and <code>_</code> are identical</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>__bold__</code></td>
+<td align="center"><strong>bold</strong></td>
+<td></td>
+</tr>
+<tr class="even">
+<td align="left"><code>**bold**</code></td>
+<td align="center"><strong>bold</strong></td>
+<td>recommened</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>___italic-and-bold___</code></td>
+<td align="center"><strong><em>italic-and-bold</em></strong></td>
+<td></td>
+</tr>
+<tr class="even">
+<td align="left"><code>***italic-and-bold***</code></td>
+<td align="center"><strong><em>italic-and-bold</em></strong></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td align="left"><code>**_italic-and-bold_**</code></td>
+<td align="center"><strong><em>italic-and-bold</em></strong></td>
+<td>recommended</td>
+</tr>
+<tr class="even">
+<td align="left"><code>~~strikethrough~~</code></td>
+<td align="center"><del>strikethrough</del></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td align="left"><code>X~i~</code></td>
+<td align="center">X<sub>i</sub></td>
+<td>subscript</td>
+</tr>
+<tr class="even">
+<td align="left"><code>X^2^</code></td>
+<td align="center">X<sup>2</sup></td>
+<td>superscript</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>X~i~^2^</code></td>
+<td align="center">X<sub>i</sub><sup>2</sup></td>
+<td>subscript followed by superscript</td>
+</tr>
+<tr class="even">
+<td align="left"><code>X^2^~i~</code></td>
+<td align="center">X<sup>2</sup><sub>i</sub></td>
+<td>superscript followed by subscript</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Horizontal Rule</strong></p>
+<p>Three or more asterisks or dashes create a <em>horizontal rule</em>, aka <strong>page break</strong>.</p>
+<pre><code>***</code></pre>
+<hr />
+<p>or</p>
+<pre><code>---</code></pre>
+<hr />
+</div>
+<div id="links" class="section level4">
+<h4><span class="header-section-number">1.3.1.5</span> Links</h4>
+<p><strong>Links to Websites</strong></p>
+<p>Links can be either naked or in the form of <code>[mandatory text](http://somesite.com &quot;optional hover message&quot;)</code>. Operative links must start with <code>http</code> or <code>https</code>.</p>
+<pre><code>www.baidu.com
+
+https://www.baidu.com/
+
+[](https://www.baidu.com/)    # no mandatory text, no links whatsoever
+
+[Baidu Search Engine - malfunctioning](www.baidu.com &quot;This link would not work&quot;)
+
+[Baidu Search Engine - functioning](https://www.baidu.com/ &quot;This link would work&quot;)
+</code></pre>
+<p>www.baidu.com</p>
+<p><a href="https://www.baidu.com/" class="uri">https://www.baidu.com/</a></p>
+<p><a href="https://www.baidu.com/"></a></p>
+<p><a href="www.baidu.com" title="This link would not work">Baidu Search Engine - malfunctioning</a></p>
+<p><a href="https://www.baidu.com/" title="This link would work">Baidu Search Engine - functioning</a></p>
+<p><strong>Links to Images</strong></p>
+<p>Images on the web or local disks can be loaded in the form of <code>![optional caption](link to image) &quot;optional hover message&quot;</code>. The caption is completely optional.</p>
+<p>RStudio(TM)</p>
+<pre><code>![](images/intro_rule.png)
+
+![Caption: The 68-95-99.7 Rule](images/intro_rule.png)
+
+![Caption: Stormtroopocat](https://octodex.github.com/images/stormtroopocat.jpg &quot;The Stormtroopocat&quot;)</code></pre>
+<div class="figure">
+<img src="images/intro_rule.png" title="The rule that you must know" />
+
+</div>
+<div class="figure">
+<img src="images/intro_rule.png" title="The rule that you must know" alt="Caption: The 68-95-99.7 Rule" />
+<p class="caption">Caption: The 68-95-99.7 Rule</p>
+</div>
+<div class="figure">
+<img src="https://octodex.github.com/images/stormtroopocat.jpg" title="The Stormtroopocat" alt="Caption: Stormtroopocat" />
+<p class="caption">Caption: Stormtroopocat</p>
+</div>
+<p><strong>Reference-style Links</strong></p>
+<pre><code>Hover to see [where this link directs you][id].
+
+[id]: http://www.baidu.com &quot;This is Baidu.com&quot;
+
+This graph represents a well-known rule in statistics:
+![caption not displayed due to absence of line break][id2]
+
+[id2]: images/intro_rule.png &quot;This is the 68-95-99.7 Rule&quot;</code></pre>
+<p>Hover to see <a href="http://www.baidu.com" title="This is Baidu.com">where this link directs you</a>.</p>
+<p>This graph represents a well-known rule in statistics: <img src="images/intro_rule.png" title="This is the 68-95-99.7 Rule" alt="caption not displayed due to absence of line break" /></p>
+</div>
+<div id="unordered-lists" class="section level4">
+<h4><span class="header-section-number">1.3.1.6</span> Unordered Lists</h4>
+<ul>
+<li>Start an unordered list with any one of <code>-</code>, <code>+</code>, or <code>*</code>. They are <strong>completely identical</strong>.</li>
+<li>To create nested sub-lists, indent with <strong>four spaces</strong> (or hitting the <code>tab</code> key twice to create the equivalent of four spaces).</li>
+<li>Unordered lists only work for <strong>two or three levels</strong>, depending on your output format, i.e., html, pdf, or docx.</li>
+</ul>
+<p>To emphasize again, using any one of <code>-</code>, <code>+</code>, or <code>*</code> would give completely identical result.</p>
+<pre><code>- item1
+- item2
+    - item2.1
+    - item2.2
+        - item2.2.1
+        - item2.2.2
+            - item2.2.2.1
+            - item2.2.2.2</code></pre>
+<ul>
+<li>item1</li>
+<li>item2
+<ul>
+<li>item2.1</li>
+<li>item2.2
+<ul>
+<li>item2.2.1</li>
+<li>item2.2.2
+<ul>
+<li>item2.2.2.1</li>
+<li>item2.2.2.2</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+<div id="ordered-lists" class="section level4">
+<h4><span class="header-section-number">1.3.1.7</span> Ordered Lists</h4>
+<table>
+<thead>
+<tr class="header">
+<th>type</th>
+<th>works</th>
+<th>fails</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>arabic numerals</td>
+<td><code>1.</code> or <code>(1)</code></td>
+<td><code>1</code> or <code>(1).</code></td>
+</tr>
+<tr class="even">
+<td>English alphabet</td>
+<td><code>a.</code> or <code>(a)</code></td>
+<td><code>a</code> or <code>(a).</code></td>
+</tr>
+<tr class="odd">
+<td>roman numerals</td>
+<td><code>i.</code> or <code>(i)</code></td>
+<td><code>i</code> or <code>(i).</code></td>
+</tr>
+</tbody>
+</table>
+<p>To note, you can of course mix ordered lists with unordered lists.</p>
+<pre><code>2. Item 1
+9. Item 2
+8. Item 3
+    (3) Item 3.1
+    (1) Item 3.2
+7. Item 4
+(4) Item 5
+(1) Item 6
+(1) Item 7
+    2. Item 7.1
+    1. Item 7.2</code></pre>
+<ol start="2" style="list-style-type: decimal">
+<li>Item 1</li>
+<li>Item 2</li>
+<li>Item 3
+<ol start="3" style="list-style-type: decimal">
+<li>Item 3.1</li>
+<li>Item 3.2</li>
+</ol></li>
+<li>Item 4</li>
+</ol>
+<ol start="4" style="list-style-type: decimal">
+<li>Item 5</li>
+<li>Item 6</li>
+<li>Item 7
+<ol start="2" style="list-style-type: decimal">
+<li>Item 7.1</li>
+<li>Item 7.2</li>
+</ol></li>
+</ol>
+<p>The same rules apply to <strong>English alphabet</strong> and <strong>Roman numerals</strong>.</p>
+<pre><code>b. Item 1
+d. Item 2  
+c. Item 3  
+    (c) Item 3.1
+    (a) Item 3.2
+z. Item 4
+(c) Item 5
+(a) Item 6  
+(a) Item 7
+    b. Item 7.1
+    b. Item 7.2</code></pre>
+<ol start="2" style="list-style-type: lower-alpha">
+<li>Item 1</li>
+<li>Item 2<br />
+</li>
+<li>Item 3
+<ol start="3" style="list-style-type: lower-alpha">
+<li>Item 3.1</li>
+<li>Item 3.2</li>
+</ol></li>
+<li>Item 4</li>
+</ol>
+<ol start="3" style="list-style-type: lower-alpha">
+<li>Item 5</li>
+<li>Item 6<br />
+</li>
+<li>Item 7
+<ol start="2" style="list-style-type: lower-alpha">
+<li>Item 7.1</li>
+<li>Item 7.2</li>
+</ol></li>
+</ol>
+<pre><code>ii. Item 1
+iv. Item 2  
+viii. Item 3  
+    (iii) Item 3.1
+    (i) Item 3.2
+vii. Item 4  
+(iv) Item 5 
+(i) Item 6
+(i) Item 7
+    ii. Item 7.1
+    i. Item 7.2</code></pre>
+<ol start="2" style="list-style-type: lower-roman">
+<li>Item 1</li>
+<li>Item 2<br />
+</li>
+<li>Item 3
+<ol start="3" style="list-style-type: lower-roman">
+<li>Item 3.1</li>
+<li>Item 3.2</li>
+</ol></li>
+<li>Item 4<br />
+</li>
+</ol>
+<ol start="4" style="list-style-type: lower-roman">
+<li>Item 5</li>
+<li>Item 6</li>
+<li>Item 7
+<ol start="2" style="list-style-type: lower-roman">
+<li>Item 7.1</li>
+<li>Item 7.2</li>
+</ol></li>
+</ol>
+</div>
+<div id="tables" class="section level4">
+<h4><span class="header-section-number">1.3.1.8</span> Tables</h4>
+<pre><code>|order|name|producing area|price|
+|---|:---|---:|:---:|
+|1|banana|hainan|2￥/kg|
+|2|apple|baishui|4￥/kg|
+|3|mango|zhangzhou|8￥/kg|
+|4|watermelon|jinhua|1￥/kg|</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th>order</th>
+<th align="left">name</th>
+<th align="right">producing area</th>
+<th align="center">price</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td align="left">banana</td>
+<td align="right">hainan</td>
+<td align="center">2￥/kg</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td align="left">apple</td>
+<td align="right">baishui</td>
+<td align="center">4￥/kg</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td align="left">mango</td>
+<td align="right">zhangzhou</td>
+<td align="center">8￥/kg</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td align="left">watermelon</td>
+<td align="right">jinhua</td>
+<td align="center">1￥/kg</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="r-markdown" class="section level3">
+<h3><span class="header-section-number">1.3.2</span> R Markdown</h3>
+<div id="rcode" class="section level4">
+<h4><span class="header-section-number">1.3.2.1</span> Including R Code &amp; Result</h4>
+<ul>
+<li><p>In Markdown, one backstick sign ` indicates inline code and three represent code blocks.</p></li>
+<li><p>Similarly, in R Markdown, we can include R code and result directly using one backstick ` to introduce inline code and three for code blocks.</p></li>
+</ul>
+<p><strong>Inline Code</strong></p>
+<p>Placing an <code>r</code> <strong>immediately</strong> after the first backstick sign ` creates inline R code that will always be evaluated, showing only result but not code.</p>
+<p>R has numerous datasets loaded automatically when it is opened. In your console, use the <code>data()</code> function to inspect available datasets. We will use the popular <strong>iris</strong> dataset as an example here.</p>
+<p>In the console, if you type <code>iris</code> and press Enter, you will see the contents of the iris dataset. If you want to show the number of rows in the iris datasets, you can type <code>nrow(iris)</code>. Then you can report the result as follows. This is OK, but you will have to actually take a look at the result of <code>nrow(iris)</code>. Instead, we can use incline code.</p>
+<pre><code>The iris dataset has 150 rows. </code></pre>
+<p>The iris dataset has 150 rows.</p>
+<pre><code>The iris dataset has `_r nrow(iris)` rows.</code></pre>
+<p>The iris dataset has 150 rows.</p>
+<p><code>NOTE</code>: The underscore sign _ has to be added, or else <code>nrow(iris)</code> will be evaluated in the code block, which is an exception to the rule discussed at <a href="index.html#codequote">Code &amp; Quotes</a>.</p>
+<p><strong>Code Blocks</strong></p>
+<p>Placing an <code>{r}</code> <strong>immediately</strong> after the first three backstick signs creates an R code block. By default, the code block will be evaluated, showing the code and the result.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(cars)</code></pre></div>
+<pre><code>##      speed           dist       
+##  Min.   : 4.0   Min.   :  2.00  
+##  1st Qu.:12.0   1st Qu.: 26.00  
+##  Median :15.0   Median : 36.00  
+##  Mean   :15.4   Mean   : 42.98  
+##  3rd Qu.:19.0   3rd Qu.: 56.00  
+##  Max.   :25.0   Max.   :120.00</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(cars)</code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-40-1.png" width="672" /></p>
+<p>You can control whether to evaluate the code (and hence show the result) or to show the code by changing the <code>eval</code> and <code>echo</code> arguments.</p>
+<table>
+<thead>
+<tr class="header">
+<th>ID</th>
+<th>show code</th>
+<th>show result</th>
+<th>argument</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>A</td>
+<td>Yes</td>
+<td>Yes</td>
+<td><code>{r eval=TRUE, echo=TRUE}</code></td>
+</tr>
+<tr class="even">
+<td>B</td>
+<td>Yes</td>
+<td>No</td>
+<td><code>{r eval=FALSE, echo=TRUE}</code></td>
+</tr>
+<tr class="odd">
+<td>C</td>
+<td>No</td>
+<td>Yes</td>
+<td><code>{r eval=TRUE, echo=FALSE}</code></td>
+</tr>
+<tr class="even">
+<td>D</td>
+<td>No</td>
+<td>No</td>
+<td><code>{r eval=FALSE, echo=FALSE}</code></td>
+</tr>
+</tbody>
+</table>
+<p>A</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(cars)</code></pre></div>
+<pre><code>##      speed           dist       
+##  Min.   : 4.0   Min.   :  2.00  
+##  1st Qu.:12.0   1st Qu.: 26.00  
+##  Median :15.0   Median : 36.00  
+##  Mean   :15.4   Mean   : 42.98  
+##  3rd Qu.:19.0   3rd Qu.: 56.00  
+##  Max.   :25.0   Max.   :120.00</code></pre>
+<p>B</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(cars)</code></pre></div>
+<p>C</p>
+<pre><code>##      speed           dist       
+##  Min.   : 4.0   Min.   :  2.00  
+##  1st Qu.:12.0   1st Qu.: 26.00  
+##  Median :15.0   Median : 36.00  
+##  Mean   :15.4   Mean   : 42.98  
+##  3rd Qu.:19.0   3rd Qu.: 56.00  
+##  Max.   :25.0   Max.   :120.00</code></pre>
+<p>D</p>
+</div>
+</div>
+<div id="mathematical-symbols-in-latex" class="section level3">
+<h3><span class="header-section-number">1.3.3</span> Mathematical Symbols in Latex</h3>
+<p>There are two ways to introduce mathematical equations formatted by <strong>Latex</strong>.</p>
+<ul>
+<li>using <code>$</code> for introducing inline equations, e.g. <code>$x+1$</code> gives <span class="math inline">\(x+1\)</span></li>
+<li>using <code>$$</code> for presenting stand-alone equations in display mode, e.g. <code>$$x+1$$</code> gives <span class="math display">\[x+1\]</span></li>
+</ul>
+<div id="texts" class="section level4">
+<h4><span class="header-section-number">1.3.3.1</span> Texts</h4>
+<p>Surrounded within <code>$</code> or <code>$$</code> sign, whitespaces lose their meaning. Must use <code>~</code> or <code>\,</code> to denote a whitespace. For the sake of clarity, use <code>~</code> whenever applicable. Note, <code>~</code> gives slightly bigger space than <code>\,</code>, but who cares.</p>
+<pre><code>$$ab, a b, a    b, a~b, a\,b, a~~b, a\,\,b, a~~~b, a\,\,\,b$$</code></pre>
+<p><span class="math display">\[ab, a b, a    b, a~b, a\,b, a~~b, a\,\,b, a~~~b, a\,\,\,b\]</span></p>
+<p>By default, texts within <code>$</code> are italized. You will have to use special Latex commands to ask for regular non-italized fonts.</p>
+<pre><code>$$ abc, \text{abc}, \boldsymbol{abc}, \mathbf{abc}, \exp(x), \sin, \cos, \lim $$</code></pre>
+<p><span class="math display">\[ abc, \text{abc}, \boldsymbol{abc}, \mathbf{abc}, \exp(x), \sin, \cos, \lim \]</span></p>
+<table>
+<thead>
+<tr class="header">
+<th>Code</th>
+<th>Effect</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>$abc$</code></td>
+<td><span class="math inline">\(abc\)</span></td>
+<td>text is italicized by default</td>
+</tr>
+<tr class="even">
+<td><code>$\text{abc}$</code></td>
+<td><span class="math inline">\(\text{abc}\)</span></td>
+<td>non-italicized font</td>
+</tr>
+<tr class="odd">
+<td><code>$\boldsymbol{abc}$</code></td>
+<td><span class="math inline">\(\boldsymbol{abc}\)</span></td>
+<td>bold and italicized</td>
+</tr>
+<tr class="even">
+<td><code>$\mathbf{abc}$</code></td>
+<td><span class="math inline">\(\mathbf{abc}\)</span></td>
+<td>bold and non-italicized font</td>
+</tr>
+<tr class="odd">
+<td><code>$\exp(x)$</code></td>
+<td><span class="math inline">\(\exp(x)\)</span></td>
+<td>exponentiate</td>
+</tr>
+<tr class="even">
+<td><code>$\sin$</code></td>
+<td><span class="math inline">\(\sin\)</span></td>
+<td>sine</td>
+</tr>
+<tr class="odd">
+<td><code>$\cos$</code></td>
+<td><span class="math inline">\(\cos\)</span></td>
+<td>cosine</td>
+</tr>
+<tr class="even">
+<td><code>$\lim$</code></td>
+<td><span class="math inline">\(\lim\)</span></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="greek-letters" class="section level4">
+<h4><span class="header-section-number">1.3.3.2</span> Greek Letters</h4>
+<table>
+<thead>
+<tr class="header">
+<th>Code</th>
+<th>Effect</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>$\alpha$</code></td>
+<td><span class="math inline">\(\alpha\)</span></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><code>$A$</code></td>
+<td><span class="math inline">\(A\)</span></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><code>$\beta$</code></td>
+<td><span class="math inline">\(\beta\)</span></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><code>$\gamma$</code></td>
+<td><span class="math inline">\(\gamma\)</span></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><code>$\Gamma$</code></td>
+<td><span class="math inline">\(\Gamma\)</span></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><code>$\delta$</code></td>
+<td><span class="math inline">\(\delta\)</span></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><code>$\Delta$</code></td>
+<td><span class="math inline">\(\Delta\)</span></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><code>$\pi$</code></td>
+<td><span class="math inline">\(\pi\)</span></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><code>$\Pi$</code></td>
+<td><span class="math inline">\(\Pi\)</span></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><code>$\phi$</code></td>
+<td><span class="math inline">\(\phi\)</span></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><code>$\Phi$</code></td>
+<td><span class="math inline">\(\Phi\)</span></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><code>$\varphi$</code></td>
+<td><span class="math inline">\(\varphi\)</span></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><code>$\theta$</code></td>
+<td><span class="math inline">\(\theta\)</span></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="algebraic-representation" class="section level4">
+<h4><span class="header-section-number">1.3.3.3</span> Algebraic Representation</h4>
+<pre><code>$$ x_i, x_{ij}, x_{i+1}, x^2, x^{2/3}, x_i^2, x^2_i, \sqrt{x}, \sqrt[^n]{x}, \frac{2}{3}, \binom{n}{k} $$</code></pre>
+<p><span class="math display">\[ x_i, x_{ij}, x_{i+1}, x^2, x^{2/3}, x_i^2, x^2_i, \sqrt{x}, \sqrt[^n]{x}, \frac{2}{3}, \binom{n}{k} \]</span></p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Code</th>
+<th align="left">Effect</th>
+<th align="left">Note</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code>$x_i$</code></td>
+<td align="left"><span class="math inline">\(x_i\)</span></td>
+<td align="left">subscript</td>
+</tr>
+<tr class="even">
+<td align="left"><code>$x_{ij}$</code></td>
+<td align="left"><span class="math inline">\(x_{ij}\)</span></td>
+<td align="left">must use <code>{}</code> with more than one character</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>$x_{i+1}$</code></td>
+<td align="left"><span class="math inline">\(x_{i+1}\)</span></td>
+<td align="left">another example</td>
+</tr>
+<tr class="even">
+<td align="left"><code>$x^2$</code></td>
+<td align="left"><span class="math inline">\(x^2\)</span></td>
+<td align="left">superscript</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>$x^{2/3}$</code></td>
+<td align="left"><span class="math inline">\(x^{2/3}\)</span></td>
+<td align="left">another example</td>
+</tr>
+<tr class="even">
+<td align="left"><code>$x_i^2$</code></td>
+<td align="left"><span class="math inline">\(x_i^2\)</span></td>
+<td align="left">subscript and superscript</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>$x^2_i$</code></td>
+<td align="left"><span class="math inline">\(x^2_i\)</span></td>
+<td align="left">superscript and subscript (identical; order does not matter)</td>
+</tr>
+<tr class="even">
+<td align="left"><code>$\sqrt{x}$</code></td>
+<td align="left"><span class="math inline">\(\sqrt{x}\)</span></td>
+<td align="left">square root</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>$\sqrt[^n]{x}$</code></td>
+<td align="left"><span class="math inline">\(\sqrt[^n]{x}\)</span></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left"><code>$\frac{2}{3}$</code></td>
+<td align="left"><span class="math inline">\(\frac{2}{3}\)</span></td>
+<td align="left">fraction</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>$\binom{n}{k}$</code></td>
+<td align="left"><span class="math inline">\(\binom{n}{k}\)</span></td>
+<td align="left">binomial coeffcient</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="algebraic-operations" class="section level4">
+<h4><span class="header-section-number">1.3.3.4</span> Algebraic Operations</h4>
+<pre><code>$$ \times, \div, \pm, \mp, \ne, \le, \ge, \ll, \gg, \approx, \sim, \equiv, \cong, \propto, \infty $$</code></pre>
+<p><span class="math display">\[ \times, \div, \pm, \mp, \ne, \le, \ge, \ll, \gg, \approx, \sim, \equiv, \cong, \propto, \infty \]</span></p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Code</th>
+<th align="left">Effect</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code>$\times$</code></td>
+<td align="left"><span class="math inline">\(\times\)</span></td>
+<td>multiplication sign</td>
+</tr>
+<tr class="even">
+<td align="left"><code>$\div$</code></td>
+<td align="left"><span class="math inline">\(\div\)</span></td>
+<td>division sign</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>$\pm$</code></td>
+<td align="left"><span class="math inline">\(\pm\)</span></td>
+<td>plus and minus</td>
+</tr>
+<tr class="even">
+<td align="left"><code>$\mp$</code></td>
+<td align="left"><span class="math inline">\(\mp\)</span></td>
+<td>minus and plus</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>$\ne$</code></td>
+<td align="left"><span class="math inline">\(\ne\)</span></td>
+<td>not equal</td>
+</tr>
+<tr class="even">
+<td align="left"><code>$\le$</code></td>
+<td align="left"><span class="math inline">\(\le\)</span></td>
+<td>less than or equal to</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>$\ge$</code></td>
+<td align="left"><span class="math inline">\(\ge\)</span></td>
+<td>greater than or equal to</td>
+</tr>
+<tr class="even">
+<td align="left"><code>$\ll$</code></td>
+<td align="left"><span class="math inline">\(\ll\)</span></td>
+<td>much less than</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>$\gg$</code></td>
+<td align="left"><span class="math inline">\(\gg\)</span></td>
+<td>much greater than</td>
+</tr>
+<tr class="even">
+<td align="left"><code>$\approx$</code></td>
+<td align="left"><span class="math inline">\(\approx\)</span></td>
+<td>approximate to</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>$\sim$</code></td>
+<td align="left"><span class="math inline">\(\sim\)</span></td>
+<td>similar to</td>
+</tr>
+<tr class="even">
+<td align="left"><code>$\equiv$</code></td>
+<td align="left"><span class="math inline">\(\equiv\)</span></td>
+<td>equivalent to</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>$\cong$</code></td>
+<td align="left"><span class="math inline">\(\cong\)</span></td>
+<td></td>
+</tr>
+<tr class="even">
+<td align="left"><code>$\propto$</code></td>
+<td align="left"><span class="math inline">\(\propto\)</span></td>
+<td>proportion to</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>$\infty$</code></td>
+<td align="left"><span class="math inline">\(\infty\)</span></td>
+<td>infinity</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="set-operations" class="section level4">
+<h4><span class="header-section-number">1.3.3.5</span> Set Operations</h4>
+<pre><code>$$ \forall, \exists, \nexists, \cup, \cap, \in, \ni, \emptyset $$</code></pre>
+<p><span class="math display">\[ \forall, \exists, \nexists, \cup, \cap, \in, \ni, \emptyset \]</span></p>
+<table>
+<thead>
+<tr class="header">
+<th>Code</th>
+<th>Effect</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>$\forall$</code></td>
+<td><span class="math inline">\(\forall\)</span></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><code>$\exists$</code></td>
+<td><span class="math inline">\(\exists\)</span></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><code>$\nexists$</code></td>
+<td><span class="math inline">\(\nexists\)</span></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><code>$\cup$</code></td>
+<td><span class="math inline">\(\cup\)</span></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><code>$\cap$</code></td>
+<td><span class="math inline">\(\cap\)</span></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><code>$\in$</code></td>
+<td><span class="math inline">\(\in\)</span></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><code>$\ni$</code></td>
+<td><span class="math inline">\(\ni\)</span></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><code>$\emptyset $</code></td>
+<td><span class="math inline">\(\emptyset\)</span></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="calculus-symbols" class="section level4">
+<h4><span class="header-section-number">1.3.3.6</span> Calculus Symbols</h4>
+<p><span class="math display">\[ \sum, \prod, \partial{x}, \int,    \]</span></p>
+<table>
+<thead>
+<tr class="header">
+<th>Code</th>
+<th>Effect</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>$\sum$</code></td>
+<td><span class="math inline">\(\sum\)</span></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><code>$\prod$</code></td>
+<td><span class="math inline">\(\prod\)</span></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><code>$\coprod$</code></td>
+<td><span class="math inline">\(\coprod\)</span></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><code>$\partial{x}$</code></td>
+<td><span class="math inline">\(\partial{x}\)</span></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><code>$\int$</code></td>
+<td><span class="math inline">\(\int\)</span></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><code>$\int x \,\mathrm{d}x$</code></td>
+<td><span class="math inline">\(\int x \,\mathrm{d}x\)</span></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><code>$\oint$</code></td>
+<td><span class="math inline">\(\oint\)</span></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><code>$\iint$</code></td>
+<td><span class="math inline">\(\iint\)</span></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><code>$\idotsint$</code></td>
+<td><span class="math inline">\(\idotsint\)</span></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><code>$\int_a^b$</code></td>
+<td><span class="math inline">\(\int_a^b\)</span></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><code>$\int\limits_a^b$</code></td>
+<td><span class="math inline">\(\int\limits_a^b\)</span></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="statistics-linear-algebra-symbols" class="section level4">
+<h4><span class="header-section-number">1.3.3.7</span> Statistics &amp; Linear Algebra Symbols</h4>
+<pre><code>$$ \overset{iid}{\sim}, \underset{(1)}{=}, \underset{\text{below}}{\overset{\text{above}}{=}} $$</code></pre>
+<p><span class="math display">\[ \overset{iid}{\sim}, \underset{(1)}{=}, \underset{\text{below}}{\overset{\text{above}}{=}} \]</span></p>
+<pre><code>$$  \therefore, \cdot, \cdots, \dots, \ldots, \vdots, \ddots, \bullet, \dot A, \dot \forall $$</code></pre>
+<p><span class="math display">\[  \therefore, \cdot, \cdots, \dots, \ldots, \vdots, \ddots, \bullet, \dot A, \dot \forall \]</span></p>
+<table>
+<thead>
+<tr class="header">
+<th>Code</th>
+<th>Effect</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>$\hat{a}$</code></td>
+<td><span class="math inline">\(\hat{a}\)</span></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><code>$\bar{a}$</code></td>
+<td><span class="math inline">\(\bar{a}\)</span></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><code>$\vec{a}$</code></td>
+<td><span class="math inline">\(\vec{a}\)</span></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><code>$\overset{iid}{\sim}$</code></td>
+<td><span class="math inline">\(\overset{iid}{\sim}\)</span></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><code>$\underset{(1)}{=}$</code></td>
+<td><span class="math inline">\(\underset{(1)}{=}\)</span></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><code>$\underset{b}{\overset{a}{=}}$</code></td>
+<td><span class="math inline">\(\underset{b}{\overset{a}{=}}\)</span></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><code>$\cdot$</code></td>
+<td><span class="math inline">\(\cdot\)</span></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><code>$\cdots$</code></td>
+<td><span class="math inline">\(\cdots\)</span></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><code>$\dots$</code></td>
+<td><span class="math inline">\(\dots\)</span></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><code>$\ldots$</code></td>
+<td><span class="math inline">\(\ldots\)</span></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><code>$\vdots$</code></td>
+<td><span class="math inline">\(\vdots\)</span></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><code>$\ddots$</code></td>
+<td><span class="math inline">\(\ddots\)</span></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><code>$\bullet$</code></td>
+<td><span class="math inline">\(\bullet\)</span></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><code>$\dot A$</code></td>
+<td><span class="math inline">\(\dot A\)</span></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><code>$\dot\forall$</code></td>
+<td><span class="math inline">\(\dot\forall\)</span></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><code>$\therefore$</code></td>
+<td><span class="math inline">\(\therefore\)</span></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><code>$\overrightarrow{AB}$</code></td>
+<td><span class="math inline">\(\overrightarrow{AB}\)</span></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><code>$\overline{aaa}$</code></td>
+<td><span class="math inline">\(\overline{aaa}\)</span></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><code>$\bigoplus$</code></td>
+<td><span class="math inline">\(\bigoplus\)</span></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><code>$\bigotimes$</code></td>
+<td><span class="math inline">\(\bigotimes\)</span></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><code>$\bigodot$</code></td>
+<td><span class="math inline">\(\bigodot\)</span></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><code>$\bigotimes$</code></td>
+<td><span class="math inline">\(\bigotimes\)</span></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><code>$\biguplus$</code></td>
+<td><span class="math inline">\(\biguplus\)</span></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><code>$\bigsqcup$</code></td>
+<td><span class="math inline">\(\bigsqcup\)</span></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><code>$\bigvee$</code></td>
+<td><span class="math inline">\(\bigvee\)</span></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><code>$\bigwedge$</code></td>
+<td><span class="math inline">\(\bigwedge\)</span></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="other-mathematical-symbols" class="section level4">
+<h4><span class="header-section-number">1.3.3.8</span> Other Mathematical Symbols</h4>
+<table>
+<thead>
+<tr class="header">
+<th>Code</th>
+<th>Effect</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>$\nabla$</code></td>
+<td><span class="math inline">\(\nabla\)</span></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><code>$\grave{a}$</code></td>
+<td><span class="math inline">\(\grave{a}\)</span></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><code>$\acute{a}$</code></td>
+<td><span class="math inline">\(\acute{a}\)</span></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><code>$\dot{a}$</code></td>
+<td><span class="math inline">\(\dot{a}\)</span></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><code>$\ddot{a}$</code></td>
+<td><span class="math inline">\(\ddot{a}\)</span></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><code>$\ddot{a}$</code></td>
+<td><span class="math inline">\(\ddot{a}\)</span></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><code>$\mathring{a}$</code></td>
+<td><span class="math inline">\(\mathring{a}\)</span></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><code>$\check{a}$</code></td>
+<td><span class="math inline">\(\check{a}\)</span></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><code>$\underline{aaa}$</code></td>
+<td><span class="math inline">\(\underline{aaa}\)</span></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><code>$\to$</code></td>
+<td><span class="math inline">\(\to\)</span></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><code>$\rightarrow$</code></td>
+<td><span class="math inline">\(\rightarrow\)</span></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><code>$\gets$</code></td>
+<td><span class="math inline">\(\gets\)</span></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><code>$\leftarrow$</code></td>
+<td><span class="math inline">\(\leftarrow\)</span></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><code>$\uparrow$</code></td>
+<td><span class="math inline">\(\uparrow\)</span></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><code>$\downarrow$</code></td>
+<td><span class="math inline">\(\downarrow\)</span></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><code>$\leftrightarrow$</code></td>
+<td><span class="math inline">\(\leftrightarrow\)</span></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><code>$(a)$</code></td>
+<td><span class="math inline">\((a)\)</span></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><code>$[a]$</code></td>
+<td><span class="math inline">\([a]\)</span></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><code>$\langle f \rangle$</code></td>
+<td><span class="math inline">\(\langle f \rangle\)</span></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><code>$\lfloor f \rfloor$</code></td>
+<td><span class="math inline">\(\lfloor f \rfloor\)</span></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><code>$\lceil f \rceil$</code></td>
+<td><span class="math inline">\(\lceil f \rceil\)</span></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><code>$\ulcorner f \urcorner$</code></td>
+<td><span class="math inline">\(\ulcorner f \urcorner\)</span></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="matrices" class="section level4">
+<h4><span class="header-section-number">1.3.3.9</span> Matrices</h4>
+<ul>
+<li>a matrix begins with <code>\begin{array}</code> and ends with <code>\end{array}</code></li>
+<li>we use the code <code>{rrr}</code> to indicate that each column is right justified</li>
+<li>cells are separated by the <code>&amp;</code> symbol</li>
+<li>each line (except the last) is terminated by <code>\\</code></li>
+</ul>
+<pre><code>$$
+\begin{array}
+{rrr}
+1 &amp; 2 &amp; 3 \\
+4 &amp; 5 &amp; 6 \\
+7 &amp; 8 &amp; 9
+\end{array}
+$$</code></pre>
+<p><span class="math display">\[
+\begin{array}
+{rrr}
+1 &amp; 2 &amp; 3 \\
+4 &amp; 5 &amp; 6 \\
+7 &amp; 8 &amp; 9
+\end{array}
+\]</span></p>
+<p>In math textbooks, matrices are often surrounded by brackets, and are assigned to a boldface letter. Here is an example</p>
+<pre><code>$$
+\mathbf{X} = \left[\begin{array}
+{rrr}
+1 &amp; 2 &amp; 3 \\
+4 &amp; 5 &amp; 6 \\
+7 &amp; 8 &amp; 9
+\end{array}\right]
+$$</code></pre>
+<p><span class="math display">\[
+\mathbf{X} = \left[\begin{array}
+{rrr}
+1 &amp; 2 &amp; 3 \\
+4 &amp; 5 &amp; 6 \\
+7 &amp; 8 &amp; 9
+\end{array}\right]
+\]</span></p>
+</div>
+<div id="practice" class="section level4">
+<h4><span class="header-section-number">1.3.3.10</span> Practice</h4>
+<p>Try to reproduce the code for the following formulas.</p>
+<pre><code>$$\sum_{i=1}^{n}\left( \frac{X_i}{Y_i} \right)$$</code></pre>
+<p><span class="math display">\[\sum_{i=1}^{n}\left( \frac{X_i}{Y_i} \right)\]</span></p>
+<p>Hint: In LaTeX, you can create parentheses, brackets, and braces which size themselves automatically to contain large expressions. You do this using the <code>\left</code> and <code>\right</code> operators. Here is an example</p>
+<pre><code>$$ \sum_{i=1}^{n} (X_i - \bar{X})(Y_i - \bar{Y}) $$</code></pre>
+<p><span class="math display">\[ \sum_{i=1}^{n} (X_i - \bar{X})(Y_i - \bar{Y}) \]</span></p>
+<pre><code>$$\int_0^{2\pi} \sin x~dx$$</code></pre>
+<p><span class="math display">\[\int_0^{2\pi} \sin x~dx\]</span></p>
+</div>
+</div>
+</div>
+<div id="introduction-to-git-github" class="section level2">
+<h2><span class="header-section-number">1.4</span> Introduction to Git &amp; GitHub</h2>
+<div id="whats-git-github" class="section level3">
+<h3><span class="header-section-number">1.4.1</span> what’s Git &amp; GitHub</h3>
+<p>Git is a <em>version control</em> system. Git manages the evolution of a set of files – called a <em>repository</em> – in a sane, highly structured way.</p>
+<p>GitHub provides a home for your Git-based projects on the internet.</p>
+</div>
+<div id="connect-git-github-rstudio" class="section level3">
+<h3><span class="header-section-number">1.4.2</span> Connect Git, GitHub, Rstudio</h3>
+<p>Objective: make sure that you can pull from and push to GitHub from your computer.</p>
+<div id="introduce-yourself-to-git" class="section level5">
+<h5><span class="header-section-number">1.4.2.0.1</span> introduce yourself to Git</h5>
+<p>In the shell (Git Bash) print the following code:</p>
+<p>git config –global user.name ‘Jennifer Bryan’ git config –global user.email ‘<a href="mailto:jenny@stat.ubc.ca">jenny@stat.ubc.ca</a>’ git config –global –list</p>
+<p>substituting your name and the email associated with your GitHub account.</p>
+</div>
+</div>
+<div id="new-project-github-first" class="section level3">
+<h3><span class="header-section-number">1.4.3</span> New project, GitHub first</h3>
+<p>We create a new Project, with the preferred “GitHub first, then RStudio” sequence. Why do we prefer this? Because this method of copying the Project from GitHub to your computer also sets up the local Git repository for immediate pulling and pushing. Under the hood, we are doing <code>git clone</code>.</p>
+<div id="make-a-repo-on-github" class="section level5">
+<h5><span class="header-section-number">1.4.3.0.1</span> Make a repo on GitHub</h5>
+<p>Go to <a href="https://github.com" class="uri">https://github.com</a> and make sure you are logged in.</p>
+<p>Click green “New repository” button. Or, if you are on your own profile page, click on “Repositories”, then click the green “New” button.</p>
+<p>Repository name: <code>myrepo</code> (or whatever you wish, we will delete this) choose the <em>Public</em> and <em>YES Initialize this repository with a README</em></p>
+<div class="figure">
+<img src="images/create_a_new_repo.PNG" />
+
+</div>
+<p>Click big green button “Create repository.”</p>
+<p>Copy the HTTPS clone URL to your clipboard via the green “Clone or Download” button.</p>
+</div>
+<div id="new-rstudio-project-via-git-clone" class="section level4">
+<h4><span class="header-section-number">1.4.3.1</span> New RStudio Project via git clone</h4>
+<p>In RStudio, start a new Project:</p>
+<ul>
+<li><em>File&gt;New Project&gt;Version Control&gt;Git</em>. In the “repository URL” paste the URL of your new GitHub repository. It will be something like this <code>https://github.com/jennybc/myrepo.git</code>.</li>
+<li>Be intentional about where you create this Project.</li>
+<li>Suggest you check the box “Open in new session”.</li>
+<li>Click “Create Project” to create a new directory, which will be all of these things:
+<ul>
+<li>a directory or “folder” on your computer</li>
+<li>a Git repository, linked to a remote GitHub repository</li>
+<li>an RStudio Project</li>
+</ul></li>
+<li><strong>In the absence of other constraints, I suggest that all of your R projects have exactly this set-up.</strong></li>
+</ul>
+<p>This should download the <em>README.md</em> file that we created on GitHub in the previous step. Look in RStudio’s file browser pane for the <em>README.md</em> file.</p>
+<p>There’s a big advantage to the “GitHub first, then RStudio” workflow: the remote GitHub repo is added as a remote for your local repo and your local <em>master</em> branch is now tracking <em>master</em> on GitHub. This is a technical but important point about Git. The practical implication is that you are now set up to push and pull. No need to fanny around setting up Git remotes and tracking branches on the command line.</p>
+</div>
+<div id="make-local-changes-save-commit" class="section level4">
+<h4><span class="header-section-number">1.4.3.2</span> Make local changes, save, commit</h4>
+<p><strong>Do this every time you finish a valuable chunk of work, probably many times a day.</strong></p>
+<p>From RStudio, modify the <em>README.md</em> file, e.g., by adding the line “This is a line from RStudio”. Save your changes.</p>
+<p>Commit these changes to your local repo. How?</p>
+<ul>
+<li>Click the “Git” tab in upper right pane</li>
+<li>Check “Staged” box for any files whose existence or modifications you want to commit.
+<ul>
+<li>To see more detail on what’s changed in file since the last commit, click on “Diff” for a Git pop-up</li>
+</ul></li>
+<li>If you’re not already in the Git pop-up, click “Commit”</li>
+<li>Type a message in “Commit message”, such as “Commit from RStudio”.</li>
+<li>Click “Commit”</li>
+</ul>
+</div>
+<div id="push-your-local-changes-to-github" class="section level4">
+<h4><span class="header-section-number">1.4.3.3</span> Push your local changes to GitHub</h4>
+<p><strong>Do this a few times a day, but possibly less often than you commit.</strong></p>
+<p>You have new work in your local Git repository, but the changes are not online yet.</p>
+<p>This will seem counterintuitive, but first let’s stop and pull from GitHub.</p>
+<p>Why? Establish this habit for the future! If you make changes to the repo in the browser or from another machine or (one day) a collaborator has pushed, you will be happier if you pull those changes in before you attempt to push.</p>
+<p>Click the blue “Pull” button in the “Git” tab in RStudio. I doubt anything will happen, i.e. you’ll get the message “Already up-to-date.” This is just to establish a habit.</p>
+<p>Click the green “Push” button to send your local changes to GitHub. You should see some message along these lines.</p>
+<pre><code>[master dc671f0] blah
+ 3 files changed, 22 insertions(+)
+ create mode 100644 .gitignore
+ create mode 100644 myrepo.Rproj</code></pre>
+</div>
+<div id="confirm-the-local-change-propagated-to-the-github-remote" class="section level4">
+<h4><span class="header-section-number">1.4.3.4</span> Confirm the local change propagated to the GitHub remote</h4>
+<p>Go back to the browser. I assume we’re still viewing your new GitHub repo.</p>
+<p>Refresh this page.</p>
+<p>You should see the new “This is a line from RStudio” in the README.</p>
+<p>If you click on “commits,” you should see one with the message “Commit from RStudio”.</p>
+</div>
+<div id="make-a-change-on-github" class="section level4">
+<h4><span class="header-section-number">1.4.3.5</span> Make a change on GitHub</h4>
+<p>Click on README.md in the file listing on GitHub.</p>
+<p>In the upper right corner, click on the pencil for “Edit this file”.</p>
+<div class="figure">
+<img src="images/edit_file.PNG" />
+
+</div>
+<p>Add a line to this file, such as “Line added from GitHub.”</p>
+<p>Edit the commit message in “Commit changes” or accept the default.</p>
+<p>Click the big green button “Commit changes.”</p>
+</div>
+<div id="pull-from-github" class="section level4">
+<h4><span class="header-section-number">1.4.3.6</span> Pull from GitHub</h4>
+<p>Back in RStudio locally …</p>
+<p>Inspect your README.md. It should NOT have the line “Line added from GitHub”. It should be as you left it. Verify that.</p>
+<p>Click the blue Pull button.</p>
+<p>Look at README.md again. You should now see the new line there.</p>
+</div>
+<div id="the-end" class="section level4">
+<h4><span class="header-section-number">1.4.3.7</span> The end</h4>
+<p>Now just … repeat. Do work somewhere. Commit it. Push it or pull it depending on where you did it, but get local and remote “synced up”. Repeat.</p>
+<p><strong>Note that</strong> in general (and especially in future when collaborating with other developers) you will usually need to pull changes from the remote (GitHub) before pushing the local changes you have made. For this reason, it’s a good idea to try and get into the habit of pulling before you attempt to push.</p>
+</div>
+</div>
+<div id="existing-project-github-first" class="section level3">
+<h3><span class="header-section-number">1.4.4</span> Existing project, GitHub first</h3>
+<p>A novice-friendly workflow for bringing an existing R project into the RStudio and Git/GitHub universe.</p>
+<p>We do this in a slightly awkward way, in order to avoid using Git at the command line. You won’t want to work this way forever, but it’s perfectly fine as you’re getting started!</p>
+<p>We assume you’ve got your existing R project isolated in a directory on your computer. If that’s not already true, make it so. Create a directory and marshal all the existing data and R scripts there. It doesn’t really matter where you do this, but note where the project currently lives.</p>
+<div id="make-a-repo-on-github-1" class="section level4">
+<h4><span class="header-section-number">1.4.4.1</span> Make a repo on GitHub</h4>
+<p>We have do this before and now repeat the steps.</p>
+<p>Go to <a href="https://github.com" class="uri">https://github.com</a> and make sure you are logged in.</p>
+<p>Click green “New repository” button. Or, if you are on your own profile page, click on “Repositories”, then click the green “New” button.</p>
+<p>Repository name: <code>myrepo</code> (or whatever you wish, we will delete this) choose the <em>Public</em> and <em>YES Initialize this repository with a README</em></p>
+<div class="figure">
+<img src="images/create_a_new_repo.PNG" />
+
+</div>
+<p>Click big green button “Create repository.”</p>
+<p>Copy the HTTPS clone URL to your clipboard via the green “Clone or Download” button.</p>
+</div>
+<div id="new-rstudio-project-via-git-clone-1" class="section level4">
+<h4><span class="header-section-number">1.4.4.2</span> New RStudio Project via git clone</h4>
+<p>We have do this before and now repeat the steps.</p>
+<p>In RStudio, start a new Project:</p>
+<ul>
+<li><em>File&gt;New Project&gt;Version Control&gt;Git</em>. In the “repository URL” paste the URL of your new GitHub repository. It will be something like this <code>https://github.com/jennybc/myrepo.git</code>.</li>
+<li>Be intentional about where you create this Project.</li>
+<li>Suggest you check the box “Open in new session”.</li>
+<li>Click “Create Project” to create a new directory, which will be all of these things:
+<ul>
+<li>a directory or “folder” on your computer</li>
+<li>a Git repository, linked to a remote GitHub repository</li>
+<li>an RStudio Project</li>
+</ul></li>
+<li><strong>In the absence of other constraints, I suggest that all of your R projects have exactly this set-up.</strong></li>
+</ul>
+<p>This should download the <em>README.md</em> file that we created on GitHub in the previous step. Look in RStudio’s file browser pane for the <em>README.md</em> file.</p>
+</div>
+<div id="bring-your-existing-project-over" class="section level4">
+<h4><span class="header-section-number">1.4.4.3</span> Bring your existing project over</h4>
+<p>Using your favorite method of moving or copying files, copy the files that constitute your existing project into the directory for this new project.</p>
+<p>In RStudio, consult the Git pane and the file browser.</p>
+<ul>
+<li>Are you seeing all the files? They should be here if your move/copy was successful.</li>
+<li>Are they showing up in the Git pane with questions marks? They should be appearing as new untracked files.</li>
+</ul>
+</div>
+<div id="stage-and-commit" class="section level4">
+<h4><span class="header-section-number">1.4.4.4</span> Stage and commit</h4>
+<p>Commit your files to this repo. How?</p>
+<ul>
+<li>Click the “Git” tab in upper right pane</li>
+<li>Check “Staged” box for all files you want to commit.
+<ul>
+<li>Default: stage it.</li>
+<li>When to reconsider: this will all go to GitHub. So do consider if that is appropriate for each file. <strong>You can absolutely keep a file locally, without committing it to the Git repo and sending to GitHub</strong>. Just let it sit there in your Git pane, without being staged. No harm will be done. If this is a long-term situation, list the file in .gitignore.</li>
+</ul></li>
+<li>If you’re not already in the Git pop-up, click “Commit”</li>
+<li>Type a message in “Commit message”, such as “init”.</li>
+<li>Click “Commit”</li>
+</ul>
+</div>
+<div id="push-your-local-changes-to-github-1" class="section level4">
+<h4><span class="header-section-number">1.4.4.5</span> Push your local changes to GitHub</h4>
+<p>Click the green “Push” button to send your local changes to GitHub. You should see some message along these lines.</p>
+<pre><code>[master dc671f0] blah
+ 3 files changed, 22 insertions(+)
+ create mode 100644 .gitignore
+ create mode 100644 myrepo.Rproj</code></pre>
+</div>
+<div id="confirm-the-local-change-propagated-to-the-github-remote-1" class="section level4">
+<h4><span class="header-section-number">1.4.4.6</span> Confirm the local change propagated to the GitHub remote</h4>
+<p>Go back to the browser. I assume we’re still viewing your new GitHub repo.</p>
+<p>Refresh.</p>
+<p>You should see all the project files you committed there.</p>
+<p>If you click on “commits”,you should see one with the message “init”.</p>
+</div>
+<div id="the-end-1" class="section level4">
+<h4><span class="header-section-number">1.4.4.7</span> The end</h4>
+<p>Now just … repeat. Do work somewhere. Commit it. Push it or pull it depending on where you did it, but get local and remote “synced up”. Repeat.</p>
+<p><strong>Note that</strong> in general (and especially in future when collaborating with other developers) you will usually need to pull changes from the remote (GitHub) before pushing the local changes you have made. For this reason, it’s a good idea to try and get into the habit of pulling before you attempt to push.</p>
+</div>
+</div>
+<div id="existing-project-github-last" class="section level3">
+<h3><span class="header-section-number">1.4.5</span> Existing project, GitHub last</h3>
+<div id="make-or-verify-an-rstudio-project" class="section level4">
+<h4><span class="header-section-number">1.4.5.1</span> Make or verify an RStudio Project</h4>
+<p>We assume you’ve got your existing R project isolated in a directory on your computer.</p>
+<p>If it’s not already an RStudio Project, make it so:</p>
+<ul>
+<li>If you use the <a href="https://cran.r-project.org/web/packages/usethis/index.html">usethis</a> package, set the existing directory as the current project with <code>proj_set()</code>, then do <code>usethis::use_rstudio()</code>.</li>
+<li>Within RStudio you can do: File &gt; New Project &gt; Existing Directory and, if you wish, “Open in new session”.</li>
+</ul>
+<p>If your project is already an RStudio Project, launch it.</p>
+</div>
+<div id="make-or-verify-a-git-repo" class="section level4">
+<h4><span class="header-section-number">1.4.5.2</span> Make or verify a Git repo</h4>
+<p>You should be in RStudio now, in your project.</p>
+<p>Is it already a Git repository? The presence of the Git pane should tip you off. If yes, you’re done.</p>
+<p>If not, you have several options:</p>
+<ul>
+<li>If you have the <a href="https://cran.r-project.org/web/packages/usethis/index.html">usethis</a> package, call <code>usethis::use_git()</code>.</li>
+<li>In RStudio, go to <em>Tools &gt; Project Options … &gt; Git/SVN</em>. Under “Version control system”, select “Git”. Confirm New Git Repository? Yes!</li>
+<li>In the shell, in Project’s directory, do <code>git init</code>.</li>
+</ul>
+<p>If you used RStudio or usethis, the Project should re-launch in RStudio. Do that yourself if you did <code>git init</code>. RStudio should now have a Git pane.</p>
+</div>
+<div id="stage-and-commit-1" class="section level4">
+<h4><span class="header-section-number">1.4.5.3</span> Stage and commit</h4>
+<p>If your local project was already a Git repo and was up-to-date, move on. Otherwise, you probably need to stage and commit.</p>
+<ul>
+<li>Click the “Git” tab in upper right pane</li>
+<li>Check “Staged” box for all files you want to commit.
+<ul>
+<li>Default: stage everything</li>
+<li>When to do otherwise: this will all go to GitHub. So consider if that is appropriate for each file. <strong>You can absolutely keep a file locally, without committing it to the Git repo and sending to GitHub</strong>. Just let it sit there in your Git pane, without being staged. No harm will be done. If this is a long-term situation, list the file in .gitignore.</li>
+</ul></li>
+<li>If you’re not already in the Git pop-up, click “Commit”</li>
+<li>Type a message in “Commit message”.</li>
+<li>Click “Commit”</li>
+</ul>
+</div>
+<div id="make-and-connect-a-github-repo-option-1" class="section level4">
+<h4><span class="header-section-number">1.4.5.4</span> Make and connect a GitHub repo, option 1</h4>
+<p>If you use the <a href="https://cran.r-project.org/web/packages/usethis/index.html">usethis</a> package AND you have configured a GitHub Personal Access Token (PAT), do this in</p>
+<pre><code>R:usethis::use_github()</code></pre>
+<p>This will create a new repo on GitHub, add it as a remote, set up a tracking branch, and open it in your browser. Read the <code>use_github()</code> help to learn about its arguments and advice on configuring a PAT. This is extremely handy for a variety of workflows that call the GitHub API. Consider setting this up if you use usethis, devtools, or gh regularly.</p>
+</div>
+<div id="make-and-connect-a-github-repo-option-2" class="section level4">
+<h4><span class="header-section-number">1.4.5.5</span> Make and connect a GitHub repo, option 2</h4>
+<div id="make-a-new-repo-on-github" class="section level5">
+<h5><span class="header-section-number">1.4.5.5.1</span> Make a new repo on GitHub</h5>
+<p>We have do this before and now repeat the steps.</p>
+</div>
+<div id="connect-local-repo-to-github-repo" class="section level5">
+<h5><span class="header-section-number">1.4.5.5.2</span> Connect local repo to GitHub repo</h5>
+<p>You can do this in the shell or, with recent versions of RStudio, via RStudio.</p>
+</div>
+<div id="in-rstudio" class="section level5">
+<h5><span class="header-section-number">1.4.5.5.3</span> In RStudio</h5>
+<p>Click on the “two purple boxes and a white square” in the Git pane. Click “Add remote”. Paste the URL here and pick a remote name, almost certainly <code>origin</code>. Now “Add”.</p>
+<p>We should be back in the “New Branch” dialog (if not, click on the “two purple boxes and a white square” in the Git pane again). I assume you’re on the <code>master</code> branch want it to track <code>master</code> on GitHub. Enter <code>master</code> as the branch name and make sure “Sync branch with remote” is checked. Click “Create” (yes, even though the branch already exists). In the next dialog, choose “overwrite”.</p>
+</div>
+<div id="in-a-shell" class="section level5">
+<h5><span class="header-section-number">1.4.5.5.4</span> In a shell</h5>
+<p>In a shell, do this, substituting your URL:</p>
+<pre><code>git remote add origin https://github.com/jennybc/myrepo.git</code></pre>
+<p>Push and cement the tracking relationship between your local <code>master</code> branch and <code>master</code> on GitHub:</p>
+<pre><code>git push --set-upstream origin master</code></pre>
+</div>
+</div>
+<div id="confirm-the-local-files-propagated-to-the-github-remote" class="section level4">
+<h4><span class="header-section-number">1.4.5.6</span> Confirm the local files propagated to the GitHub remote</h4>
+<p>Go back to the browser. I assume we’re still viewing your new GitHub repo.</p>
+<p>Refresh.</p>
+<p>You should see all the project files you committed there.</p>
+<p>If this project already had a Git history, it should be reflected on GitHub.</p>
+</div>
+<div id="the-end-2" class="section level4">
+<h4><span class="header-section-number">1.4.5.7</span> The end</h4>
+<p>Now just … repeat. Do work somewhere. Commit it. Push it or pull it depending on where you did it, but get local and remote “synced up”. Repeat.</p>
+<p>Note that in general (and especially in future when collaborating with other developers) you will usually need to pull changes from the remote (GitHub) before pushing the local changes you have made. For this reason, it’s a good idea to try and get into the habit of pulling before you attempt to push.</p>
+</div>
+</div>
+</div>
+<div id="introduction-to-ggplot2" class="section level2">
+<h2><span class="header-section-number">1.5</span> Introduction to ggplot2</h2>
+</div>
+<div id="introduction-to-shiny" class="section level2">
+<h2><span class="header-section-number">1.6</span> Introduction to Shiny</h2>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+
+<a href="the-fundamentals-of-statistics.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "";
+    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

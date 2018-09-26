@@ -1,0 +1,41 @@
+---
+title: "Untitled"
+output: html_document
+---
+
+### what's Git & GitHub
+
+Git is a *version control* system. Git manages the evolution of a set of files – called a *repository* – in a sane, highly structured way.
+
+GitHub provides a home for your Git-based projects on the internet.
+
+### Connect Git, GitHub, Rstudio
+
+Objective: make sure that you can pull from and push to GitHub from your computer.
+
+#### introduce yourself to Git
+
+In the shell (Git Bash) print the following code:
+
+git config --global user.name 'Jennifer Bryan'
+git config --global user.email 'jenny@stat.ubc.ca'
+git config --global --list
+
+substituting your name and the email associated with your GitHub account.
+
+#### Make a repo on GitHub
+
+Go to https://github.com and make sure you are logged in.
+
+Click green “New repository” button. Or, if you are on your own profile page, click on “Repositories”, then click the green “New” button.
+
+Repository name: `myrepo` (or whatever you wish, we will delete this)
+choose the *Public* and *YES Initialize this repository with a README*
+
+![](pic/create_a_new_repo.PNG)
+
+Click big green button “Create repository.”
+
+Copy the HTTPS clone URL to your clipboard via the green “Clone or Download” button.
+
+#### Clone the repo to your local computer
