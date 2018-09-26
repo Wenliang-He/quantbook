@@ -1,8 +1,12 @@
 {
-    "path" : "~/Google Drive/01_Teaching/01_My_Courses/11_QuantMethods_I/quantbook",
+    "path" : "~/百度云同步盘/01_Teaching/01_My_Courses/QuantMethods/quantbook",
     "sortOrder" : [
         {
             "ascending" : true,
+            "columnIndex" : 1
+        },
+        {
+            "ascending" : false,
             "columnIndex" : 2
         }
     ]

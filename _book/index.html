@@ -54,13 +54,6 @@
 <link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
 <script src="libs/chromatography-0.1/chromatography.js"></script>
 <script src="libs/DiagrammeR-binding-1.0.0/DiagrammeR.js"></script>
-<link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
-<script src="libs/datatables-binding-0.4/datatables.js"></script>
-<link href="libs/dt-core-1.10.16/css/jquery.dataTables.min.css" rel="stylesheet" />
-<link href="libs/dt-core-1.10.16/css/jquery.dataTables.extra.css" rel="stylesheet" />
-<script src="libs/dt-core-1.10.16/js/jquery.dataTables.min.js"></script>
-<link href="libs/crosstalk-1.0.0/css/crosstalk.css" rel="stylesheet" />
-<script src="libs/crosstalk-1.0.0/js/crosstalk.min.js"></script>
 
 
 <style type="text/css">
@@ -268,7 +261,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div id="header">
 <h1 class="title">Quantitative Research Methods for Education</h1>
 <h4 class="author"><em>Wenliang He</em></h4>
-<h4 class="date"><em>Updated on 2018-09-25</em></h4>
+<h4 class="date"><em>Updated on 2018-09-26</em></h4>
 </div>
 <div id="introduction" class="section level1">
 <h1><span class="header-section-number">1</span> Introduction</h1>
@@ -506,36 +499,82 @@ attr(,&quot;RStudio&quot;)
 </div>
 <div id="install-git" class="section level3">
 <h3><span class="header-section-number">1.1.6</span> Install Git</h3>
+<div id="windows-users" class="section level4">
+<h4><span class="header-section-number">1.1.6.1</span> Windows Users</h4>
+<p>Install <strong>Git for Windows</strong>, also known as <code>msysgit</code> or “Git Bash”, which installs Git along with other useful tools, such as the Bash shell.</p>
 <ol style="list-style-type: decimal">
-<li>Windows Users</li>
-</ol>
-<p>Install <strong>Git for Windows</strong>, aka <code>msysgit</code> or “Git Bash”, which installs Git along with other useful tools, such as the Bash shell.</p>
+<li>Download the <strong>Git for Windows</strong> installer
 <ul>
-<li><p>Go to <a href="https://gitforwindows.org/">gitforwindows.org</a> and press Download.</p></li>
-<li><p>On the download page, click on either the 32-bit or 64-bit version depending on your Windows system.</p></li>
-</ul>
+<li>Go to <a href="https://gitforwindows.org/">gitforwindows.org</a> and press Download.</li>
+<li>On the download page, click on either the 32-bit or 64-bit version depending on your Windows system. The latest version by the time of writing this guide is v2.19.0.</li>
+</ul></li>
+</ol>
 <div class="figure">
 <img src="images/gitdownload_win.png" width="500" />
 
 </div>
 <p><code>NOTE</code>: You can also go to <a href="https://git-scm.com/download/win">git-scm.com</a> and the download would automatically start. However, it will download the 32-bit version by default, which is inconvenient if you want the 64-bit one. It does not matter which link you use, since the two would eventually go to the same place fetching for the same installation program.</p>
 <ol start="2" style="list-style-type: decimal">
-<li>Install Git</li>
+<li>Run the installer and follow the steps below
+<ol style="list-style-type: decimal">
+<li>Click “Next”</li>
+<li>Click “Next”</li>
+<li>Click “Next”</li>
+<li>Click “Next”</li>
+<li>Click “Next”</li>
+<li>Select <strong>“Use Git from the Windows Command Prompt”</strong> and click “Next”. It’s critical that you select this. Otherwise, you need to rerun the installer.</li>
+<li>Click “Next”. Keep “Checkout Windows-style, commit Unix-style line endings” selected.</li>
+<li>Select <strong>“Use Windows’ default console window”</strong> and click “Next”.</li>
+<li>Click “Next”</li>
+<li>Click “Finish”</li>
+</ol></li>
 </ol>
+<p>Please use the default <code>C:/Program Files</code>, which makes it easier for RStudio to find Git.</p>
+<p>During Git installation, select “Enable Git Credential Manager”.</p>
+</div>
+<div id="mac-users" class="section level4">
+<h4><span class="header-section-number">1.1.6.2</span> Mac Users</h4>
+<p>Since Bash shell is included in Mac OS, you only need to download and install Git.</p>
 <ul>
-<li><p>Please use the default path, i.e. <code>C:/Program Files</code>, which makes it easier for RStudio to find Git.</p></li>
-<li><p>During Git installation, select (a) Use Git from Windows Command Prompt, and (b) Enable Git Credential Manager.</p></li>
-</ul>
-<ol start="3" style="list-style-type: decimal">
-<li>Mac Users</li>
-</ol>
-<ul>
-<li>Download Git from <a href="https://git-scm.com/download/mac">git-scm.com</a>.</li>
+<li><p>Download Git installer from <a href="https://git-scm.com/download/mac">git-scm.com</a>.</p></li>
+<li><p>Installation should be straightfoward for Mac users.</p></li>
 </ul>
 <p>If the download does not automatically start, click the link as highlighted in the graph below. <img src="images/gitdownload_mac.png" width="500" /></p>
+</div>
+<div id="configure-git" class="section level4">
+<h4><span class="header-section-number">1.1.6.3</span> Configure Git</h4>
+<p>After installation, your need to configure your Git. You only need to do this once.</p>
+<p>Open shell and type the following commands into shell and press Enter. Please make sure that you have changed the code accordingly based on your personal information. For example, <code>your-first-name</code> should be really your first name.</p>
+<pre><code>git config --global user.name &quot;your-first-name your-last-name&quot;   # set user.name
+git config --global user.email &quot;your-github-email&quot;               # set user.email
+git config --global core.editor &quot;nano&quot;                           # set text editor
+git config --global --list                                       # check settings
+</code></pre>
 <ul>
-<li>Installation should be straightfoward for Mac users.</li>
+<li>open shell
+<ul>
+<li><strong>easiest way</strong>: For Windows and Mac, in RStudio, go to <em>Tools &gt; Shell…</em></li>
+<li><strong>another way</strong>: For Windows, open a new program called Git Bash. You have just installed it while installing Git.</li>
+<li><strong>another way</strong>: For Mac, go to <em>Finder</em> &gt; <em>Command + Option + Space</em> &gt; type <code>terminal</code> and press Enter</li>
+</ul></li>
+<li><strong>set user.name</strong>: <code>git config --global user.name &quot;your-first-name your-last-name&quot;</code>
+<ul>
+<li>The <code>your-first-name your-last-name</code> is a Git username, <strong>NOT</strong> your GitHub username. It can be any name you want (in this course, however, please use the first-name-last-name convention, which is informative for others). Git uses it to associate commits with an identity such that others can see which commit is made by which user. Changing a Git username affects future commits, not past commits.</li>
+</ul></li>
+<li><strong>set user.email</strong>: <code>git config --global user.email &quot;your-github-email&quot;</code>
+<ul>
+<li>The <code>your-github-email</code> <strong>must</strong> be your GitHub email. This useremail is officially called <strong>Git commit email address</strong>. GitHub uses it to associate commits with your GitHub account such that GitHub knows if it should allow a certain commit to be pushed to a specific GitHub account.</li>
+</ul></li>
+<li><strong>set text editor</strong>: <code>git config --global core.editor &quot;nano&quot;</code>
+<ul>
+<li>Set your default Git text editor to be nano, a light-weight easy to use text editor that comes with both Windows and Mac OS. Git may use Vim by default, which is powerful, but not the easiest editor to use.</li>
+</ul></li>
+<li><strong>check settings</strong>: <code>git config --global --list</code>
+<ul>
+<li>Check to ensure everything is set correctly.</li>
+</ul></li>
 </ul>
+</div>
 </div>
 </div>
 <div id="introduction-to-r" class="section level2">
@@ -938,8 +977,8 @@ fac =<span class="st"> </span><span class="kw">factor</span>(var3); fac         
 </div>
 <div id="introduction-to-r-markdown" class="section level2">
 <h2><span class="header-section-number">1.3</span> Introduction to R Markdown</h2>
-<div id="htmlwidget-0055636b57474b173e92" style="width:672px;height:200px;" class="DiagrammeR html-widget"></div>
-<script type="application/json" data-for="htmlwidget-0055636b57474b173e92">{"x":{"diagram":"\ngraph LR\nMU(Markup) --> MD(Markdown) \nMD --> PDMD(Pandoc Markdown)\nMD --> GHMD(GitHub Markdown)\nMD --> PHPMD(PHP Markdown)\nPDMD --> RMD(R Markdown)\nRMD --> BD(Bookdown)\n"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-0b6cb858f6a393ee4b7a" style="width:672px;height:200px;" class="DiagrammeR html-widget"></div>
+<script type="application/json" data-for="htmlwidget-0b6cb858f6a393ee4b7a">{"x":{"diagram":"\ngraph LR\nMU(Markup) --> MD(Markdown) \nMD --> PDMD(Pandoc Markdown)\nMD --> GHMD(GitHub Markdown)\nMD --> PHPMD(PHP Markdown)\nPDMD --> RMD(R Markdown)\nRMD --> BD(Bookdown)\n"},"evals":[],"jsHooks":[]}</script>
 <p>There are some resources for learning Markdown, GitHub Markdown, and R Markdown.</p>
 <p><strong>Markdown Tutorials</strong></p>
 <ul>

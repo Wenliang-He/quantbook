@@ -275,36 +275,84 @@ Here is the good news: For students, faculty, and research staff with `.edu` ema
 
 ### Install Git
 
-1. Windows Users
+#### Windows Users
 
-Install **Git for Windows**, aka `msysgit` or "Git Bash", which installs Git along with other useful tools, such as the Bash shell. 
+Install **Git for Windows**, also known as `msysgit` or "Git Bash", which installs Git along with other useful tools, such as the Bash shell. 
 
-* Go to [gitforwindows.org](https://gitforwindows.org/) and press Download.
-
-* On the download page, click on either the 32-bit or 64-bit version depending on your Windows system. 
+1. Download the **Git for Windows** installer
+    - Go to [gitforwindows.org](https://gitforwindows.org/) and press Download.
+    - On the download page, click on either the 32-bit or 64-bit version depending on your Windows system. The latest version by the time of writing this guide is v2.19.0. 
 
 ![](images/gitdownload_win.png){width=500}
 
-
-
 `NOTE`: You can also go to [git-scm.com](https://git-scm.com/download/win) and the download would automatically start. However, it will download the 32-bit version by default, which is inconvenient if you want the 64-bit one. It does not matter which link you use, since the two would eventually go to the same place fetching for the same installation program. 
 
+2. Run the installer and follow the steps below
+    1. Click "Next"
+    1. Click "Next"
+    1. Click "Next"
+    1. Click "Next"
+    1. Click "Next"
+    1. Select **"Use Git from the Windows Command Prompt"** and click "Next". It's critical that you select this. Otherwise, you need to rerun the installer. 
+    1. Click "Next". Keep "Checkout Windows-style, commit Unix-style line endings" selected.
+    1. Select **"Use Windows' default console window"** and click "Next".
+    1. Click "Next"
+    1. Click "Finish"
 
-2. Install Git
+Please use the default `C:/Program Files`, which makes it easier for RStudio to find Git. 
 
-* Please use the default path, i.e. `C:/Program Files`, which makes it easier for RStudio to find Git. 
+During Git installation, select "Enable Git Credential Manager". 
 
-* During Git installation, select (a) Use Git from Windows Command Prompt, and (b) Enable Git Credential Manager. 
+```{r eval=FALSE, echo=FALSE}
+# https://cfss.uchicago.edu/git01.html
+# http://happygitwithr.com/install-git.html
+
+```
 
 
-3. Mac Users
+#### Mac Users
 
-* Download Git from [git-scm.com](https://git-scm.com/download/mac).
+Since Bash shell is included in Mac OS, you only need to download and install Git. 
+
+- Download Git installer from [git-scm.com](https://git-scm.com/download/mac).
+
+- Installation should be straightfoward for Mac users. 
 
 If the download does not automatically start, click the link as highlighted in the graph below. 
 ![](images/gitdownload_mac.png){width=500}
 
-* Installation should be straightfoward for Mac users. 
+
+#### Configure Git
+
+After installation, your need to configure your Git. You only need to do this once.
+
+Open shell and type the following commands into shell and press Enter. Please make sure that you have changed the code accordingly based on your personal information. For example, `your-first-name` should be really your first name. 
+
+```
+git config --global user.name "your-first-name your-last-name"   # set user.name
+git config --global user.email "your-github-email"               # set user.email
+git config --global core.editor "nano"                           # set text editor
+git config --global --list                                       # check settings
+
+```
+
+- **open shell**
+    - **easiest way**: For Windows and Mac, in RStudio, go to _Tools > Shell..._ 
+    - **another way**: For Windows, open a new program called Git Bash. You have just installed it while installing Git. 
+    - **another way**: For Mac, go to _Finder_ > _Command + Option + Space_ > type `terminal` and press Enter
+
+- **set user.name**: `git config --global user.name "your-first-name your-last-name"`
+    - The `your-first-name your-last-name` is a Git username, **NOT** your GitHub username. It can be any name you want (in this course, however, please observe the first-name-last-name convention, which is informative for others). Git uses it to associate commits with an identity such that others can see which commit is made by which user. Changing a Git username affects future commits, not past commits. 
+
+- **set user.email**: `git config --global user.email "your-github-email"`
+    - The `your-github-email` **must** be your GitHub email. This email is officially called **Git commit email address**. GitHub uses it to associate commits with your GitHub account such that GitHub knows if it should allow a certain commit to be pushed to a specific GitHub account. 
+
+- **set text editor**: `git config --global core.editor "nano"`
+    - Set your default Git text editor to be nano, a light-weight easy to use text editor that comes with both Windows and Mac OS. Git may use Vim by default, which is powerful, but not the easiest editor to use. 
+
+- **check settings**: `git config --global --list`
+    - Check to ensure everything is set correctly.
+
 
 
 ## Introduction to R
