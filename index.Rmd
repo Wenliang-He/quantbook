@@ -246,7 +246,6 @@ update.packages(ask = FALSE, checkBuilt = TRUE)
 
 Choosing a proper GitHub username is **extremely important**. Given the _Username_ you choose, your GitHub account will look like `https://github.com/Username`. This "website" will be the one place to host and showcase all of your coursework. In the information age, when online presence is more important than ever, this is your online portfolio, your "voice", your professional "business card".
 
-```{r, eval=F, echo=F}
 Therefore a few tips:
 
 - **Incorporate your actual name**. Using your actual name makes it easier for people to remember. Moreover, people like to know who they are dealing with.
@@ -259,7 +258,7 @@ Therefore a few tips:
 
 
 `Note`: The tips presented above are adapted from suggestions given by [Jenny Bryan](http://happygitwithr.com/github-acct.html).
-```
+
 
 You can change your username later, but it's better to get it right the first time. 
 

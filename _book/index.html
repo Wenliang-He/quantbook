@@ -54,13 +54,6 @@
 <link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
 <script src="libs/chromatography-0.1/chromatography.js"></script>
 <script src="libs/DiagrammeR-binding-1.0.0/DiagrammeR.js"></script>
-<link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
-<script src="libs/datatables-binding-0.4/datatables.js"></script>
-<link href="libs/dt-core-1.10.16/css/jquery.dataTables.min.css" rel="stylesheet" />
-<link href="libs/dt-core-1.10.16/css/jquery.dataTables.extra.css" rel="stylesheet" />
-<script src="libs/dt-core-1.10.16/js/jquery.dataTables.min.js"></script>
-<link href="libs/crosstalk-1.0.0/css/crosstalk.css" rel="stylesheet" />
-<script src="libs/crosstalk-1.0.0/js/crosstalk.min.js"></script>
 
 
 <style type="text/css">
@@ -138,7 +131,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="1.4.1" data-path="index.html"><a href="index.html#introduction-to-git"><i class="fa fa-check"></i><b>1.4.1</b> Introduction to Git</a></li>
 <li class="chapter" data-level="1.4.2" data-path="index.html"><a href="index.html#introduction-to-github"><i class="fa fa-check"></i><b>1.4.2</b> Introduction to GitHub</a></li>
 </ul></li>
-<li class="chapter" data-level="1.5" data-path="index.html"><a href="index.html#introduction-to-shiny"><i class="fa fa-check"></i><b>1.5</b> Introduction to Shiny</a></li>
+<li class="chapter" data-level="1.5" data-path="index.html"><a href="index.html#introduction-to-ggplot2"><i class="fa fa-check"></i><b>1.5</b> Introduction to ggplot2</a></li>
+<li class="chapter" data-level="1.6" data-path="index.html"><a href="index.html#introduction-to-shiny"><i class="fa fa-check"></i><b>1.6</b> Introduction to Shiny</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="the-fundamentals-of-statistics.html"><a href="the-fundamentals-of-statistics.html"><i class="fa fa-check"></i><b>2</b> The Fundamentals of Statistics</a><ul>
 <li class="chapter" data-level="2.1" data-path="the-fundamentals-of-statistics.html"><a href="the-fundamentals-of-statistics.html#why-studying-statistics"><i class="fa fa-check"></i><b>2.1</b> Why Studying Statistics</a><ul>
@@ -495,6 +489,17 @@ attr(,&quot;RStudio&quot;)
 <li>Choose a GitHub Username</li>
 </ol>
 <p>Choosing a proper GitHub username is <strong>extremely important</strong>. Given the <em>Username</em> you choose, your GitHub account will look like <code>https://github.com/Username</code>. This “website” will be the one place to host and showcase all of your coursework. In the information age, when online presence is more important than ever, this is your online portfolio, your “voice”, your professional “business card”.</p>
+<p>Therefore a few tips:</p>
+<ul>
+<li><strong>Incorporate your actual name</strong>. Using your actual name makes it easier for people to remember. Moreover, people like to know who they are dealing with.</li>
+<li><strong>Use proper case styles</strong>. You can use <strong>camel case</strong>, e.g. WeChat, FedEx, iPhone, eBay, <strong>snake case</strong>, e.g. wenliang_he, or <strong>kebab case</strong>, e.g. Wenliang-He to introduce complexity into your usernames to avoid conflicts. Please refer to <a href="https://en.wikipedia.org/wiki/Letter_case#Special_case_styles">Special Case Styles</a> for more informatin.</li>
+<li><strong>Use topic words</strong>. If you are creating a themed account posting things for a specific purpose. You can consider using words evocative of a topic, e.g. Wen4Education, GeoStatsNinja.</li>
+<li><strong>Make it timeless</strong>. Try to avoid using your current school name, employer, or place of residence etc. As things change, your username might become irrelevant.</li>
+<li><strong>Pick a username you feel comfortable revealing to your future boss</strong>. People are fond of coming up with unique, bold and sassy usernames. But be careful not to go too far.</li>
+<li><strong>Shorter is better than longer</strong>. This should be obvious.</li>
+<li><strong>Remove numbers whenever possible</strong>. Try your best to avoid appending random numbers to your username.</li>
+</ul>
+<p><code>Note</code>: The tips presented above are adapted from suggestions given by <a href="http://happygitwithr.com/github-acct.html">Jenny Bryan</a>.</p>
 <p>You can change your username later, but it’s better to get it right the first time.</p>
 <ul>
 <li><a href="https://help.github.com/articles/changing-your-github-username/" class="uri">https://help.github.com/articles/changing-your-github-username/</a></li>
@@ -986,8 +991,8 @@ fac =<span class="st"> </span><span class="kw">factor</span>(var3); fac         
 </div>
 <div id="introduction-to-r-markdown" class="section level2">
 <h2><span class="header-section-number">1.3</span> Introduction to R Markdown</h2>
-<div id="htmlwidget-2e3479637dcde6683a44" style="width:672px;height:200px;" class="DiagrammeR html-widget"></div>
-<script type="application/json" data-for="htmlwidget-2e3479637dcde6683a44">{"x":{"diagram":"\ngraph LR\nMU(Markup) --> MD(Markdown) \nMD --> PDMD(Pandoc Markdown)\nMD --> GHMD(GitHub Markdown)\nMD --> PHPMD(PHP Markdown)\nPDMD --> RMD(R Markdown)\nRMD --> BD(Bookdown)\n"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-23a568096f88c24378da" style="width:672px;height:200px;" class="DiagrammeR html-widget"></div>
+<script type="application/json" data-for="htmlwidget-23a568096f88c24378da">{"x":{"diagram":"\ngraph LR\nMU(Markup) --> MD(Markdown) \nMD --> PDMD(Pandoc Markdown)\nMD --> GHMD(GitHub Markdown)\nMD --> PHPMD(PHP Markdown)\nPDMD --> RMD(R Markdown)\nRMD --> BD(Bookdown)\n"},"evals":[],"jsHooks":[]}</script>
 <p>There are some resources for learning Markdown, GitHub Markdown, and R Markdown.</p>
 <p><strong>Markdown Tutorials</strong></p>
 <ul>
@@ -1457,7 +1462,7 @@ vii. Item 4
 ##  3rd Qu.:19.0   3rd Qu.: 56.00  
 ##  Max.   :25.0   Max.   :120.00</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(cars)</code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-41-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-40-1.png" width="672" /></p>
 <p>You can control whether to evaluate the code (and hence show the result) or to show the code by changing the <code>eval</code> and <code>echo</code> arguments.</p>
 <table>
 <thead>
@@ -2581,8 +2586,11 @@ git checkout master       # come back to the latest commit
 </div>
 </div>
 </div>
+<div id="introduction-to-ggplot2" class="section level2">
+<h2><span class="header-section-number">1.5</span> Introduction to ggplot2</h2>
+</div>
 <div id="introduction-to-shiny" class="section level2">
-<h2><span class="header-section-number">1.5</span> Introduction to Shiny</h2>
+<h2><span class="header-section-number">1.6</span> Introduction to Shiny</h2>
 
 </div>
 </div>
